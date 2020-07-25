@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RuntimeNullables.Fody": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\dotnet\\dotnet.exe",
+      "commandLineArgs": "msbuild -t:Rebuild",
+      "workingDirectory": "C:\\Users\\mikem\\Documents\\Projects\\Singulink\\RuntimeNullables\\Source\\"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <!--<WeaverConfiguration>
+      <Weavers VerifyAssembly="true" VerifyIgnoreCodes="0x80131205">
+        <RuntimeNullables CheckNonPublic="false" CheckOutputs="false" />
+      </Weavers>
+    </WeaverConfiguration>-->
+
+    <!-- CS1591	Missing XML comment for publicly visible type or member. -->
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WeaverFiles Include="$(SolutionDir)RuntimeNullables.Fody\bin\$(Configuration)\netstandard2.0\RuntimeNullables.Fody.dll" />
+    <PackageReference Include="Fody" Version="6.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuntimeNullables\RuntimeNullables.csproj" />
+  </ItemGroup>
+
+</Project>

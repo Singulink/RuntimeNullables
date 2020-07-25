@@ -1,0 +1,30 @@
+.class private abstract auto ansi sealed beforefieldinit RuntimeNullables.ThrowHelpers
+extends [netstandard]System.Object
+{
+string) = ( 01 00 15 52 75 6E 74 69 6D 65 4E 75 6C 6C 61 62   // ...RuntimeNullab
+6C 65 73 2E 46 6F 64 79 05 30 2E 39 2E 31 00 00 ) // les.Fody.0.9.1..
+.method assembly hidebysig static void
+ThrowArgumentNull(string paramName) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  newobj     instance void [netstandard]System.ArgumentNullException::.ctor(string)
+IL_0006:  throw
+}
+.method assembly hidebysig static void
+ThrowOutputNull(string message) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  newobj     instance void [netstandard]System.NullReferenceException::.ctor(string)
+IL_0006:  throw
+}
+.method assembly hidebysig static class [netstandard]System.Exception
+GetAsyncResultNullException(string message) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  newobj     instance void [netstandard]System.NullReferenceException::.ctor(string)
+IL_0006:  ret
+}
+}

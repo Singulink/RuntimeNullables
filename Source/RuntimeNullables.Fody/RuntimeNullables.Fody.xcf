@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:complexType xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:attribute name="CheckOutputs" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Determines whether outputs (return values and out/ref parameters) have null checks injected.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+  <xs:attribute name="CheckNonPublic" type="xs:boolean">
+    <xs:annotation>
+      <xs:documentation>Determines whether non-public members have null checks injected or if only public entry points are checked.</xs:documentation>
+    </xs:annotation>
+  </xs:attribute>
+</xs:complexType>

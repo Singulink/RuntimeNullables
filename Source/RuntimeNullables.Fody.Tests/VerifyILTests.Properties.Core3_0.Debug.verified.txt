@@ -1,0 +1,137 @@
+.class public auto ansi beforefieldinit TestAssembly.Properties
+extends [netstandard]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private string _reference
+.field private string _nullableReference
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.field private string '<ReferenceAuto>k__BackingField'
+.field private string '<NullableReferenceAuto>k__BackingField'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.method public hidebysig specialname instance string
+get_ReferenceAuto() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Properties::'<ReferenceAuto>k__BackingField'
+IL_0006:  dup
+IL_0007:  brtrue.s   IL_0013
+IL_0009:  ldstr      "Return value nullability contract was broken."
+IL_000e:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0013:  ret
+}
+.method public hidebysig specialname instance void
+set_ReferenceAuto(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ldarg.0
+IL_000e:  ldarg.1
+IL_000f:  stfld      string TestAssembly.Properties::'<ReferenceAuto>k__BackingField'
+IL_0014:  ret
+}
+.method public hidebysig specialname instance string
+get_Reference() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Properties::_reference
+IL_0006:  dup
+IL_0007:  brtrue.s   IL_0013
+IL_0009:  ldstr      "Return value nullability contract was broken."
+IL_000e:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0013:  ret
+}
+.method public hidebysig specialname instance void
+set_Reference(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ldarg.0
+IL_000e:  ldarg.1
+IL_000f:  stfld      string TestAssembly.Properties::_reference
+IL_0014:  ret
+}
+.method public hidebysig specialname instance string
+get_NullableReferenceAuto() cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Properties::'<NullableReferenceAuto>k__BackingField'
+IL_0006:  ret
+}
+.method public hidebysig specialname instance void
+set_NullableReferenceAuto(string 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldarg.1
+IL_0002:  stfld      string TestAssembly.Properties::'<NullableReferenceAuto>k__BackingField'
+IL_0007:  ret
+}
+.method public hidebysig specialname instance string
+get_NullableReference() cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Properties::_nullableReference
+IL_0006:  ret
+}
+.method public hidebysig specialname instance void
+set_NullableReference(string 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldarg.1
+IL_0002:  stfld      string TestAssembly.Properties::_nullableReference
+IL_0007:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldnull
+IL_0002:  stfld      string TestAssembly.Properties::_reference
+IL_0007:  ldarg.0
+IL_0008:  ldnull
+IL_0009:  stfld      string TestAssembly.Properties::'<ReferenceAuto>k__BackingField'
+IL_000e:  ldarg.0
+IL_000f:  call       instance void [netstandard]System.Object::.ctor()
+IL_0014:  nop
+IL_0015:  ret
+}
+.property instance string ReferenceAuto()
+{
+.get instance string TestAssembly.Properties::get_ReferenceAuto()
+.set instance void TestAssembly.Properties::set_ReferenceAuto(string)
+}
+.property instance string Reference()
+{
+.get instance string TestAssembly.Properties::get_Reference()
+.set instance void TestAssembly.Properties::set_Reference(string)
+}
+.property instance string NullableReferenceAuto()
+{
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.get instance string TestAssembly.Properties::get_NullableReferenceAuto()
+.set instance void TestAssembly.Properties::set_NullableReferenceAuto(string)
+}
+.property instance string NullableReference()
+{
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.get instance string TestAssembly.Properties::get_NullableReference()
+.set instance void TestAssembly.Properties::set_NullableReference(string)
+}
+}

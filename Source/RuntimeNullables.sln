@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuntimeNullables", "RuntimeNullables\RuntimeNullables.csproj", "{19EC82F1-5148-485F-991E-A5C2557F8123}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6FB7D39-DF78-47C5-863E-6E8F1818706B} = {E6FB7D39-DF78-47C5-863E-6E8F1818706B}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuntimeNullables.Fody", "RuntimeNullables.Fody\RuntimeNullables.Fody.csproj", "{E6FB7D39-DF78-47C5-863E-6E8F1818706B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{401B2C06-A20C-455F-B903-B958DA072D0F}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{A10A0A2A-3CB2-4D03-B218-4462EB44041E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAssembly", "TestAssembly\TestAssembly.csproj", "{D36C0FFD-3AC5-47AB-B6F9-70B958B35230}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6FB7D39-DF78-47C5-863E-6E8F1818706B} = {E6FB7D39-DF78-47C5-863E-6E8F1818706B}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RuntimeNullables.Fody.Tests", "RuntimeNullables.Fody.Tests\RuntimeNullables.Fody.Tests.csproj", "{8DEF8EBB-D68B-4EE1-8B67-3B5B50B0A706}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAssemblyThrowHelpers", "TestAssemblyThrowHelpers\TestAssemblyThrowHelpers.csproj", "{23BB249B-DEAF-4664-9E00-AA068D9ADC3B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6FB7D39-DF78-47C5-863E-6E8F1818706B} = {E6FB7D39-DF78-47C5-863E-6E8F1818706B}
+		{19EC82F1-5148-485F-991E-A5C2557F8123} = {19EC82F1-5148-485F-991E-A5C2557F8123}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAssemblyNonPublic", "TestAssemblyNonPublic\TestAssemblyNonPublic.csproj", "{E6D0C5D9-0303-454C-9177-5C775F82335F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6FB7D39-DF78-47C5-863E-6E8F1818706B} = {E6FB7D39-DF78-47C5-863E-6E8F1818706B}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestAssemblyPointers", "TestAssemblyPointers\TestAssemblyPointers.csproj", "{58871249-FF9E-4EFF-BD56-89F020AF1857}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E6FB7D39-DF78-47C5-863E-6E8F1818706B} = {E6FB7D39-DF78-47C5-863E-6E8F1818706B}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19EC82F1-5148-485F-991E-A5C2557F8123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19EC82F1-5148-485F-991E-A5C2557F8123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19EC82F1-5148-485F-991E-A5C2557F8123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19EC82F1-5148-485F-991E-A5C2557F8123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6FB7D39-DF78-47C5-863E-6E8F1818706B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FB7D39-DF78-47C5-863E-6E8F1818706B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FB7D39-DF78-47C5-863E-6E8F1818706B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FB7D39-DF78-47C5-863E-6E8F1818706B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D36C0FFD-3AC5-47AB-B6F9-70B958B35230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D36C0FFD-3AC5-47AB-B6F9-70B958B35230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D36C0FFD-3AC5-47AB-B6F9-70B958B35230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D36C0FFD-3AC5-47AB-B6F9-70B958B35230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DEF8EBB-D68B-4EE1-8B67-3B5B50B0A706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DEF8EBB-D68B-4EE1-8B67-3B5B50B0A706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DEF8EBB-D68B-4EE1-8B67-3B5B50B0A706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DEF8EBB-D68B-4EE1-8B67-3B5B50B0A706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23BB249B-DEAF-4664-9E00-AA068D9ADC3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BB249B-DEAF-4664-9E00-AA068D9ADC3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BB249B-DEAF-4664-9E00-AA068D9ADC3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BB249B-DEAF-4664-9E00-AA068D9ADC3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D0C5D9-0303-454C-9177-5C775F82335F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D0C5D9-0303-454C-9177-5C775F82335F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D0C5D9-0303-454C-9177-5C775F82335F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D0C5D9-0303-454C-9177-5C775F82335F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58871249-FF9E-4EFF-BD56-89F020AF1857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58871249-FF9E-4EFF-BD56-89F020AF1857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58871249-FF9E-4EFF-BD56-89F020AF1857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58871249-FF9E-4EFF-BD56-89F020AF1857}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D36C0FFD-3AC5-47AB-B6F9-70B958B35230} = {A10A0A2A-3CB2-4D03-B218-4462EB44041E}
+		{8DEF8EBB-D68B-4EE1-8B67-3B5B50B0A706} = {A10A0A2A-3CB2-4D03-B218-4462EB44041E}
+		{23BB249B-DEAF-4664-9E00-AA068D9ADC3B} = {A10A0A2A-3CB2-4D03-B218-4462EB44041E}
+		{E6D0C5D9-0303-454C-9177-5C775F82335F} = {A10A0A2A-3CB2-4D03-B218-4462EB44041E}
+		{58871249-FF9E-4EFF-BD56-89F020AF1857} = {A10A0A2A-3CB2-4D03-B218-4462EB44041E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECB8F662-0B5D-4E53-9D46-2D3390C47371}
+	EndGlobalSection
+EndGlobal

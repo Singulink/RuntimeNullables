@@ -1,0 +1,73 @@
+.class public auto ansi beforefieldinit TestAssembly.Combo`1<TClass>
+extends [netstandard]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig instance string
+GetValue<class TMethod>(bool returnNull,
+!TClass inputValue,
+!!TMethod& refValue,
+bool outputNull) cil managed
+{
+.maxstack  2
+.locals init (string V_0,
+bool V_1,
+string V_2)
+IL_0000:  ldarg.2
+IL_0001:  box        !TClass
+IL_0006:  brtrue.s   IL_0012
+IL_0008:  ldstr      "inputValue"
+IL_000d:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_0012:  ldarg.3
+IL_0013:  ldobj      !!TMethod
+IL_0018:  box        !!TMethod
+IL_001d:  brtrue.s   IL_0029
+IL_001f:  ldstr      "refValue"
+IL_0024:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_0029:  nop
+IL_002a:  ldarg.1
+IL_002b:  brtrue.s   IL_004d
+IL_002d:  ldarga.s   inputValue
+IL_002f:  constrained. !TClass
+IL_0035:  callvirt   instance string [netstandard]System.Object::ToString()
+IL_003a:  ldarg.3
+IL_003b:  constrained. !!TMethod
+IL_0041:  callvirt   instance string [netstandard]System.Object::ToString()
+IL_0046:  call       string [netstandard]System.String::Concat(string,
+string)
+IL_004b:  br.s       IL_004e
+IL_004d:  ldnull
+IL_004e:  stloc.0
+IL_004f:  ldarg.s    outputNull
+IL_0051:  stloc.1
+IL_0052:  ldloc.1
+IL_0053:  brfalse.s  IL_005c
+IL_0055:  ldarg.3
+IL_0056:  initobj    !!TMethod
+IL_005c:  ldloc.0
+IL_005d:  stloc.2
+IL_005e:  br.s       IL_0060
+IL_0060:  ldloc.2
+IL_0061:  ldarg.3
+IL_0062:  ldobj      !!TMethod
+IL_0067:  box        !!TMethod
+IL_006c:  brtrue.s   IL_0078
+IL_006e:  ldstr      "Output parameter 'refValue' nullability contract w"
++ "as broken."
+IL_0073:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0078:  dup
+IL_0079:  brtrue.s   IL_0085
+IL_007b:  ldstr      "Return value nullability contract was broken."
+IL_0080:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0085:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [netstandard]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+}
