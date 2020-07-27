@@ -19,10 +19,13 @@ jobs:
         dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
+      working-directory: Source
     - name: Build
       run: dotnet build --configuration Release --no-restore
+      working-directory: Source
     - name: Test
       run: dotnet test --configuration Release --no-restore --verbosity normal
+      working-directory: Source
       
   build-test-debug:
 
@@ -36,7 +39,10 @@ jobs:
         dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
+      working-directory: Source
     - name: Build
       run: dotnet build --configuration Debug --no-restore
+      working-directory: Source
     - name: Test
       run: dotnet test --configuration Debug --no-restore --verbosity normal
+      working-directory: Source
