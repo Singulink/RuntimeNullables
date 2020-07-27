@@ -1,0 +1,48 @@
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-test-release:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: Source
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+      working-directory: Source
+    - name: Test
+      run: dotnet test --configuration Release --no-restore --verbosity normal
+      working-directory: Source
+      
+  build-test-debug:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - name: Install dependencies
+      run: dotnet restore
+      working-directory: Source
+    - name: Build
+      run: dotnet build --configuration Debug --no-restore
+      working-directory: Source
+    - name: Test
+      run: dotnet test --configuration Debug --no-restore --verbosity normal
+      working-directory: Source
