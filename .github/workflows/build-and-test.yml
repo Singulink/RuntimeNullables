@@ -1,4 +1,4 @@
-name: Build and Test
+name: build and test
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build-test-release:
+  debug:
 
     runs-on: windows-latest
 
@@ -21,13 +21,13 @@ jobs:
       run: dotnet restore
       working-directory: Source
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Debug -p:DefineConstants:CI --no-restore
       working-directory: Source
     - name: Test
-      run: dotnet test --configuration Release --no-restore --verbosity normal
+      run: dotnet test --configuration Debug --no-build --verbosity normal
       working-directory: Source
-      
-  build-test-debug:
+
+  release:
 
     runs-on: windows-latest
 
@@ -41,8 +41,8 @@ jobs:
       run: dotnet restore
       working-directory: Source
     - name: Build
-      run: dotnet build --configuration Debug --no-restore
+      run: dotnet build --configuration Release -p:DefineConstants:CI --no-restore
       working-directory: Source
     - name: Test
-      run: dotnet test --configuration Debug --no-restore --verbosity normal
+      run: dotnet test --configuration Release --no-build --verbosity normal
       working-directory: Source

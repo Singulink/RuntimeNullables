@@ -2,6 +2,9 @@
 
 [![Join the chat at https://gitter.im/Singulink/RuntimeNullables](https://badges.gitter.im/Singulink/RuntimeNullables.svg)](https://gitter.im/Singulink/RuntimeNullables?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![View nuget packages](https://img.shields.io/nuget/v/RuntimeNullables.Fody.svg)](https://www.nuget.org/packages/RuntimeNullables.Fody/)
+[![Build and Test](https://github.com/Singulink/RuntimeNullables/workflows/build%20and%20test/badge.svg)](https://github.com/Singulink/RuntimeNullables/actions?query=workflow%3A%22build+and+test%22)
+
+
 
 This package automatically adds null checks to method/property entry and exit points based on the standard C# 8+ Nullable Reference Type (NRT) annotations and attributes. It is capable of checking input parameters as well as outputs (i.e. return values and `out`/`ref` parameters) and supports comprehensive checks on the full range of special method types including `async Task<T>` methods, `Task<T>` methods that synchronously return completed tasks (i.e. using `Task.FromResult<T>`), `IEnumerable<T>` iterators as well as `async IAsyncEnumerable<T>` iterators. Custom throw helpers can be defined to fully customize the exceptions thrown to your liking.
 
