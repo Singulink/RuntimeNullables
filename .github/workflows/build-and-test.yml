@@ -21,7 +21,7 @@ jobs:
       run: dotnet restore
       working-directory: Source
     - name: Build
-      run: dotnet build --configuration Debug -p:DefineConstants:CI --no-restore
+      run: dotnet build --configuration Debug -p:IsCI=true --no-restore
       working-directory: Source
     - name: Test
       run: dotnet test --configuration Debug --no-build --verbosity normal
@@ -41,7 +41,7 @@ jobs:
       run: dotnet restore
       working-directory: Source
     - name: Build
-      run: dotnet build --configuration Release -p:DefineConstants:CI --no-restore
+      run: dotnet build --configuration Release -p:IsCI=true --no-restore
       working-directory: Source
     - name: Test
       run: dotnet test --configuration Release --no-build --verbosity normal
