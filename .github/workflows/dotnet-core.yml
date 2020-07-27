@@ -13,10 +13,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
+    - name: Setup .NET Core 3.0
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.0.103
+    - name: Setup .NET Core 3.1
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
       working-directory: Source
@@ -33,10 +37,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
+    - name: Setup .NET Core 3.0
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.0.103
+    - name: Setup .NET Core 3.1
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
       working-directory: Source
