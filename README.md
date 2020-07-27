@@ -2,6 +2,9 @@
 
 [![Join the chat at https://gitter.im/Singulink/RuntimeNullables](https://badges.gitter.im/Singulink/RuntimeNullables.svg)](https://gitter.im/Singulink/RuntimeNullables?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![View nuget packages](https://img.shields.io/nuget/v/RuntimeNullables.Fody.svg)](https://www.nuget.org/packages/RuntimeNullables.Fody/)
+[![Build and Test](https://github.com/Singulink/RuntimeNullables/workflows/build%20and%20test/badge.svg)](https://github.com/Singulink/RuntimeNullables/actions?query=workflow%3A%22build+and+test%22)
+
+
 
 This package automatically adds null checks to method/property entry and exit points based on the standard C# 8+ Nullable Reference Type (NRT) annotations and attributes. It is capable of checking input parameters as well as outputs (i.e. return values and `out`/`ref` parameters) and supports comprehensive checks on the full range of special method types including `async Task<T>` methods, `Task<T>` methods that synchronously return completed tasks (i.e. using `Task.FromResult<T>`), `IEnumerable<T>` iterators as well as `async IAsyncEnumerable<T>` iterators. Custom throw helpers can be defined to fully customize the exceptions thrown to your liking.
 
@@ -59,36 +62,36 @@ If you would like to configure settings with a `FodyWeavers.xml` file in the pro
 
 If you omit the `CheckNonPublic` or `CheckOutputs` setting then it will fallback to the default behavior based on the build configuration as explained above.
 
-## Fine Tuning Behavior
+## Fine-Tuning Behavior
 
-Injection of null checks can be fine tuned in your code using the `[RuntimeNullables.NullChecks(bool)]` attribute which can be applied at the assembly, class, method/property or return value level. For example, if you apply `[NullChecks(false)]` to a class it will disable null checks on every member in that class unless it has `[NullChecks(true)]` applied to it. It is important to note that if the `CheckOutputs` or `CheckNonPublic` setting is `false` then that will override any `[NullChecks(true)]` attribute applied to an output or non-public member. In other words, if the setting is set to `false` then those particular checks are never emitted, regardless of the presence of a `[NullChecks(true)]` attribute.
+Injection of null checks can be fine-tuned in your code using the `[RuntimeNullables.NullChecks(bool)]` attribute which can be applied at the assembly, class, method/property or return value level. For example, if you apply `[NullChecks(false)]` to a class it will disable null checks on every member in that class unless it has `[NullChecks(true)]` applied to it. It is important to note that if the `CheckOutputs` or `CheckNonPublic` setting is `false` then that will override any `[NullChecks(true)]` attribute applied to an output or non-public member. In other words, if the setting is set to `false` then those particular checks are never emitted, regardless of the presence of a `[NullChecks(true)]` attribute.
 
 Additionally, custom throw helpers can be defined to customize the exceptions that are thrown. In order to do that, you simply add an internal `ThrowHelpers` class into your project in the `RuntimeNullables` namespace and match the signature of the throw helper you want to override and it will be used instead of the defaults. The default throw helpers are as follows:
 
 ```c#
 namespace RuntimeNullables
 {
-	internal static class ThrowHelpers
-	{
-		internal static void ThrowArgumentNull(string paramName)
-		{
-			throw new ArgumentNullException(paramName);
-		}
+    internal static class ThrowHelpers
+    {
+        internal static void ThrowArgumentNull(string paramName)
+        {
+            throw new ArgumentNullException(paramName);
+        }
 
-		internal static void ThrowOutputNull(string message)
-		{
-			throw new NullReferenceException(message);
-		}
+        internal static void ThrowOutputNull(string message)
+        {
+            throw new NullReferenceException(message);
+        }
 
-		internal static Exception GetAsyncResultNullException(string message)
-		{
-			return new NullReferenceException(message);
-		}
-	}
+        internal static Exception GetAsyncResultNullException(string message)
+        {
+            return new NullReferenceException(message);
+        }
+    }
 }
 ```
 
-If an output check or async result check fails then `message` parameter contains a message specifying exactly what caused the check to fail, i.e. "Enumerator result nullability contract was broken."
+If an output check or async result check fails then the `message` parameter contains a message specifying exactly what caused the check to fail, i.e. "Enumerator result nullability contract was broken."
 
 ## Examples
 
@@ -108,21 +111,21 @@ public void UpdateMessage([MaybeNull] ref string value);
 // Each item returned by the enumeration is null checked
 public IEnumerable<string> GetMessages()
 {
-    string nullValue = null;
+    string? nullValue = null;
     yield return "some value";
     yield return "some other value";
-    yield return nullValue; // NullReferenceException is thrown
+    yield return nullValue!; // NullReferenceException is thrown
 }
 
 public Task<T> GetValueAsync<T>()
 {
-    return Task.FromResult<T>(default); // NullReferenceException if T is a reference type
+    return Task.FromResult<T>(default!); // NullReferenceException if T is a reference type
 }
 
 [return: NullChecks(false)]
 public Task<T> GetValueAsync<T>()
 {
-    return Task.FromResult<T>(default); // This is okay now since return value null checks are disabled
+    return Task.FromResult<T>(default!); // This is okay now since return value null checks are disabled
 }
 
 // Result of the task is null checked
@@ -137,6 +140,6 @@ public async IAsyncEnumerable<string> GetValuesAsync()
     await Task.Delay(100);
     yield return "Some value";
     await Task.Delay(100);
-    yield return null; // NullReferenceException is thrown
+    yield return null!; // NullReferenceException is thrown
 }
 ```

@@ -5,6 +5,7 @@
     <AnnotatedReferenceAssemblyVersion>3.1.0</AnnotatedReferenceAssemblyVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Version>0.9.1</Version>
+    <DefineConstants Condition="'$(IsCI)' == 'true'">$(DefineConstants);CI</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">

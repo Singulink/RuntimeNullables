@@ -1,4 +1,4 @@
-name: .NET Core
+name: build and test
 
 on:
   push:
@@ -7,42 +7,42 @@ on:
     branches: [ master ]
 
 jobs:
-  build-test-release:
+  debug:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
+    - name: Setup .NET Core 3.1
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.0.103
+        dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
       working-directory: Source
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Debug -p:IsCI=true --no-restore
       working-directory: Source
     - name: Test
-      run: dotnet test --configuration Release --no-restore --verbosity normal
+      run: dotnet test --configuration Debug --no-build --verbosity normal
       working-directory: Source
-      
-  build-test-debug:
 
-    runs-on: ubuntu-latest
+  release:
+
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
+    - name: Setup .NET Core 3.1
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.0.103
+        dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
       working-directory: Source
     - name: Build
-      run: dotnet build --configuration Debug --no-restore
+      run: dotnet build --configuration Release -p:IsCI=true --no-restore
       working-directory: Source
     - name: Test
-      run: dotnet test --configuration Debug --no-restore --verbosity normal
+      run: dotnet test --configuration Release --no-build --verbosity normal
       working-directory: Source
