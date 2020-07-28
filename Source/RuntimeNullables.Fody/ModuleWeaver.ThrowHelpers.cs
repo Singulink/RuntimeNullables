@@ -119,8 +119,8 @@ namespace RuntimeNullables.Fody
 
             void AddGeneratedCodeAttribute(ICustomAttributeProvider item)
             {
-                // ("RuntimeNullables.Fody", "0.9.1")
-                const string dataString = "01 00 15 52 75 6e 74 69 6d 65 4e 75 6c 6c 61 62 6c 65 73 2e 46 6f 64 79 05 30 2e 39 2e 31 00 00";
+                // ("RuntimeNullables.Fody", "0.9.2")
+                const string dataString = "01 00 15 52 75 6e 74 69 6d 65 4e 75 6c 6c 61 62 6c 65 73 2e 46 6f 64 79 05 30 2e 39 2e 32 00 00";
                 byte[] data = dataString.Split(' ').Select(b => byte.Parse(b, NumberStyles.HexNumber, null)).ToArray();
 
                 var attribute = new CustomAttribute(bclReferences.GeneratedCodeAttributeConstructor, data);

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageTags>Null Check, NRT, Nullable, ILWeaving, Fody, Cecil, AOP</PackageTags>
+    <PackageTags>NullGuard, Null Check, NRT, Nullable, ILWeaving, Fody, Cecil, AOP</PackageTags>
     <Description>Automatic null check injection for runtime C# 8+ Nullable Reference Type (NRT) contract validation.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Singulink/RuntimeNullables</PackageProjectUrl>
@@ -20,7 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FodyPackaging" Version="6.2.0" />
+    <PackageReference Include="Fody" Version="6.2.0" PrivateAssets="none" />
+    <PackageReference Include="FodyPackaging" Version="6.2.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
