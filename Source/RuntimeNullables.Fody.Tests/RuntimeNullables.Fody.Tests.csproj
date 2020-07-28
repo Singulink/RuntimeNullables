@@ -6,6 +6,7 @@
     <NoWarn>1591</NoWarn>
     <IsPackable>false</IsPackable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DisableFody>true</DisableFody>
   </PropertyGroup>
 
   <ItemGroup>
