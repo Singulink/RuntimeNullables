@@ -1,6 +1,6 @@
 # Runtime Nullables
 
-[![Join the chat](https://badges.gitter.im/Singulink.svg)](https://gitter.im/Singulink?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat](https://badges.gitter.im/Singulink/community.svg)](https://gitter.im/Singulink/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![View nuget packages](https://img.shields.io/nuget/v/RuntimeNullables.Fody.svg)](https://www.nuget.org/packages/RuntimeNullables.Fody/)
 [![Build and Test](https://github.com/Singulink/RuntimeNullables/workflows/build%20and%20test/badge.svg)](https://github.com/Singulink/RuntimeNullables/actions?query=workflow%3A%22build+and+test%22)
 
