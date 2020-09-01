@@ -8,7 +8,7 @@ namespace RuntimeNullables.Fody.Contexts
     internal sealed class TypeContext : NullableContext
     {
         private readonly List<MethodContext> _methodContexts = new List<MethodContext>();
-        private List<(GenericParameter Parameter, bool Nullable)>? _genericParameters;
+        private List<GenericParameterInfo>? _genericParameters;
 
         public TypeDefinition Type { get; }
 
@@ -18,7 +18,7 @@ namespace RuntimeNullables.Fody.Contexts
 
         public ICollection<MethodContext> MethodContexts => _methodContexts;
 
-        public ICollection<(GenericParameter Parameter, bool Nullable)> GenericParameters => _genericParameters ??
+        public ICollection<GenericParameterInfo> GenericParameters => _genericParameters ??
             throw new InvalidOperationException("Type does not have generic parameters.");
 
         public TypeContext(TypeDefinition type, ModuleContext moduleContext) : base(type, moduleContext)
@@ -38,10 +38,8 @@ namespace RuntimeNullables.Fody.Contexts
         {
             base.Build();
 
-            if (Type.HasGenericParameters) {
-                var parameterInfo = Type.GenericParameters.Select(p => (p, IsContextItemNullable(p)));
-                _genericParameters = new List<(GenericParameter Parameter, bool Nullable)>(parameterInfo);
-            }
+            if (Type.HasGenericParameters)
+                _genericParameters = Type.GenericParameters.Select(p => new GenericParameterInfo(p, IsContextItemNullable(p))).ToList();
 
             foreach (var method in Type.Methods.Where(m => m.HasBody && !m.IsGetter && !m.IsSetter && !m.HasAnyGeneratedAttribute())) {
                 var methodContext = new MethodContext(method, this);
@@ -64,7 +62,7 @@ namespace RuntimeNullables.Fody.Contexts
         /// <summary>
         /// Walks the parent hierarchy of contexts to find the generic parameter and get its nullability.
         /// </summary>
-        public bool GetGenericParameterNullable(GenericParameter parameter)
+        public bool GetGenericParameterIsNullable(GenericParameter parameter)
         {
             if (parameter.Owner != Type) {
                 if (DeclaringTypeContext == null) {
@@ -72,7 +70,7 @@ namespace RuntimeNullables.Fody.Contexts
                     return true;
                 }
 
-                return DeclaringTypeContext.GetGenericParameterNullable(parameter);
+                return DeclaringTypeContext.GetGenericParameterIsNullable(parameter);
             }
 
             var paramInfo = GenericParameters.FirstOrDefault(p => p.Parameter == parameter);

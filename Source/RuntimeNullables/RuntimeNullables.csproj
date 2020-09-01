@@ -12,7 +12,8 @@
     <Copyright>Copyright (c) 2020 Singulink</Copyright>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
+    <Version>0.9.3</Version>
+    <PackageIcon>Singulink Icon 128x128.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +23,13 @@
   <ItemGroup>
     <PackageReference Include="Fody" Version="6.2.0" PrivateAssets="none" />
     <PackageReference Include="FodyPackaging" Version="6.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Resources\Singulink Icon 128x128.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

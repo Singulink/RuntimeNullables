@@ -7,13 +7,13 @@ namespace RuntimeNullables.Fody.Contexts
 {
     internal class MethodContext : NullableContext
     {
-        private List<(GenericParameter Parameter, bool Nullable)>? _genericParameters;
+        private List<GenericParameterInfo>? _genericParameters;
 
         public MethodDefinition Method { get; }
 
         public TypeContext TypeContext { get; }
 
-        public ICollection<(GenericParameter Parameter, bool Nullable)> GenericParameters => _genericParameters ??
+        public ICollection<GenericParameterInfo> GenericParameters => _genericParameters ??
             throw new InvalidOperationException("Method does not have generic parameters.");
 
         public MethodContext(MethodDefinition method, TypeContext typeContext) : base(method, typeContext)
@@ -32,10 +32,8 @@ namespace RuntimeNullables.Fody.Contexts
         {
             base.Build();
 
-            if (Method.HasGenericParameters) {
-                var parameterInfo = Method.GenericParameters.Select(p => (p, IsContextItemNullable(p)));
-                _genericParameters = new List<(GenericParameter Parameter, bool Nullable)>(parameterInfo);
-            }
+            if (Method.HasGenericParameters)
+                _genericParameters = Method.GenericParameters.Select(p => new GenericParameterInfo(p, IsContextItemNullable(p))).ToList();
         }
 
         public bool IsParameterNullable(ParameterDefinition parameter)
@@ -71,7 +69,7 @@ namespace RuntimeNullables.Fody.Contexts
         public bool GetGenericParameterIsNullable(GenericParameter parameter)
         {
             if (parameter.Owner != Method)
-                return TypeContext.GetGenericParameterNullable(parameter);
+                return TypeContext.GetGenericParameterIsNullable(parameter);
 
             var paramInfo = GenericParameters.FirstOrDefault(p => p.Parameter == parameter);
 

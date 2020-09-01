@@ -4,6 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <!-- CS1591	Missing XML comment for publicly visible type or member. -->
     <NoWarn>1591</NoWarn>
+    <Version>0.9.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
