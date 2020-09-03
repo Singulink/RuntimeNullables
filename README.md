@@ -4,26 +4,30 @@
 [![View nuget packages](https://img.shields.io/nuget/v/RuntimeNullables.Fody.svg)](https://www.nuget.org/packages/RuntimeNullables.Fody/)
 [![Build and Test](https://github.com/Singulink/RuntimeNullables/workflows/build%20and%20test/badge.svg)](https://github.com/Singulink/RuntimeNullables/actions?query=workflow%3A%22build+and+test%22)
 
+**Runtime Nullables** automatically adds null checks to method/property entry and exit points based on the standard C# 8+ Nullable Reference Type (NRT) annotations and attributes. It is capable of checking input parameters as well as outputs (i.e. return values and `out`/`ref` parameters) and supports comprehensive checks on the full range of special method types including `async Task<T>` methods, `Task<T>` methods that synchronously return completed tasks (i.e. using `Task.FromResult<T>`), `IEnumerable<T>` iterators as well as `async IAsyncEnumerable<T>` iterators. Custom throw helpers can be defined to fully customize the exceptions thrown to your liking.
 
+### About Singulink
 
-This package automatically adds null checks to method/property entry and exit points based on the standard C# 8+ Nullable Reference Type (NRT) annotations and attributes. It is capable of checking input parameters as well as outputs (i.e. return values and `out`/`ref` parameters) and supports comprehensive checks on the full range of special method types including `async Task<T>` methods, `Task<T>` methods that synchronously return completed tasks (i.e. using `Task.FromResult<T>`), `IEnumerable<T>` iterators as well as `async IAsyncEnumerable<T>` iterators. Custom throw helpers can be defined to fully customize the exceptions thrown to your liking.
+*Shameless plug*: We are a small team of engineers and designers dedicated to building beautiful, functional and well-engineered software solutions. We offer very competitive rates as well as fixed-price contracts and welcome inquiries to discuss any custom development / project support needs you may have.
+
+Visit https://github.com/Singulink to see our full list of publicly available libraries and other open-source projects.
 
 ## Installation
 
-The package is available on NuGet - simply install the `RuntimeNullables.Fody` package into your project and you are good to go - null checks will be automatically injected when your project builds! It is also a good idea to add the latest `Fody` package directly to your project to ensure you are using an up-to-date version to avoid issues.
+The package is available on NuGet - simply install the `RuntimeNullables.Fody` package into your project and null checks will be automatically injected when your project builds! It is also a good idea to add the latest `Fody` package directly to your project to ensure you are using an up-to-date version to avoid issues.
 
 ## Runtime Nullables v.s. NullGuard.Fody
 
-I was the primary contributor to add NRT support to NullGuard but I wanted something simpler and more streamlined specifically designed for use with NRTs. Unfortunately, NullGuard has a lot of "legacy" functionality in it which makes expanding features and optimizing behavior for NRTs very difficult and I found the attribute model to be overly complex. This weaver was written from the ground up with only NRTs in mind. Some notable improvements in Runtime Nullables include:
+I contributed most of the bits needed to give NullGuard NRT support but came to the realization that piling that on top of its legacy functionality caused it to become rather unweildy, making expanding features and optimizing behavior for NRTs difficult in addition to inheriting an overly complex attribute model. **Runtime Nullables** was written from the ground up with only NRTs in mind to address these issues. Some notable improvements include:
 
-- Does not force `.initlocals` on methods (better performance, especially with `stackalloc`).
 - More efficient weaving algorithm for faster build times.
+- Does not force `.initlocals` on methods (better performance, especially with `stackalloc`).
 - Supports checking `ValueTask<T>` results, synchronously returned complete `Task<T>` results, and `IEnumerable<T>`/`IAsyncEnumerable<T>` iterator values.
 - Uses throw helpers instead of throwing directly (better performance / smaller IL code) and lets you define your own custom throw helpers.
 - Much simpler attribute model that uses a single `[NullChecks(bool)]` attribute to control null check injection.
 - Designed specifically for NRTs so it is much easier to add advanced functionality such as full validation of conditional attributes like `[MaybeNullWhen]` (coming soon).
 - Outputs warnings for conflicting annotations that cause null checks to be skipped, i.e. if `[AllowNull, DisallowNull]` is applied to a parameter.
-- Uses `NullReferenceException` instead of `InvalidOperationException` when an output check fails since the latter is often used and caught in normal circumstances and thus problems might not be caught in unit tests or code.
+- Uses `NullReferenceException` instead of `InvalidOperationException` when an output check fails since the latter is often thrown/caught in normal circumstances causing null contract violations to go unnoticed in unit tests or exception handling code.
 - Numerous bug fixes and reliability improvements.
 
 ## Configuration
@@ -64,7 +68,7 @@ If you omit the `CheckNonPublic` or `CheckOutputs` setting then it will fallback
 
 ## Fine-Tuning Behavior
 
-Injection of null checks can be fine-tuned in your code using the `[RuntimeNullables.NullChecks(bool)]` attribute which can be applied at the assembly, class, method/property or return value level. For example, if you apply `[NullChecks(false)]` to a class it will disable null checks on every member in that class unless it has `[NullChecks(true)]` applied to it. It is important to note that if the `CheckOutputs` or `CheckNonPublic` setting is `false` then that will override any `[NullChecks(true)]` attribute applied to an output or non-public member. In other words, if the setting is set to `false` then those particular checks are never emitted, regardless of the presence of a `[NullChecks(true)]` attribute.
+Injection of null checks can be fine-tuned in your code using the `[NullChecks(bool)]` attribute which can be applied at the assembly, class, method/property or return value level. For example, if you apply `[NullChecks(false)]` to a class it will disable null checks on every member in that class unless it has `[NullChecks(true)]` applied to it. It is important to note that if the `CheckOutputs` or `CheckNonPublic` setting is `false` then that will override any `[NullChecks(true)]` attribute applied to an output or non-public member. In other words, if the setting is set to `false` then those particular checks are never emitted, regardless of the presence of a `[NullChecks(true)]` attribute.
 
 Additionally, custom throw helpers can be defined to customize the exceptions that are thrown. In order to do that, you simply add an internal `ThrowHelpers` class into your project in the `RuntimeNullables` namespace and match the signature of the throw helper you want to override and it will be used instead of the defaults. The default throw helpers are as follows:
 
