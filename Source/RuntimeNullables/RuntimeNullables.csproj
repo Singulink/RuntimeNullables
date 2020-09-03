@@ -6,10 +6,9 @@
     <Description>Automatic null check injection for runtime C# 8+ Nullable Reference Type (NRT) contract validation.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Singulink/RuntimeNullables</PackageProjectUrl>
-    <Company>Singulink</Company>
-    <Authors>Mike Marynowski</Authors>
+    <Authors>Singulink</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Copyright>Copyright (c) 2020 Singulink</Copyright>
+    <Copyright>© Singulink. All rights reserved.</Copyright>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <Version>0.9.3</Version>
