@@ -4,7 +4,7 @@
 [![View nuget packages](https://img.shields.io/nuget/v/RuntimeNullables.Fody.svg)](https://www.nuget.org/packages/RuntimeNullables.Fody/)
 [![Build and Test](https://github.com/Singulink/RuntimeNullables/workflows/build%20and%20test/badge.svg)](https://github.com/Singulink/RuntimeNullables/actions?query=workflow%3A%22build+and+test%22)
 
-**Runtime Nullables** automatically adds null checks to method/property entry and exit points based on the standard C# 8+ Nullable Reference Type (NRT) annotations and attributes. It is capable of checking input parameters as well as outputs (i.e. return values and `out`/`ref` parameters) and supports comprehensive checks on the full range of special method types including `async Task<T>` methods, `Task<T>` methods that synchronously return completed tasks (i.e. using `Task.FromResult<T>`), `IEnumerable<T>` iterators as well as `async IAsyncEnumerable<T>` iterators. Custom throw helpers can be defined to fully customize the exceptions thrown to your liking.
+**Runtime Nullables** automatically adds null checks to method/property entry and exit points based on the standard nullable annotations and attributes available in C# 8+. It is capable of checking input parameters as well as outputs (i.e. return values and `out`/`ref` parameters) and supports comprehensive checks on the full range of special method types including `async Task<T>` methods, `Task<T>` methods that synchronously return completed tasks (i.e. using `Task.FromResult<T>`), `IEnumerable<T>` iterators as well as `async IAsyncEnumerable<T>` iterators. Custom throw helpers can be defined to fully customize the exceptions thrown to your liking.
 
 ### About Singulink
 
@@ -18,7 +18,7 @@ The package is available on NuGet - simply install the `RuntimeNullables.Fody` p
 
 ## Runtime Nullables v.s. NullGuard.Fody
 
-I contributed most of the bits needed to give NullGuard NRT support but came to the realization that piling that on top of its legacy functionality caused it to become rather unweildy, making expanding features and optimizing behavior for NRTs difficult in addition to inheriting an overly complex attribute model. **Runtime Nullables** was written from the ground up with only NRTs in mind to address these issues. Some notable improvements include:
+After adding nullable annotation support to NullGuard on top of its legacy functionality, it was apparent that it become rather unweildy. This made expanding features and optimizing behavior for nullable annotations difficult in addition to inheriting an overly complex attribute model. **Runtime Nullables** was written from the ground up with only nullable annotations in mind to address these issues. Some notable improvements include:
 
 - More efficient weaving algorithm for faster build times.
 - Does not force `.initlocals` on methods (better performance, especially with `stackalloc`).
