@@ -17,6 +17,42 @@ IL_000b:  ldstr      "Output parameter 'value' nullability contract was "
 IL_0010:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
 IL_0015:  ret
 }
+.method public hidebysig static void  GoodReferenceWithTryFinally([out] string& 'value') cil managed
+{
+.maxstack  3
+IL_0000:  ldarg.0
+IL_0001:  ldsfld     string [netstandard]System.String::Empty
+IL_0006:  stind.ref
+.try
+{
+IL_0007:  ldarg.0
+IL_0008:  ldarg.0
+IL_0009:  ldind.ref
+IL_000a:  ldsfld     string [netstandard]System.String::Empty
+IL_000f:  call       string [netstandard]System.String::Concat(string,
+string)
+IL_0014:  stind.ref
+IL_0015:  leave.s    IL_0026
+}  // end .try
+finally
+{
+IL_0017:  ldarg.0
+IL_0018:  ldarg.0
+IL_0019:  ldind.ref
+IL_001a:  ldsfld     string [netstandard]System.String::Empty
+IL_001f:  call       string [netstandard]System.String::Concat(string,
+string)
+IL_0024:  stind.ref
+IL_0025:  endfinally
+}  // end handler
+IL_0026:  ldarg.0
+IL_0027:  ldind.ref
+IL_0028:  brtrue.s   IL_0034
+IL_002a:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_002f:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0034:  ret
+}
 .method public hidebysig static void  BadReference([out] string& 'value') cil managed
 {
 .maxstack  8
