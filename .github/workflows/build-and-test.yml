@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
+    - name: Clean
+      run: dotnet clean ./Source --configuration Debug && dotnet nuget locals all --clear
     - name: Install dependencies
       run: dotnet restore
       working-directory: Source
@@ -37,6 +39,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
+    - name: Clean
+      run: dotnet clean ./Source --configuration Release && dotnet nuget locals all --clear
     - name: Install dependencies
       run: dotnet restore
       working-directory: Source
