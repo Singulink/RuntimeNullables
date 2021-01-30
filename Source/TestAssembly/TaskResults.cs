@@ -82,5 +82,15 @@ namespace TestAssembly
             await Task.Delay(10);
             return default!;
         }
+
+        public static Task<bool> DefaultValueType()
+        {
+            return Task.FromResult(false);
+        }
+
+        public static Task<bool?> DefaultNullableValueType()
+        {
+            return Task.FromResult((bool?)null);
+        }
     }
 }

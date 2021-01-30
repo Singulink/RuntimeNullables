@@ -93,5 +93,17 @@ namespace RuntimeNullables.Fody.Tests
         {
             return Assert.ThrowsExceptionAsync<NullReferenceException>(() => TaskResults.BadGenericAsync<object>());
         }
+
+        [TestMethod]
+        public async Task DefaultValueType()
+        {
+            Assert.AreEqual(false, await TaskResults.DefaultValueType());
+        }
+
+        [TestMethod]
+        public async Task DefaultNullableValueType()
+        {
+            Assert.AreEqual(null, await TaskResults.DefaultNullableValueType());
+        }
     }
 }

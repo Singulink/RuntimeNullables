@@ -1224,4 +1224,31 @@ IL_0024:  ldflda     valuetype [netstandard]System.Runtime.CompilerServices.Asyn
 IL_0029:  call       instance class [netstandard]System.Threading.Tasks.Task`1<!0> valuetype [netstandard]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!T>::get_Task()
 IL_002e:  ret
 }
+.method public hidebysig static class [netstandard]System.Threading.Tasks.Task`1<bool>
+DefaultValueType() cil managed
+{
+.maxstack  8
+IL_0000:  ldc.i4.0
+IL_0001:  call       class [netstandard]System.Threading.Tasks.Task`1<!!0> [netstandard]System.Threading.Tasks.Task::FromResult<bool>(!!0)
+IL_0006:  dup
+IL_0007:  brtrue.s   IL_0013
+IL_0009:  ldstr      "Return value nullability contract was broken."
+IL_000e:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0013:  ret
+}
+.method public hidebysig static class [netstandard]System.Threading.Tasks.Task`1<valuetype [netstandard]System.Nullable`1<bool>>
+DefaultNullableValueType() cil managed
+{
+.maxstack  2
+.locals init (valuetype [netstandard]System.Nullable`1<bool> V_0)
+IL_0000:  ldloca.s   V_0
+IL_0002:  initobj    valuetype [netstandard]System.Nullable`1<bool>
+IL_0008:  ldloc.0
+IL_0009:  call       class [netstandard]System.Threading.Tasks.Task`1<!!0> [netstandard]System.Threading.Tasks.Task::FromResult<valuetype [netstandard]System.Nullable`1<bool>>(!!0)
+IL_000e:  dup
+IL_000f:  brtrue.s   IL_001b
+IL_0011:  ldstr      "Return value nullability contract was broken."
+IL_0016:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_001b:  ret
+}
 }

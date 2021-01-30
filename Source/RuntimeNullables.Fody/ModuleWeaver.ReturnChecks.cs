@@ -60,7 +60,10 @@ namespace RuntimeNullables.Fody
 
             // Synchronous task result:
 
-            if (returnType.IsTaskWithResultType() && !methodContext.IsReturnValueGenericArgumentNullable()) {
+            if (returnType.IsTaskWithResultType() &&
+                methodContext.IsReturnValueGenericArgumentAReferenceType() &&
+                !methodContext.IsReturnValueGenericArgumentNullable())
+            {
                 returnBlockInfo ??= new ReturnBlockInfo(method);
                 methodBody.SimplifyMacros(); // Required to ensure short branch instructions are expanded if necessary.
 
@@ -337,7 +340,7 @@ namespace RuntimeNullables.Fody
             }
         }
 
-        private static MethodDefinition GetMoveNextMethod(TypeDefinition type)
+        private static MethodDefinition? GetMoveNextMethod(TypeDefinition type)
         {
             return type.Methods.FirstOrDefault(m => m.Name == "MoveNext" && m.Parameters.Count == 0 && !m.HasGenericParameters && m.HasBody);
         }
@@ -382,7 +385,7 @@ namespace RuntimeNullables.Fody
 
             var instructions = currentGetter.Body.Instructions;
 
-            return instructions.FirstOrDefault(i => i.OpCode == OpCodes.Ldfld).Operand as FieldReference;
+            return instructions.FirstOrDefault(i => i.OpCode == OpCodes.Ldfld)?.Operand as FieldReference;
         }
     }
 }

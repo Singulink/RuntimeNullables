@@ -40,14 +40,14 @@ instance void  .ctor(int32 '<>1__state') cil managed
 IL_0000:  ldarg.0
 IL_0001:  call       instance void [netstandard]System.Object::.ctor()
 IL_0006:  ldarg.0
-IL_0007:  ldarg.1
-IL_0008:  stfld      int32 TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsync>d__0'::'<>1__state'
-IL_000d:  ldarg.0
-IL_000e:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
-IL_0013:  stfld      int32 TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsync>d__0'::'<>l__initialThreadId'
+IL_0007:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
+IL_000c:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsync>d__0'::'<>t__builder'
+IL_0011:  ldarg.0
+IL_0012:  ldarg.1
+IL_0013:  stfld      int32 TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsync>d__0'::'<>1__state'
 IL_0018:  ldarg.0
-IL_0019:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_001e:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsync>d__0'::'<>t__builder'
+IL_0019:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
+IL_001e:  stfld      int32 TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsync>d__0'::'<>l__initialThreadId'
 IL_0023:  ret
 }
 .method private hidebysig newslot virtual final
@@ -463,14 +463,14 @@ instance void  .ctor(int32 '<>1__state') cil managed
 IL_0000:  ldarg.0
 IL_0001:  call       instance void [netstandard]System.Object::.ctor()
 IL_0006:  ldarg.0
-IL_0007:  ldarg.1
-IL_0008:  stfld      int32 TestAssembly.AsyncEnumerables/'<BadGetReferencesAsync>d__1'::'<>1__state'
-IL_000d:  ldarg.0
-IL_000e:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
-IL_0013:  stfld      int32 TestAssembly.AsyncEnumerables/'<BadGetReferencesAsync>d__1'::'<>l__initialThreadId'
+IL_0007:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
+IL_000c:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerables/'<BadGetReferencesAsync>d__1'::'<>t__builder'
+IL_0011:  ldarg.0
+IL_0012:  ldarg.1
+IL_0013:  stfld      int32 TestAssembly.AsyncEnumerables/'<BadGetReferencesAsync>d__1'::'<>1__state'
 IL_0018:  ldarg.0
-IL_0019:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_001e:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerables/'<BadGetReferencesAsync>d__1'::'<>t__builder'
+IL_0019:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
+IL_001e:  stfld      int32 TestAssembly.AsyncEnumerables/'<BadGetReferencesAsync>d__1'::'<>l__initialThreadId'
 IL_0023:  ret
 }
 .method private hidebysig newslot virtual final
@@ -923,14 +923,14 @@ instance void  .ctor(int32 '<>1__state') cil managed
 IL_0000:  ldarg.0
 IL_0001:  call       instance void [netstandard]System.Object::.ctor()
 IL_0006:  ldarg.0
-IL_0007:  ldarg.1
-IL_0008:  stfld      int32 TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsyncWithoutAwait>d__2'::'<>1__state'
-IL_000d:  ldarg.0
-IL_000e:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
-IL_0013:  stfld      int32 TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsyncWithoutAwait>d__2'::'<>l__initialThreadId'
+IL_0007:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
+IL_000c:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsyncWithoutAwait>d__2'::'<>t__builder'
+IL_0011:  ldarg.0
+IL_0012:  ldarg.1
+IL_0013:  stfld      int32 TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsyncWithoutAwait>d__2'::'<>1__state'
 IL_0018:  ldarg.0
-IL_0019:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_001e:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsyncWithoutAwait>d__2'::'<>t__builder'
+IL_0019:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
+IL_001e:  stfld      int32 TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsyncWithoutAwait>d__2'::'<>l__initialThreadId'
 IL_0023:  ret
 }
 .method private hidebysig newslot virtual final
@@ -1304,14 +1304,14 @@ instance void  .ctor(int32 '<>1__state') cil managed
 IL_0000:  ldarg.0
 IL_0001:  call       instance void [netstandard]System.Object::.ctor()
 IL_0006:  ldarg.0
-IL_0007:  ldarg.1
-IL_0008:  stfld      int32 TestAssembly.AsyncEnumerables/'<BadGetReferencesAsyncWithoutAwait>d__3'::'<>1__state'
-IL_000d:  ldarg.0
-IL_000e:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
-IL_0013:  stfld      int32 TestAssembly.AsyncEnumerables/'<BadGetReferencesAsyncWithoutAwait>d__3'::'<>l__initialThreadId'
+IL_0007:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
+IL_000c:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerables/'<BadGetReferencesAsyncWithoutAwait>d__3'::'<>t__builder'
+IL_0011:  ldarg.0
+IL_0012:  ldarg.1
+IL_0013:  stfld      int32 TestAssembly.AsyncEnumerables/'<BadGetReferencesAsyncWithoutAwait>d__3'::'<>1__state'
 IL_0018:  ldarg.0
-IL_0019:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_001e:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerables/'<BadGetReferencesAsyncWithoutAwait>d__3'::'<>t__builder'
+IL_0019:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
+IL_001e:  stfld      int32 TestAssembly.AsyncEnumerables/'<BadGetReferencesAsyncWithoutAwait>d__3'::'<>l__initialThreadId'
 IL_0023:  ret
 }
 .method private hidebysig newslot virtual final
@@ -1723,14 +1723,14 @@ instance void  .ctor(int32 '<>1__state') cil managed
 IL_0000:  ldarg.0
 IL_0001:  call       instance void [netstandard]System.Object::.ctor()
 IL_0006:  ldarg.0
-IL_0007:  ldarg.1
-IL_0008:  stfld      int32 class TestAssembly.AsyncEnumerables/'<GoodGetGenericsAsync>d__4`1'<!T>::'<>1__state'
-IL_000d:  ldarg.0
-IL_000e:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
-IL_0013:  stfld      int32 class TestAssembly.AsyncEnumerables/'<GoodGetGenericsAsync>d__4`1'<!T>::'<>l__initialThreadId'
+IL_0007:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
+IL_000c:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerables/'<GoodGetGenericsAsync>d__4`1'<!T>::'<>t__builder'
+IL_0011:  ldarg.0
+IL_0012:  ldarg.1
+IL_0013:  stfld      int32 class TestAssembly.AsyncEnumerables/'<GoodGetGenericsAsync>d__4`1'<!T>::'<>1__state'
 IL_0018:  ldarg.0
-IL_0019:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_001e:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerables/'<GoodGetGenericsAsync>d__4`1'<!T>::'<>t__builder'
+IL_0019:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
+IL_001e:  stfld      int32 class TestAssembly.AsyncEnumerables/'<GoodGetGenericsAsync>d__4`1'<!T>::'<>l__initialThreadId'
 IL_0023:  ret
 }
 .method private hidebysig newslot virtual final
@@ -2147,14 +2147,14 @@ instance void  .ctor(int32 '<>1__state') cil managed
 IL_0000:  ldarg.0
 IL_0001:  call       instance void [netstandard]System.Object::.ctor()
 IL_0006:  ldarg.0
-IL_0007:  ldarg.1
-IL_0008:  stfld      int32 class TestAssembly.AsyncEnumerables/'<BadGetGenericsAsync>d__5`1'<!T>::'<>1__state'
-IL_000d:  ldarg.0
-IL_000e:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
-IL_0013:  stfld      int32 class TestAssembly.AsyncEnumerables/'<BadGetGenericsAsync>d__5`1'<!T>::'<>l__initialThreadId'
+IL_0007:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
+IL_000c:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerables/'<BadGetGenericsAsync>d__5`1'<!T>::'<>t__builder'
+IL_0011:  ldarg.0
+IL_0012:  ldarg.1
+IL_0013:  stfld      int32 class TestAssembly.AsyncEnumerables/'<BadGetGenericsAsync>d__5`1'<!T>::'<>1__state'
 IL_0018:  ldarg.0
-IL_0019:  call       valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_001e:  stfld      valuetype [Microsoft.Bcl.AsyncInterfaces]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerables/'<BadGetGenericsAsync>d__5`1'<!T>::'<>t__builder'
+IL_0019:  call       int32 [netstandard]System.Environment::get_CurrentManagedThreadId()
+IL_001e:  stfld      int32 class TestAssembly.AsyncEnumerables/'<BadGetGenericsAsync>d__5`1'<!T>::'<>l__initialThreadId'
 IL_0023:  ret
 }
 .method private hidebysig newslot virtual final

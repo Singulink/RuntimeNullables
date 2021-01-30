@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Mono.Cecil;
+using RuntimeNullables.Fody.Extensions;
 
 namespace RuntimeNullables.Fody.Contexts
 {
@@ -50,6 +51,14 @@ namespace RuntimeNullables.Fody.Contexts
                 return true;
 
             return Method.ReturnType is GenericParameter genericParameter && GetGenericParameterIsNullable(genericParameter);
+        }
+
+        public bool IsReturnValueGenericArgumentAReferenceType()
+        {
+            if (!(Method.ReturnType is GenericInstanceType genericReturnType))
+                throw new InvalidOperationException("Return type is not a generic instance type.");
+
+            return genericReturnType.GenericArguments[0].IsReferenceType();
         }
 
         public bool IsReturnValueGenericArgumentNullable()
