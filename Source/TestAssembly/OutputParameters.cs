@@ -6,6 +6,18 @@ namespace TestAssembly
     {
         public static void GoodReference(out string value) => value = string.Empty;
 
+        public static void GoodReferenceWithTryFinally(out string value)
+        {
+            value = string.Empty;
+
+            try {
+                value += string.Empty;
+            }
+            finally {
+                value += string.Empty;
+            }
+        }
+
         public static void BadReference(out string value) => value = null!;
 
         public static void NullableReference(out string? value) => value = null;

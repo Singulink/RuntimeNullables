@@ -11,6 +11,9 @@ namespace RuntimeNullables.Fody.Tests
         public void GoodReference() => OutputParameters.GoodReference(out _);
 
         [TestMethod]
+        public void GoodReferenceWithTryFinally() => OutputParameters.GoodReferenceWithTryFinally(out _);
+
+        [TestMethod]
         public void BadReference() => Assert.ThrowsException<NullReferenceException>(() => OutputParameters.BadReference(out _));
 
         [TestMethod]

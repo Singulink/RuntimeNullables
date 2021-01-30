@@ -1,10 +1,10 @@
 <Project>
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <AnnotatedReferenceAssemblyVersion>5.0.0</AnnotatedReferenceAssemblyVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.9.4</Version>
+    <Version>0.9.5</Version>
     <DefineConstants Condition="'$(IsCI)' == 'true'">$(DefineConstants);CI</DefineConstants>
   </PropertyGroup>
 
@@ -16,7 +16,7 @@
     <!-- Analyzers -->
     <PackageReference Include="DotNetAnalyzers.DocumentationAnalyzers" Version="1.0.0-beta.59" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0" PrivateAssets="all" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.164" PrivateAssets="all" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321" PrivateAssets="all" />
     <PackageReference Include="Roslynator.Analyzers" Version="3.0.0-rc" PrivateAssets="all" />
 
     <!-- Nullable Annotations -->

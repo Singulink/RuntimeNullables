@@ -13,12 +13,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core 3.1
+    - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.301
+        dotnet-version: 5.0.100
     - name: Clean
-      run: dotnet clean ./Source --configuration Debug && dotnet nuget locals all --clear
+      run: dotnet clean --configuration Debug && dotnet nuget locals all --clear
+      working-directory: Source
     - name: Install dependencies
       run: dotnet restore
       working-directory: Source
@@ -35,12 +36,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core 3.1
+    - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.301
+        dotnet-version: 5.0.100
     - name: Clean
-      run: dotnet clean ./Source --configuration Release && dotnet nuget locals all --clear
+      run: dotnet clean --configuration Release && dotnet nuget locals all --clear
+      working-directory: Source
     - name: Install dependencies
       run: dotnet restore
       working-directory: Source

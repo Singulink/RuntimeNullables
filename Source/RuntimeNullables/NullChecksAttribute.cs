@@ -7,7 +7,8 @@ namespace RuntimeNullables
     /// </summary>
     [AttributeUsage(
         AttributeTargets.Assembly | AttributeTargets.Module | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum |
-        AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.ReturnValue, Inherited = false)]
+        AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.ReturnValue,
+        Inherited = false)]
     public sealed class NullChecksAttribute : Attribute
     {
         /// <summary>

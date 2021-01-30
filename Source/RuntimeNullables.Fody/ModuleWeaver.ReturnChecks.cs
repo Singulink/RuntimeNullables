@@ -64,8 +64,8 @@ namespace RuntimeNullables.Fody
                 methodContext.IsReturnValueGenericArgumentAReferenceType() &&
                 !methodContext.IsReturnValueGenericArgumentNullable())
             {
-                returnBlockInfo ??= new ReturnBlockInfo(method);
                 methodBody.SimplifyMacros(); // Required to ensure short branch instructions are expanded if necessary.
+                returnBlockInfo ??= new ReturnBlockInfo(method);
 
                 if (InjectSynchronousTaskResultCheck(method, returnBlockInfo, weavingContext))
                     modified = true;
@@ -77,11 +77,10 @@ namespace RuntimeNullables.Fody
                 bool? maybeNull = ReturnValueMaybeNull();
 
                 if (maybeNull == false || (maybeNull == null && !methodContext.IsReturnValueNullable())) {
-                    returnBlockInfo ??= new ReturnBlockInfo(method);
-
                     if (!modified)
                         methodBody.SimplifyMacros(); // Required to ensure short branch instructions are expanded if necessary.
 
+                    returnBlockInfo ??= new ReturnBlockInfo(method);
                     InjectReturnValueCheck(method, returnBlockInfo, weavingContext.ModuleReferences);
                     modified = true;
                 }

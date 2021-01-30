@@ -99,6 +99,13 @@ namespace RuntimeNullables.Fody
                     }
                 }
             }
+
+            foreach (var handler in method.Body.ExceptionHandlers) {
+                int handlerEndIndex = oldStartPoints.IndexOf(handler.HandlerEnd);
+
+                if (handlerEndIndex >= 0)
+                    handler.HandlerEnd = newStartPoints[handlerEndIndex];
+            }
         }
 
         /// <summary>
