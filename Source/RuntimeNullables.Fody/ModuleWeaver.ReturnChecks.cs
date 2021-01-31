@@ -23,7 +23,7 @@ namespace RuntimeNullables.Fody
             if (method.GetIteratorStateMachineType(weavingContext) is { } iteratorStateMachineType) {
                 if (!returnType.IsIEnumerableType())
                     weavingContext.WriteWarning($"Skipping iterator state machine result checks on method '{method}': Unknown iterator return type.");
-                else if (!methodContext.IsReturnValueGenericArgumentNullable())
+                else if (!methodContext.IsReturnValueGenericArgumentNullableOrValueType())
                     InjectIteratorStateMachineChecks(method, iteratorStateMachineType, weavingContext);
 
                 // Method not modified directly so always return false
@@ -36,7 +36,7 @@ namespace RuntimeNullables.Fody
                 if (!returnType.IsNonGenericTaskType()) {
                     if (!returnType.IsTaskWithResultType())
                         weavingContext.WriteWarning($"Skipping async state machine result check on method '{method}': Unknown Task return type.");
-                    else if (!methodContext.IsReturnValueGenericArgumentNullable())
+                    else if (!methodContext.IsReturnValueGenericArgumentNullableOrValueType())
                         InjectAsyncStateMachineCheck(method, asyncStateMachineType, weavingContext);
                 }
 
@@ -49,7 +49,7 @@ namespace RuntimeNullables.Fody
             if (method.GetAsyncIteratorStateMachineType(weavingContext) is { } asyncIteratorStateMachineType) {
                 if (!returnType.IsIAsyncEnumerableType())
                     weavingContext.WriteWarning($"Skipping async iterator state machine result checks on method '{method}': Unknown async iterator return type.");
-                else if (!methodContext.IsReturnValueGenericArgumentNullable())
+                else if (!methodContext.IsReturnValueGenericArgumentNullableOrValueType())
                     InjectAsyncIteratorStateMachineChecks(method, asyncIteratorStateMachineType, weavingContext);
 
                 // Method not modified directly so always return false
@@ -60,9 +60,7 @@ namespace RuntimeNullables.Fody
 
             // Synchronous task result:
 
-            if (returnType.IsTaskWithResultType() &&
-                methodContext.IsReturnValueGenericArgumentAReferenceType() &&
-                !methodContext.IsReturnValueGenericArgumentNullable())
+            if (returnType.IsTaskWithResultType() && !methodContext.IsReturnValueGenericArgumentNullableOrValueType())
             {
                 methodBody.SimplifyMacros(); // Required to ensure short branch instructions are expanded if necessary.
                 returnBlockInfo ??= new ReturnBlockInfo(method);

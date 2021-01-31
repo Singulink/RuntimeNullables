@@ -53,18 +53,13 @@ namespace RuntimeNullables.Fody.Contexts
             return Method.ReturnType is GenericParameter genericParameter && GetGenericParameterIsNullable(genericParameter);
         }
 
-        public bool IsReturnValueGenericArgumentAReferenceType()
+        public bool IsReturnValueGenericArgumentNullableOrValueType()
         {
             if (!(Method.ReturnType is GenericInstanceType genericReturnType))
                 throw new InvalidOperationException("Return type is not a generic instance type.");
 
-            return genericReturnType.GenericArguments[0].IsReferenceType();
-        }
-
-        public bool IsReturnValueGenericArgumentNullable()
-        {
-            if (!(Method.ReturnType is GenericInstanceType genericReturnType))
-                throw new InvalidOperationException("Return type is not a generic instance type.");
+            if (!genericReturnType.GenericArguments[0].IsReferenceType())
+                return true;
 
             if (IsContextInnerItemNullable(Method.MethodReturnType, 0))
                 return true;
