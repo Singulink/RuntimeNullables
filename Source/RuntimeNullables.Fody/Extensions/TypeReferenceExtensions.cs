@@ -25,9 +25,16 @@ namespace RuntimeNullables.Fody.Extensions
             return elementTypeName == "System.Threading.Tasks.Task`1" || elementTypeName == "System.Threading.Tasks.ValueTask`1";
         }
 
-        public static bool IsIEnumerableType(this TypeReference type)
+        public static bool IsNonGenericEnumeratorType(this TypeReference type)
         {
-            return type.GetElementType()?.FullName == "System.Collections.Generic.IEnumerable`1";
+            string name = type.GetElementType()?.FullName;
+            return name is "System.Collections.IEnumerable" or "System.Collections.IEnumerator";
+        }
+
+        public static bool IsGenericEnumeratorType(this TypeReference type)
+        {
+            string name = type.GetElementType()?.FullName;
+            return name is "System.Collections.Generic.IEnumerable`1" or "System.Collections.Generic.IEnumerator`1";
         }
 
         public static bool IsIAsyncEnumerableType(this TypeReference type)

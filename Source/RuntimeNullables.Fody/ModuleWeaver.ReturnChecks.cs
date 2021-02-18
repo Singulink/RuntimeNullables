@@ -21,10 +21,12 @@ namespace RuntimeNullables.Fody
             // Enumerable results:
 
             if (method.GetIteratorStateMachineType(weavingContext) is { } iteratorStateMachineType) {
-                if (!returnType.IsIEnumerableType())
-                    weavingContext.WriteWarning($"Skipping iterator state machine result checks on method '{method}': Unknown iterator return type.");
-                else if (!methodContext.IsReturnValueGenericArgumentNullableOrValueType())
-                    InjectIteratorStateMachineChecks(method, iteratorStateMachineType, weavingContext);
+                if (!returnType.IsNonGenericEnumeratorType()) {
+                    if (!returnType.IsGenericEnumeratorType())
+                        weavingContext.WriteWarning($"Skipping iterator state machine result checks on method '{method}': Unknown iterator return type.");
+                    else if (!methodContext.IsReturnValueGenericArgumentNullableOrValueType())
+                        InjectIteratorStateMachineChecks(method, iteratorStateMachineType, weavingContext);
+                }
 
                 // Method not modified directly so always return false
                 return false;

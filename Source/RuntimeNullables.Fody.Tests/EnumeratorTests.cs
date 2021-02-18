@@ -5,40 +5,45 @@ using TestAssembly;
 namespace RuntimeNullables.Fody.Tests
 {
     [TestClass]
-    public class EnumerableTests
+    public class EnumeratorTests
     {
         [TestMethod]
         public void GoodGetReferences()
         {
-            foreach (var value in Enumerables.GoodGetReferences()) { }
+            var enumerator = Enumerators.GoodGetReferences();
+            while (enumerator.MoveNext()) { }
         }
 
         [TestMethod]
         public void BadGetReferences()
         {
             Assert.ThrowsException<NullReferenceException>(() => {
-                foreach (var value in Enumerables.BadGetReferences()) { }
+                var enumerator = Enumerators.BadGetReferences();
+                while (enumerator.MoveNext()) { }
             });
         }
 
         [TestMethod]
         public void GoodGetGenerics()
         {
-            foreach (var value in Enumerables.GoodGetGenerics<object>()) { }
+            var enumerator = Enumerators.GoodGetGenerics<object>();
+            while (enumerator.MoveNext()) { }
         }
 
         [TestMethod]
         public void BadGetGenerics()
         {
             Assert.ThrowsException<NullReferenceException>(() => {
-                foreach (var value in Enumerables.BadGetGenerics<object>()) { }
+                var enumerator = Enumerators.BadGetGenerics<object>();
+                while (enumerator.MoveNext()) { }
             });
         }
 
         [TestMethod]
         public void GetNullNonGenerics()
         {
-            foreach (var value in Enumerables.GetNullNonGenerics()) { }
+            var enumerator = Enumerators.GetNullNonGenerics();
+            while (enumerator.MoveNext()) { }
         }
     }
 }
