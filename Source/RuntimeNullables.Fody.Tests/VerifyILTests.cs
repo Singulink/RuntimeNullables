@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Fody;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -49,6 +49,18 @@ namespace RuntimeNullables.Fody.Tests
         public Task Combo()
         {
             return Verify(Decompile(typeof(Combo<>)), _verifySettings);
+        }
+
+        [TestMethod]
+        public Task Enumerables()
+        {
+            return Verify(Decompile(typeof(Enumerables)), _verifySettings);
+        }
+
+        [TestMethod]
+        public Task Enumerators()
+        {
+            return Verify(Decompile(typeof(Enumerators)), _verifySettings);
         }
 
         [TestMethod]
