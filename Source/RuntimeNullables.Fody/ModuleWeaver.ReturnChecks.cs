@@ -49,7 +49,7 @@ namespace RuntimeNullables.Fody
             // Async enumerable results:
 
             if (method.GetAsyncIteratorStateMachineType(weavingContext) is { } asyncIteratorStateMachineType) {
-                if (!returnType.IsIAsyncEnumerableType())
+                if (!returnType.IsAsyncEnumeratorType())
                     weavingContext.WriteWarning($"Skipping async iterator state machine result checks on method '{method}': Unknown async iterator return type.");
                 else if (!methodContext.IsReturnValueGenericArgumentNullableOrValueType())
                     InjectAsyncIteratorStateMachineChecks(method, asyncIteratorStateMachineType, weavingContext);

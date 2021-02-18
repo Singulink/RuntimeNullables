@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Fody;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -37,6 +37,12 @@ namespace RuntimeNullables.Fody.Tests
         public Task AsyncEnumerables()
         {
             return Verify(Decompile(typeof(AsyncEnumerables)), _verifySettings);
+        }
+
+        [TestMethod]
+        public Task AsyncEnumerators()
+        {
+            return Verify(Decompile(typeof(AsyncEnumerators)), _verifySettings);
         }
 
         [TestMethod]

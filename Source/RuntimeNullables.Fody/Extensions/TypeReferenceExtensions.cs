@@ -15,31 +15,27 @@ namespace RuntimeNullables.Fody.Extensions
 
         public static bool IsNonGenericTaskType(this TypeReference type)
         {
-            string elementTypeName = type.GetElementType()?.FullName;
-            return elementTypeName == "System.Threading.Tasks.Task" || elementTypeName == "System.Threading.Tasks.ValueTask";
+            return type.GetElementType()?.FullName is "System.Threading.Tasks.Task" or "System.Threading.Tasks.ValueTask";
         }
 
         public static bool IsTaskWithResultType(this TypeReference type)
         {
-            string elementTypeName = type.GetElementType()?.FullName;
-            return elementTypeName == "System.Threading.Tasks.Task`1" || elementTypeName == "System.Threading.Tasks.ValueTask`1";
+            return type.GetElementType()?.FullName is "System.Threading.Tasks.Task`1" or "System.Threading.Tasks.ValueTask`1";
         }
 
         public static bool IsNonGenericEnumeratorType(this TypeReference type)
         {
-            string name = type.GetElementType()?.FullName;
-            return name is "System.Collections.IEnumerable" or "System.Collections.IEnumerator";
+            return type.GetElementType()?.FullName is "System.Collections.IEnumerable" or "System.Collections.IEnumerator";
         }
 
         public static bool IsGenericEnumeratorType(this TypeReference type)
         {
-            string name = type.GetElementType()?.FullName;
-            return name is "System.Collections.Generic.IEnumerable`1" or "System.Collections.Generic.IEnumerator`1";
+            return type.GetElementType()?.FullName is "System.Collections.Generic.IEnumerable`1" or "System.Collections.Generic.IEnumerator`1";
         }
 
-        public static bool IsIAsyncEnumerableType(this TypeReference type)
+        public static bool IsAsyncEnumeratorType(this TypeReference type)
         {
-            return type.GetElementType()?.FullName == "System.Collections.Generic.IAsyncEnumerable`1";
+            return type.GetElementType()?.FullName is "System.Collections.Generic.IAsyncEnumerable`1" or "System.Collections.Generic.IAsyncEnumerator`1";
         }
     }
 }
