@@ -4,7 +4,7 @@
     <Nullable>enable</Nullable>
     <AnnotatedReferenceAssemblyVersion>5.0.0</AnnotatedReferenceAssemblyVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>0.9.7</Version>
+    <Version>0.9.8</Version>
     <DefineConstants Condition="'$(IsCI)' == 'true'">$(DefineConstants);CI</DefineConstants>
   </PropertyGroup>
 
