@@ -20,7 +20,7 @@ jobs:
     - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.100
+        dotnet-version: 5.0.200
     - name: Clean
       run: dotnet clean --configuration Debug && dotnet nuget locals all --clear
       working-directory: Source
@@ -47,7 +47,7 @@ jobs:
     - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.100
+        dotnet-version: 5.0.200
     - name: Clean
       run: dotnet clean --configuration Release && dotnet nuget locals all --clear
       working-directory: Source
