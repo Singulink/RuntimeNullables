@@ -23,7 +23,7 @@ namespace RuntimeNullables.Fody
         public static bool HasAnyGeneratedAttribute(this ICustomAttributeProvider item)
         {
             return item.CustomAttributes.Select(a => a.AttributeType.FullName).Any(
-                n => n == "System.CodeDom.Compiler.GeneratedCodeAttribute" || n == "System.Runtime.CompilerServices.CompilerGeneratedAttribute");
+                n => n is "System.CodeDom.Compiler.GeneratedCodeAttribute" or "System.Runtime.CompilerServices.CompilerGeneratedAttribute");
         }
 
         public static bool? GetNullChecksAttributeValue(this ICustomAttributeProvider item, WeavingContext weavingContext, bool removeAttribute)
