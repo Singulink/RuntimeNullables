@@ -38,11 +38,11 @@ namespace RuntimeNullables.Fody
 
             // Simplify injected macros and/or simplified macros if return checks simplified them.
 
-            if (paramChecksInjected || returnChecksInjected)
-                method.Body.OptimizeMacros();
-
             if (paramChecksInjected)
                 AddParamChecksToDebugInfo(method);
+
+            if (paramChecksInjected || returnChecksInjected)
+                method.Body.OptimizeMacros();
 
             static bool IsMethodPossiblyExposed(MethodDefinition method)
             {
