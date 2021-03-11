@@ -45,7 +45,7 @@ namespace RuntimeNullables.Fody.Contexts
 
             static bool IsInjectedType(TypeDefinition type)
             {
-                return type.Namespace == "System.Runtime.CompilerServices" || type.Namespace == "System.Diagnostics.CodeAnalysis";
+                return type.Namespace is "RuntimeNullables" or "System.Runtime.CompilerServices" or "System.Diagnostics.CodeAnalysis";
             }
         }
     }
