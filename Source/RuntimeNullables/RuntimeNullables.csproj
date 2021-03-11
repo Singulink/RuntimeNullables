@@ -19,8 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.2.0" PrivateAssets="none" />
-    <PackageReference Include="FodyPackaging" Version="6.2.0" PrivateAssets="All" />
+    <PackageReference Include="Fody" Version="6.4.0" PrivateAssets="none" />
+    <PackageReference Include="FodyPackaging" Version="6.4.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
