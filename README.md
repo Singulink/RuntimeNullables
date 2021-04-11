@@ -103,7 +103,7 @@ If an output check or async result check fails then the `message` parameter cont
 using RuntimeNullables;
 
 // Return value is not null checked since it is nullable,
-// but method throws NullArgumentException if messageService is null
+// but method throws ArgumentNullException if messageService is null
 public string? GetMessage(MessageService messageService);
 
 // The 'value' parameter is null checked on method entry as well as when the method exits since it is a ref
