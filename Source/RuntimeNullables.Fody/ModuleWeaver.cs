@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Xml;
 using Fody;
-using Mono.Cecil;
-using Mono.Collections.Generic;
 using RuntimeNullables.Fody.Contexts;
 
 namespace RuntimeNullables.Fody
@@ -24,6 +22,8 @@ namespace RuntimeNullables.Fody
             yield return "netstandard";
             yield return "System.Diagnostics.Tools";
         }
+
+        public override bool ShouldCleanReference => true;
 
         public override void Execute()
         {
@@ -57,24 +57,7 @@ namespace RuntimeNullables.Fody
                 }
             }
 
-            if (RemoveAttributeLibraryReference(ModuleDefinition.AssemblyReferences))
-                weavingContext.WriteInfo("Reference to attribute library removed.");
-            else
-                weavingContext.WriteInfo("Reference to attribute library not found - references remain unchanged.");
-
             weavingContext.WriteInfo("Injection complete.");
-        }
-
-        private static bool RemoveAttributeLibraryReference(Collection<AssemblyNameReference> assemblyReferences)
-        {
-            for (int i = 0; i < assemblyReferences.Count; i++) {
-                if (assemblyReferences[i].Name == "RuntimeNullables") {
-                    assemblyReferences.RemoveAt(i);
-                    return true;
-                }
-            }
-
-            return false;
         }
 
         public bool? GetConfigBooleanValue(string attributeName)
