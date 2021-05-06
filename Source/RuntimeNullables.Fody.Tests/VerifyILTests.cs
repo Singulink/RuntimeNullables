@@ -88,6 +88,12 @@ namespace RuntimeNullables.Fody.Tests
         }
 
         [TestMethod]
+        public Task Record()
+        {
+            return Verify(Decompile(typeof(Record)), _verifySettings);
+        }
+
+        [TestMethod]
         public Task Returns()
         {
             return Verify(Decompile(typeof(Returns)), _verifySettings);

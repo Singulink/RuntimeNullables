@@ -21,6 +21,7 @@ namespace RuntimeNullables.Fody
             bool injectParamChecks = methodNullChecksEnabled;
             bool injectReturnChecks = weavingContext.CheckOutputs &&
                 (returnNullChecksValue == true || (methodNullChecksEnabled && returnNullChecksValue != false)) &&
+                !method.ReturnType.IsRequiredModifier &&
                 method.ReturnType.FullName != bclReferences.VoidType.FullName;
 
             if (!(injectParamChecks || injectReturnChecks) || !(methodContext.WeavingContext.CheckNonPublic || IsMethodPossiblyExposed(method)))

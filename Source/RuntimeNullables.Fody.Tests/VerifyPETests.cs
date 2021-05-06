@@ -17,7 +17,7 @@ namespace RuntimeNullables.Fody.Tests
         public void VerifyTestAssembly()
         {
             var weaver = new ModuleWeaver() { DefineConstants = new List<string> { "DEBUG" } };
-            weaver.ExecuteTestRun("TestAssembly.dll", ignoreCodes: new[] { "0x80131205" });
+            weaver.ExecuteTestRun("TestAssembly.dll", ignoreCodes: new[] { "0x80131205", "0x80131884" });
         }
 
         [TestMethod]
