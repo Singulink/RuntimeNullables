@@ -23,6 +23,15 @@ IL_0000:  ret
 .maxstack  8
 IL_0000:  ret
 }
+.method public hidebysig static void  ValueArray(uint8[] 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ret
+}
 .method public hidebysig static void  GenericUnconstrained<T>(!!T 'value') cil managed
 {
 .param type T

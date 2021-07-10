@@ -27,6 +27,13 @@ namespace RuntimeNullables.Fody.Tests
         }
 
         [TestMethod]
+        public void ValueArray()
+        {
+            InputParameters.ValueArray(new byte[0]);
+            Assert.ThrowsException<ArgumentNullException>(() => InputParameters.ValueArray(null!));
+        }
+
+        [TestMethod]
         public void GenericUnconstrained()
         {
             InputParameters.GenericUnconstrained<string?>(null);

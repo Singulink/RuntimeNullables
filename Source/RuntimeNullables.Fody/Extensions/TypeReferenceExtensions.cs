@@ -6,7 +6,7 @@ namespace RuntimeNullables.Fody.Extensions
     {
         public static bool IsReferenceType(this TypeReference type)
         {
-            if (type.IsPointer)
+            if (type.IsPointer || type.IsArray)
                 return true;
 
             type = type.GetElementType();

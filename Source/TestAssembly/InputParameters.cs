@@ -14,6 +14,8 @@ namespace TestAssembly
 
         public static void NullableReference(string? value) { }
 
+        public static void ValueArray(byte[] value) { }
+
         public static void GenericUnconstrained<T>(T value) { }
 
         public static void GenericUnconstrainedIn<T>(in T value) { }

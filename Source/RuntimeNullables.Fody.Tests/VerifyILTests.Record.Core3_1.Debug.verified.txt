@@ -162,8 +162,8 @@ IL_0071:  ldc.i4.1
 IL_0072:  ret
 }
 .method public hidebysig specialname static
-bool  op_Inequality(class TestAssembly.Record r1,
-class TestAssembly.Record r2) cil managed
+bool  op_Inequality(class TestAssembly.Record left,
+class TestAssembly.Record right) cil managed
 {
 .custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
 .maxstack  8
@@ -176,8 +176,8 @@ IL_0008:  ceq
 IL_000a:  ret
 }
 .method public hidebysig specialname static
-bool  op_Equality(class TestAssembly.Record r1,
-class TestAssembly.Record r2) cil managed
+bool  op_Equality(class TestAssembly.Record left,
+class TestAssembly.Record right) cil managed
 {
 .custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
 .maxstack  8
@@ -235,33 +235,38 @@ instance bool  Equals(class TestAssembly.Record other) cil managed
 {
 .custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
 .maxstack  3
-IL_0000:  ldarg.1
-IL_0001:  brfalse.s  IL_0046
-IL_0003:  ldarg.0
-IL_0004:  callvirt   instance class [netstandard]System.Type TestAssembly.Record::get_EqualityContract()
-IL_0009:  ldarg.1
-IL_000a:  callvirt   instance class [netstandard]System.Type TestAssembly.Record::get_EqualityContract()
-IL_000f:  call       bool [netstandard]System.Type::op_Equality(class [netstandard]System.Type,
+IL_0000:  ldarg.0
+IL_0001:  ldarg.1
+IL_0002:  beq.s      IL_004d
+IL_0004:  ldarg.1
+IL_0005:  brfalse.s  IL_004a
+IL_0007:  ldarg.0
+IL_0008:  callvirt   instance class [netstandard]System.Type TestAssembly.Record::get_EqualityContract()
+IL_000d:  ldarg.1
+IL_000e:  callvirt   instance class [netstandard]System.Type TestAssembly.Record::get_EqualityContract()
+IL_0013:  call       bool [netstandard]System.Type::op_Equality(class [netstandard]System.Type,
 class [netstandard]System.Type)
-IL_0014:  brfalse.s  IL_0046
-IL_0016:  call       class [netstandard]System.Collections.Generic.EqualityComparer`1<!0> class [netstandard]System.Collections.Generic.EqualityComparer`1<string>::get_Default()
-IL_001b:  ldarg.0
-IL_001c:  ldfld      string TestAssembly.Record::'<Name>k__BackingField'
-IL_0021:  ldarg.1
-IL_0022:  ldfld      string TestAssembly.Record::'<Name>k__BackingField'
-IL_0027:  callvirt   instance bool class [netstandard]System.Collections.Generic.EqualityComparer`1<string>::Equals(!0,
+IL_0018:  brfalse.s  IL_004a
+IL_001a:  call       class [netstandard]System.Collections.Generic.EqualityComparer`1<!0> class [netstandard]System.Collections.Generic.EqualityComparer`1<string>::get_Default()
+IL_001f:  ldarg.0
+IL_0020:  ldfld      string TestAssembly.Record::'<Name>k__BackingField'
+IL_0025:  ldarg.1
+IL_0026:  ldfld      string TestAssembly.Record::'<Name>k__BackingField'
+IL_002b:  callvirt   instance bool class [netstandard]System.Collections.Generic.EqualityComparer`1<string>::Equals(!0,
 !0)
-IL_002c:  brfalse.s  IL_0046
-IL_002e:  call       class [netstandard]System.Collections.Generic.EqualityComparer`1<!0> class [netstandard]System.Collections.Generic.EqualityComparer`1<int32>::get_Default()
-IL_0033:  ldarg.0
-IL_0034:  ldfld      int32 TestAssembly.Record::'<Value>k__BackingField'
-IL_0039:  ldarg.1
-IL_003a:  ldfld      int32 TestAssembly.Record::'<Value>k__BackingField'
-IL_003f:  callvirt   instance bool class [netstandard]System.Collections.Generic.EqualityComparer`1<int32>::Equals(!0,
+IL_0030:  brfalse.s  IL_004a
+IL_0032:  call       class [netstandard]System.Collections.Generic.EqualityComparer`1<!0> class [netstandard]System.Collections.Generic.EqualityComparer`1<int32>::get_Default()
+IL_0037:  ldarg.0
+IL_0038:  ldfld      int32 TestAssembly.Record::'<Value>k__BackingField'
+IL_003d:  ldarg.1
+IL_003e:  ldfld      int32 TestAssembly.Record::'<Value>k__BackingField'
+IL_0043:  callvirt   instance bool class [netstandard]System.Collections.Generic.EqualityComparer`1<int32>::Equals(!0,
 !0)
-IL_0044:  br.s       IL_0047
-IL_0046:  ldc.i4.0
-IL_0047:  ret
+IL_0048:  br.s       IL_004b
+IL_004a:  ldc.i4.0
+IL_004b:  br.s       IL_004e
+IL_004d:  ldc.i4.1
+IL_004e:  ret
 }
 .method public hidebysig newslot virtual
 instance class TestAssembly.Record
