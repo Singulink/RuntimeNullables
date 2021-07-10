@@ -75,8 +75,10 @@ namespace RuntimeNullables.Fody.Contexts
 
             var paramInfo = GenericParameters.FirstOrDefault(p => p.Parameter == parameter);
 
-            if (paramInfo.Parameter == null)
+            if (paramInfo.Parameter == null) {
                 WeavingContext.WriteError($"Could not resolve generic parameter '{parameter}': parameter not found.");
+                return true;
+            }
 
             return paramInfo.Nullable;
         }
