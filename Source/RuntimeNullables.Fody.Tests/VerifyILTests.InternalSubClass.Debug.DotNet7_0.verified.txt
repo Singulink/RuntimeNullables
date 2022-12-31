@@ -1,0 +1,77 @@
+﻿.class private auto ansi beforefieldinit TestAssemblyNonPublic.InternalSubClass
+extends TestAssemblyNonPublic.PublicBaseClass
+implements TestAssemblyNonPublic.IPublicInterface,
+TestAssemblyNonPublic.IInternalInterface
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type TestAssemblyNonPublic.IPublicInterface
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type TestAssemblyNonPublic.IInternalInterface
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig virtual instance void
+AbstractPublicMethod(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  nop
+IL_000e:  ret
+}
+.method public hidebysig virtual instance void
+VirtualPublicMethod(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  nop
+IL_000e:  ret
+}
+.method assembly hidebysig strict virtual
+instance void  AbstractInternalMethod(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  nop
+IL_0001:  ret
+}
+.method assembly hidebysig strict virtual
+instance void  VirtualInternalMethod(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  nop
+IL_0001:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  TestAssemblyNonPublic.IPublicInterface.InterfacePublicMethod(string 'value') cil managed
+{
+.override TestAssemblyNonPublic.IPublicInterface::InterfacePublicMethod
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  nop
+IL_000e:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  TestAssemblyNonPublic.IInternalInterface.InterfaceInternalMethod(string 'value') cil managed
+{
+.override TestAssemblyNonPublic.IInternalInterface::InterfaceInternalMethod
+.maxstack  8
+IL_0000:  nop
+IL_0001:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void TestAssemblyNonPublic.PublicBaseClass::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+}

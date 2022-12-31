@@ -1,0 +1,165 @@
+﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.OutputParameters
+extends [System.Runtime]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig static void  GoodReference([out] string& 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldsfld     string [System.Runtime]System.String::Empty
+IL_0006:  stind.ref
+IL_0007:  ldarg.0
+IL_0008:  ldind.ref
+IL_0009:  brtrue.s   IL_0015
+IL_000b:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_0010:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0015:  ret
+}
+.method public hidebysig static void  GoodReferenceWithTryFinally([out] string& 'value') cil managed
+{
+.maxstack  3
+IL_0000:  nop
+IL_0001:  ldarg.0
+IL_0002:  ldsfld     string [System.Runtime]System.String::Empty
+IL_0007:  stind.ref
+.try
+{
+IL_0008:  nop
+IL_0009:  ldarg.0
+IL_000a:  ldarg.0
+IL_000b:  ldind.ref
+IL_000c:  ldsfld     string [System.Runtime]System.String::Empty
+IL_0011:  call       string [System.Runtime]System.String::Concat(string,
+string)
+IL_0016:  stind.ref
+IL_0017:  nop
+IL_0018:  leave.s    IL_002b
+}  // end .try
+finally
+{
+IL_001a:  nop
+IL_001b:  ldarg.0
+IL_001c:  ldarg.0
+IL_001d:  ldind.ref
+IL_001e:  ldsfld     string [System.Runtime]System.String::Empty
+IL_0023:  call       string [System.Runtime]System.String::Concat(string,
+string)
+IL_0028:  stind.ref
+IL_0029:  nop
+IL_002a:  endfinally
+}  // end handler
+IL_002b:  ldarg.0
+IL_002c:  ldind.ref
+IL_002d:  brtrue.s   IL_0039
+IL_002f:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_0034:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0039:  ret
+}
+.method public hidebysig static void  BadReference([out] string& 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldnull
+IL_0002:  stind.ref
+IL_0003:  ldarg.0
+IL_0004:  ldind.ref
+IL_0005:  brtrue.s   IL_0011
+IL_0007:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_000c:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0011:  ret
+}
+.method public hidebysig static void  NullableReference([out] string& 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldnull
+IL_0002:  stind.ref
+IL_0003:  ret
+}
+.method public hidebysig static void  GoodGenericNotNullConstraint<.ctor T>([out] !!T& 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!!0>()
+IL_0006:  stobj      !!T
+IL_000b:  ldarg.0
+IL_000c:  ldobj      !!T
+IL_0011:  box        !!T
+IL_0016:  brtrue.s   IL_0022
+IL_0018:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_001d:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0022:  ret
+}
+.method public hidebysig static void  BadGenericNotNullConstraint<.ctor T>([out] !!T& 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  initobj    !!T
+IL_0007:  ldarg.0
+IL_0008:  ldobj      !!T
+IL_000d:  box        !!T
+IL_0012:  brtrue.s   IL_001e
+IL_0014:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_0019:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_001e:  ret
+}
+.method public hidebysig static void  GoodGenericNotNullAttribute<.ctor T>([out] !!T& 'value') cil managed
+{
+.param type T
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.param [1]
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!!0>()
+IL_0006:  stobj      !!T
+IL_000b:  ldarg.0
+IL_000c:  ldobj      !!T
+IL_0011:  box        !!T
+IL_0016:  brtrue.s   IL_0022
+IL_0018:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_001d:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0022:  ret
+}
+.method public hidebysig static void  BadGenericNotNullAttribute<T>([out] !!T& 'value') cil managed
+{
+.param type T
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.param [1]
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  initobj    !!T
+IL_0007:  ldarg.0
+IL_0008:  ldobj      !!T
+IL_000d:  box        !!T
+IL_0012:  brtrue.s   IL_001e
+IL_0014:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_0019:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_001e:  ret
+}
+.method public hidebysig static void  GenericMaybeNullAttribute<class T>([out] !!T& 'value') cil managed
+{
+.param [1]
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  initobj    !!T
+IL_0007:  ret
+}
+.method public hidebysig static void  GenericUnconstrained<T>([out] !!T& 'value') cil managed
+{
+.param type T
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  initobj    !!T
+IL_0007:  ret
+}
+}

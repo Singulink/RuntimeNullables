@@ -1,0 +1,848 @@
+﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.Enumerators
+extends [System.Runtime]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.class auto ansi sealed nested private beforefieldinit '<BadGetGenerics>d__3`1'<.ctor T>
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>,
+[System.Runtime]System.Collections.IEnumerator,
+[System.Runtime]System.IDisposable
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerator
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private int32 '<>1__state'
+.field private !T '<>2__current'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  ldarg.1
+IL_0009:  stfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_000e:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.IDisposable.Dispose() cil managed
+{
+.override [System.Runtime]System.IDisposable::Dispose
+.maxstack  8
+IL_0000:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  MoveNext() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::MoveNext
+.maxstack  2
+.locals init (int32 V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_0006:  stloc.0
+IL_0007:  ldloc.0
+IL_0008:  switch     (
+IL_001f,
+IL_0021,
+IL_0023,
+IL_0025)
+IL_001d:  br.s       IL_002a
+IL_001f:  br.s       IL_002c
+IL_0021:  br.s       IL_005f
+IL_0023:  br.s       IL_0092
+IL_0025:  br         IL_00c4
+IL_002a:  ldc.i4.0
+IL_002b:  ret
+IL_002c:  ldarg.0
+IL_002d:  ldc.i4.m1
+IL_002e:  stfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_0033:  nop
+IL_0034:  ldarg.0
+IL_0035:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
+IL_003a:  stfld      !0 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>2__current'
+IL_003f:  ldarg.0
+IL_0040:  ldc.i4.1
+IL_0041:  stfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_0046:  ldarg.0
+IL_0047:  ldfld      !0 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>2__current'
+IL_004c:  box        !T
+IL_0051:  brtrue.s   IL_005d
+IL_0053:  ldstr      "Enumerator result nullability contract was broken."
+IL_0058:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_005d:  ldc.i4.1
+IL_005e:  ret
+IL_005f:  ldarg.0
+IL_0060:  ldc.i4.m1
+IL_0061:  stfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_0066:  ldarg.0
+IL_0067:  ldflda     !0 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>2__current'
+IL_006c:  initobj    !T
+IL_0072:  ldarg.0
+IL_0073:  ldc.i4.2
+IL_0074:  stfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_0079:  ldarg.0
+IL_007a:  ldfld      !0 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>2__current'
+IL_007f:  box        !T
+IL_0084:  brtrue.s   IL_0090
+IL_0086:  ldstr      "Enumerator result nullability contract was broken."
+IL_008b:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0090:  ldc.i4.1
+IL_0091:  ret
+IL_0092:  ldarg.0
+IL_0093:  ldc.i4.m1
+IL_0094:  stfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_0099:  ldarg.0
+IL_009a:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
+IL_009f:  stfld      !0 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>2__current'
+IL_00a4:  ldarg.0
+IL_00a5:  ldc.i4.3
+IL_00a6:  stfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_00ab:  ldarg.0
+IL_00ac:  ldfld      !0 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>2__current'
+IL_00b1:  box        !T
+IL_00b6:  brtrue.s   IL_00c2
+IL_00b8:  ldstr      "Enumerator result nullability contract was broken."
+IL_00bd:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_00c2:  ldc.i4.1
+IL_00c3:  ret
+IL_00c4:  ldarg.0
+IL_00c5:  ldc.i4.m1
+IL_00c6:  stfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_00cb:  ldc.i4.0
+IL_00cc:  ret
+}
+.method private hidebysig newslot specialname virtual final
+instance !T  'System.Collections.Generic.IEnumerator<T>.get_Current'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      !0 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Collections.IEnumerator.Reset() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::Reset
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_0005:  throw
+}
+.method private hidebysig newslot specialname virtual final
+instance object  System.Collections.IEnumerator.get_Current() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Runtime]System.Collections.IEnumerator::get_Current
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      !0 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>2__current'
+IL_0006:  box        !T
+IL_000b:  ret
+}
+.property instance !T 'System.Collections.Generic.IEnumerator<T>.Current'()
+{
+.get instance !T TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'::'System.Collections.Generic.IEnumerator<T>.get_Current'()
+}
+.property instance object System.Collections.IEnumerator.Current()
+{
+.get instance object TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'::System.Collections.IEnumerator.get_Current()
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<BadGetReferences>d__1'
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>,
+[System.Runtime]System.Collections.IEnumerator,
+[System.Runtime]System.IDisposable
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerator
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private int32 '<>1__state'
+.field private string '<>2__current'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  ldarg.1
+IL_0009:  stfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_000e:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.IDisposable.Dispose() cil managed
+{
+.override [System.Runtime]System.IDisposable::Dispose
+.maxstack  8
+IL_0000:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  MoveNext() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::MoveNext
+.maxstack  2
+.locals init (int32 V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_0006:  stloc.0
+IL_0007:  ldloc.0
+IL_0008:  switch     (
+IL_001f,
+IL_0021,
+IL_0023,
+IL_0025)
+IL_001d:  br.s       IL_002a
+IL_001f:  br.s       IL_002c
+IL_0021:  br.s       IL_005a
+IL_0023:  br.s       IL_0083
+IL_0025:  br         IL_00b0
+IL_002a:  ldc.i4.0
+IL_002b:  ret
+IL_002c:  ldarg.0
+IL_002d:  ldc.i4.m1
+IL_002e:  stfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_0033:  nop
+IL_0034:  ldarg.0
+IL_0035:  ldsfld     string [System.Runtime]System.String::Empty
+IL_003a:  stfld      string TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>2__current'
+IL_003f:  ldarg.0
+IL_0040:  ldc.i4.1
+IL_0041:  stfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_0046:  ldarg.0
+IL_0047:  ldfld      string TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>2__current'
+IL_004c:  brtrue.s   IL_0058
+IL_004e:  ldstr      "Enumerator result nullability contract was broken."
+IL_0053:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0058:  ldc.i4.1
+IL_0059:  ret
+IL_005a:  ldarg.0
+IL_005b:  ldc.i4.m1
+IL_005c:  stfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_0061:  ldarg.0
+IL_0062:  ldnull
+IL_0063:  stfld      string TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>2__current'
+IL_0068:  ldarg.0
+IL_0069:  ldc.i4.2
+IL_006a:  stfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_006f:  ldarg.0
+IL_0070:  ldfld      string TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>2__current'
+IL_0075:  brtrue.s   IL_0081
+IL_0077:  ldstr      "Enumerator result nullability contract was broken."
+IL_007c:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0081:  ldc.i4.1
+IL_0082:  ret
+IL_0083:  ldarg.0
+IL_0084:  ldc.i4.m1
+IL_0085:  stfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_008a:  ldarg.0
+IL_008b:  ldsfld     string [System.Runtime]System.String::Empty
+IL_0090:  stfld      string TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>2__current'
+IL_0095:  ldarg.0
+IL_0096:  ldc.i4.3
+IL_0097:  stfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_009c:  ldarg.0
+IL_009d:  ldfld      string TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>2__current'
+IL_00a2:  brtrue.s   IL_00ae
+IL_00a4:  ldstr      "Enumerator result nullability contract was broken."
+IL_00a9:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_00ae:  ldc.i4.1
+IL_00af:  ret
+IL_00b0:  ldarg.0
+IL_00b1:  ldc.i4.m1
+IL_00b2:  stfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_00b7:  ldc.i4.0
+IL_00b8:  ret
+}
+.method private hidebysig newslot specialname virtual final
+instance string  'System.Collections.Generic.IEnumerator<System.String>.get_Current'() cil managed
+{
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Collections.IEnumerator.Reset() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::Reset
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_0005:  throw
+}
+.method private hidebysig newslot specialname virtual final
+instance object  System.Collections.IEnumerator.get_Current() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Runtime]System.Collections.IEnumerator::get_Current
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>2__current'
+IL_0006:  ret
+}
+.property instance string 'System.Collections.Generic.IEnumerator<System.String>.Current'()
+{
+.get instance string TestAssembly.Enumerators/'<BadGetReferences>d__1'::'System.Collections.Generic.IEnumerator<System.String>.get_Current'()
+}
+.property instance object System.Collections.IEnumerator.Current()
+{
+.get instance object TestAssembly.Enumerators/'<BadGetReferences>d__1'::System.Collections.IEnumerator.get_Current()
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<GetNullNonGenerics>d__4'
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IEnumerator`1<object>,
+[System.Runtime]System.Collections.IEnumerator,
+[System.Runtime]System.IDisposable
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerator`1<object>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerator
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private int32 '<>1__state'
+.field private object '<>2__current'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  ldarg.1
+IL_0009:  stfld      int32 TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'<>1__state'
+IL_000e:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.IDisposable.Dispose() cil managed
+{
+.override [System.Runtime]System.IDisposable::Dispose
+.maxstack  8
+IL_0000:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  MoveNext() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::MoveNext
+.maxstack  2
+.locals init (int32 V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'<>1__state'
+IL_0006:  stloc.0
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0012
+IL_000a:  br.s       IL_000c
+IL_000c:  ldloc.0
+IL_000d:  ldc.i4.1
+IL_000e:  beq.s      IL_0014
+IL_0010:  br.s       IL_0016
+IL_0012:  br.s       IL_0018
+IL_0014:  br.s       IL_0030
+IL_0016:  ldc.i4.0
+IL_0017:  ret
+IL_0018:  ldarg.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'<>1__state'
+IL_001f:  nop
+IL_0020:  ldarg.0
+IL_0021:  ldnull
+IL_0022:  stfld      object TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'<>2__current'
+IL_0027:  ldarg.0
+IL_0028:  ldc.i4.1
+IL_0029:  stfld      int32 TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'<>1__state'
+IL_002e:  ldc.i4.1
+IL_002f:  ret
+IL_0030:  ldarg.0
+IL_0031:  ldc.i4.m1
+IL_0032:  stfld      int32 TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'<>1__state'
+IL_0037:  ldc.i4.0
+IL_0038:  ret
+}
+.method private hidebysig newslot specialname virtual final
+instance object  'System.Collections.Generic.IEnumerator<System.Object>.get_Current'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<object>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      object TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Collections.IEnumerator.Reset() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::Reset
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_0005:  throw
+}
+.method private hidebysig newslot specialname virtual final
+instance object  System.Collections.IEnumerator.get_Current() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Runtime]System.Collections.IEnumerator::get_Current
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      object TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'<>2__current'
+IL_0006:  ret
+}
+.property instance object 'System.Collections.Generic.IEnumerator<System.Object>.Current'()
+{
+.get instance object TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'()
+}
+.property instance object System.Collections.IEnumerator.Current()
+{
+.get instance object TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::System.Collections.IEnumerator.get_Current()
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<GoodGetGenerics>d__2`1'<.ctor T>
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>,
+[System.Runtime]System.Collections.IEnumerator,
+[System.Runtime]System.IDisposable
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerator
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private int32 '<>1__state'
+.field private !T '<>2__current'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  ldarg.1
+IL_0009:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_000e:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.IDisposable.Dispose() cil managed
+{
+.override [System.Runtime]System.IDisposable::Dispose
+.maxstack  8
+IL_0000:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  MoveNext() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::MoveNext
+.maxstack  2
+.locals init (int32 V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_0006:  stloc.0
+IL_0007:  ldloc.0
+IL_0008:  switch     (
+IL_0027,
+IL_0029,
+IL_002b,
+IL_002d,
+IL_0032,
+IL_0037)
+IL_0025:  br.s       IL_003c
+IL_0027:  br.s       IL_003e
+IL_0029:  br.s       IL_0071
+IL_002b:  br.s       IL_00a3
+IL_002d:  br         IL_00d5
+IL_0032:  br         IL_0107
+IL_0037:  br         IL_0139
+IL_003c:  ldc.i4.0
+IL_003d:  ret
+IL_003e:  ldarg.0
+IL_003f:  ldc.i4.m1
+IL_0040:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_0045:  nop
+IL_0046:  ldarg.0
+IL_0047:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
+IL_004c:  stfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_0051:  ldarg.0
+IL_0052:  ldc.i4.1
+IL_0053:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_0058:  ldarg.0
+IL_0059:  ldfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_005e:  box        !T
+IL_0063:  brtrue.s   IL_006f
+IL_0065:  ldstr      "Enumerator result nullability contract was broken."
+IL_006a:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_006f:  ldc.i4.1
+IL_0070:  ret
+IL_0071:  ldarg.0
+IL_0072:  ldc.i4.m1
+IL_0073:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_0078:  ldarg.0
+IL_0079:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
+IL_007e:  stfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_0083:  ldarg.0
+IL_0084:  ldc.i4.2
+IL_0085:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_008a:  ldarg.0
+IL_008b:  ldfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_0090:  box        !T
+IL_0095:  brtrue.s   IL_00a1
+IL_0097:  ldstr      "Enumerator result nullability contract was broken."
+IL_009c:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_00a1:  ldc.i4.1
+IL_00a2:  ret
+IL_00a3:  ldarg.0
+IL_00a4:  ldc.i4.m1
+IL_00a5:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_00aa:  ldarg.0
+IL_00ab:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
+IL_00b0:  stfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_00b5:  ldarg.0
+IL_00b6:  ldc.i4.3
+IL_00b7:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_00bc:  ldarg.0
+IL_00bd:  ldfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_00c2:  box        !T
+IL_00c7:  brtrue.s   IL_00d3
+IL_00c9:  ldstr      "Enumerator result nullability contract was broken."
+IL_00ce:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_00d3:  ldc.i4.1
+IL_00d4:  ret
+IL_00d5:  ldarg.0
+IL_00d6:  ldc.i4.m1
+IL_00d7:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_00dc:  ldarg.0
+IL_00dd:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
+IL_00e2:  stfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_00e7:  ldarg.0
+IL_00e8:  ldc.i4.4
+IL_00e9:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_00ee:  ldarg.0
+IL_00ef:  ldfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_00f4:  box        !T
+IL_00f9:  brtrue.s   IL_0105
+IL_00fb:  ldstr      "Enumerator result nullability contract was broken."
+IL_0100:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0105:  ldc.i4.1
+IL_0106:  ret
+IL_0107:  ldarg.0
+IL_0108:  ldc.i4.m1
+IL_0109:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_010e:  ldarg.0
+IL_010f:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
+IL_0114:  stfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_0119:  ldarg.0
+IL_011a:  ldc.i4.5
+IL_011b:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_0120:  ldarg.0
+IL_0121:  ldfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_0126:  box        !T
+IL_012b:  brtrue.s   IL_0137
+IL_012d:  ldstr      "Enumerator result nullability contract was broken."
+IL_0132:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0137:  ldc.i4.1
+IL_0138:  ret
+IL_0139:  ldarg.0
+IL_013a:  ldc.i4.m1
+IL_013b:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_0140:  ldc.i4.0
+IL_0141:  ret
+}
+.method private hidebysig newslot specialname virtual final
+instance !T  'System.Collections.Generic.IEnumerator<T>.get_Current'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Collections.IEnumerator.Reset() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::Reset
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_0005:  throw
+}
+.method private hidebysig newslot specialname virtual final
+instance object  System.Collections.IEnumerator.get_Current() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Runtime]System.Collections.IEnumerator::get_Current
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      !0 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>2__current'
+IL_0006:  box        !T
+IL_000b:  ret
+}
+.property instance !T 'System.Collections.Generic.IEnumerator<T>.Current'()
+{
+.get instance !T TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'::'System.Collections.Generic.IEnumerator<T>.get_Current'()
+}
+.property instance object System.Collections.IEnumerator.Current()
+{
+.get instance object TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'::System.Collections.IEnumerator.get_Current()
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<GoodGetReferences>d__0'
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>,
+[System.Runtime]System.Collections.IEnumerator,
+[System.Runtime]System.IDisposable
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerator
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private int32 '<>1__state'
+.field private string '<>2__current'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  ldarg.1
+IL_0009:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_000e:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.IDisposable.Dispose() cil managed
+{
+.override [System.Runtime]System.IDisposable::Dispose
+.maxstack  8
+IL_0000:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  MoveNext() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::MoveNext
+.maxstack  2
+.locals init (int32 V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_0006:  stloc.0
+IL_0007:  ldloc.0
+IL_0008:  switch     (
+IL_0027,
+IL_0029,
+IL_002b,
+IL_002d,
+IL_0032,
+IL_0037)
+IL_0025:  br.s       IL_003c
+IL_0027:  br.s       IL_003e
+IL_0029:  br.s       IL_006c
+IL_002b:  br.s       IL_0099
+IL_002d:  br         IL_00c6
+IL_0032:  br         IL_00f3
+IL_0037:  br         IL_0120
+IL_003c:  ldc.i4.0
+IL_003d:  ret
+IL_003e:  ldarg.0
+IL_003f:  ldc.i4.m1
+IL_0040:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_0045:  nop
+IL_0046:  ldarg.0
+IL_0047:  ldsfld     string [System.Runtime]System.String::Empty
+IL_004c:  stfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_0051:  ldarg.0
+IL_0052:  ldc.i4.1
+IL_0053:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_0058:  ldarg.0
+IL_0059:  ldfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_005e:  brtrue.s   IL_006a
+IL_0060:  ldstr      "Enumerator result nullability contract was broken."
+IL_0065:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_006a:  ldc.i4.1
+IL_006b:  ret
+IL_006c:  ldarg.0
+IL_006d:  ldc.i4.m1
+IL_006e:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_0073:  ldarg.0
+IL_0074:  ldsfld     string [System.Runtime]System.String::Empty
+IL_0079:  stfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_007e:  ldarg.0
+IL_007f:  ldc.i4.2
+IL_0080:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_0085:  ldarg.0
+IL_0086:  ldfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_008b:  brtrue.s   IL_0097
+IL_008d:  ldstr      "Enumerator result nullability contract was broken."
+IL_0092:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0097:  ldc.i4.1
+IL_0098:  ret
+IL_0099:  ldarg.0
+IL_009a:  ldc.i4.m1
+IL_009b:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_00a0:  ldarg.0
+IL_00a1:  ldsfld     string [System.Runtime]System.String::Empty
+IL_00a6:  stfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_00ab:  ldarg.0
+IL_00ac:  ldc.i4.3
+IL_00ad:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_00b2:  ldarg.0
+IL_00b3:  ldfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_00b8:  brtrue.s   IL_00c4
+IL_00ba:  ldstr      "Enumerator result nullability contract was broken."
+IL_00bf:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_00c4:  ldc.i4.1
+IL_00c5:  ret
+IL_00c6:  ldarg.0
+IL_00c7:  ldc.i4.m1
+IL_00c8:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_00cd:  ldarg.0
+IL_00ce:  ldsfld     string [System.Runtime]System.String::Empty
+IL_00d3:  stfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_00d8:  ldarg.0
+IL_00d9:  ldc.i4.4
+IL_00da:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_00df:  ldarg.0
+IL_00e0:  ldfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_00e5:  brtrue.s   IL_00f1
+IL_00e7:  ldstr      "Enumerator result nullability contract was broken."
+IL_00ec:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_00f1:  ldc.i4.1
+IL_00f2:  ret
+IL_00f3:  ldarg.0
+IL_00f4:  ldc.i4.m1
+IL_00f5:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_00fa:  ldarg.0
+IL_00fb:  ldsfld     string [System.Runtime]System.String::Empty
+IL_0100:  stfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_0105:  ldarg.0
+IL_0106:  ldc.i4.5
+IL_0107:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_010c:  ldarg.0
+IL_010d:  ldfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_0112:  brtrue.s   IL_011e
+IL_0114:  ldstr      "Enumerator result nullability contract was broken."
+IL_0119:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_011e:  ldc.i4.1
+IL_011f:  ret
+IL_0120:  ldarg.0
+IL_0121:  ldc.i4.m1
+IL_0122:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_0127:  ldc.i4.0
+IL_0128:  ret
+}
+.method private hidebysig newslot specialname virtual final
+instance string  'System.Collections.Generic.IEnumerator<System.String>.get_Current'() cil managed
+{
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Collections.IEnumerator.Reset() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::Reset
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_0005:  throw
+}
+.method private hidebysig newslot specialname virtual final
+instance object  System.Collections.IEnumerator.get_Current() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Runtime]System.Collections.IEnumerator::get_Current
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>2__current'
+IL_0006:  ret
+}
+.property instance string 'System.Collections.Generic.IEnumerator<System.String>.Current'()
+{
+.get instance string TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'System.Collections.Generic.IEnumerator<System.String>.get_Current'()
+}
+.property instance object System.Collections.IEnumerator.Current()
+{
+.get instance object TestAssembly.Enumerators/'<GoodGetReferences>d__0'::System.Collections.IEnumerator.get_Current()
+}
+}
+.method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
+GoodGetReferences() cil managed
+{
+45 6E 75 6D 65 72 61 74 6F 72 73 2B 3C 47 6F 6F   // Enumerators+<Goo
+64 47 65 74 52 65 66 65 72 65 6E 63 65 73 3E 64   // dGetReferences>d
+5F 5F 30 00 00 )                                  // __0..
+.maxstack  8
+IL_0000:  ldc.i4.0
+IL_0001:  newobj     instance void TestAssembly.Enumerators/'<GoodGetReferences>d__0'::.ctor(int32)
+IL_0006:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
+BadGetReferences() cil managed
+{
+45 6E 75 6D 65 72 61 74 6F 72 73 2B 3C 42 61 64   // Enumerators+<Bad
+47 65 74 52 65 66 65 72 65 6E 63 65 73 3E 64 5F   // GetReferences>d_
+5F 31 00 00 )                                     // _1..
+.maxstack  8
+IL_0000:  ldc.i4.0
+IL_0001:  newobj     instance void TestAssembly.Enumerators/'<BadGetReferences>d__1'::.ctor(int32)
+IL_0006:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerator`1<!!T>
+GoodGetGenerics<.ctor T>() cil managed
+{
+45 6E 75 6D 65 72 61 74 6F 72 73 2B 3C 47 6F 6F   // Enumerators+<Goo
+64 47 65 74 47 65 6E 65 72 69 63 73 3E 64 5F 5F   // dGetGenerics>d__
+32 60 31 00 00 )                                  // 2`1..
+.maxstack  8
+IL_0000:  ldc.i4.0
+IL_0001:  newobj     instance void class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!!T>::.ctor(int32)
+IL_0006:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerator`1<!!T>
+BadGetGenerics<.ctor T>() cil managed
+{
+45 6E 75 6D 65 72 61 74 6F 72 73 2B 3C 42 61 64   // Enumerators+<Bad
+47 65 74 47 65 6E 65 72 69 63 73 3E 64 5F 5F 33   // GetGenerics>d__3
+60 31 00 00 )                                     // `1..
+.maxstack  8
+IL_0000:  ldc.i4.0
+IL_0001:  newobj     instance void class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!!T>::.ctor(int32)
+IL_0006:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Collections.IEnumerator
+GetNullNonGenerics() cil managed
+{
+45 6E 75 6D 65 72 61 74 6F 72 73 2B 3C 47 65 74   // Enumerators+<Get
+4E 75 6C 6C 4E 6F 6E 47 65 6E 65 72 69 63 73 3E   // NullNonGenerics>
+64 5F 5F 34 00 00 )                               // d__4..
+.maxstack  8
+IL_0000:  ldc.i4.0
+IL_0001:  newobj     instance void TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::.ctor(int32)
+IL_0006:  ret
+}
+}

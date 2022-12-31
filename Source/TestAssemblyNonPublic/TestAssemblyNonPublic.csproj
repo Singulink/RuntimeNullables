@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net7.0</TargetFrameworks>
     <!--<WeaverConfiguration>
       <Weavers VerifyAssembly="true" VerifyIgnoreCodes="0x80131205">
         <RuntimeNullables CheckNonPublic="false" CheckOutputs="false" />
@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <WeaverFiles Include="$(SolutionDir)RuntimeNullables.Fody\bin\$(Configuration)\netstandard2.0\RuntimeNullables.Fody.dll" />
-    <PackageReference Include="Fody" Version="6.5.1">
+    <PackageReference Include="Fody" Version="6.6.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

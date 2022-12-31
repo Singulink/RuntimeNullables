@@ -1,6 +1,6 @@
 # Runtime Nullables
 
-[![Join the chat](https://badges.gitter.im/Singulink/community.svg)](https://gitter.im/Singulink/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Chat on Discord](https://img.shields.io/discord/906246067773923490)](https://discord.gg/EkQhJFsBu6)
 [![View nuget packages](https://img.shields.io/nuget/v/RuntimeNullables.Fody.svg)](https://www.nuget.org/packages/RuntimeNullables.Fody/)
 [![Build and Test](https://github.com/Singulink/RuntimeNullables/workflows/build%20and%20test/badge.svg)](https://github.com/Singulink/RuntimeNullables/actions?query=workflow%3A%22build+and+test%22)
 
@@ -8,7 +8,7 @@
 
 ### About Singulink
 
-*Shameless plug*: We are a small team of engineers and designers dedicated to building beautiful, functional and well-engineered software solutions. We offer very competitive rates as well as fixed-price contracts and welcome inquiries to discuss any custom development / project support needs you may have.
+We are a small team of engineers and designers dedicated to building beautiful, functional and well-engineered software solutions. We offer very competitive rates as well as fixed-price contracts and welcome inquiries to discuss any custom development / project support needs you may have.
 
 Visit https://github.com/Singulink to see our full list of publicly available libraries and other open-source projects.
 
@@ -25,9 +25,9 @@ After adding nullable annotation support to NullGuard on top of its legacy funct
 - Supports checking `ValueTask<T>` results, synchronously returned complete `Task<T>` results, `IEnumerable<T>`/`IEnumerator<T>` iterator values and asynchronous `IAsyncEnumerable<T>`/`IAsyncEnumerator<T>` iterator values.
 - Uses throw helpers instead of throwing directly (better performance / smaller IL code) and lets you define your own custom throw helpers.
 - Much simpler attribute model that uses a single `[NullChecks(bool)]` attribute to control null check injection.
-- Designed specifically for NRTs so it is much easier to add advanced functionality such as full validation of conditional attributes like `[MaybeNullWhen]` (coming soon).
+- Designed specifically for NRTs so it is much easier to add advanced functionality such as full validation of conditional attributes like `[MaybeNullWhen]` (planned for a future release).
 - Outputs warnings for conflicting annotations that cause null checks to be skipped, i.e. if `[AllowNull, DisallowNull]` is applied to a parameter.
-- Uses `NullReferenceException` instead of `InvalidOperationException` when an output check fails since the latter is often thrown/caught in normal circumstances causing null contract violations to go unnoticed in unit tests or exception handling code.
+- Uses `NullReferenceException` instead of `InvalidOperationException` when an output check fails since the latter is often thrown/caught in normal circumstances which can cause null contract violations to go unnoticed in unit tests or exception handling code.
 - Numerous bug fixes and reliability improvements.
 
 ## Configuration
