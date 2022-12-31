@@ -1,9 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageTags>NullGuard, Null Check, NRT, Nullable, ILWeaving, Fody, Cecil, AOP</PackageTags>
-    <Description>Automatic null check injection for runtime C# 8+ Nullable Reference Type (NRT) contract validation.</Description>
+    <Description>Automatic null check injection for runtime C# Nullable Reference Types (NRT) parameter/contract validation.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Singulink/RuntimeNullables</PackageProjectUrl>
     <Authors>Singulink</Authors>
@@ -29,5 +28,4 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-
 </Project>
