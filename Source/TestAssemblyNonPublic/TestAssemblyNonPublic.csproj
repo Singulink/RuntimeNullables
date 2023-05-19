@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <WeaverFiles Include="$(SolutionDir)RuntimeNullables.Fody\bin\$(Configuration)\netstandard2.0\RuntimeNullables.Fody.dll" />
-    <PackageReference Include="Fody" Version="6.6.4">
+    <PackageReference Include="Fody" Version="6.7.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

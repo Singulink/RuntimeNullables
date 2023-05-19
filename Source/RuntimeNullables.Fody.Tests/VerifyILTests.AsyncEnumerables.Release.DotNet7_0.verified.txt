@@ -232,10 +232,11 @@ IL_0000:  ret
 }
 .method private hidebysig newslot virtual final
 instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!T>
-'System.Collections.Generic.IAsyncEnumerable<T>.GetAsyncEnumerator'(valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
+'System.Collections.Generic.IAsyncEnumerable<T>.GetAsyncEnumerator'([opt] valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
 {
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
+.param [1] = nullref
 .override  method instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<!T>::GetAsyncEnumerator(valuetype [System.Runtime]System.Threading.CancellationToken)
 .maxstack  2
 .locals init (class TestAssembly.AsyncEnumerables/'<BadGetGenericsAsync>d__5`1'<!T> V_0)
@@ -699,10 +700,11 @@ IL_0000:  ret
 }
 .method private hidebysig newslot virtual final
 instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
-'System.Collections.Generic.IAsyncEnumerable<System.String>.GetAsyncEnumerator'(valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
+'System.Collections.Generic.IAsyncEnumerable<System.String>.GetAsyncEnumerator'([opt] valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
 {
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
+.param [1] = nullref
 .override  method instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<string>::GetAsyncEnumerator(valuetype [System.Runtime]System.Threading.CancellationToken)
 .maxstack  2
 .locals init (class TestAssembly.AsyncEnumerables/'<BadGetReferencesAsync>d__1' V_0)
@@ -1123,10 +1125,11 @@ IL_0000:  ret
 }
 .method private hidebysig newslot virtual final
 instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
-'System.Collections.Generic.IAsyncEnumerable<System.String>.GetAsyncEnumerator'(valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
+'System.Collections.Generic.IAsyncEnumerable<System.String>.GetAsyncEnumerator'([opt] valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
 {
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
+.param [1] = nullref
 .override  method instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<string>::GetAsyncEnumerator(valuetype [System.Runtime]System.Threading.CancellationToken)
 .maxstack  2
 .locals init (class TestAssembly.AsyncEnumerables/'<BadGetReferencesAsyncWithoutAwait>d__3' V_0)
@@ -1553,10 +1556,11 @@ IL_0000:  ret
 }
 .method private hidebysig newslot virtual final
 instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!T>
-'System.Collections.Generic.IAsyncEnumerable<T>.GetAsyncEnumerator'(valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
+'System.Collections.Generic.IAsyncEnumerable<T>.GetAsyncEnumerator'([opt] valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
 {
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
+.param [1] = nullref
 .override  method instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<!T>::GetAsyncEnumerator(valuetype [System.Runtime]System.Threading.CancellationToken)
 .maxstack  2
 .locals init (class TestAssembly.AsyncEnumerables/'<GoodGetGenericsAsync>d__4`1'<!T> V_0)
@@ -1982,10 +1986,11 @@ IL_0000:  ret
 }
 .method private hidebysig newslot virtual final
 instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
-'System.Collections.Generic.IAsyncEnumerable<System.String>.GetAsyncEnumerator'(valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
+'System.Collections.Generic.IAsyncEnumerable<System.String>.GetAsyncEnumerator'([opt] valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
 {
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
+.param [1] = nullref
 .override  method instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<string>::GetAsyncEnumerator(valuetype [System.Runtime]System.Threading.CancellationToken)
 .maxstack  2
 .locals init (class TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsync>d__0' V_0)
@@ -2369,10 +2374,11 @@ IL_0000:  ret
 }
 .method private hidebysig newslot virtual final
 instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
-'System.Collections.Generic.IAsyncEnumerable<System.String>.GetAsyncEnumerator'(valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
+'System.Collections.Generic.IAsyncEnumerable<System.String>.GetAsyncEnumerator'([opt] valuetype [System.Runtime]System.Threading.CancellationToken cancellationToken) cil managed
 {
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
+.param [1] = nullref
 .override  method instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<string>::GetAsyncEnumerator(valuetype [System.Runtime]System.Threading.CancellationToken)
 .maxstack  2
 .locals init (class TestAssembly.AsyncEnumerables/'<GoodGetReferencesAsyncWithoutAwait>d__2' V_0)

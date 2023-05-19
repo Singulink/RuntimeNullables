@@ -7,7 +7,7 @@ namespace RuntimeNullables.Fody.Contexts
 {
     internal sealed class TypeContext : NullableContext
     {
-        private readonly List<MethodContext> _methodContexts = new List<MethodContext>();
+        private readonly List<MethodContext> _methodContexts = new();
         private List<GenericParameterInfo>? _genericParameters;
 
         public TypeDefinition Type { get; }
