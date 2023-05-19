@@ -6,7 +6,7 @@ namespace RuntimeNullables.Fody.Contexts
 {
     internal sealed class ModuleContext : NullableContext
     {
-        private readonly Dictionary<TypeDefinition, TypeContext> _typeContexts = new Dictionary<TypeDefinition, TypeContext>();
+        private readonly Dictionary<TypeDefinition, TypeContext> _typeContexts = new();
 
         public ModuleDefinition Module { get; }
 
@@ -21,19 +21,26 @@ namespace RuntimeNullables.Fody.Contexts
         {
             base.Build();
 
-            foreach (var type in Module.GetTypes().Where(t => !t.HasAnyGeneratedAttribute() && !IsInjectedType(t)))
+            foreach (var type in Module.GetTypes())
                 Build(type);
 
-            TypeContext Build(TypeDefinition type)
+            TypeContext? Build(TypeDefinition type)
             {
                 if (_typeContexts.TryGetValue(type, out var typeContext))
                     return typeContext;
+
+                if (type.HasAnyGeneratedAttribute() || IsInjectedType(type))
+                    return null;
 
                 if (type.DeclaringType == null) {
                     typeContext = new TypeContext(type, this);
                 }
                 else {
                     var declaringTypeContext = Build(type.DeclaringType);
+
+                    if (declaringTypeContext == null)
+                        return null;
+
                     typeContext = new TypeContext(type, declaringTypeContext);
                 }
 
