@@ -64,6 +64,12 @@ namespace RuntimeNullables.Fody.Tests
         }
 
         [TestMethod]
+        public Task GeneratedCode()
+        {
+            return Verify(Decompile(typeof(GeneratedCode)), _verifySettings);
+        }
+
+        [TestMethod]
         public Task InputParameters()
         {
             return Verify(Decompile(typeof(InputParameters)), _verifySettings);
@@ -141,6 +147,8 @@ namespace RuntimeNullables.Fody.Tests
             return Verify(Decompile(typeof(UsesThrowHelpers)), _verifySettings);
         }
 
+#pragma warning disable CS0618 // Type or member is obsolete
         private static string Decompile(Type type) => Ildasm.Decompile(type.Assembly.Location, type.FullName);
+#pragma warning restore CS0618 // Type or member is obsolete
     }
 }

@@ -1,0 +1,40 @@
+﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.GeneratedCode
+extends [System.Runtime]System.Object
+{
+string) = ( 01 00 15 52 75 6E 74 69 6D 65 4E 75 6C 6C 61 62   // ...RuntimeNullab
+6C 65 73 2E 46 6F 64 79 05 31 2E 30 2E 30 00 00 ) // les.Fody.1.0.0..
+.class auto ansi sealed nested public SomeDelegate
+extends [System.Runtime]System.MulticastDelegate
+{
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(object 'object',
+native int 'method') runtime managed
+{
+}
+.method public hidebysig newslot virtual
+instance void  Invoke(object obj) runtime managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+}
+.method public hidebysig newslot virtual
+instance class [System.Runtime]System.IAsyncResult
+BeginInvoke(object obj,
+class [System.Runtime]System.AsyncCallback callback,
+object 'object') runtime managed
+{
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+}
+.method public hidebysig newslot virtual
+instance void  EndInvoke(class [System.Runtime]System.IAsyncResult result) runtime managed
+{
+}
+}
+.method public hidebysig static void  Method(object obj) cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.maxstack  8
+IL_0000:  nop
+IL_0001:  ret
+}
+}
