@@ -1,19 +1,18 @@
 ﻿using Mono.Cecil;
 
-namespace RuntimeNullables.Fody.Extensions
+namespace RuntimeNullables.Fody.Extensions;
+
+internal static class ParameterDefinitionExtensions
 {
-    internal static class ParameterDefinitionExtensions
+    // Preconditions:
+
+    public static bool HasAllowNullAttribute(this ParameterDefinition parameter)
     {
-        // Preconditions:
+        return parameter.HasAttribute("System.Diagnostics.CodeAnalysis.AllowNullAttribute");
+    }
 
-        public static bool HasAllowNullAttribute(this ParameterDefinition parameter)
-        {
-            return parameter.HasAttribute("System.Diagnostics.CodeAnalysis.AllowNullAttribute");
-        }
-
-        public static bool HasDisallowNullAttribute(this ParameterDefinition parameter)
-        {
-            return parameter.HasAttribute("System.Diagnostics.CodeAnalysis.DisallowNullAttribute");
-        }
+    public static bool HasDisallowNullAttribute(this ParameterDefinition parameter)
+    {
+        return parameter.HasAttribute("System.Diagnostics.CodeAnalysis.DisallowNullAttribute");
     }
 }

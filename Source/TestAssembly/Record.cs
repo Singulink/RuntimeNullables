@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TestAssembly
+namespace TestAssembly;
+
+public record Record(string Name, int Value)
 {
-    public record Record(string Name, int Value)
-    {
-    }
 }

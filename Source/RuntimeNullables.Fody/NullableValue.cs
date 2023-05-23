@@ -1,9 +1,8 @@
-﻿namespace RuntimeNullables.Fody
+﻿namespace RuntimeNullables.Fody;
+
+internal enum NullableValue : byte
 {
-    internal enum NullableValue : byte
-    {
-        Oblivious = 0,
-        NotAnnotated = 1,
-        Annotated = 2,
-    }
+    Oblivious = 0,
+    NotAnnotated = 1,
+    Annotated = 2,
 }

@@ -2,83 +2,82 @@
 using Mono.Cecil;
 using RuntimeNullables.Fody.Extensions;
 
-namespace RuntimeNullables.Fody.Contexts
+namespace RuntimeNullables.Fody.Contexts;
+
+internal abstract class NullableContext
 {
-    internal abstract class NullableContext
+    private readonly bool _isNullable;
+    private readonly bool _nullChecksEnabled;
+
+    private bool _buildCalled;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="NullableContext"/> class. This constructor should only be used for root contexts with no parent
+    /// contexts.
+    /// </summary>
+    internal NullableContext(ICustomAttributeProvider attributeProvider, WeavingContext weavingContext)
     {
-        private readonly bool _isNullable;
-        private readonly bool _nullChecksEnabled;
+        WeavingContext = weavingContext;
 
-        private bool _buildCalled;
+        _isNullable = false;
+        _nullChecksEnabled = true;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NullableContext"/> class. This constructor should only be used for root contexts with no parent
-        /// contexts.
-        /// </summary>
-        internal NullableContext(ICustomAttributeProvider attributeProvider, WeavingContext weavingContext)
-        {
-            WeavingContext = weavingContext;
+        ProcessAttributes(attributeProvider, ref _isNullable, ref _nullChecksEnabled);
+    }
 
-            _isNullable = false;
-            _nullChecksEnabled = true;
+    internal NullableContext(ICustomAttributeProvider attributeProvider, NullableContext parentContext)
+    {
+        WeavingContext = parentContext.WeavingContext;
 
-            ProcessAttributes(attributeProvider, ref _isNullable, ref _nullChecksEnabled);
-        }
+        _isNullable = parentContext._isNullable;
+        _nullChecksEnabled = parentContext._nullChecksEnabled;
 
-        internal NullableContext(ICustomAttributeProvider attributeProvider, NullableContext parentContext)
-        {
-            WeavingContext = parentContext.WeavingContext;
+        ProcessAttributes(attributeProvider, ref _isNullable, ref _nullChecksEnabled);
+    }
 
-            _isNullable = parentContext._isNullable;
-            _nullChecksEnabled = parentContext._nullChecksEnabled;
+    /// <summary>
+    /// Gets the current weaving context.
+    /// </summary>
+    public WeavingContext WeavingContext { get; }
 
-            ProcessAttributes(attributeProvider, ref _isNullable, ref _nullChecksEnabled);
-        }
+    /// <summary>
+    /// Gets a value indicating whether the current context is nullable by default.
+    /// </summary>
+    public bool IsNullable => _isNullable;
 
-        /// <summary>
-        /// Gets the current weaving context.
-        /// </summary>
-        public WeavingContext WeavingContext { get; }
+    /// <summary>
+    /// Gets a value indicating whether the current context has null checks enabled.
+    /// </summary>
+    public bool NullChecksEnabled => _nullChecksEnabled;
 
-        /// <summary>
-        /// Gets a value indicating whether the current context is nullable by default.
-        /// </summary>
-        public bool IsNullable => _isNullable;
+    /// <summary>
+    /// Builds the context data.
+    /// </summary>
+    public virtual void Build()
+    {
+        if (_buildCalled)
+            throw new InvalidOperationException("Build method has already been called on this context.");
 
-        /// <summary>
-        /// Gets a value indicating whether the current context has null checks enabled.
-        /// </summary>
-        public bool NullChecksEnabled => _nullChecksEnabled;
+        _buildCalled = true;
+    }
 
-        /// <summary>
-        /// Builds the context data.
-        /// </summary>
-        public virtual void Build()
-        {
-            if (_buildCalled)
-                throw new InvalidOperationException("Build method has already been called on this context.");
+    /// <summary>
+    /// Determines the nullability of an item that belongs to this type.
+    /// </summary>
+    protected bool IsContextItemNullable(ICustomAttributeProvider item) => IsContextInnerItemNullable(item, -1);
 
-            _buildCalled = true;
-        }
+    protected bool IsContextInnerItemNullable(ICustomAttributeProvider item, int innerOrdinal)
+    {
+        var nullable = item.GetNullableAttributeValue(innerOrdinal + 1, WeavingContext);
+        return nullable == null ? IsNullable : nullable.GetValueOrDefault().ToIsNullable(WeavingContext);
+    }
 
-        /// <summary>
-        /// Determines the nullability of an item that belongs to this type.
-        /// </summary>
-        protected bool IsContextItemNullable(ICustomAttributeProvider item) => IsContextInnerItemNullable(item, -1);
+    private void ProcessAttributes(ICustomAttributeProvider item, ref bool nullable, ref bool nullChecksEnabled)
+    {
+        if (item.GetNullChecksAttributeValue(WeavingContext, true) is bool nullChecksValue)
+            nullChecksEnabled = nullChecksValue;
 
-        protected bool IsContextInnerItemNullable(ICustomAttributeProvider item, int innerOrdinal)
-        {
-            var nullable = item.GetNullableAttributeValue(innerOrdinal + 1, WeavingContext);
-            return nullable == null ? IsNullable : nullable.GetValueOrDefault().ToIsNullable(WeavingContext);
-        }
-
-        private void ProcessAttributes(ICustomAttributeProvider item, ref bool nullable, ref bool nullChecksEnabled)
-        {
-            if (item.GetNullChecksAttributeValue(WeavingContext, true) is bool nullChecksValue)
-                nullChecksEnabled = nullChecksValue;
-
-            if (item.GetNullableContextAttributeValue(WeavingContext) is NullableValue nullableValue)
-                nullable = nullableValue.ToIsNullable(WeavingContext);
-        }
+        if (item.GetNullableContextAttributeValue(WeavingContext) is NullableValue nullableValue)
+            nullable = nullableValue.ToIsNullable(WeavingContext);
     }
 }

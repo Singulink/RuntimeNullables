@@ -1,7 +1,6 @@
-﻿namespace TestAssemblyNonPublic
+﻿namespace TestAssemblyNonPublic;
+
+internal interface IInternalInterface
 {
-    internal interface IInternalInterface
-    {
-        void InterfaceInternalMethod(string value);
-    }
+    void InterfaceInternalMethod(string value);
 }

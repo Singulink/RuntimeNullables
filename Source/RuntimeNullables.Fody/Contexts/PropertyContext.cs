@@ -1,36 +1,35 @@
 ﻿using Mono.Cecil;
 
-namespace RuntimeNullables.Fody.Contexts
+namespace RuntimeNullables.Fody.Contexts;
+
+internal sealed class PropertyContext : NullableContext
 {
-    internal sealed class PropertyContext : NullableContext
+    public PropertyDefinition Property { get; }
+
+    public TypeContext TypeContext { get; }
+
+    public MethodContext? GetMethodContext { get; private set; }
+
+    public MethodContext? SetMethodContext { get; private set; }
+
+    public PropertyContext(PropertyDefinition property, TypeContext typeContext) : base(property, typeContext)
     {
-        public PropertyDefinition Property { get; }
+        Property = property;
+        TypeContext = typeContext;
+    }
 
-        public TypeContext TypeContext { get; }
+    public override void Build()
+    {
+        base.Build();
 
-        public MethodContext? GetMethodContext { get; private set; }
-
-        public MethodContext? SetMethodContext { get; private set; }
-
-        public PropertyContext(PropertyDefinition property, TypeContext typeContext) : base(property, typeContext)
-        {
-            Property = property;
-            TypeContext = typeContext;
+        if (Property.GetMethod != null) {
+            GetMethodContext = new MethodContext(Property.GetMethod, this);
+            GetMethodContext.Build();
         }
 
-        public override void Build()
-        {
-            base.Build();
-
-            if (Property.GetMethod != null) {
-                GetMethodContext = new MethodContext(Property.GetMethod, this);
-                GetMethodContext.Build();
-            }
-
-            if (Property.SetMethod != null) {
-                SetMethodContext = new MethodContext(Property.SetMethod, this);
-                SetMethodContext.Build();
-            }
+        if (Property.SetMethod != null) {
+            SetMethodContext = new MethodContext(Property.SetMethod, this);
+            SetMethodContext.Build();
         }
     }
 }

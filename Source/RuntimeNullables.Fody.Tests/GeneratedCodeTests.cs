@@ -2,15 +2,14 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestAssembly;
 
-namespace RuntimeNullables.Fody.Tests
+namespace RuntimeNullables.Fody.Tests;
+
+[TestClass]
+public class GeneratedCodeTests
 {
-    [TestClass]
-    public class GeneratedCodeTests
+    [TestMethod]
+    public void NoChecksOnGeneratedCode()
     {
-        [TestMethod]
-        public void NoChecksOnGeneratedCode()
-        {
-            GeneratedCode.Method(null!);
-        }
+        GeneratedCode.Method(null!);
     }
 }

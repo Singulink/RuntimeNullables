@@ -5,27 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestAssemblyThrowHelpers;
 
-namespace RuntimeNullables.Fody.Tests
+namespace RuntimeNullables.Fody.Tests;
+
+[TestClass]
+public class ThrowHelpersTests
 {
-    [TestClass]
-    public class ThrowHelpersTests
+    [TestMethod]
+    public void ArgumentNull()
     {
-        [TestMethod]
-        public void ArgumentNull()
-        {
-            Assert.ThrowsException<InvalidOperationException>(() => UsesThrowHelpers.ReturnParameter(null!));
-        }
+        Assert.ThrowsException<InvalidOperationException>(() => UsesThrowHelpers.ReturnParameter(null!));
+    }
 
-        [TestMethod]
-        public void OutputNull()
-        {
-            Assert.ThrowsException<InvalidDataException>(() => UsesThrowHelpers.ReturnNullableParameterNonNullReturn(null));
-        }
+    [TestMethod]
+    public void OutputNull()
+    {
+        Assert.ThrowsException<InvalidDataException>(() => UsesThrowHelpers.ReturnNullableParameterNonNullReturn(null));
+    }
 
-        [TestMethod]
-        public Task OutputNullAsync()
-        {
-            return Assert.ThrowsExceptionAsync<InvalidConstraintException>(() => UsesThrowHelpers.ReturnAllowNullParameterNonNullReturnAsync(null));
-        }
+    [TestMethod]
+    public Task OutputNullAsync()
+    {
+        return Assert.ThrowsExceptionAsync<InvalidConstraintException>(() => UsesThrowHelpers.ReturnAllowNullParameterNonNullReturnAsync(null));
     }
 }

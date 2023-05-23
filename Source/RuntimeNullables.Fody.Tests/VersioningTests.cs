@@ -3,27 +3,26 @@ using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestAssembly;
 
-namespace RuntimeNullables.Fody.Tests
+namespace RuntimeNullables.Fody.Tests;
+
+[TestClass]
+public class VersioningTests
 {
-    [TestClass]
-    public class VersioningTests
+    [TestMethod]
+    public void GeneratedCodeToolVersion()
     {
-        [TestMethod]
-        public void GeneratedCodeToolVersion()
-        {
-            // Ensure that the GeneratedCodeAttribute version placed on the throw helper class is correct.
+        // Ensure that the GeneratedCodeAttribute version placed on the throw helper class is correct.
 
-            var throwHelperType = typeof(InputParameters).Assembly.GetType("RuntimeNullables.ThrowHelpers");
-            string generatedCodeVersionString = throwHelperType!.GetCustomAttribute<GeneratedCodeAttribute>()!.Version;
+        var throwHelperType = typeof(InputParameters).Assembly.GetType("RuntimeNullables.ThrowHelpers");
+        string generatedCodeVersionString = throwHelperType!.GetCustomAttribute<GeneratedCodeAttribute>()!.Version;
 
-            var weaverVersion = new AssemblyName(typeof(ModuleWeaver).Assembly.FullName!).Version!;
-            string weaverVersionString = $"{weaverVersion.Major}.{weaverVersion.Minor}.{weaverVersion.Build}";
+        var weaverVersion = new AssemblyName(typeof(ModuleWeaver).Assembly.FullName!).Version!;
+        string weaverVersionString = $"{weaverVersion.Major}.{weaverVersion.Minor}.{weaverVersion.Build}";
 
-            var addinVersion = new AssemblyName(typeof(NullChecksAttribute).Assembly.FullName!).Version!;
-            string addinVersionString = $"{addinVersion.Major}.{addinVersion.Minor}.{addinVersion.Build}";
+        var addinVersion = new AssemblyName(typeof(NullChecksAttribute).Assembly.FullName!).Version!;
+        string addinVersionString = $"{addinVersion.Major}.{addinVersion.Minor}.{addinVersion.Build}";
 
-            Assert.AreEqual(weaverVersionString, generatedCodeVersionString);
-            Assert.AreEqual(addinVersionString, generatedCodeVersionString);
-        }
+        Assert.AreEqual(weaverVersionString, generatedCodeVersionString);
+        Assert.AreEqual(addinVersionString, generatedCodeVersionString);
     }
 }

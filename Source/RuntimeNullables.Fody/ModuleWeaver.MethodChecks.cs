@@ -5,132 +5,131 @@ using Mono.Cecil.Rocks;
 using RuntimeNullables.Fody.Contexts;
 using RuntimeNullables.Fody.Extensions;
 
-namespace RuntimeNullables.Fody
+namespace RuntimeNullables.Fody;
+
+public partial class ModuleWeaver
 {
-    public partial class ModuleWeaver
+    private static void InjectMethodChecks(MethodContext methodContext)
     {
-        private static void InjectMethodChecks(MethodContext methodContext)
+        var method = methodContext.Method;
+        var weavingContext = methodContext.WeavingContext;
+        var bclReferences = weavingContext.BclReferences;
+
+        bool methodNullChecksEnabled = methodContext.NullChecksEnabled;
+        bool? returnNullChecksValue = method.MethodReturnType.GetNullChecksAttributeValue(weavingContext, true);
+
+        bool injectParamChecks = methodNullChecksEnabled;
+        bool injectReturnChecks = weavingContext.CheckOutputs &&
+            (returnNullChecksValue == true || (methodNullChecksEnabled && returnNullChecksValue != false)) &&
+            !method.ReturnType.IsRequiredModifier &&
+            method.ReturnType.FullName != bclReferences.VoidType.FullName;
+
+        if (!(injectParamChecks || injectReturnChecks) || !(methodContext.WeavingContext.CheckNonPublic || IsMethodPossiblyExposed(method)))
+            return;
+
+        ReturnBlockInfo returnBlockInfo = null;
+
+        // InjectReturnChecks will simplify macros if it modifies the method. Parameter checks don't simplify because they don't change branch offsets.
+
+        bool returnChecksInjected = injectReturnChecks && InjectReturnChecks(methodContext, ref returnBlockInfo);
+        bool paramChecksInjected = injectParamChecks && InjectParameterChecks(methodContext, ref returnBlockInfo);
+
+        if (returnBlockInfo != null)
+            UpdateReturnBlockInstructionReferences(method, returnBlockInfo);
+
+        // Simplify injected macros and/or simplified macros if return checks simplified them.
+
+        if (paramChecksInjected)
+            AddParamChecksToDebugInfo(method);
+
+        if (paramChecksInjected || returnChecksInjected)
+            method.Body.OptimizeMacros();
+
+        static bool IsMethodPossiblyExposed(MethodDefinition method)
         {
-            var method = methodContext.Method;
-            var weavingContext = methodContext.WeavingContext;
-            var bclReferences = weavingContext.BclReferences;
+            if (method.IsPublic && IsTypeExposed(method.DeclaringType))
+                return true;
 
-            bool methodNullChecksEnabled = methodContext.NullChecksEnabled;
-            bool? returnNullChecksValue = method.MethodReturnType.GetNullChecksAttributeValue(weavingContext, true);
+            // Check if method implements any public interface methods
 
-            bool injectParamChecks = methodNullChecksEnabled;
-            bool injectReturnChecks = weavingContext.CheckOutputs &&
-                (returnNullChecksValue == true || (methodNullChecksEnabled && returnNullChecksValue != false)) &&
-                !method.ReturnType.IsRequiredModifier &&
-                method.ReturnType.FullName != bclReferences.VoidType.FullName;
+            if (method.HasOverrides && method.Overrides.Any(m => IsMethodPossiblyExposed(m.Resolve())))
+                return true;
 
-            if (!(injectParamChecks || injectReturnChecks) || !(methodContext.WeavingContext.CheckNonPublic || IsMethodPossiblyExposed(method)))
-                return;
+            // Check if method implements any public methods
 
-            ReturnBlockInfo returnBlockInfo = null;
+            if (method.IsVirtual && !method.IsNewSlot) {
+                var baseMethod = method.GetBaseMethod();
 
-            // InjectReturnChecks will simplify macros if it modifies the method. Parameter checks don't simplify because they don't change branch offsets.
-
-            bool returnChecksInjected = injectReturnChecks && InjectReturnChecks(methodContext, ref returnBlockInfo);
-            bool paramChecksInjected = injectParamChecks && InjectParameterChecks(methodContext, ref returnBlockInfo);
-
-            if (returnBlockInfo != null)
-                UpdateReturnBlockInstructionReferences(method, returnBlockInfo);
-
-            // Simplify injected macros and/or simplified macros if return checks simplified them.
-
-            if (paramChecksInjected)
-                AddParamChecksToDebugInfo(method);
-
-            if (paramChecksInjected || returnChecksInjected)
-                method.Body.OptimizeMacros();
-
-            static bool IsMethodPossiblyExposed(MethodDefinition method)
-            {
-                if (method.IsPublic && IsTypeExposed(method.DeclaringType))
+                if (baseMethod != method && IsMethodPossiblyExposed(baseMethod))
                     return true;
-
-                // Check if method implements any public interface methods
-
-                if (method.HasOverrides && method.Overrides.Any(m => IsMethodPossiblyExposed(m.Resolve())))
-                    return true;
-
-                // Check if method implements any public methods
-
-                if (method.IsVirtual && !method.IsNewSlot) {
-                    var baseMethod = method.GetBaseMethod();
-
-                    if (baseMethod != method && IsMethodPossiblyExposed(baseMethod))
-                        return true;
-                }
-
-                return false;
             }
 
-            static bool IsTypeExposed(TypeDefinition type)
-            {
-                return type.IsPublic && (type.DeclaringType == null || IsTypeExposed(type.DeclaringType));
-            }
+            return false;
         }
 
-        /// <summary>
-        /// Points all instructions that previously jumped to returns to point at the new return block start points.
-        /// </summary>
-        private static void UpdateReturnBlockInstructionReferences(MethodDefinition method, ReturnBlockInfo returnBlockInfo)
+        static bool IsTypeExposed(TypeDefinition type)
         {
-            var instructions = method.Body.Instructions;
+            return type.IsPublic && (type.DeclaringType == null || IsTypeExposed(type.DeclaringType));
+        }
+    }
 
-            var oldStartPoints = returnBlockInfo.OldStartPoints;
-            var newStartPoints = returnBlockInfo.NewStartPoints;
-            var branches = returnBlockInfo.Branches;
+    /// <summary>
+    /// Points all instructions that previously jumped to returns to point at the new return block start points.
+    /// </summary>
+    private static void UpdateReturnBlockInstructionReferences(MethodDefinition method, ReturnBlockInfo returnBlockInfo)
+    {
+        var instructions = method.Body.Instructions;
 
-            foreach (var instruction in instructions) {
-                if (instruction.Operand is Instruction branchTarget && !branches.Contains(instruction)) {
-                    int startPointIndex = oldStartPoints.IndexOf(branchTarget);
+        var oldStartPoints = returnBlockInfo.OldStartPoints;
+        var newStartPoints = returnBlockInfo.NewStartPoints;
+        var branches = returnBlockInfo.Branches;
+
+        foreach (var instruction in instructions) {
+            if (instruction.Operand is Instruction branchTarget && !branches.Contains(instruction)) {
+                int startPointIndex = oldStartPoints.IndexOf(branchTarget);
+
+                if (startPointIndex >= 0)
+                    instruction.Operand = newStartPoints[startPointIndex];
+            }
+            else if (instruction.Operand is Instruction[] branchTargets) {
+                for (int i = 0; i < branchTargets.Length; i++) {
+                    int startPointIndex = oldStartPoints.IndexOf(branchTargets[i]);
 
                     if (startPointIndex >= 0)
-                        instruction.Operand = newStartPoints[startPointIndex];
+                        branchTargets[i] = newStartPoints[startPointIndex];
                 }
-                else if (instruction.Operand is Instruction[] branchTargets) {
-                    for (int i = 0; i < branchTargets.Length; i++) {
-                        int startPointIndex = oldStartPoints.IndexOf(branchTargets[i]);
-
-                        if (startPointIndex >= 0)
-                            branchTargets[i] = newStartPoints[startPointIndex];
-                    }
-                }
-            }
-
-            foreach (var handler in method.Body.ExceptionHandlers) {
-                int handlerEndIndex = oldStartPoints.IndexOf(handler.HandlerEnd);
-
-                if (handlerEndIndex >= 0)
-                    handler.HandlerEnd = newStartPoints[handlerEndIndex];
             }
         }
 
-        /// <summary>
-        /// Updates the method's debug information to include injected IL and variables.
-        /// </summary>
-        private static void AddParamChecksToDebugInfo(MethodDefinition method)
-        {
-            if (!(method.DebugInformation is { } debugInfo && debugInfo.Scope is { } debugScope))
-                return;
+        foreach (var handler in method.Body.ExceptionHandlers) {
+            int handlerEndIndex = oldStartPoints.IndexOf(handler.HandlerEnd);
 
-            var instructions = method.Body.Instructions;
+            if (handlerEndIndex >= 0)
+                handler.HandlerEnd = newStartPoints[handlerEndIndex];
+        }
+    }
 
-            if (debugInfo.HasSequencePoints && debugInfo.SequencePoints[0] is var firstSequencePoint && firstSequencePoint.Offset == 0) {
-                var firstInstruction = instructions[0];
+    /// <summary>
+    /// Updates the method's debug information to include injected IL and variables.
+    /// </summary>
+    private static void AddParamChecksToDebugInfo(MethodDefinition method)
+    {
+        if (!(method.DebugInformation is { } debugInfo && debugInfo.Scope is { } debugScope))
+            return;
 
-                debugInfo.SequencePoints[0] = new SequencePoint(firstInstruction, firstSequencePoint.Document) {
-                    StartColumn = firstSequencePoint.StartColumn,
-                    StartLine = firstSequencePoint.StartLine,
-                    EndColumn = firstSequencePoint.EndColumn,
-                    EndLine = firstSequencePoint.EndLine,
-                };
+        var instructions = method.Body.Instructions;
 
-                debugScope.Start = new InstructionOffset(firstInstruction);
-            }
+        if (debugInfo.HasSequencePoints && debugInfo.SequencePoints[0] is var firstSequencePoint && firstSequencePoint.Offset == 0) {
+            var firstInstruction = instructions[0];
+
+            debugInfo.SequencePoints[0] = new SequencePoint(firstInstruction, firstSequencePoint.Document) {
+                StartColumn = firstSequencePoint.StartColumn,
+                StartLine = firstSequencePoint.StartLine,
+                EndColumn = firstSequencePoint.EndColumn,
+                EndLine = firstSequencePoint.EndLine,
+            };
+
+            debugScope.Start = new InstructionOffset(firstInstruction);
         }
     }
 }
