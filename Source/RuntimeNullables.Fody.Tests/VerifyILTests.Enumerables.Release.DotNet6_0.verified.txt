@@ -35,7 +35,7 @@ IL_0006:  ldarg.0
 IL_0007:  ldarg.1
 IL_0008:  stfld      int32 class TestAssembly.Enumerables/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
 IL_000d:  ldarg.0
-IL_000e:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_000e:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0013:  stfld      int32 class TestAssembly.Enumerables/'<BadGetGenerics>d__3`1'<!T>::'<>l__initialThreadId'
 IL_0018:  ret
 }
@@ -166,7 +166,7 @@ IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0022
 IL_000a:  ldarg.0
 IL_000b:  ldfld      int32 class TestAssembly.Enumerables/'<BadGetGenerics>d__3`1'<!T>::'<>l__initialThreadId'
-IL_0010:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0015:  bne.un.s   IL_0022
 IL_0017:  ldarg.0
 IL_0018:  ldc.i4.0
@@ -230,7 +230,7 @@ IL_0006:  ldarg.0
 IL_0007:  ldarg.1
 IL_0008:  stfld      int32 TestAssembly.Enumerables/'<BadGetReferences>d__1'::'<>1__state'
 IL_000d:  ldarg.0
-IL_000e:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_000e:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0013:  stfld      int32 TestAssembly.Enumerables/'<BadGetReferences>d__1'::'<>l__initialThreadId'
 IL_0018:  ret
 }
@@ -355,7 +355,7 @@ IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0022
 IL_000a:  ldarg.0
 IL_000b:  ldfld      int32 TestAssembly.Enumerables/'<BadGetReferences>d__1'::'<>l__initialThreadId'
-IL_0010:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0015:  bne.un.s   IL_0022
 IL_0017:  ldarg.0
 IL_0018:  ldc.i4.0
@@ -420,7 +420,7 @@ IL_0006:  ldarg.0
 IL_0007:  ldarg.1
 IL_0008:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__4'::'<>1__state'
 IL_000d:  ldarg.0
-IL_000e:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_000e:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0013:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__4'::'<>l__initialThreadId'
 IL_0018:  ret
 }
@@ -509,7 +509,7 @@ IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0022
 IL_000a:  ldarg.0
 IL_000b:  ldfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__4'::'<>l__initialThreadId'
-IL_0010:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0015:  bne.un.s   IL_0022
 IL_0017:  ldarg.0
 IL_0018:  ldc.i4.0
@@ -574,7 +574,7 @@ IL_0006:  ldarg.0
 IL_0007:  ldarg.1
 IL_0008:  stfld      int32 class TestAssembly.Enumerables/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
 IL_000d:  ldarg.0
-IL_000e:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_000e:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0013:  stfld      int32 class TestAssembly.Enumerables/'<GoodGetGenerics>d__2`1'<!T>::'<>l__initialThreadId'
 IL_0018:  ret
 }
@@ -741,7 +741,7 @@ IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0022
 IL_000a:  ldarg.0
 IL_000b:  ldfld      int32 class TestAssembly.Enumerables/'<GoodGetGenerics>d__2`1'<!T>::'<>l__initialThreadId'
-IL_0010:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0015:  bne.un.s   IL_0022
 IL_0017:  ldarg.0
 IL_0018:  ldc.i4.0
@@ -805,7 +805,7 @@ IL_0006:  ldarg.0
 IL_0007:  ldarg.1
 IL_0008:  stfld      int32 TestAssembly.Enumerables/'<GoodGetReferences>d__0'::'<>1__state'
 IL_000d:  ldarg.0
-IL_000e:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_000e:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0013:  stfld      int32 TestAssembly.Enumerables/'<GoodGetReferences>d__0'::'<>l__initialThreadId'
 IL_0018:  ret
 }
@@ -964,7 +964,7 @@ IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0022
 IL_000a:  ldarg.0
 IL_000b:  ldfld      int32 TestAssembly.Enumerables/'<GoodGetReferences>d__0'::'<>l__initialThreadId'
-IL_0010:  call       int32 [System.Runtime.Extensions]System.Environment::get_CurrentManagedThreadId()
+IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0015:  bne.un.s   IL_0022
 IL_0017:  ldarg.0
 IL_0018:  ldc.i4.0

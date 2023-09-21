@@ -3,7 +3,7 @@ extends [System.Runtime]System.Object
 {
 .custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
-.class auto ansi sealed nested private beforefieldinit '<BadGenericAsync>d__13`1'<T>
+.class auto ansi sealed nested private beforefieldinit '<BadGenericAsync>d__15`1'<T>
 extends [System.Runtime]System.Object
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -30,10 +30,10 @@ instance void  MoveNext() cil managed
 .locals init (int32 V_0,
 !T V_1,
 valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
-class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T> V_3,
+class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T> V_3,
 class [System.Runtime]System.Exception V_4)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>1__state'
+IL_0001:  ldfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -53,31 +53,31 @@ IL_0025:  ldarg.0
 IL_0026:  ldc.i4.0
 IL_0027:  dup
 IL_0028:  stloc.0
-IL_0029:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>1__state'
+IL_0029:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>1__state'
 IL_002e:  ldarg.0
 IL_002f:  ldloc.2
-IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>u__1'
+IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>u__1'
 IL_0035:  ldarg.0
 IL_0036:  stloc.3
 IL_0037:  ldarg.0
-IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>t__builder'
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>t__builder'
 IL_003d:  ldloca.s   V_2
 IL_003f:  ldloca.s   V_3
-IL_0041:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!T>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!0>>(!!0&,
+IL_0041:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!T>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!0>>(!!0&,
 !!1&)
 IL_0046:  nop
 IL_0047:  leave.s    IL_00be
 IL_0049:  ldarg.0
-IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>u__1'
+IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>u__1'
 IL_004f:  stloc.2
 IL_0050:  ldarg.0
-IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>u__1'
+IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>u__1'
 IL_0056:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
 IL_005c:  ldarg.0
 IL_005d:  ldc.i4.m1
 IL_005e:  dup
 IL_005f:  stloc.0
-IL_0060:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>1__state'
+IL_0060:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>1__state'
 IL_0065:  ldloca.s   V_2
 IL_0067:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL_006c:  nop
@@ -90,9 +90,9 @@ catch [System.Runtime]System.Exception
 IL_0077:  stloc.s    V_4
 IL_0079:  ldarg.0
 IL_007a:  ldc.i4.s   -2
-IL_007c:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>1__state'
+IL_007c:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>1__state'
 IL_0081:  ldarg.0
-IL_0082:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>t__builder'
+IL_0082:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>t__builder'
 IL_0087:  ldloc.s    V_4
 IL_0089:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!T>::SetException(class [System.Runtime]System.Exception)
 IL_008e:  nop
@@ -100,9 +100,9 @@ IL_008f:  leave.s    IL_00be
 }  // end handler
 IL_0091:  ldarg.0
 IL_0092:  ldc.i4.s   -2
-IL_0094:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>1__state'
+IL_0094:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>1__state'
 IL_0099:  ldarg.0
-IL_009a:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!T>::'<>t__builder'
+IL_009a:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!T>::'<>t__builder'
 IL_009f:  ldloc.1
 IL_00a0:  box        !T
 IL_00a5:  brtrue.s   IL_00b7
@@ -242,7 +242,7 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 IL_0000:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<BadReferenceAsyncValueWithoutAwait>d__11'
+.class auto ansi sealed nested private beforefieldinit '<BadReferenceAsyncValueWithoutAwait>d__13'
 extends [System.Runtime]System.Object
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -269,7 +269,7 @@ instance void  MoveNext() cil managed
 string V_1,
 class [System.Runtime]System.Exception V_2)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -283,9 +283,9 @@ catch [System.Runtime]System.Exception
 IL_000c:  stloc.2
 IL_000d:  ldarg.0
 IL_000e:  ldc.i4.s   -2
-IL_0010:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::'<>1__state'
+IL_0010:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::'<>1__state'
 IL_0015:  ldarg.0
-IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::'<>t__builder'
+IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::'<>t__builder'
 IL_001b:  ldloc.2
 IL_001c:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
 IL_0021:  nop
@@ -293,9 +293,9 @@ IL_0022:  leave.s    IL_004c
 }  // end handler
 IL_0024:  ldarg.0
 IL_0025:  ldc.i4.s   -2
-IL_0027:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::'<>1__state'
+IL_0027:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::'<>1__state'
 IL_002c:  ldarg.0
-IL_002d:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::'<>t__builder'
+IL_002d:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::'<>t__builder'
 IL_0032:  ldloc.1
 IL_0033:  brtrue.s   IL_0045
 IL_0035:  ldstr      "Async task result nullability contract was broken."
@@ -388,7 +388,7 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 IL_0000:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<BadReferenceValueAsync>d__9'
+.class auto ansi sealed nested private beforefieldinit '<BadReferenceValueAsync>d__11'
 extends [System.Runtime]System.Object
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -415,10 +415,10 @@ instance void  MoveNext() cil managed
 .locals init (int32 V_0,
 string V_1,
 valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
-class TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9' V_3,
+class TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11' V_3,
 class [System.Runtime]System.Exception V_4)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -438,31 +438,31 @@ IL_0025:  ldarg.0
 IL_0026:  ldc.i4.0
 IL_0027:  dup
 IL_0028:  stloc.0
-IL_0029:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>1__state'
+IL_0029:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>1__state'
 IL_002e:  ldarg.0
 IL_002f:  ldloc.2
-IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>u__1'
+IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>u__1'
 IL_0035:  ldarg.0
 IL_0036:  stloc.3
 IL_0037:  ldarg.0
-IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>t__builder'
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>t__builder'
 IL_003d:  ldloca.s   V_2
 IL_003f:  ldloca.s   V_3
-IL_0041:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'>(!!0&,
+IL_0041:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'>(!!0&,
 !!1&)
 IL_0046:  nop
 IL_0047:  leave.s    IL_00b3
 IL_0049:  ldarg.0
-IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>u__1'
+IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>u__1'
 IL_004f:  stloc.2
 IL_0050:  ldarg.0
-IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>u__1'
+IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>u__1'
 IL_0056:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
 IL_005c:  ldarg.0
 IL_005d:  ldc.i4.m1
 IL_005e:  dup
 IL_005f:  stloc.0
-IL_0060:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>1__state'
+IL_0060:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>1__state'
 IL_0065:  ldloca.s   V_2
 IL_0067:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL_006c:  nop
@@ -475,9 +475,9 @@ catch [System.Runtime]System.Exception
 IL_0071:  stloc.s    V_4
 IL_0073:  ldarg.0
 IL_0074:  ldc.i4.s   -2
-IL_0076:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>1__state'
+IL_0076:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>1__state'
 IL_007b:  ldarg.0
-IL_007c:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>t__builder'
+IL_007c:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>t__builder'
 IL_0081:  ldloc.s    V_4
 IL_0083:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
 IL_0088:  nop
@@ -485,9 +485,9 @@ IL_0089:  leave.s    IL_00b3
 }  // end handler
 IL_008b:  ldarg.0
 IL_008c:  ldc.i4.s   -2
-IL_008e:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>1__state'
+IL_008e:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>1__state'
 IL_0093:  ldarg.0
-IL_0094:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>t__builder'
+IL_0094:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>t__builder'
 IL_0099:  ldloc.1
 IL_009a:  brtrue.s   IL_00ac
 IL_009c:  ldstr      "Async task result nullability contract was broken."
@@ -507,7 +507,7 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 IL_0000:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<GoodGenericAsync>d__12`1'<.ctor T>
+.class auto ansi sealed nested private beforefieldinit '<GoodGenericAsync>d__14`1'<.ctor T>
 extends [System.Runtime]System.Object
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -534,10 +534,10 @@ instance void  MoveNext() cil managed
 .locals init (int32 V_0,
 !T V_1,
 valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
-class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T> V_3,
+class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T> V_3,
 class [System.Runtime]System.Exception V_4)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>1__state'
+IL_0001:  ldfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -557,31 +557,31 @@ IL_0025:  ldarg.0
 IL_0026:  ldc.i4.0
 IL_0027:  dup
 IL_0028:  stloc.0
-IL_0029:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>1__state'
+IL_0029:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>1__state'
 IL_002e:  ldarg.0
 IL_002f:  ldloc.2
-IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>u__1'
+IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>u__1'
 IL_0035:  ldarg.0
 IL_0036:  stloc.3
 IL_0037:  ldarg.0
-IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>t__builder'
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>t__builder'
 IL_003d:  ldloca.s   V_2
 IL_003f:  ldloca.s   V_3
-IL_0041:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!T>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!0>>(!!0&,
+IL_0041:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!T>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!0>>(!!0&,
 !!1&)
 IL_0046:  nop
 IL_0047:  leave.s    IL_00bc
 IL_0049:  ldarg.0
-IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>u__1'
+IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>u__1'
 IL_004f:  stloc.2
 IL_0050:  ldarg.0
-IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>u__1'
+IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>u__1'
 IL_0056:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
 IL_005c:  ldarg.0
 IL_005d:  ldc.i4.m1
 IL_005e:  dup
 IL_005f:  stloc.0
-IL_0060:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>1__state'
+IL_0060:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>1__state'
 IL_0065:  ldloca.s   V_2
 IL_0067:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL_006c:  nop
@@ -594,9 +594,9 @@ catch [System.Runtime]System.Exception
 IL_0075:  stloc.s    V_4
 IL_0077:  ldarg.0
 IL_0078:  ldc.i4.s   -2
-IL_007a:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>1__state'
+IL_007a:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>1__state'
 IL_007f:  ldarg.0
-IL_0080:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>t__builder'
+IL_0080:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>t__builder'
 IL_0085:  ldloc.s    V_4
 IL_0087:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!T>::SetException(class [System.Runtime]System.Exception)
 IL_008c:  nop
@@ -604,9 +604,9 @@ IL_008d:  leave.s    IL_00bc
 }  // end handler
 IL_008f:  ldarg.0
 IL_0090:  ldc.i4.s   -2
-IL_0092:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>1__state'
+IL_0092:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>1__state'
 IL_0097:  ldarg.0
-IL_0098:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!T>::'<>t__builder'
+IL_0098:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!T>::'<>t__builder'
 IL_009d:  ldloc.1
 IL_009e:  box        !T
 IL_00a3:  brtrue.s   IL_00b5
@@ -819,7 +819,7 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 IL_0000:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<GoodReferenceValueAsync>d__8'
+.class auto ansi sealed nested private beforefieldinit '<GoodReferenceValueAsync>d__10'
 extends [System.Runtime]System.Object
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -846,10 +846,10 @@ instance void  MoveNext() cil managed
 .locals init (int32 V_0,
 string V_1,
 valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
-class TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8' V_3,
+class TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10' V_3,
 class [System.Runtime]System.Exception V_4)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -869,31 +869,31 @@ IL_0025:  ldarg.0
 IL_0026:  ldc.i4.0
 IL_0027:  dup
 IL_0028:  stloc.0
-IL_0029:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>1__state'
+IL_0029:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>1__state'
 IL_002e:  ldarg.0
 IL_002f:  ldloc.2
-IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>u__1'
+IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>u__1'
 IL_0035:  ldarg.0
 IL_0036:  stloc.3
 IL_0037:  ldarg.0
-IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>t__builder'
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>t__builder'
 IL_003d:  ldloca.s   V_2
 IL_003f:  ldloca.s   V_3
-IL_0041:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'>(!!0&,
+IL_0041:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'>(!!0&,
 !!1&)
 IL_0046:  nop
 IL_0047:  leave.s    IL_00b7
 IL_0049:  ldarg.0
-IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>u__1'
+IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>u__1'
 IL_004f:  stloc.2
 IL_0050:  ldarg.0
-IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>u__1'
+IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>u__1'
 IL_0056:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
 IL_005c:  ldarg.0
 IL_005d:  ldc.i4.m1
 IL_005e:  dup
 IL_005f:  stloc.0
-IL_0060:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>1__state'
+IL_0060:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>1__state'
 IL_0065:  ldloca.s   V_2
 IL_0067:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL_006c:  nop
@@ -906,9 +906,9 @@ catch [System.Runtime]System.Exception
 IL_0075:  stloc.s    V_4
 IL_0077:  ldarg.0
 IL_0078:  ldc.i4.s   -2
-IL_007a:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>1__state'
+IL_007a:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>1__state'
 IL_007f:  ldarg.0
-IL_0080:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>t__builder'
+IL_0080:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>t__builder'
 IL_0085:  ldloc.s    V_4
 IL_0087:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
 IL_008c:  nop
@@ -916,9 +916,9 @@ IL_008d:  leave.s    IL_00b7
 }  // end handler
 IL_008f:  ldarg.0
 IL_0090:  ldc.i4.s   -2
-IL_0092:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>1__state'
+IL_0092:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>1__state'
 IL_0097:  ldarg.0
-IL_0098:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>t__builder'
+IL_0098:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>t__builder'
 IL_009d:  ldloc.1
 IL_009e:  brtrue.s   IL_00b0
 IL_00a0:  ldstr      "Async task result nullability contract was broken."
@@ -938,7 +938,7 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 IL_0000:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<GoodReferenceValueAsyncWithoutAwait>d__10'
+.class auto ansi sealed nested private beforefieldinit '<GoodReferenceValueAsyncWithoutAwait>d__12'
 extends [System.Runtime]System.Object
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -965,7 +965,7 @@ instance void  MoveNext() cil managed
 string V_1,
 class [System.Runtime]System.Exception V_2)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -979,9 +979,9 @@ catch [System.Runtime]System.Exception
 IL_0010:  stloc.2
 IL_0011:  ldarg.0
 IL_0012:  ldc.i4.s   -2
-IL_0014:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::'<>1__state'
+IL_0014:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::'<>1__state'
 IL_0019:  ldarg.0
-IL_001a:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::'<>t__builder'
+IL_001a:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::'<>t__builder'
 IL_001f:  ldloc.2
 IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
 IL_0025:  nop
@@ -989,9 +989,9 @@ IL_0026:  leave.s    IL_0050
 }  // end handler
 IL_0028:  ldarg.0
 IL_0029:  ldc.i4.s   -2
-IL_002b:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::'<>1__state'
+IL_002b:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::'<>1__state'
 IL_0030:  ldarg.0
-IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::'<>t__builder'
+IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::'<>t__builder'
 IL_0036:  ldloc.1
 IL_0037:  brtrue.s   IL_0049
 IL_0039:  ldstr      "Async task result nullability contract was broken."
@@ -1243,29 +1243,93 @@ IL_002b:  call       instance class [System.Runtime]System.Threading.Tasks.Task`
 IL_0030:  ret
 }
 .method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
+GoodReferenceValue() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.maxstack  2
+.locals init (valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string> V_0,
+valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string> V_1)
+IL_0000:  nop
+IL_0001:  ldsfld     string [System.Runtime]System.String::Empty
+IL_0006:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::.ctor(!0)
+IL_000b:  stloc.0
+IL_000c:  br.s       IL_000e
+IL_000e:  ldloc.0
+IL_000f:  dup
+IL_0010:  stloc.1
+IL_0011:  ldloca.s   V_1
+IL_0013:  call       instance bool valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::get_IsCompleted()
+IL_0018:  brfalse.s  IL_003f
+IL_001a:  ldloca.s   V_1
+IL_001c:  call       instance bool valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::get_IsCanceled()
+IL_0021:  brtrue.s   IL_003f
+IL_0023:  ldloca.s   V_1
+IL_0025:  call       instance bool valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::get_IsFaulted()
+IL_002a:  brtrue.s   IL_003f
+IL_002c:  ldloca.s   V_1
+IL_002e:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::get_Result()
+IL_0033:  brtrue.s   IL_003f
+IL_0035:  ldstr      "Task result nullability contract was broken."
+IL_003a:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_003f:  ret
+}
+.method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
+BadReferenceValue() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.maxstack  2
+.locals init (valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string> V_0,
+valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string> V_1)
+IL_0000:  nop
+IL_0001:  ldnull
+IL_0002:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::.ctor(!0)
+IL_0007:  stloc.0
+IL_0008:  br.s       IL_000a
+IL_000a:  ldloc.0
+IL_000b:  dup
+IL_000c:  stloc.1
+IL_000d:  ldloca.s   V_1
+IL_000f:  call       instance bool valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::get_IsCompleted()
+IL_0014:  brfalse.s  IL_003b
+IL_0016:  ldloca.s   V_1
+IL_0018:  call       instance bool valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::get_IsCanceled()
+IL_001d:  brtrue.s   IL_003b
+IL_001f:  ldloca.s   V_1
+IL_0021:  call       instance bool valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::get_IsFaulted()
+IL_0026:  brtrue.s   IL_003b
+IL_0028:  ldloca.s   V_1
+IL_002a:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>::get_Result()
+IL_002f:  brtrue.s   IL_003b
+IL_0031:  ldstr      "Task result nullability contract was broken."
+IL_0036:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_003b:  ret
+}
+.method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
 GoodReferenceValueAsync() cil managed
 {
 54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 47 6F 6F   // TaskResults+<Goo
 64 52 65 66 65 72 65 6E 63 65 56 61 6C 75 65 41   // dReferenceValueA
-73 79 6E 63 3E 64 5F 5F 38 00 00 )                // sync>d__8..
+73 79 6E 63 3E 64 5F 5F 31 30 00 00 )             // sync>d__10..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
-.locals init (class TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8' V_0)
-IL_0000:  newobj     instance void TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::.ctor()
+.locals init (class TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10' V_0)
+IL_0000:  newobj     instance void TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
 IL_0007:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Create()
-IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>t__builder'
+IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>t__builder'
 IL_0011:  ldloc.0
 IL_0012:  ldc.i4.m1
-IL_0013:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>1__state'
+IL_0013:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>1__state'
 IL_0018:  ldloc.0
-IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>t__builder'
+IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>t__builder'
 IL_001e:  ldloca.s   V_0
-IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<class TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'>(!!0&)
+IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<class TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'>(!!0&)
 IL_0025:  ldloc.0
-IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__8'::'<>t__builder'
+IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsync>d__10'::'<>t__builder'
 IL_002b:  call       instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::get_Task()
 IL_0030:  ret
 }
@@ -1274,25 +1338,25 @@ BadReferenceValueAsync() cil managed
 {
 54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 42 61 64   // TaskResults+<Bad
 52 65 66 65 72 65 6E 63 65 56 61 6C 75 65 41 73   // ReferenceValueAs
-79 6E 63 3E 64 5F 5F 39 00 00 )                   // ync>d__9..
+79 6E 63 3E 64 5F 5F 31 31 00 00 )                // ync>d__11..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
-.locals init (class TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9' V_0)
-IL_0000:  newobj     instance void TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::.ctor()
+.locals init (class TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11' V_0)
+IL_0000:  newobj     instance void TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
 IL_0007:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Create()
-IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>t__builder'
+IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>t__builder'
 IL_0011:  ldloc.0
 IL_0012:  ldc.i4.m1
-IL_0013:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>1__state'
+IL_0013:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>1__state'
 IL_0018:  ldloc.0
-IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>t__builder'
+IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>t__builder'
 IL_001e:  ldloca.s   V_0
-IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<class TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'>(!!0&)
+IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<class TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'>(!!0&)
 IL_0025:  ldloc.0
-IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__9'::'<>t__builder'
+IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceValueAsync>d__11'::'<>t__builder'
 IL_002b:  call       instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::get_Task()
 IL_0030:  ret
 }
@@ -1302,25 +1366,25 @@ GoodReferenceValueAsyncWithoutAwait() cil managed
 54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 47 6F 6F   // TaskResults+<Goo
 64 52 65 66 65 72 65 6E 63 65 56 61 6C 75 65 41   // dReferenceValueA
 73 79 6E 63 57 69 74 68 6F 75 74 41 77 61 69 74   // syncWithoutAwait
-3E 64 5F 5F 31 30 00 00 )                         // >d__10..
+3E 64 5F 5F 31 32 00 00 )                         // >d__12..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
-.locals init (class TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10' V_0)
-IL_0000:  newobj     instance void TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::.ctor()
+.locals init (class TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12' V_0)
+IL_0000:  newobj     instance void TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
 IL_0007:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Create()
-IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::'<>t__builder'
+IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::'<>t__builder'
 IL_0011:  ldloc.0
 IL_0012:  ldc.i4.m1
-IL_0013:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::'<>1__state'
+IL_0013:  stfld      int32 TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::'<>1__state'
 IL_0018:  ldloc.0
-IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::'<>t__builder'
+IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::'<>t__builder'
 IL_001e:  ldloca.s   V_0
-IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<class TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'>(!!0&)
+IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<class TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'>(!!0&)
 IL_0025:  ldloc.0
-IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__10'::'<>t__builder'
+IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<GoodReferenceValueAsyncWithoutAwait>d__12'::'<>t__builder'
 IL_002b:  call       instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::get_Task()
 IL_0030:  ret
 }
@@ -1330,25 +1394,25 @@ BadReferenceAsyncValueWithoutAwait() cil managed
 54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 42 61 64   // TaskResults+<Bad
 52 65 66 65 72 65 6E 63 65 41 73 79 6E 63 56 61   // ReferenceAsyncVa
 6C 75 65 57 69 74 68 6F 75 74 41 77 61 69 74 3E   // lueWithoutAwait>
-64 5F 5F 31 31 00 00 )                            // d__11..
+64 5F 5F 31 33 00 00 )                            // d__13..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
-.locals init (class TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11' V_0)
-IL_0000:  newobj     instance void TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::.ctor()
+.locals init (class TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13' V_0)
+IL_0000:  newobj     instance void TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
 IL_0007:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Create()
-IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::'<>t__builder'
+IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::'<>t__builder'
 IL_0011:  ldloc.0
 IL_0012:  ldc.i4.m1
-IL_0013:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::'<>1__state'
+IL_0013:  stfld      int32 TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::'<>1__state'
 IL_0018:  ldloc.0
-IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::'<>t__builder'
+IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::'<>t__builder'
 IL_001e:  ldloca.s   V_0
-IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<class TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'>(!!0&)
+IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<class TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'>(!!0&)
 IL_0025:  ldloc.0
-IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__11'::'<>t__builder'
+IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferenceAsyncValueWithoutAwait>d__13'::'<>t__builder'
 IL_002b:  call       instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::get_Task()
 IL_0030:  ret
 }
@@ -1357,23 +1421,23 @@ GoodGenericAsync<.ctor T>() cil managed
 {
 54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 47 6F 6F   // TaskResults+<Goo
 64 47 65 6E 65 72 69 63 41 73 79 6E 63 3E 64 5F   // dGenericAsync>d_
-5F 31 32 60 31 00 00 )                            // _12`1..
+5F 31 34 60 31 00 00 )                            // _14`1..
 .maxstack  2
-.locals init (class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!!T> V_0)
-IL_0000:  newobj     instance void class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!!T>::.ctor()
+.locals init (class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!!T> V_0)
+IL_0000:  newobj     instance void class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!!T>::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
 IL_0007:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!T>::Create()
-IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!!T>::'<>t__builder'
+IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!!T>::'<>t__builder'
 IL_0011:  ldloc.0
 IL_0012:  ldc.i4.m1
-IL_0013:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!!T>::'<>1__state'
+IL_0013:  stfld      int32 class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!!T>::'<>1__state'
 IL_0018:  ldloc.0
-IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!!T>::'<>t__builder'
+IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!!T>::'<>t__builder'
 IL_001e:  ldloca.s   V_0
-IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!0>::Start<class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!!0>>(!!0&)
+IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!0>::Start<class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!!0>>(!!0&)
 IL_0025:  ldloc.0
-IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__12`1'<!!T>::'<>t__builder'
+IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!!T>::'<>t__builder'
 IL_002b:  call       instance class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!T>::get_Task()
 IL_0030:  ret
 }
@@ -1382,23 +1446,23 @@ BadGenericAsync<T>() cil managed
 {
 54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 42 61 64   // TaskResults+<Bad
 47 65 6E 65 72 69 63 41 73 79 6E 63 3E 64 5F 5F   // GenericAsync>d__
-31 33 60 31 00 00 )                               // 13`1..
+31 35 60 31 00 00 )                               // 15`1..
 .maxstack  2
-.locals init (class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!!T> V_0)
-IL_0000:  newobj     instance void class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!!T>::.ctor()
+.locals init (class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!!T> V_0)
+IL_0000:  newobj     instance void class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!!T>::.ctor()
 IL_0005:  stloc.0
 IL_0006:  ldloc.0
 IL_0007:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!T>::Create()
-IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!!T>::'<>t__builder'
+IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!!T>::'<>t__builder'
 IL_0011:  ldloc.0
 IL_0012:  ldc.i4.m1
-IL_0013:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!!T>::'<>1__state'
+IL_0013:  stfld      int32 class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!!T>::'<>1__state'
 IL_0018:  ldloc.0
-IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!!T>::'<>t__builder'
+IL_0019:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!!T>::'<>t__builder'
 IL_001e:  ldloca.s   V_0
-IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!0>::Start<class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!!0>>(!!0&)
+IL_0020:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!0>::Start<class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!!0>>(!!0&)
 IL_0025:  ldloc.0
-IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__13`1'<!!T>::'<>t__builder'
+IL_0026:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> class TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!!T>::'<>t__builder'
 IL_002b:  call       instance class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!T>::get_Task()
 IL_0030:  ret
 }

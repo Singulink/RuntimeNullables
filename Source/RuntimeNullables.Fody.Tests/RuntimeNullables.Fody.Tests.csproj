@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net7.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <!-- CS1591	Missing XML comment for publicly visible type or member. -->
     <NoWarn>1591</NoWarn>
     <IsPackable>false</IsPackable>
@@ -18,11 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FodyHelpers" Version="6.7.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
-    <PackageReference Include="MSTest.TestAdapter" Version="3.0.2" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.0.2" />
-    <PackageReference Include="Verify.MSTest" Version="19.5.0" />
+    <PackageReference Include="FodyHelpers" Version="6.8.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
+    <PackageReference Include="Verify.MSTest" Version="21.1.5" />
   </ItemGroup>
 
   <ItemGroup>

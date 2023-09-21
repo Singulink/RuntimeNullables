@@ -59,6 +59,18 @@ public class TaskResultTests
     }
 
     [TestMethod]
+    public Task GoodReferenceValue()
+    {
+        return TaskResults.GoodReferenceValue().AsTask();
+    }
+
+    [TestMethod]
+    public Task BadReferenceValue()
+    {
+        return Assert.ThrowsExceptionAsync<NullReferenceException>(() => TaskResults.BadReferenceValue().AsTask());
+    }
+
+    [TestMethod]
     public Task GoodReferenceValueAsync()
     {
         return TaskResults.GoodReferenceValueAsync().AsTask();

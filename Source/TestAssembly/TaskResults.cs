@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using RuntimeNullables;
 
 #pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
@@ -47,6 +48,16 @@ public static class TaskResults
     public static async Task<string> BadReferenceAsyncWithoutAwait()
     {
         return null!;
+    }
+
+    public static ValueTask<string> GoodReferenceValue()
+    {
+        return new ValueTask<string>(string.Empty);
+    }
+
+    public static ValueTask<string> BadReferenceValue()
+    {
+        return new ValueTask<string>((string)null!);
     }
 
     public static async ValueTask<string> GoodReferenceValueAsync()

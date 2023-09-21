@@ -282,34 +282,77 @@ public partial class ModuleWeaver
         var instructions = method.Body.Instructions;
         var returnBlockStartPoints = returnBlockInfo.NewStartPoints;
 
-        for (int i = 0; i < returnBlockStartPoints.Length; i++) {
-            Instruction returnBlockStartPoint = returnBlockStartPoints[i];
-            int index = instructions.LastIndexOf(returnBlockStartPoint);
+        if (taskType.IsValueType) {
+            // Value type task object
 
-            // Value on stack is the return task
+            var returnTaskVar = new VariableDefinition(method.ReturnType);
+            method.Body.Variables.Add(returnTaskVar);
 
-            var firstInstruction = Instruction.Create(OpCodes.Dup);
-            instructions.Insert(index++, firstInstruction);
-            instructions.Insert(index++, Instruction.Create(OpCodes.Call, isCompletedGetter));
-            instructions.Insert(index++, returnBlockInfo.CreateBranchInstruction(OpCodes.Brfalse_S, returnBlockStartPoint));
+            for (int i = 0; i < returnBlockStartPoints.Length; i++) {
+                Instruction returnBlockStartPoint = returnBlockStartPoints[i];
+                int index = instructions.LastIndexOf(returnBlockStartPoint);
 
-            instructions.Insert(index++, Instruction.Create(OpCodes.Dup));
-            instructions.Insert(index++, Instruction.Create(OpCodes.Call, isCanceledGetter));
-            instructions.Insert(index++, returnBlockInfo.CreateBranchInstruction(OpCodes.Brtrue_S, returnBlockStartPoint));
+                // Value on stack is the return task
 
-            instructions.Insert(index++, Instruction.Create(OpCodes.Dup));
-            instructions.Insert(index++, Instruction.Create(OpCodes.Call, isFaultedGetter));
-            instructions.Insert(index++, returnBlockInfo.CreateBranchInstruction(OpCodes.Brtrue_S, returnBlockStartPoint));
+                var firstInstruction = Instruction.Create(OpCodes.Dup);
+                instructions.Insert(index++, firstInstruction);
+                instructions.Insert(index++, Instruction.Create(OpCodes.Stloc, returnTaskVar));
 
-            instructions.Insert(index++, Instruction.Create(OpCodes.Dup));
-            instructions.Insert(index++, Instruction.Create(OpCodes.Call, resultGetter));
-            ILHelpers.InsertGetValueRef(ref index, instructions, resultType);
+                instructions.Insert(index++, Instruction.Create(OpCodes.Ldloca, returnTaskVar));
+                instructions.Insert(index++, Instruction.Create(OpCodes.Call, isCompletedGetter));
+                instructions.Insert(index++, returnBlockInfo.CreateBranchInstruction(OpCodes.Brfalse_S, returnBlockStartPoint));
 
-            const string message = "Task result nullability contract was broken.";
-            ILHelpers.InsertThrowHelperCallIfValueRefIsNull(
-                ref index, instructions, moduleReferences.ThrowOutputNullMethod, message, returnBlockStartPoint, returnBlockInfo);
+                instructions.Insert(index++, Instruction.Create(OpCodes.Ldloca, returnTaskVar));
+                instructions.Insert(index++, Instruction.Create(OpCodes.Call, isCanceledGetter));
+                instructions.Insert(index++, returnBlockInfo.CreateBranchInstruction(OpCodes.Brtrue_S, returnBlockStartPoint));
 
-            returnBlockStartPoints[i] = firstInstruction;
+                instructions.Insert(index++, Instruction.Create(OpCodes.Ldloca, returnTaskVar));
+                instructions.Insert(index++, Instruction.Create(OpCodes.Call, isFaultedGetter));
+                instructions.Insert(index++, returnBlockInfo.CreateBranchInstruction(OpCodes.Brtrue_S, returnBlockStartPoint));
+
+                instructions.Insert(index++, Instruction.Create(OpCodes.Ldloca, returnTaskVar));
+                instructions.Insert(index++, Instruction.Create(OpCodes.Call, resultGetter));
+                ILHelpers.InsertGetValueRef(ref index, instructions, resultType);
+
+                const string message = "Task result nullability contract was broken.";
+                ILHelpers.InsertThrowHelperCallIfValueRefIsNull(
+                    ref index, instructions, moduleReferences.ThrowOutputNullMethod, message, returnBlockStartPoint, returnBlockInfo);
+
+                returnBlockStartPoints[i] = firstInstruction;
+            }
+        }
+        else {
+            // Reference type task object
+
+            for (int i = 0; i < returnBlockStartPoints.Length; i++) {
+                Instruction returnBlockStartPoint = returnBlockStartPoints[i];
+                int index = instructions.LastIndexOf(returnBlockStartPoint);
+
+                // Value on stack is the return task
+
+                var firstInstruction = Instruction.Create(OpCodes.Dup);
+                instructions.Insert(index++, firstInstruction);
+                instructions.Insert(index++, Instruction.Create(OpCodes.Call, isCompletedGetter));
+                instructions.Insert(index++, returnBlockInfo.CreateBranchInstruction(OpCodes.Brfalse_S, returnBlockStartPoint));
+
+                instructions.Insert(index++, Instruction.Create(OpCodes.Dup));
+                instructions.Insert(index++, Instruction.Create(OpCodes.Call, isCanceledGetter));
+                instructions.Insert(index++, returnBlockInfo.CreateBranchInstruction(OpCodes.Brtrue_S, returnBlockStartPoint));
+
+                instructions.Insert(index++, Instruction.Create(OpCodes.Dup));
+                instructions.Insert(index++, Instruction.Create(OpCodes.Call, isFaultedGetter));
+                instructions.Insert(index++, returnBlockInfo.CreateBranchInstruction(OpCodes.Brtrue_S, returnBlockStartPoint));
+
+                instructions.Insert(index++, Instruction.Create(OpCodes.Dup));
+                instructions.Insert(index++, Instruction.Create(OpCodes.Call, resultGetter));
+                ILHelpers.InsertGetValueRef(ref index, instructions, resultType);
+
+                const string message = "Task result nullability contract was broken.";
+                ILHelpers.InsertThrowHelperCallIfValueRefIsNull(
+                    ref index, instructions, moduleReferences.ThrowOutputNullMethod, message, returnBlockStartPoint, returnBlockInfo);
+
+                returnBlockStartPoints[i] = firstInstruction;
+            }
         }
 
         return true;
