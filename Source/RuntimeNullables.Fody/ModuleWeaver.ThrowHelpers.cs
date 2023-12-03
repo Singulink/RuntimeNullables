@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using RuntimeNullables.Fody.Contexts;
@@ -119,11 +120,24 @@ public partial class ModuleWeaver
 
         void AddGeneratedCodeAttribute(ICustomAttributeProvider item)
         {
-            // [System.CodeDom.Compiler.GeneratedCodeAttribute("RuntimeNullables.Fody", "1.0.6")]
-            const string dataString = "01 00 15 52 75 6e 74 69 6d 65 4e 75 6c 6c 61 62 6c 65 73 2e 46 6f 64 79 05 31 2e 30 2e 36 00 00";
-            byte[] data = dataString.Split(' ').Select(b => byte.Parse(b, NumberStyles.HexNumber, null)).ToArray();
+            // [System.CodeDom.Compiler.GeneratedCodeAttribute(string tool, string version)]
 
-            var attribute = new CustomAttribute(bclReferences.GeneratedCodeAttributeConstructor, data);
+            var assemblyInfo = typeof(ModuleWeaver).Assembly.GetName();
+
+            string name = assemblyInfo.Name ?? throw new RuntimeNullablesException("Could not get runtime nullables assembly name.");
+            string version = assemblyInfo.Version?.ToString() ?? throw new RuntimeNullablesException("Could not get runtime nullables version.");
+
+            byte[] nameBytes = Encoding.ASCII.GetBytes(name);
+            byte[] versionBytes = Encoding.ASCII.GetBytes(version);
+
+            // TODO: Remove suppression when StyleCop gets C# 12 update
+#pragma warning disable SA1010 // Opening square brackets should be spaced correctly
+
+            byte[] attributeBlob = [1, 0, (byte)nameBytes.Length, .. nameBytes, (byte)versionBytes.Length, .. versionBytes, 0, 0];
+
+#pragma warning restore SA1010
+
+            var attribute = new CustomAttribute(bclReferences.GeneratedCodeAttributeConstructor, attributeBlob);
             item.CustomAttributes.Add(attribute);
         }
 

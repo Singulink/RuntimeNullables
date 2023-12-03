@@ -17,7 +17,6 @@ implements class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>,
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field private int32 '<>1__state'
 .field private !T '<>2__current'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .method public hidebysig specialname rtspecialname
 instance void  .ctor(int32 '<>1__state') cil managed
 {
@@ -120,8 +119,6 @@ IL_00cc:  ret
 .method private hidebysig newslot specialname virtual final
 instance !T  'System.Collections.Generic.IEnumerator<T>.get_Current'() cil managed
 {
-.param [0]
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>::get_Current()
 .maxstack  8
 IL_0000:  ldarg.0
@@ -429,7 +426,6 @@ implements class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>,
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .field private int32 '<>1__state'
 .field private !T '<>2__current'
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .method public hidebysig specialname rtspecialname
 instance void  .ctor(int32 '<>1__state') cil managed
 {
@@ -570,8 +566,6 @@ IL_0141:  ret
 .method private hidebysig newslot specialname virtual final
 instance !T  'System.Collections.Generic.IEnumerator<T>.get_Current'() cil managed
 {
-.param [0]
-.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<!T>::get_Current()
 .maxstack  8
 IL_0000:  ldarg.0

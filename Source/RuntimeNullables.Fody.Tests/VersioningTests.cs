@@ -14,15 +14,12 @@ public class VersioningTests
         // Ensure that the GeneratedCodeAttribute version placed on the throw helper class is correct.
 
         var throwHelperType = typeof(InputParameters).Assembly.GetType("RuntimeNullables.ThrowHelpers");
-        string generatedCodeVersionString = throwHelperType!.GetCustomAttribute<GeneratedCodeAttribute>()!.Version;
+        string generatedCodeVersion = throwHelperType!.GetCustomAttribute<GeneratedCodeAttribute>()!.Version;
 
-        var weaverVersion = new AssemblyName(typeof(ModuleWeaver).Assembly.FullName!).Version!;
-        string weaverVersionString = $"{weaverVersion.Major}.{weaverVersion.Minor}.{weaverVersion.Build}";
+        string weaverVersion = new AssemblyName(typeof(ModuleWeaver).Assembly.FullName!).Version!.ToString();
+        string addinVersion = new AssemblyName(typeof(NullChecksAttribute).Assembly.FullName!).Version!.ToString();
 
-        var addinVersion = new AssemblyName(typeof(NullChecksAttribute).Assembly.FullName!).Version!;
-        string addinVersionString = $"{addinVersion.Major}.{addinVersion.Minor}.{addinVersion.Build}";
-
-        Assert.AreEqual(weaverVersionString, generatedCodeVersionString);
-        Assert.AreEqual(addinVersionString, generatedCodeVersionString);
+        Assert.AreEqual(weaverVersion, generatedCodeVersion);
+        Assert.AreEqual(addinVersion, generatedCodeVersion);
     }
 }

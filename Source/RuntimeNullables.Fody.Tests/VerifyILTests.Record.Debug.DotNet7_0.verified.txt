@@ -272,7 +272,8 @@ IL_0013:  ldarg.0
 IL_0014:  ldarg.1
 IL_0015:  ldfld      int32 TestAssembly.Record::'<Value>k__BackingField'
 IL_001a:  stfld      int32 TestAssembly.Record::'<Value>k__BackingField'
-IL_001f:  ret
+IL_001f:  nop
+IL_0020:  ret
 }
 .method public hidebysig instance void
 Deconstruct([out] string& Name,
