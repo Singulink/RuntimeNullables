@@ -2,6 +2,7 @@
 
 [![Chat on Discord](https://img.shields.io/discord/906246067773923490)](https://discord.gg/EkQhJFsBu6)
 [![View nuget packages](https://img.shields.io/nuget/v/RuntimeNullables.Fody.svg)](https://www.nuget.org/packages/RuntimeNullables.Fody/)
+[![Downloads](https://img.shields.io/nuget/dt/RuntimeNullables.Fody)](https://www.nuget.org/packages/RuntimeNullables.Fody/)
 [![Build and Test](https://github.com/Singulink/RuntimeNullables/workflows/build%20and%20test/badge.svg)](https://github.com/Singulink/RuntimeNullables/actions?query=workflow%3A%22build+and+test%22)
 
 **Runtime Nullables** automatically adds null checks to method/property entry and exit points based on the standard nullable annotations and attributes available in C# 8+. It is capable of checking input parameters as well as outputs (i.e. return values and `out`/`ref` parameters) and supports comprehensive checks on the full range of special method types including asynchronous `Task<T>` methods, `Task<T>` methods that synchronously return completed tasks (i.e. using `Task.FromResult<T>`), `IEnumerable<T>`/`IEnumerator<T>` iterators as well as asynchronous `IAsyncEnumerable<T>`/`IAsyncEnumerator<T>` iterators. Custom throw helpers can be defined to fully customize the exceptions thrown to your liking.
