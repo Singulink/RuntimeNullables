@@ -43,7 +43,7 @@ public partial class ModuleWeaver
 
             // Postconditions:
 
-            if (weavingContext.CheckOutputs && (parameterType.IsPointer || (parameterType.IsByReference && !parameter.IsIn))) {
+            if (weavingContext.CheckOutputs && parameterType.IsByReference && !parameter.IsIn) {
                 bool? maybeNull = MaybeNull(parameter);
 
                 // Avoid calling MethodContext.IsParameterNullable unless we did not already do so for the getter and we are going to need the value

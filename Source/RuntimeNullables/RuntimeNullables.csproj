@@ -11,15 +11,20 @@
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <PackageIcon>Singulink Icon 128x128.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Link="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fody" Version="6.8.0" PrivateAssets="none" />
-    <PackageReference Include="FodyPackaging" Version="6.8.0" PrivateAssets="All" />
+    <PackageReference Include="Fody" Version="6.8.2" PrivateAssets="none" />
+    <PackageReference Include="FodyPackaging" Version="6.8.2" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>

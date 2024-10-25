@@ -2,7 +2,7 @@
 extends [System.Runtime]System.Object
 {
 string) = ( 01 00 15 52 75 6E 74 69 6D 65 4E 75 6C 6C 61 62   // ...RuntimeNullab
-6C 65 73 2E 46 6F 64 79 07 31 2E 30 2E 36 2E 30   // les.Fody.1.0.6.0
+6C 65 73 2E 46 6F 64 79 07 32 2E 30 2E 30 2E 30   // les.Fody.2.0.0.0
 00 00 )
 .method assembly hidebysig static void
 ThrowArgumentNull(string paramName) cil managed

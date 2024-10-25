@@ -82,6 +82,12 @@ public class VerifyILTests : VerifyBase
     }
 
     [TestMethod]
+    public Task NullableDisabled()
+    {
+        return Verify(Decompile(typeof(NullableDisabled)), _verifySettings);
+    }
+
+    [TestMethod]
     public Task OutputParameters()
     {
         return Verify(Decompile(typeof(OutputParameters)), _verifySettings);

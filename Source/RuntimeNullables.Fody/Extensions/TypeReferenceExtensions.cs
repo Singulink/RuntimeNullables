@@ -6,7 +6,10 @@ internal static class TypeReferenceExtensions
 {
     public static bool IsReferenceType(this TypeReference type)
     {
-        if (type.IsPointer || type.IsArray)
+        if (type.IsPointer)
+            return false;
+
+        if (type.IsArray)
             return true;
 
         type = type.GetElementType();

@@ -19,7 +19,7 @@ internal abstract class NullableContext
     {
         WeavingContext = weavingContext;
 
-        _isNullable = false;
+        _isNullable = true;
         _nullChecksEnabled = true;
 
         ProcessAttributes(attributeProvider, ref _isNullable, ref _nullChecksEnabled);

@@ -1,0 +1,11 @@
+﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.NullableDisabled
+extends [System.Runtime]System.Object
+{
+.method public hidebysig static string
+NonNull(string x) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ret
+}
+}
