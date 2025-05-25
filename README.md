@@ -21,15 +21,15 @@ The package is available on NuGet - simply install the `RuntimeNullables.Fody` p
 
 After adding nullable annotation support to NullGuard on top of its legacy functionality, it was apparent that it become rather unweildy. This made expanding features and optimizing behavior for nullable annotations difficult in addition to inheriting an overly complex attribute model. **Runtime Nullables** was written from the ground up with only nullable annotations in mind to address these issues. Some notable improvements include:
 
-- More efficient weaving algorithm for faster build times.
-- Does not force `.initlocals` on methods (better performance, especially with `stackalloc`).
-- Supports checking `ValueTask<T>` results, synchronously returned complete `Task<T>` results, `IEnumerable<T>`/`IEnumerator<T>` iterator values and asynchronous `IAsyncEnumerable<T>`/`IAsyncEnumerator<T>` iterator values.
-- Uses throw helpers instead of throwing directly (better performance / smaller IL code) and lets you define your own custom throw helpers.
-- Much simpler attribute model that uses a single `[NullChecks(bool)]` attribute to control null check injection.
-- Designed specifically for NRTs so it is much easier to add advanced functionality such as full validation of conditional attributes like `[MaybeNullWhen]` (planned for a future release).
-- Outputs warnings for conflicting annotations that cause null checks to be skipped, i.e. if `[AllowNull, DisallowNull]` is applied to a parameter.
-- Uses `NullReferenceException` instead of `InvalidOperationException` when an output check fails since the latter is often thrown/caught in normal circumstances which can cause null contract violations to go unnoticed in unit tests or exception handling code.
-- Numerous bug fixes and reliability improvements.
+- More efficient weaving algorithm for faster build times
+- Supports checking `ValueTask<T>` results, synchronously returned complete `Task<T>` results, `IEnumerable<T>`/`IEnumerator<T>` iterator values and asynchronous `IAsyncEnumerable<T>`/`IAsyncEnumerator<T>` iterator values
+- Uses throw helpers instead of throwing directly (better performance / smaller IL code) and lets you define your own custom throw helpers
+- Much simpler attribute model that uses a single `[NullChecks(bool)]` attribute to control null check injection
+- Designed specifically for NRTs so it is much easier to add advanced functionality such as full validation of conditional attributes like `[MaybeNullWhen]` (planned for a future release)
+- Outputs warnings for conflicting annotations that cause null checks to be skipped, i.e. if `[AllowNull, DisallowNull]` is applied to a parameter
+- Uses `NullReferenceException` instead of `InvalidOperationException` when an output check fails since the latter is often thrown/caught in normal circumstances which can cause null contract violations to go unnoticed in unit tests or exception handling code
+- Does not forcibly add `.initlocals` to methods (which overrides `[SkipLocalsInit]` behavior)
+- Numerous bug fixes and reliability improvements
 
 ## Configuration
 
