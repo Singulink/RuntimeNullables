@@ -34,7 +34,10 @@ instance void  System.IDisposable.Dispose() cil managed
 {
 .override [System.Runtime]System.IDisposable::Dispose
 .maxstack  8
-IL_0000:  ret
+IL_0000:  ldarg.0
+IL_0001:  ldc.i4.s   -2
+IL_0003:  stfld      int32 class TestAssembly.Enumerators/'<BadGetGenerics>d__3`1'<!T>::'<>1__state'
+IL_0008:  ret
 }
 .method private hidebysig newslot virtual final
 instance bool  MoveNext() cil managed
@@ -185,7 +188,10 @@ instance void  System.IDisposable.Dispose() cil managed
 {
 .override [System.Runtime]System.IDisposable::Dispose
 .maxstack  8
-IL_0000:  ret
+IL_0000:  ldarg.0
+IL_0001:  ldc.i4.s   -2
+IL_0003:  stfld      int32 TestAssembly.Enumerators/'<BadGetReferences>d__1'::'<>1__state'
+IL_0008:  ret
 }
 .method private hidebysig newslot virtual final
 instance bool  MoveNext() cil managed
@@ -333,7 +339,10 @@ instance void  System.IDisposable.Dispose() cil managed
 {
 .override [System.Runtime]System.IDisposable::Dispose
 .maxstack  8
-IL_0000:  ret
+IL_0000:  ldarg.0
+IL_0001:  ldc.i4.s   -2
+IL_0003:  stfld      int32 TestAssembly.Enumerators/'<GetNullNonGenerics>d__4'::'<>1__state'
+IL_0008:  ret
 }
 .method private hidebysig newslot virtual final
 instance bool  MoveNext() cil managed
@@ -443,7 +452,10 @@ instance void  System.IDisposable.Dispose() cil managed
 {
 .override [System.Runtime]System.IDisposable::Dispose
 .maxstack  8
-IL_0000:  ret
+IL_0000:  ldarg.0
+IL_0001:  ldc.i4.s   -2
+IL_0003:  stfld      int32 class TestAssembly.Enumerators/'<GoodGetGenerics>d__2`1'<!T>::'<>1__state'
+IL_0008:  ret
 }
 .method private hidebysig newslot virtual final
 instance bool  MoveNext() cil managed
@@ -632,7 +644,10 @@ instance void  System.IDisposable.Dispose() cil managed
 {
 .override [System.Runtime]System.IDisposable::Dispose
 .maxstack  8
-IL_0000:  ret
+IL_0000:  ldarg.0
+IL_0001:  ldc.i4.s   -2
+IL_0003:  stfld      int32 TestAssembly.Enumerators/'<GoodGetReferences>d__0'::'<>1__state'
+IL_0008:  ret
 }
 .method private hidebysig newslot virtual final
 instance bool  MoveNext() cil managed

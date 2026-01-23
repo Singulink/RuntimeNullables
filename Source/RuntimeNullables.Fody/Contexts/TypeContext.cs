@@ -39,7 +39,7 @@ internal sealed class TypeContext : NullableContext
         base.Build();
 
         if (Type.HasGenericParameters)
-            _genericParameters = Type.GenericParameters.Select(p => new GenericParameterInfo(p, IsContextItemNullable(p))).ToList();
+            _genericParameters = Type.GenericParameters.Select(p => new GenericParameterInfo(p, IsGenericParameterNullable(p))).ToList();
 
         foreach (var method in Type.Methods.Where(m => m.HasBody && !m.IsGetter && !m.IsSetter && !m.HasAnyGeneratedAttribute())) {
             var methodContext = new MethodContext(method, this);
@@ -57,6 +57,23 @@ internal sealed class TypeContext : NullableContext
             if (propertyContext.SetMethodContext != null)
                 _methodContexts.Add(propertyContext.SetMethodContext);
         }
+    }
+
+    /// <summary>
+    /// Determines nullability of a generic parameter, considering constraints.
+    /// A generic parameter with a class constraint (HasReferenceTypeConstraint) is only nullable
+    /// if explicitly annotated with NullableAttribute(2), i.e. "where T : class?".
+    /// </summary>
+    private bool IsGenericParameterNullable(GenericParameter parameter)
+    {
+        // If parameter has a class constraint, it's only nullable if explicitly marked as such
+        if (parameter.HasReferenceTypeConstraint) {
+            var nullableValue = parameter.GetNullableAttributeValue(0, WeavingContext);
+            return nullableValue == NullableValue.Annotated;
+        }
+
+        // For other generic parameters, use the standard context-based nullability
+        return IsContextItemNullable(parameter);
     }
 
     /// <summary>

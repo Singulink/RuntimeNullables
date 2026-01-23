@@ -69,7 +69,10 @@ public partial class ModuleWeaver
 
         static bool IsTypeExposed(TypeDefinition type)
         {
-            return type.IsPublic && (type.DeclaringType == null || IsTypeExposed(type.DeclaringType));
+            if (type.DeclaringType != null)
+                return type.IsNestedPublic && IsTypeExposed(type.DeclaringType);
+
+            return type.IsPublic;
         }
     }
 

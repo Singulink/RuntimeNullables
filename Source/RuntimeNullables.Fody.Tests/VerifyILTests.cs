@@ -145,6 +145,12 @@ public class VerifyILTests : VerifyBase
         return Verify(Decompile(typeof(Pointers)), _verifySettings);
     }
 
+    [TestMethod]
+    public Task TypeClassConstraint()
+    {
+        return Verify(Decompile(typeof(TypeClassConstraint<>)), _verifySettings);
+    }
+
     // TestAssemblyThrowHelpers:
 
     [TestMethod]
