@@ -16,12 +16,12 @@
 
   <ItemGroup>
     <WeaverFiles Include="$(SolutionDir)RuntimeNullables.Fody\bin\$(Configuration)\netstandard2.0\RuntimeNullables.Fody.dll" />
-    <PackageReference Include="Fody" Version="6.9.3">
+    <PackageReference Include="Fody">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="7.0.0" />
-    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" />
   </ItemGroup>
 
   <ItemGroup>
