@@ -1318,9 +1318,6 @@ IL_004d:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 GoodReferenceAsync() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 47 6F 6F   // TaskResults+<Goo
-64 52 65 66 65 72 65 6E 63 65 41 73 79 6E 63 3E   // dReferenceAsync>
-64 5F 5F 34 00 00 )                               // d__4..
 .maxstack  2
 .locals init (valuetype TestAssembly.TaskResults/'<GoodReferenceAsync>d__4' V_0)
 IL_0000:  ldloca.s   V_0
@@ -1341,9 +1338,6 @@ IL_002e:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 BadReferenceAsync() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 42 61 64   // TaskResults+<Bad
-52 65 66 65 72 65 6E 63 65 41 73 79 6E 63 3E 64   // ReferenceAsync>d
-5F 5F 35 00 00 )                                  // __5..
 .maxstack  2
 .locals init (valuetype TestAssembly.TaskResults/'<BadReferenceAsync>d__5' V_0)
 IL_0000:  ldloca.s   V_0
@@ -1364,10 +1358,6 @@ IL_002e:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 GoodReferenceAsyncWithoutAwait() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 47 6F 6F   // TaskResults+<Goo
-64 52 65 66 65 72 65 6E 63 65 41 73 79 6E 63 57   // dReferenceAsyncW
-69 74 68 6F 75 74 41 77 61 69 74 3E 64 5F 5F 36   // ithoutAwait>d__6
-00 00 )
 .maxstack  2
 .locals init (valuetype TestAssembly.TaskResults/'<GoodReferenceAsyncWithoutAwait>d__6' V_0)
 IL_0000:  ldloca.s   V_0
@@ -1388,10 +1378,6 @@ IL_002e:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 BadReferenceAsyncWithoutAwait() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 42 61 64   // TaskResults+<Bad
-52 65 66 65 72 65 6E 63 65 41 73 79 6E 63 57 69   // ReferenceAsyncWi
-74 68 6F 75 74 41 77 61 69 74 3E 64 5F 5F 37 00   // thoutAwait>d__7.
-00 )
 .maxstack  2
 .locals init (valuetype TestAssembly.TaskResults/'<BadReferenceAsyncWithoutAwait>d__7' V_0)
 IL_0000:  ldloca.s   V_0
@@ -1466,9 +1452,6 @@ IL_0036:  ret
 .method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
 GoodReferenceValueAsync() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 47 6F 6F   // TaskResults+<Goo
-64 52 65 66 65 72 65 6E 63 65 56 61 6C 75 65 41   // dReferenceValueA
-73 79 6E 63 3E 64 5F 5F 31 30 00 00 )             // sync>d__10..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
@@ -1491,9 +1474,6 @@ IL_002e:  ret
 .method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
 BadReferenceValueAsync() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 42 61 64   // TaskResults+<Bad
-52 65 66 65 72 65 6E 63 65 56 61 6C 75 65 41 73   // ReferenceValueAs
-79 6E 63 3E 64 5F 5F 31 31 00 00 )                // ync>d__11..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
@@ -1516,10 +1496,6 @@ IL_002e:  ret
 .method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
 GoodReferenceValueAsyncWithoutAwait() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 47 6F 6F   // TaskResults+<Goo
-64 52 65 66 65 72 65 6E 63 65 56 61 6C 75 65 41   // dReferenceValueA
-73 79 6E 63 57 69 74 68 6F 75 74 41 77 61 69 74   // syncWithoutAwait
-3E 64 5F 5F 31 32 00 00 )                         // >d__12..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
@@ -1542,10 +1518,6 @@ IL_002e:  ret
 .method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
 BadReferenceValueAsyncWithoutAwait() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 42 61 64   // TaskResults+<Bad
-52 65 66 65 72 65 6E 63 65 56 61 6C 75 65 41 73   // ReferenceValueAs
-79 6E 63 57 69 74 68 6F 75 74 41 77 61 69 74 3E   // yncWithoutAwait>
-64 5F 5F 31 33 00 00 )                            // d__13..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
@@ -1568,9 +1540,6 @@ IL_002e:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<!!T>
 GoodGenericAsync<.ctor T>() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 47 6F 6F   // TaskResults+<Goo
-64 47 65 6E 65 72 69 63 41 73 79 6E 63 3E 64 5F   // dGenericAsync>d_
-5F 31 34 60 31 00 00 )                            // _14`1..
 .maxstack  2
 .locals init (valuetype TestAssembly.TaskResults/'<GoodGenericAsync>d__14`1'<!!T> V_0)
 IL_0000:  ldloca.s   V_0
@@ -1591,9 +1560,6 @@ IL_002e:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<!!T>
 BadGenericAsync<T>() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 42 61 64   // TaskResults+<Bad
-47 65 6E 65 72 69 63 41 73 79 6E 63 3E 64 5F 5F   // GenericAsync>d__
-31 35 60 31 00 00 )                               // 15`1..
 .maxstack  2
 .locals init (valuetype TestAssembly.TaskResults/'<BadGenericAsync>d__15`1'<!!T> V_0)
 IL_0000:  ldloca.s   V_0
@@ -1614,9 +1580,6 @@ IL_002e:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 ThrowingAsync() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 54 68 72   // TaskResults+<Thr
-6F 77 69 6E 67 41 73 79 6E 63 3E 64 5F 5F 31 36   // owingAsync>d__16
-00 00 )
 .maxstack  2
 .locals init (valuetype TestAssembly.TaskResults/'<ThrowingAsync>d__16' V_0)
 IL_0000:  ldloca.s   V_0
@@ -1637,9 +1600,6 @@ IL_002e:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 ThrowingAsyncWithoutAwait() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 54 68 72   // TaskResults+<Thr
-6F 77 69 6E 67 41 73 79 6E 63 57 69 74 68 6F 75   // owingAsyncWithou
-74 41 77 61 69 74 3E 64 5F 5F 31 37 00 00 )       // tAwait>d__17..
 .maxstack  2
 .locals init (valuetype TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17' V_0)
 IL_0000:  ldloca.s   V_0
@@ -1660,9 +1620,6 @@ IL_002e:  ret
 .method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
 ThrowingValueAsync() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 54 68 72   // TaskResults+<Thr
-6F 77 69 6E 67 56 61 6C 75 65 41 73 79 6E 63 3E   // owingValueAsync>
-64 5F 5F 31 38 00 00 )                            // d__18..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
@@ -1902,9 +1859,6 @@ IL_0013:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 NullableReferenceAsync() cil managed
 {
-54 61 73 6B 52 65 73 75 6C 74 73 2B 3C 4E 75 6C   // TaskResults+<Nul
-6C 61 62 6C 65 52 65 66 65 72 65 6E 63 65 41 73   // lableReferenceAs
-79 6E 63 3E 64 5F 5F 32 37 00 00 )                // ync>d__27..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
 .maxstack  2

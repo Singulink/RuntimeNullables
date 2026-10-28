@@ -1,9 +1,6 @@
 ﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.GeneratedCode
 extends [System.Runtime]System.Object
 {
-string) = ( 01 00 16 52 75 6E 74 69 6D 65 4E 75 6C 6C 61 62   // ...RuntimeNullab
-6C 65 73 2E 54 65 73 74 73 05 31 2E 30 2E 30 00   // les.Tests.1.0.0.
-00 )
 .class auto ansi sealed nested public SomeDelegate
 extends [System.Runtime]System.MulticastDelegate
 {

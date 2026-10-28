@@ -1168,10 +1168,6 @@ IL_0026:  ret
 }
 .method public hidebysig static void  AsyncVoid(string 'value') cil managed
 {
-75 6E 74 69 6D 65 41 73 79 6E 63 2E 52 75 6E 74   // untimeAsync.Runt
-69 6D 65 41 73 79 6E 63 4D 65 74 68 6F 64 73 2B   // imeAsyncMethods+
-3C 41 73 79 6E 63 56 6F 69 64 3E 64 5F 5F 31 33   // <AsyncVoid>d__13
-00 00 )
 .maxstack  2
 .locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13' V_0)
 IL_0000:  ldarg.0
@@ -1198,10 +1194,6 @@ IL_0039:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
 BadGetReferences() cil managed
 {
-75 6E 74 69 6D 65 41 73 79 6E 63 2E 52 75 6E 74   // untimeAsync.Runt
-69 6D 65 41 73 79 6E 63 4D 65 74 68 6F 64 73 2B   // imeAsyncMethods+
-3C 42 61 64 47 65 74 52 65 66 65 72 65 6E 63 65   // <BadGetReference
-73 3E 64 5F 5F 31 34 00 00 )                      // s>d__14..
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
 IL_0002:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::.ctor(int32)
@@ -1210,10 +1202,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<string>
 BadGetReferencesAsync() cil managed
 {
-75 6E 74 69 6D 65 41 73 79 6E 63 2E 52 75 6E 74   // untimeAsync.Runt
-69 6D 65 41 73 79 6E 63 4D 65 74 68 6F 64 73 2B   // imeAsyncMethods+
-3C 42 61 64 47 65 74 52 65 66 65 72 65 6E 63 65   // <BadGetReference
-73 41 73 79 6E 63 3E 64 5F 5F 31 35 00 00 )       // sAsync>d__15..
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
 IL_0002:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::.ctor(int32)

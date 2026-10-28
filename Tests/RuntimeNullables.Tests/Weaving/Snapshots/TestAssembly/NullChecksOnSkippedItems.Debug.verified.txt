@@ -39,8 +39,6 @@ IL_0007:  ret
 .class auto ansi nested public beforefieldinit GeneratedCode
 extends [System.Runtime]System.Object
 {
-string) = ( 01 00 16 52 75 6E 74 69 6D 65 4E 75 6C 6C 61 62   // ...RuntimeNullab
-6C 65 73 2E 54 65 73 74 73 03 31 2E 30 00 00 )    // les.Tests.1.0..
 .method public hidebysig static void
 Method(string 'value') cil managed
 {

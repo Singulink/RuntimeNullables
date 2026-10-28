@@ -1210,9 +1210,6 @@ IL_0006:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
 GoodGetReferences() cil managed
 {
-45 6E 75 6D 65 72 61 62 6C 65 73 2B 3C 47 6F 6F   // Enumerables+<Goo
-64 47 65 74 52 65 66 65 72 65 6E 63 65 73 3E 64   // dGetReferences>d
-5F 5F 30 00 00 )                                  // __0..
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
 IL_0002:  newobj     instance void TestAssembly.Enumerables/'<GoodGetReferences>d__0'::.ctor(int32)
@@ -1221,9 +1218,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
 BadGetReferences() cil managed
 {
-45 6E 75 6D 65 72 61 62 6C 65 73 2B 3C 42 61 64   // Enumerables+<Bad
-47 65 74 52 65 66 65 72 65 6E 63 65 73 3E 64 5F   // GetReferences>d_
-5F 31 00 00 )                                     // _1..
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
 IL_0002:  newobj     instance void TestAssembly.Enumerables/'<BadGetReferences>d__1'::.ctor(int32)
@@ -1232,9 +1226,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<!!T>
 GoodGetGenerics<.ctor T>() cil managed
 {
-45 6E 75 6D 65 72 61 62 6C 65 73 2B 3C 47 6F 6F   // Enumerables+<Goo
-64 47 65 74 47 65 6E 65 72 69 63 73 3E 64 5F 5F   // dGetGenerics>d__
-32 60 31 00 00 )                                  // 2`1..
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
 IL_0002:  newobj     instance void class TestAssembly.Enumerables/'<GoodGetGenerics>d__2`1'<!!T>::.ctor(int32)
@@ -1243,9 +1234,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<!!T>
 BadGetGenerics<.ctor T>() cil managed
 {
-45 6E 75 6D 65 72 61 62 6C 65 73 2B 3C 42 61 64   // Enumerables+<Bad
-47 65 74 47 65 6E 65 72 69 63 73 3E 64 5F 5F 33   // GetGenerics>d__3
-60 31 00 00 )                                     // `1..
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
 IL_0002:  newobj     instance void class TestAssembly.Enumerables/'<BadGetGenerics>d__3`1'<!!T>::.ctor(int32)
@@ -1254,9 +1242,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
 GetNullableReferences() cil managed
 {
-45 6E 75 6D 65 72 61 62 6C 65 73 2B 3C 47 65 74   // Enumerables+<Get
-4E 75 6C 6C 61 62 6C 65 52 65 66 65 72 65 6E 63   // NullableReferenc
-65 73 3E 64 5F 5F 34 00 00 )                      // es>d__4..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
 .maxstack  8
@@ -1267,9 +1252,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.IEnumerable
 GetNullNonGenerics() cil managed
 {
-45 6E 75 6D 65 72 61 62 6C 65 73 2B 3C 47 65 74   // Enumerables+<Get
-4E 75 6C 6C 4E 6F 6E 47 65 6E 65 72 69 63 73 3E   // NullNonGenerics>
-64 5F 5F 35 00 00 )                               // d__5..
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
 IL_0002:  newobj     instance void TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::.ctor(int32)

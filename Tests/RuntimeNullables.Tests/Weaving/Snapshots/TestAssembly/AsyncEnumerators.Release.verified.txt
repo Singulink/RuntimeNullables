@@ -2753,9 +2753,6 @@ IL_0055:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
 GoodGetReferencesAsync() cil managed
 {
-41 73 79 6E 63 45 6E 75 6D 65 72 61 74 6F 72 73   // AsyncEnumerators
-2B 3C 47 6F 6F 64 47 65 74 52 65 66 65 72 65 6E   // +<GoodGetReferen
-63 65 73 41 73 79 6E 63 3E 64 5F 5F 30 00 00 )    // cesAsync>d__0..
 .maxstack  8
 IL_0000:  ldc.i4.s   -3
 IL_0002:  newobj     instance void TestAssembly.AsyncEnumerators/'<GoodGetReferencesAsync>d__0'::.ctor(int32)
@@ -2764,9 +2761,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
 BadGetReferencesAsync() cil managed
 {
-41 73 79 6E 63 45 6E 75 6D 65 72 61 74 6F 72 73   // AsyncEnumerators
-2B 3C 42 61 64 47 65 74 52 65 66 65 72 65 6E 63   // +<BadGetReferenc
-65 73 41 73 79 6E 63 3E 64 5F 5F 31 00 00 )       // esAsync>d__1..
 .maxstack  8
 IL_0000:  ldc.i4.s   -3
 IL_0002:  newobj     instance void TestAssembly.AsyncEnumerators/'<BadGetReferencesAsync>d__1'::.ctor(int32)
@@ -2775,10 +2769,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
 GoodGetReferencesAsyncWithoutAwait() cil managed
 {
-41 73 79 6E 63 45 6E 75 6D 65 72 61 74 6F 72 73   // AsyncEnumerators
-2B 3C 47 6F 6F 64 47 65 74 52 65 66 65 72 65 6E   // +<GoodGetReferen
-63 65 73 41 73 79 6E 63 57 69 74 68 6F 75 74 41   // cesAsyncWithoutA
-77 61 69 74 3E 64 5F 5F 32 00 00 )                // wait>d__2..
 .maxstack  8
 IL_0000:  ldc.i4.s   -3
 IL_0002:  newobj     instance void TestAssembly.AsyncEnumerators/'<GoodGetReferencesAsyncWithoutAwait>d__2'::.ctor(int32)
@@ -2787,10 +2777,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
 BadGetReferencesAsyncWithoutAwait() cil managed
 {
-41 73 79 6E 63 45 6E 75 6D 65 72 61 74 6F 72 73   // AsyncEnumerators
-2B 3C 42 61 64 47 65 74 52 65 66 65 72 65 6E 63   // +<BadGetReferenc
-65 73 41 73 79 6E 63 57 69 74 68 6F 75 74 41 77   // esAsyncWithoutAw
-61 69 74 3E 64 5F 5F 33 00 00 )                   // ait>d__3..
 .maxstack  8
 IL_0000:  ldc.i4.s   -3
 IL_0002:  newobj     instance void TestAssembly.AsyncEnumerators/'<BadGetReferencesAsyncWithoutAwait>d__3'::.ctor(int32)
@@ -2799,10 +2785,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
 GetNullableReferencesAsync() cil managed
 {
-41 73 79 6E 63 45 6E 75 6D 65 72 61 74 6F 72 73   // AsyncEnumerators
-2B 3C 47 65 74 4E 75 6C 6C 61 62 6C 65 52 65 66   // +<GetNullableRef
-65 72 65 6E 63 65 73 41 73 79 6E 63 3E 64 5F 5F   // erencesAsync>d__
-34 00 00 )                                        // 4..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
 .maxstack  8
@@ -2813,9 +2795,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!!T>
 GoodGetGenericsAsync<.ctor T>() cil managed
 {
-41 73 79 6E 63 45 6E 75 6D 65 72 61 74 6F 72 73   // AsyncEnumerators
-2B 3C 47 6F 6F 64 47 65 74 47 65 6E 65 72 69 63   // +<GoodGetGeneric
-73 41 73 79 6E 63 3E 64 5F 5F 35 60 31 00 00 )    // sAsync>d__5`1..
 .maxstack  8
 IL_0000:  ldc.i4.s   -3
 IL_0002:  newobj     instance void class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!!T>::.ctor(int32)
@@ -2824,9 +2803,6 @@ IL_0007:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!!T>
 BadGetGenericsAsync<.ctor T>() cil managed
 {
-41 73 79 6E 63 45 6E 75 6D 65 72 61 74 6F 72 73   // AsyncEnumerators
-2B 3C 42 61 64 47 65 74 47 65 6E 65 72 69 63 73   // +<BadGetGenerics
-41 73 79 6E 63 3E 64 5F 5F 36 60 31 00 00 )       // Async>d__6`1..
 .maxstack  8
 IL_0000:  ldc.i4.s   -3
 IL_0002:  newobj     instance void class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!!T>::.ctor(int32)

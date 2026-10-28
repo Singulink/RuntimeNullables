@@ -56,14 +56,25 @@ internal static class Ildasm
 
         using var process = Process.Start(startInfo) ?? throw new InvalidOperationException("Could not start ildasm.exe.");
         var output = new StringBuilder();
+        bool inLeftOutAttribute = false;
+        bool leftOutAttributeHasValue = false;
 
         while (process.StandardOutput.ReadLine() is { } rawLine)
         {
             string line = _frameworkAttributePrefix.Replace(rawLine.Trim(), ".custom instance void ");
 
-            if (line.Length == 0 || line.Contains(".line ", StringComparison.Ordinal) || line.Contains(".custom instance void [", StringComparison.Ordinal) ||
-                line.StartsWith("// ", StringComparison.Ordinal) || line.StartsWith("//0", StringComparison.Ordinal) ||
-                line.Contains(".language '", StringComparison.Ordinal))
+            // An attribute that's left out can take several lines. Its value is the bytes in parentheses after "= (", which end it. Leaving all its lines
+            // out also leaves out the weaver's version, which is in the [GeneratedCode] attribute on the throw helpers.
+
+            if (inLeftOutAttribute || line.Contains(".custom instance void [", StringComparison.Ordinal))
+            {
+                leftOutAttributeHasValue = (inLeftOutAttribute && leftOutAttributeHasValue) || line.Contains("= (", StringComparison.Ordinal);
+                inLeftOutAttribute = !(leftOutAttributeHasValue && WithoutComment(line).EndsWith(')'));
+                continue;
+            }
+
+            if (line.Length == 0 || line.Contains(".line ", StringComparison.Ordinal) || line.StartsWith("// ", StringComparison.Ordinal) ||
+                line.StartsWith("//0", StringComparison.Ordinal) || line.Contains(".language '", StringComparison.Ordinal))
             {
                 continue;
             }
@@ -77,5 +88,14 @@ internal static class Ildasm
             throw new InvalidOperationException($"ildasm.exe failed with exit code {process.ExitCode}.");
 
         return output.ToString();
+    }
+
+    /// <summary>
+    /// Removes the comment at the end of a line, e.g. the text that the bytes of an attribute's value represent.
+    /// </summary>
+    private static string WithoutComment(string line)
+    {
+        int commentIndex = line.IndexOf("//", StringComparison.Ordinal);
+        return (commentIndex < 0 ? line : line[..commentIndex]).TrimEnd();
     }
 }

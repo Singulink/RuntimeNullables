@@ -373,9 +373,6 @@ IL_0001:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 BadEchoAsync(string 'value') cil managed
 {
-4E 6F 74 4E 75 6C 6C 49 66 4E 6F 74 4E 75 6C 6C   // NotNullIfNotNull
-4F 75 74 70 75 74 73 2B 3C 42 61 64 45 63 68 6F   // Outputs+<BadEcho
-41 73 79 6E 63 3E 64 5F 5F 39 00 00 )             // Async>d__9..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
 .maxstack  2
@@ -398,9 +395,6 @@ IL_002e:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
 BadEchoIterator(string 'value') cil managed
 {
-4E 6F 74 4E 75 6C 6C 49 66 4E 6F 74 4E 75 6C 6C   // NotNullIfNotNull
-4F 75 74 70 75 74 73 2B 3C 42 61 64 45 63 68 6F   // Outputs+<BadEcho
-49 74 65 72 61 74 6F 72 3E 64 5F 5F 31 30 00 00 ) // Iterator>d__10..
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
 .maxstack  8

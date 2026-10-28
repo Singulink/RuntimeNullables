@@ -508,11 +508,6 @@ IL_000e:  ret
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 ReturnAllowNullParameterNonNullReturnAsync(string 'value') cil managed
 {
-68 72 6F 77 48 65 6C 70 65 72 73 2E 55 73 65 73   // hrowHelpers.Uses
-54 68 72 6F 77 48 65 6C 70 65 72 73 2B 3C 52 65   // ThrowHelpers+<Re
-74 75 72 6E 41 6C 6C 6F 77 4E 75 6C 6C 50 61 72   // turnAllowNullPar
-61 6D 65 74 65 72 4E 6F 6E 4E 75 6C 6C 52 65 74   // ameterNonNullRet
-75 72 6E 41 73 79 6E 63 3E 64 5F 5F 32 00 00 )    // urnAsync>d__2..
 .param [1]
 .maxstack  2
 .locals init (class TestAssemblyThrowHelpers.UsesThrowHelpers/'<ReturnAllowNullParameterNonNullReturnAsync>d__2' V_0)
@@ -539,10 +534,6 @@ IL_0037:  ret
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<string>
 BadGetReferencesAsync() cil managed
 {
-68 72 6F 77 48 65 6C 70 65 72 73 2E 55 73 65 73   // hrowHelpers.Uses
-54 68 72 6F 77 48 65 6C 70 65 72 73 2B 3C 42 61   // ThrowHelpers+<Ba
-64 47 65 74 52 65 66 65 72 65 6E 63 65 73 41 73   // dGetReferencesAs
-79 6E 63 3E 64 5F 5F 33 00 00 )                   // ync>d__3..
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
 IL_0002:  newobj     instance void TestAssemblyThrowHelpers.UsesThrowHelpers/'<BadGetReferencesAsync>d__3'::.ctor(int32)
