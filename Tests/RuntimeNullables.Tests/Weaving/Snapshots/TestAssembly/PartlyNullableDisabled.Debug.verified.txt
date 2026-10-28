@@ -1,0 +1,21 @@
+﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.PartlyNullableDisabled
+extends [System.Runtime]System.Object
+{
+.method public hidebysig static void  Method(string 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  nop
+IL_000e:  ret
+}
+.method public hidebysig static void  NullableDisabledMethod(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  nop
+IL_0001:  ret
+}
+}

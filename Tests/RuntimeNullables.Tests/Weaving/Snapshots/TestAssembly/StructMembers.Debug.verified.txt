@@ -1,0 +1,41 @@
+﻿.class public sequential ansi sealed beforefieldinit TestAssembly.StructMembers
+extends [System.Runtime]System.ValueType
+{
+.pack 0
+.size 1
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  nop
+IL_000e:  ret
+}
+.method public hidebysig instance void
+Method(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  nop
+IL_000e:  ret
+}
+.method public hidebysig instance string
+BadReturn() cil managed
+{
+.maxstack  8
+IL_0000:  ldnull
+IL_0001:  dup
+IL_0002:  brtrue.s   IL_000e
+IL_0004:  ldstr      "Return value nullability contract was broken."
+IL_0009:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_000e:  ret
+}
+}

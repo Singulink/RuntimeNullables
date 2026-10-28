@@ -1,0 +1,39 @@
+﻿.class public auto ansi beforefieldinit TestAssembly.VirtualInputParameters
+extends [System.Runtime]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig newslot virtual
+instance void  InReference([in] string& modreq([System.Runtime]System.Runtime.InteropServices.InAttribute) 'value') cil managed
+{
+.param [1]
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  ldind.ref
+IL_0002:  brtrue.s   IL_000e
+IL_0004:  ldstr      "value"
+IL_0009:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000e:  ret
+}
+.method public hidebysig newslot virtual
+instance void  GenericInReference<T>([in] !!T& modreq([System.Runtime]System.Runtime.InteropServices.InAttribute) 'value') cil managed
+{
+.param [1]
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  ldobj      !!T
+IL_0006:  box        !!T
+IL_000b:  brtrue.s   IL_0017
+IL_000d:  ldstr      "value"
+IL_0012:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_0017:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  ret
+}
+}

@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageTags>NullGuard, Null Check, NRT, Nullable, ILWeaving, Fody, Cecil, AOP</PackageTags>
+    <PackageId>Singulink.RuntimeNullables</PackageId>
+    <PackageTags>NullGuard, Null Check, NRT, Nullable, ILWeaving, Cecil, AOP</PackageTags>
     <Description>Automatic null check injection for runtime C# Nullable Reference Types (NRT) parameter/contract validation.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Singulink/RuntimeNullables</PackageProjectUrl>
@@ -12,19 +13,15 @@
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <PackageIcon>Singulink Icon 128x128.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <!-- The weaving task and its dependencies go in tasks/ instead of lib/ since they are loaded by MSBuild, not referenced by the project. -->
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddWeavingFilesToPackage</TargetsForTfmSpecificContentInPackage>
+    <NoWarn>$(NoWarn);NU5100</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\..\README.md" Link="README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="stylecop.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Fody" PrivateAssets="none" />
-    <PackageReference Include="FodyPackaging" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,4 +30,28 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+
+  <ItemGroup>
+    <!-- NuGet only imports build files named after the package. The file has that name here too, so in-repo builds see the same file name. -->
+    <None Update="build\$(PackageId).targets" Pack="true" PackagePath="build\$(PackageId).targets" />
+  </ItemGroup>
+
+  <Target Name="_CheckBuildFileName" BeforeTargets="GenerateNuspec">
+    <Error Condition="!Exists('build\$(PackageId).targets')" Text="The build file must be named after the package ID: build\$(PackageId).targets." />
+  </Target>
+
+  <ItemGroup>
+    <!-- Only built so its output can be packed: the weaving task is not a dependency of this library. -->
+    <ProjectReference Include="..\RuntimeNullables.Tasks\RuntimeNullables.Tasks.csproj" ReferenceOutputAssembly="false" PrivateAssets="all" />
+  </ItemGroup>
+
+  <Target Name="_AddWeavingFilesToPackage">
+    <MSBuild Projects="..\RuntimeNullables.Tasks\RuntimeNullables.Tasks.csproj" Targets="GetTaskPackageFiles" RemoveProperties="TargetFramework">
+      <Output TaskParameter="TargetOutputs" ItemName="_RuntimeNullablesTaskFile" />
+    </MSBuild>
+
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="@(_RuntimeNullablesTaskFile)" PackagePath="tasks\netstandard2.0\" />
+    </ItemGroup>
+  </Target>
 </Project>

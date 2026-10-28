@@ -1,0 +1,45 @@
+# Use LF endings by default
+* text=auto eol=lf
+
+# Use CRLF for powershell scripts / ini files
+*.ps1 text eol=crlf
+*.ini text eol=crlf
+
+# Use CRLF for project-related files
+*.csproj text eol=crlf
+*.props text eol=crlf
+*.targets text eol=crlf
+*.proj text eol=crlf
+*.projitems text eol=crlf
+*.shproj text eol=crlf
+*.slnx text eol=crlf
+
+# Use CRLF for xaml files
+*.xaml eol=crlf
+
+# Use CRLF for C# files
+*.cs eol=crlf
+
+# Use LF for other text files
+*.xml eol=lf
+*.resw text eol=lf
+web.config eol=lf
+*.plist eol=lf
+*.xcprivacy text eol=lf
+*.yml eol=lf
+*.yaml eol=lf
+*.json eol=lf
+*.slnf text eol=lf
+*.vsconfig text eol=lf
+*.css eol=lf
+*.js eol=lf
+*.html eol=lf
+*.md eol=lf
+*.ipproj text eol=lf
+
+# Verify snapshot files (settings recommended by Verify)
+*.verified.txt text eol=lf working-tree-encoding=UTF-8
+
+# Mark some files as not text
+*.sub -text
+*.idx -text

@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+
+    <!--
+      MSBuild loads the task's dependencies from the task's directory, so they are copied to the output. The package doesn't contain a deps.json, so
+      none is generated here either, which makes in-repo builds load the dependencies the same way.
+    -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Provided by MSBuild at run time. -->
+    <PackageReference Include="Microsoft.Build.Utilities.Core" PrivateAssets="all" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuntimeNullables.Weaver\RuntimeNullables.Weaver.csproj" />
+  </ItemGroup>
+
+  <!-- Returns the files the NuGet package needs to run the task: the task assembly and its runtime dependencies, with symbols for our own assemblies. -->
+  <Target Name="GetTaskPackageFiles" DependsOnTargets="ResolveReferences" Returns="@(_TaskPackageFile)">
+    <ItemGroup>
+      <_TaskPackageFile Include="$(TargetPath);$(TargetDir)$(TargetName).pdb" />
+      <_TaskPackageFile Include="@(ReferenceCopyLocalPaths)"
+                        Condition="'%(Extension)' == '.dll' Or ('%(Extension)' == '.pdb' And $([System.String]::Copy('%(Filename)').StartsWith('RuntimeNullables.')))" />
+      <_TaskPackageFile Remove="@(_TaskPackageFile)" Condition="'%(Filename)' == 'Mono.Cecil.Mdb'" />
+    </ItemGroup>
+  </Target>
+</Project>

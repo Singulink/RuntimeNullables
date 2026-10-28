@@ -1,0 +1,27 @@
+﻿.class public auto ansi beforefieldinit TestAssembly.Constructors
+extends [System.Runtime]System.Object
+{
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(string 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ldarg.0
+IL_000e:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0013:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(string 'value',
+int32 number) cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  ret
+}
+}

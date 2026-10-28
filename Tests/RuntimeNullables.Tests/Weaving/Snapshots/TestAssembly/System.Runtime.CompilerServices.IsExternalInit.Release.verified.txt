@@ -1,0 +1,4 @@
+﻿.class private abstract auto ansi sealed beforefieldinit System.Runtime.CompilerServices.IsExternalInit
+extends [System.Runtime]System.Object
+{
+}

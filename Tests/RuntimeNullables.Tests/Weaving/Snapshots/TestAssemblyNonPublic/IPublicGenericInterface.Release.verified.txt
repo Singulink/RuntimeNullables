@@ -1,0 +1,11 @@
+﻿.class interface public abstract auto ansi beforefieldinit TestAssemblyNonPublic.IPublicGenericInterface`1<T>
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.param type T
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.method public hidebysig newslot abstract virtual
+instance void  InterfaceGenericMethod(!T 'value',
+string text) cil managed
+{
+}
+}

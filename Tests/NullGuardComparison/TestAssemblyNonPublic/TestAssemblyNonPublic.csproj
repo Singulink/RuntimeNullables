@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Only the public API's inputs, like the Runtime Nullables build, which compares what each counts as public API. -->
+    <NullGuardValidationFlags>AllPublicArguments</NullGuardValidationFlags>
+  </PropertyGroup>
+
+  <Import Project="..\NullGuardTestAssembly.props" />
+
+</Project>

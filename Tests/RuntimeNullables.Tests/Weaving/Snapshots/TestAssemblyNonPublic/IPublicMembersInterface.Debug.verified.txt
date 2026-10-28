@@ -1,0 +1,25 @@
+﻿.class interface public abstract auto ansi beforefieldinit TestAssemblyNonPublic.IPublicMembersInterface
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.method public hidebysig newslot specialname abstract virtual
+instance void  add_InterfaceEvent(class [System.Runtime]System.Action 'value') cil managed
+{
+}
+.method public hidebysig newslot specialname abstract virtual
+instance void  remove_InterfaceEvent(class [System.Runtime]System.Action 'value') cil managed
+{
+}
+.method public hidebysig newslot specialname abstract virtual
+instance void  set_InterfaceProperty(string 'value') cil managed
+{
+}
+.event [System.Runtime]System.Action InterfaceEvent
+{
+.addon instance void TestAssemblyNonPublic.IPublicMembersInterface::add_InterfaceEvent(class [System.Runtime]System.Action)
+.removeon instance void TestAssemblyNonPublic.IPublicMembersInterface::remove_InterfaceEvent(class [System.Runtime]System.Action)
+}
+.property instance string InterfaceProperty()
+{
+.set instance void TestAssemblyNonPublic.IPublicMembersInterface::set_InterfaceProperty(string)
+}
+}

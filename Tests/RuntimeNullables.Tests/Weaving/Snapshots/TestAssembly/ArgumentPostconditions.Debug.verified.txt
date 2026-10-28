@@ -1,0 +1,557 @@
+﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.ArgumentPostconditions
+extends [System.Runtime]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.class auto ansi sealed nested private beforefieldinit '<BadThrowIfNullAsync>d__11'
+extends [System.Runtime]System.Object
+implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.interfaceimpl type [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field public int32 '<>1__state'
+.field public valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder '<>t__builder'
+.field public object 'value'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter V_1,
+valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable V_2,
+class TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11' V_3,
+class [System.Runtime]System.Exception V_4)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_000c
+IL_000a:  br.s       IL_000e
+IL_000c:  br.s       IL_0049
+IL_000e:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable [System.Runtime]System.Threading.Tasks.Task::Yield()
+IL_0013:  stloc.2
+IL_0014:  ldloca.s   V_2
+IL_0016:  call       instance valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable::GetAwaiter()
+IL_001b:  stloc.1
+IL_001c:  ldloca.s   V_1
+IL_001e:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter::get_IsCompleted()
+IL_0023:  brtrue.s   IL_0065
+IL_0025:  ldarg.0
+IL_0026:  ldc.i4.0
+IL_0027:  dup
+IL_0028:  stloc.0
+IL_0029:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>1__state'
+IL_002e:  ldarg.0
+IL_002f:  ldloc.1
+IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>u__1'
+IL_0035:  ldarg.0
+IL_0036:  stloc.3
+IL_0037:  ldarg.0
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>t__builder'
+IL_003d:  ldloca.s   V_1
+IL_003f:  ldloca.s   V_3
+IL_0041:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter,class TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'>(!!0&,
+!!1&)
+IL_0046:  nop
+IL_0047:  leave.s    IL_009d
+IL_0049:  ldarg.0
+IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>u__1'
+IL_004f:  stloc.1
+IL_0050:  ldarg.0
+IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>u__1'
+IL_0056:  initobj    [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter
+IL_005c:  ldarg.0
+IL_005d:  ldc.i4.m1
+IL_005e:  dup
+IL_005f:  stloc.0
+IL_0060:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>1__state'
+IL_0065:  ldloca.s   V_1
+IL_0067:  call       instance void [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter::GetResult()
+IL_006c:  nop
+IL_006d:  leave.s    IL_0089
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_006f:  stloc.s    V_4
+IL_0071:  ldarg.0
+IL_0072:  ldc.i4.s   -2
+IL_0074:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>1__state'
+IL_0079:  ldarg.0
+IL_007a:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>t__builder'
+IL_007f:  ldloc.s    V_4
+IL_0081:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetException(class [System.Runtime]System.Exception)
+IL_0086:  nop
+IL_0087:  leave.s    IL_009d
+}  // end handler
+IL_0089:  ldarg.0
+IL_008a:  ldc.i4.s   -2
+IL_008c:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>1__state'
+IL_0091:  ldarg.0
+IL_0092:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>t__builder'
+IL_0097:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::SetResult()
+IL_009c:  nop
+IL_009d:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<BadThrowIfNullIterator>d__12'
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IEnumerable`1<int32>,
+[System.Runtime]System.Collections.IEnumerable,
+class [System.Runtime]System.Collections.Generic.IEnumerator`1<int32>,
+[System.Runtime]System.Collections.IEnumerator,
+[System.Runtime]System.IDisposable
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerable`1<int32>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerator`1<int32>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerator
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private int32 '<>1__state'
+.field private int32 '<>2__current'
+.field private int32 '<>l__initialThreadId'
+.field private object 'value'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field public object '<>3__value'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  ldarg.1
+IL_0009:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>1__state'
+IL_000e:  ldarg.0
+IL_000f:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
+IL_0014:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>l__initialThreadId'
+IL_0019:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.IDisposable.Dispose() cil managed
+{
+.override [System.Runtime]System.IDisposable::Dispose
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldc.i4.s   -2
+IL_0003:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>1__state'
+IL_0008:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  MoveNext() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::MoveNext
+.maxstack  2
+.locals init (int32 V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>1__state'
+IL_0006:  stloc.0
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_000c
+IL_000a:  br.s       IL_000e
+IL_000c:  br.s       IL_0010
+IL_000e:  ldc.i4.0
+IL_000f:  ret
+IL_0010:  ldarg.0
+IL_0011:  ldc.i4.m1
+IL_0012:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>1__state'
+IL_0017:  nop
+IL_0018:  ldc.i4.0
+IL_0019:  ret
+}
+.method private hidebysig newslot specialname virtual final
+instance int32  'System.Collections.Generic.IEnumerator<System.Int32>.get_Current'() cil managed
+{
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<int32>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Collections.IEnumerator.Reset() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::Reset
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_0005:  throw
+}
+.method private hidebysig newslot specialname virtual final
+instance object  System.Collections.IEnumerator.get_Current() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Runtime]System.Collections.IEnumerator::get_Current
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>2__current'
+IL_0006:  box        [System.Runtime]System.Int32
+IL_000b:  ret
+}
+.method private hidebysig newslot virtual final
+instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<int32>
+'System.Collections.Generic.IEnumerable<System.Int32>.GetEnumerator'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.override  method instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IEnumerable`1<int32>::GetEnumerator()
+.maxstack  2
+.locals init (class TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12' V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>1__state'
+IL_0006:  ldc.i4.s   -2
+IL_0008:  bne.un.s   IL_0022
+IL_000a:  ldarg.0
+IL_000b:  ldfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>l__initialThreadId'
+IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
+IL_0015:  bne.un.s   IL_0022
+IL_0017:  ldarg.0
+IL_0018:  ldc.i4.0
+IL_0019:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>1__state'
+IL_001e:  ldarg.0
+IL_001f:  stloc.0
+IL_0020:  br.s       IL_0029
+IL_0022:  ldc.i4.0
+IL_0023:  newobj     instance void TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::.ctor(int32)
+IL_0028:  stloc.0
+IL_0029:  ldloc.0
+IL_002a:  ldarg.0
+IL_002b:  ldfld      object TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>3__value'
+IL_0030:  stfld      object TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'value'
+IL_0035:  ldloc.0
+IL_0036:  ret
+}
+.method private hidebysig newslot virtual final
+instance class [System.Runtime]System.Collections.IEnumerator
+System.Collections.IEnumerable.GetEnumerator() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.override [System.Runtime]System.Collections.IEnumerable::GetEnumerator
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<int32> TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'System.Collections.Generic.IEnumerable<System.Int32>.GetEnumerator'()
+IL_0006:  ret
+}
+.property instance int32 'System.Collections.Generic.IEnumerator<System.Int32>.Current'()
+{
+.get instance int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'System.Collections.Generic.IEnumerator<System.Int32>.get_Current'()
+}
+.property instance object System.Collections.IEnumerator.Current()
+{
+.get instance object TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::System.Collections.IEnumerator.get_Current()
+}
+}
+.method public hidebysig static bool  IsNullOrEmpty(string 'value') cil managed
+{
+.param [1]
+.maxstack  2
+.locals (string V_0)
+IL_0000:  ldarg.0
+IL_0001:  stloc.0
+IL_0002:  ldarg.0
+IL_0003:  brfalse.s  IL_0010
+IL_0005:  ldarg.0
+IL_0006:  callvirt   instance int32 [System.Runtime]System.String::get_Length()
+IL_000b:  ldc.i4.0
+IL_000c:  ceq
+IL_000e:  br.s       IL_0011
+IL_0010:  ldc.i4.1
+IL_0011:  dup
+IL_0012:  brtrue.s   IL_0021
+IL_0014:  ldloc.0
+IL_0015:  brtrue.s   IL_0021
+IL_0017:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_001c:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0021:  ret
+}
+.method public hidebysig static bool  BadIsNullOrEmpty(string 'value') cil managed
+{
+.param [1]
+.maxstack  2
+.locals (string V_0)
+IL_0000:  ldarg.0
+IL_0001:  stloc.0
+IL_0002:  ldarg.0
+IL_0003:  brtrue.s   IL_0008
+IL_0005:  ldc.i4.0
+IL_0006:  br.s       IL_0011
+IL_0008:  ldarg.0
+IL_0009:  call       instance int32 [System.Runtime]System.String::get_Length()
+IL_000e:  ldc.i4.0
+IL_000f:  ceq
+IL_0011:  dup
+IL_0012:  brtrue.s   IL_0021
+IL_0014:  ldloc.0
+IL_0015:  brtrue.s   IL_0021
+IL_0017:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_001c:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0021:  ret
+}
+.method public hidebysig static bool  IsNotNullOrEmpty(string 'value') cil managed
+{
+.param [1]
+.maxstack  2
+.locals (string V_0)
+IL_0000:  ldarg.0
+IL_0001:  stloc.0
+IL_0002:  ldarg.0
+IL_0003:  brtrue.s   IL_0008
+IL_0005:  ldc.i4.0
+IL_0006:  br.s       IL_0011
+IL_0008:  ldarg.0
+IL_0009:  call       instance int32 [System.Runtime]System.String::get_Length()
+IL_000e:  ldc.i4.0
+IL_000f:  cgt
+IL_0011:  dup
+IL_0012:  brfalse.s  IL_0021
+IL_0014:  ldloc.0
+IL_0015:  brtrue.s   IL_0021
+IL_0017:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_001c:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0021:  ret
+}
+.method public hidebysig static bool  BadIsNotNullOrEmpty(string 'value') cil managed
+{
+.param [1]
+.maxstack  2
+.locals (string V_0)
+IL_0000:  ldarg.0
+IL_0001:  stloc.0
+IL_0002:  ldarg.0
+IL_0003:  brfalse.s  IL_0010
+IL_0005:  ldarg.0
+IL_0006:  callvirt   instance int32 [System.Runtime]System.String::get_Length()
+IL_000b:  ldc.i4.0
+IL_000c:  cgt
+IL_000e:  br.s       IL_0011
+IL_0010:  ldc.i4.1
+IL_0011:  dup
+IL_0012:  brfalse.s  IL_0021
+IL_0014:  ldloc.0
+IL_0015:  brtrue.s   IL_0021
+IL_0017:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_001c:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0021:  ret
+}
+.method public hidebysig static bool  BadIsValid(string mode,
+string 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.param [2]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  2
+.locals init (bool V_0,
+bool V_1,
+bool V_2,
+string V_3)
+IL_0000:  ldarg.0
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "mode"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ldarg.1
+IL_000e:  stloc.3
+IL_000f:  nop
+IL_0010:  ldarg.0
+IL_0011:  ldstr      "bad"
+IL_0016:  call       bool [System.Runtime]System.String::op_Equality(string,
+string)
+IL_001b:  stloc.0
+IL_001c:  ldloc.0
+IL_001d:  brfalse.s  IL_0023
+IL_001f:  ldc.i4.1
+IL_0020:  stloc.1
+IL_0021:  br.s       IL_0033
+IL_0023:  ldarg.1
+IL_0024:  ldnull
+IL_0025:  ceq
+IL_0027:  stloc.2
+IL_0028:  ldloc.2
+IL_0029:  brfalse.s  IL_002f
+IL_002b:  ldc.i4.1
+IL_002c:  stloc.1
+IL_002d:  br.s       IL_0033
+IL_002f:  ldc.i4.0
+IL_0030:  stloc.1
+IL_0031:  br.s       IL_0033
+IL_0033:  ldloc.1
+IL_0034:  dup
+IL_0035:  brfalse.s  IL_0044
+IL_0037:  ldloc.3
+IL_0038:  brtrue.s   IL_0044
+IL_003a:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_003f:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0044:  ret
+}
+.method public hidebysig static bool  MaybeNullAndNotNullWhenTrue(string 'value') cil managed
+{
+.param [1]
+.maxstack  8
+IL_0000:  ldc.i4.1
+IL_0001:  ret
+}
+.method public hidebysig static void  ThrowIfNull(object 'value') cil managed
+{
+.param [1]
+.maxstack  2
+.locals init (bool V_0,
+object V_1)
+IL_0000:  ldarg.0
+IL_0001:  stloc.1
+IL_0002:  nop
+IL_0003:  ldarg.0
+IL_0004:  ldnull
+IL_0005:  ceq
+IL_0007:  stloc.0
+IL_0008:  ldloc.0
+IL_0009:  brfalse.s  IL_0016
+IL_000b:  ldstr      "value"
+IL_0010:  newobj     instance void [System.Runtime]System.ArgumentNullException::.ctor(string)
+IL_0015:  throw
+IL_0016:  ldloc.1
+IL_0017:  brtrue.s   IL_0023
+IL_0019:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_001e:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0023:  ret
+}
+.method public hidebysig static void  BadThrowIfNull(object 'value') cil managed
+{
+.param [1]
+.maxstack  1
+.locals (object V_0)
+IL_0000:  ldarg.0
+IL_0001:  stloc.0
+IL_0002:  nop
+IL_0003:  ldloc.0
+IL_0004:  brtrue.s   IL_0010
+IL_0006:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_000b:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0010:  ret
+}
+.method public hidebysig static void  BadThrowIfNullThatAssigns(string 'value') cil managed
+{
+.param [1]
+.maxstack  1
+.locals (string V_0)
+IL_0000:  ldarg.0
+IL_0001:  stloc.0
+IL_0002:  nop
+IL_0003:  ldsfld     string [System.Runtime]System.String::Empty
+IL_0008:  starg      'value'
+IL_000c:  nop
+IL_000d:  ldloc.0
+IL_000e:  brtrue.s   IL_001a
+IL_0010:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_0015:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_001a:  ret
+}
+.method public hidebysig static void  BadGenericThrowIfNull<T>(!!T 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.param type T
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.param [1]
+.maxstack  1
+.locals (!!T V_0)
+IL_0000:  ldarg.0
+IL_0001:  stloc.0
+IL_0002:  nop
+IL_0003:  ldloc.0
+IL_0004:  box        !!T
+IL_0009:  brtrue.s   IL_0015
+IL_000b:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_0010:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0015:  ret
+}
+.method public hidebysig static void  NotNullArgument(string 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.param [1]
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  nop
+IL_000e:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task
+BadThrowIfNullAsync(object 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+41 72 67 75 6D 65 6E 74 50 6F 73 74 63 6F 6E 64   // ArgumentPostcond
+69 74 69 6F 6E 73 2B 3C 42 61 64 54 68 72 6F 77   // itions+<BadThrow
+49 66 4E 75 6C 6C 41 73 79 6E 63 3E 64 5F 5F 31   // IfNullAsync>d__1
+31 00 00 )                                        // 1..
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  2
+.locals init (class TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11' V_0)
+IL_0000:  newobj     instance void TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::.ctor()
+IL_0005:  stloc.0
+IL_0006:  ldloc.0
+IL_0007:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Create()
+IL_000c:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>t__builder'
+IL_0011:  ldloc.0
+IL_0012:  ldarg.0
+IL_0013:  stfld      object TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'value'
+IL_0018:  ldloc.0
+IL_0019:  ldc.i4.m1
+IL_001a:  stfld      int32 TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>1__state'
+IL_001f:  ldloc.0
+IL_0020:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>t__builder'
+IL_0025:  ldloca.s   V_0
+IL_0027:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::Start<class TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'>(!!0&)
+IL_002c:  ldloc.0
+IL_002d:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder TestAssembly.ArgumentPostconditions/'<BadThrowIfNullAsync>d__11'::'<>t__builder'
+IL_0032:  call       instance class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder::get_Task()
+IL_0037:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<int32>
+BadThrowIfNullIterator(object 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+41 72 67 75 6D 65 6E 74 50 6F 73 74 63 6F 6E 64   // ArgumentPostcond
+69 74 69 6F 6E 73 2B 3C 42 61 64 54 68 72 6F 77   // itions+<BadThrow
+49 66 4E 75 6C 6C 49 74 65 72 61 74 6F 72 3E 64   // IfNullIterator>d
+5F 5F 31 32 00 00 )                               // __12..
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  8
+IL_0000:  ldc.i4.s   -2
+IL_0002:  newobj     instance void TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::.ctor(int32)
+IL_0007:  dup
+IL_0008:  ldarg.0
+IL_0009:  stfld      object TestAssembly.ArgumentPostconditions/'<BadThrowIfNullIterator>d__12'::'<>3__value'
+IL_000e:  ret
+}
+}

@@ -1,0 +1,60 @@
+﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.PartlyGeneratedCode
+extends [System.Runtime]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig specialname static
+string  get_GeneratedAccessorProperty() cil managed
+{
+.maxstack  8
+IL_0000:  ldnull
+IL_0001:  dup
+IL_0002:  brtrue.s   IL_000e
+IL_0004:  ldstr      "Return value nullability contract was broken."
+IL_0009:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_000e:  ret
+}
+.method public hidebysig specialname static
+string  get_GeneratedPropertyWithAttribute() cil managed
+{
+.maxstack  8
+IL_0000:  ldnull
+IL_0001:  ret
+}
+.method public hidebysig static void  Method(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  nop
+IL_000e:  ret
+}
+.method public hidebysig static void  GeneratedMethod(string 'value') cil managed
+{
+string) = ( 01 00 16 52 75 6E 74 69 6D 65 4E 75 6C 6C 61 62   // ...RuntimeNullab
+6C 65 73 2E 54 65 73 74 73 05 31 2E 30 2E 30 00   // les.Tests.1.0.0.
+00 )
+.maxstack  8
+IL_0000:  nop
+IL_0001:  ret
+}
+.method public hidebysig static void  CompilerGeneratedMethod(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  nop
+IL_0001:  ret
+}
+.property string GeneratedAccessorProperty()
+{
+.get string TestAssembly.PartlyGeneratedCode::get_GeneratedAccessorProperty()
+}
+.property string GeneratedPropertyWithAttribute()
+{
+string) = ( 01 00 16 52 75 6E 74 69 6D 65 4E 75 6C 6C 61 62   // ...RuntimeNullab
+6C 65 73 2E 54 65 73 74 73 05 31 2E 30 2E 30 00   // les.Tests.1.0.0.
+00 )
+.get string TestAssembly.PartlyGeneratedCode::get_GeneratedPropertyWithAttribute()
+}
+}

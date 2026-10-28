@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Source/">
+    <Project Path="Source/RuntimeNullables.Tasks/RuntimeNullables.Tasks.csproj" />
+    <Project Path="Source/RuntimeNullables.Weaver/RuntimeNullables.Weaver.csproj" />
+    <Project Path="Source/RuntimeNullables/RuntimeNullables.csproj" />
+  </Folder>
+  <Folder Name="/Tests/">
+    <Project Path="Tests/RuntimeNullables.EndToEndTests/RuntimeNullables.EndToEndTests.csproj" />
+    <Project Path="Tests/RuntimeNullables.Tests/RuntimeNullables.Tests.csproj" />
+    <Project Path="Tests/TestAssembly/TestAssembly.csproj" />
+    <Project Path="Tests/TestAssemblyNonPublic/TestAssemblyNonPublic.csproj" />
+    <Project Path="Tests/TestAssemblyPointers/TestAssemblyPointers.csproj" />
+    <Project Path="Tests/TestAssemblyRuntimeAsync/TestAssemblyRuntimeAsync.csproj" />
+    <Project Path="Tests/TestAssemblySigned/TestAssemblySigned.csproj" />
+    <Project Path="Tests/TestAssemblyThrowHelpers/TestAssemblyThrowHelpers.csproj" />
+  </Folder>
+</Solution>

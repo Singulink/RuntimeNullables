@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net10.0</TargetFrameworks>
+
+    <!--
+      Signing the woven assembly again, and the default settings, which depend on whether DEBUG is defined. RuntimeNullablesCheckNonPublic and
+      RuntimeNullablesCheckOutputs are left unset on purpose.
+    -->
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\Source\RuntimeNullables\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <Import Project="..\WeaveTestAssembly.targets" />
+
+</Project>

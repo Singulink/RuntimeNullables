@@ -1,0 +1,24 @@
+﻿.class private auto ansi beforefieldinit TestAssemblyNonPublic.InternalGenericSubClass
+extends class TestAssemblyNonPublic.PublicGenericBaseClass`1<int32>
+{
+.method public hidebysig virtual instance void
+AbstractGenericMethod(int32 'value',
+string text) cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.maxstack  8
+IL_0000:  ldarg.2
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "text"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void class TestAssemblyNonPublic.PublicGenericBaseClass`1<int32>::.ctor()
+IL_0006:  ret
+}
+}

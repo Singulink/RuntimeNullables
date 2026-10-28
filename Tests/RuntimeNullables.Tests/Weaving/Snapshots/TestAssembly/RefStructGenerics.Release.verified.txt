@@ -1,0 +1,65 @@
+﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.RefStructGenerics
+extends [System.Runtime]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig static !!T  Echo<T>(!!T 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  box        !!T
+IL_0006:  brtrue.s   IL_0012
+IL_0008:  ldstr      "value"
+IL_000d:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_0012:  ldarg.0
+IL_0013:  dup
+IL_0014:  box        !!T
+IL_0019:  brtrue.s   IL_0025
+IL_001b:  ldstr      "Return value nullability contract was broken."
+IL_0020:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0025:  ret
+}
+.method public hidebysig static !!T  BadReturn<T>() cil managed
+{
+.maxstack  2
+.locals init (!!T V_0)
+IL_0000:  ldloca.s   V_0
+IL_0002:  initobj    !!T
+IL_0008:  ldloc.0
+IL_0009:  dup
+IL_000a:  box        !!T
+IL_000f:  brtrue.s   IL_001b
+IL_0011:  ldstr      "Return value nullability contract was broken."
+IL_0016:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_001b:  ret
+}
+.method public hidebysig static void  BadOut<T>([out] !!T& 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  initobj    !!T
+IL_0007:  ldarg.0
+IL_0008:  ldobj      !!T
+IL_000d:  box        !!T
+IL_0012:  brtrue.s   IL_001e
+IL_0014:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_0019:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_001e:  ret
+}
+.method public hidebysig static void  BadNotNullArgument<T>(!!T 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.param [1]
+.maxstack  1
+.locals (!!T V_0)
+IL_0000:  ldarg.0
+IL_0001:  stloc.0
+IL_0002:  ldloc.0
+IL_0003:  box        !!T
+IL_0008:  brtrue.s   IL_0014
+IL_000a:  ldstr      "Parameter 'value' nullability contract was broken."
+IL_000f:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0014:  ret
+}
+}

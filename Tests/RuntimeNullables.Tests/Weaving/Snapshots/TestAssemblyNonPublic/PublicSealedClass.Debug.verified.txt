@@ -1,0 +1,29 @@
+﻿.class public auto ansi sealed beforefieldinit TestAssemblyNonPublic.PublicSealedClass
+extends [System.Runtime]System.Object
+{
+.method public hidebysig static void  CallProtectedMethod(string 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       void TestAssemblyNonPublic.PublicSealedClass::ProtectedMethod(string)
+IL_0006:  nop
+IL_0007:  ret
+}
+.method family hidebysig static void  ProtectedMethod(string 'value') cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.maxstack  8
+IL_0000:  nop
+IL_0001:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ret
+}
+}

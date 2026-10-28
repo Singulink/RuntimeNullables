@@ -1,0 +1,219 @@
+<Project>
+  <!--
+    RuntimeNullables injects null checks into the compiled assembly based on its nullable annotations.
+
+    Settings (all optional):
+      RuntimeNullablesEnabled          false turns weaving off. Default: true.
+      RuntimeNullablesCheckOutputs     true checks return values and out/ref parameters. Default: true if DEBUG is defined, otherwise false.
+      RuntimeNullablesCheckNonPublic   true checks members outside the public API too. Default: true if DEBUG is defined, otherwise false.
+
+      RuntimeNullablesTreatWarningsAsErrors  true reports the warnings about weaving (RN0001, RN0004) and unreadable Fody configuration (RN0005) as
+                                             errors. Default: $(TreatWarningsAsErrors).
+      RuntimeNullablesUseTaskHost            true runs the weaving task in a separate process. Default: false.
+      RuntimeNullablesTaskAssembly           The weaving task assembly to use (for testing builds of RuntimeNullables). Default: the package's.
+
+    Legacy configuration: the CheckOutputs and CheckNonPublic attributes of the <RuntimeNullables> element in Fody's configuration (FodyWeavers.xml
+    in the solution or project directory, or the WeaverConfiguration property, found the way Fody finds them) are used for settings that aren't set
+    as properties, with a warning (RN0002) to migrate. Fody setups that don't work after migrating are reported as errors (RN1004).
+  -->
+
+  <PropertyGroup>
+    <RuntimeNullablesTaskAssembly Condition="'$(RuntimeNullablesTaskAssembly)' == ''">$(MSBuildThisFileDirectory)..\tasks\netstandard2.0\RuntimeNullables.Tasks.dll</RuntimeNullablesTaskAssembly>
+
+    <!-- WPF compiles a temporary copy of the project (named *_wpftmp) for its markup, which isn't woven. -->
+    <_RuntimeNullablesIsWpfTempProject>$(MSBuildProjectName.EndsWith('_wpftmp'))</_RuntimeNullablesIsWpfTempProject>
+
+    <!--
+      CoreCompile calls these targets when it runs rather than finding its outputs up to date, so an assembly is only woven right after it is compiled.
+      The stamp target marks the weaving as done (see _RuntimeNullablesPrepareCompile), and is moved after the targets that other packages add.
+    -->
+    <TargetsTriggeredByCompilation>$(TargetsTriggeredByCompilation);RuntimeNullablesWeave;_RuntimeNullablesWriteStamp</TargetsTriggeredByCompilation>
+
+    <!--
+      The legacy configuration warning shouldn't fail builds that use -warnaserror until they are migrated. Only done when Microsoft.Common.targets
+      imports this file (as it imports NuGet's build files), since it has copied WarningsNotAsErrors into this property by then.
+    -->
+    <MSBuildWarningsNotAsErrors Condition="'$(CommonTargetsPath)' != ''">$(MSBuildWarningsNotAsErrors);RN0002</MSBuildWarningsNotAsErrors>
+  </PropertyGroup>
+
+  <!--
+    Fody's configuration files, which can contain legacy settings: FodyWeavers.xml in the solution directory, then in the project directory. Unlike
+    Fody, which looks for them when it runs, this uses the value of SolutionDir at this point of the evaluation (so setting it in a file imported
+    later, e.g. Directory.Build.targets, has no effect here), and Visual Studio only notices a new file when it evaluates the project again.
+  -->
+  <PropertyGroup>
+    <_RuntimeNullablesFodySolutionDir>$(NCrunchOriginalSolutionDir)</_RuntimeNullablesFodySolutionDir>
+    <_RuntimeNullablesFodySolutionDir Condition="'$(_RuntimeNullablesFodySolutionDir)' == '' And '$(SolutionDir)' != '*Undefined*'">$(SolutionDir)</_RuntimeNullablesFodySolutionDir>
+    <_RuntimeNullablesFodySolutionDir Condition="'$(_RuntimeNullablesFodySolutionDir)' == ''">$(MSBuildProjectDirectory)\..</_RuntimeNullablesFodySolutionDir>
+
+    <!-- Exists() also guards against invalid paths, which would make NormalizePath() fail the evaluation. -->
+    <_RuntimeNullablesSolutionFodyWeavers Condition="Exists('$(_RuntimeNullablesFodySolutionDir)')">$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', '$(_RuntimeNullablesFodySolutionDir)', 'FodyWeavers.xml'))</_RuntimeNullablesSolutionFodyWeavers>
+    <_RuntimeNullablesProjectFodyWeavers>$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', 'FodyWeavers.xml'))</_RuntimeNullablesProjectFodyWeavers>
+  </PropertyGroup>
+
+  <!-- File.Exists() is false for directories, unlike Exists(). -->
+  <ItemGroup>
+    <_RuntimeNullablesFodyWeaversFile Include="$(_RuntimeNullablesSolutionFodyWeavers)"
+                                      Condition="'$(_RuntimeNullablesSolutionFodyWeavers)' != '$(_RuntimeNullablesProjectFodyWeavers)' And $([System.IO.File]::Exists('$(_RuntimeNullablesSolutionFodyWeavers)'))" />
+    <_RuntimeNullablesFodyWeaversFile Include="$(_RuntimeNullablesProjectFodyWeavers)" Condition="$([System.IO.File]::Exists('$(_RuntimeNullablesProjectFodyWeavers)'))" />
+
+    <!-- Lets the Visual Studio fast up-to-date check notice when they change. They are compiler inputs too (see _RuntimeNullablesPrepareCompile). -->
+    <UpToDateCheckInput Include="@(_RuntimeNullablesFodyWeaversFile)" />
+  </ItemGroup>
+
+  <UsingTask TaskName="RuntimeNullables.Tasks.WeaveRuntimeNullables" AssemblyFile="$(RuntimeNullablesTaskAssembly)" TaskFactory="TaskHostFactory"
+             Condition="'$(RuntimeNullablesUseTaskHost)' == 'true'" />
+  <UsingTask TaskName="RuntimeNullables.Tasks.WeaveRuntimeNullables" AssemblyFile="$(RuntimeNullablesTaskAssembly)"
+             Condition="'$(RuntimeNullablesUseTaskHost)' != 'true'" />
+
+  <!-- Reading legacy configuration is quick and doesn't use Mono.Cecil, so it always runs in the build process. -->
+  <UsingTask TaskName="RuntimeNullables.Tasks.ReadLegacyFodyConfiguration" AssemblyFile="$(RuntimeNullablesTaskAssembly)" />
+
+  <!--
+    Checks the settings, reads the ones that aren't set as properties from legacy Fody configuration, and reports Fody setups that don't work after
+    migrating. Runs for the same builds as weaving, and also when weaving is turned off since Fody would still fail.
+  -->
+  <Target Name="_RuntimeNullablesResolveSettings" BeforeTargets="CoreCompile"
+          Condition="('$(DesignTimeBuild)' != 'true' Or '$(BuildingForLiveUnitTesting)' == 'true') And '$(_RuntimeNullablesIsWpfTempProject)' != 'true'">
+    <Error Code="RN1003" File="$(MSBuildProjectFullPath)" Condition="$([MSBuild]::VersionLessThan('$(MSBuildVersion)', '17.0'))"
+           Text="RuntimeNullables: MSBuild 17 (Visual Studio 2022 or the .NET 6 SDK) or later is required." />
+
+    <ItemGroup>
+      <_RuntimeNullablesBooleanSetting Include="RuntimeNullablesEnabled" Value="$(RuntimeNullablesEnabled)" />
+      <_RuntimeNullablesBooleanSetting Include="RuntimeNullablesCheckOutputs" Value="$(RuntimeNullablesCheckOutputs)" />
+      <_RuntimeNullablesBooleanSetting Include="RuntimeNullablesCheckNonPublic" Value="$(RuntimeNullablesCheckNonPublic)" />
+      <_RuntimeNullablesBooleanSetting Include="RuntimeNullablesTreatWarningsAsErrors" Value="$(RuntimeNullablesTreatWarningsAsErrors)" />
+      <_RuntimeNullablesBooleanSetting Include="RuntimeNullablesUseTaskHost" Value="$(RuntimeNullablesUseTaskHost)" />
+    </ItemGroup>
+
+    <Error Code="RN1002" File="$(MSBuildProjectFullPath)"
+           Condition="'%(_RuntimeNullablesBooleanSetting.Value)' != '' And '%(_RuntimeNullablesBooleanSetting.Value)' != 'true' And '%(_RuntimeNullablesBooleanSetting.Value)' != 'false'"
+           Text="RuntimeNullables: Invalid value '%(_RuntimeNullablesBooleanSetting.Value)' for the %(_RuntimeNullablesBooleanSetting.Identity) property. Expected 'true' or 'false'." />
+
+    <!-- Fody's build file defines FodyAssembly, and WeaverFiles lists the installed Fody add-ins. -->
+    <PropertyGroup>
+      <_RuntimeNullablesFodyEnabled>false</_RuntimeNullablesFodyEnabled>
+      <_RuntimeNullablesFodyEnabled Condition="'$(FodyAssembly)' != '' And '$(DisableFody)' != 'true'">true</_RuntimeNullablesFodyEnabled>
+    </PropertyGroup>
+
+    <Error Code="RN1004" File="$(MSBuildProjectFullPath)" Condition="'@(WeaverFiles->WithMetadataValue('Filename', 'RuntimeNullables.Fody'))' != ''"
+           Text="RuntimeNullables: The RuntimeNullables.Fody package is still installed. Remove it (and the Fody package, if no other Fody add-ins use it), since the $(MSBuildThisFileName) package replaces it." />
+
+    <Error Code="RN1004" File="$(MSBuildProjectFullPath)" Condition="'$(_RuntimeNullablesFodyEnabled)' == 'true' And '@(WeaverFiles)' == ''"
+           Text="RuntimeNullables: The Fody package is installed without any Fody add-ins, so Fody fails the build. Remove it (and FodyWeavers.xml and FodyWeavers.xsd), since RuntimeNullables isn't a Fody add-in anymore." />
+
+    <RuntimeNullables.Tasks.ReadLegacyFodyConfiguration
+        Condition="'@(_RuntimeNullablesFodyWeaversFile)' != '' Or '$(WeaverConfiguration)' != ''"
+        ProjectPath="$(MSBuildProjectFullPath)"
+        FodyWeaversFiles="@(_RuntimeNullablesFodyWeaversFile)"
+        WeaverConfiguration="$(WeaverConfiguration)"
+        CheckOutputs="$(RuntimeNullablesCheckOutputs)"
+        CheckNonPublic="$(RuntimeNullablesCheckNonPublic)"
+        FodyEnabled="$(_RuntimeNullablesFodyEnabled)"
+        TreatWarningsAsErrors="$([MSBuild]::ValueOrDefault('$(RuntimeNullablesTreatWarningsAsErrors)', '$(TreatWarningsAsErrors)'))"
+        NoWarn="$(NoWarn);$(MSBuildWarningsAsMessages)"
+        WarningsNotAsErrors="$(WarningsNotAsErrors);$(MSBuildWarningsNotAsErrors)">
+      <Output TaskParameter="LegacyCheckOutputs" PropertyName="_RuntimeNullablesLegacyCheckOutputs" />
+      <Output TaskParameter="LegacyCheckNonPublic" PropertyName="_RuntimeNullablesLegacyCheckNonPublic" />
+    </RuntimeNullables.Tasks.ReadLegacyFodyConfiguration>
+  </Target>
+
+  <!--
+    Adds files to the compiler's inputs and outputs, so that CoreCompile (and therefore weaving) runs again when needed:
+
+    - The settings file records the settings that affect weaving, including those from legacy Fody configuration. It is only rewritten when they
+      change, which makes it newer than the compiler's outputs when a setting changes (including from the command line) or RuntimeNullables is
+      updated.
+    - The task assemblies, and the Fody configuration files so that the Visual Studio fast up-to-date check and MSBuild agree on when to compile
+      (Fody makes the project's FodyWeavers.xml a compiler input too).
+    - The stamp file is written after the assembly was woven and the other targets that compiling triggers (e.g. Fody's) have run. If any of them
+      fails or the build is cancelled before they finish, the stamp is missing or older than the inputs, so the next build compiles and weaves again
+      instead of finding the unfinished assembly up to date.
+  -->
+  <Target Name="_RuntimeNullablesPrepareCompile" BeforeTargets="CoreCompile" DependsOnTargets="_RuntimeNullablesResolveSettings"
+          Condition="'$(DesignTimeBuild)' != 'true' And '$(_RuntimeNullablesIsWpfTempProject)' != 'true'">
+    <PropertyGroup>
+      <_RuntimeNullablesSettingsFile>$(IntermediateOutputPath)$(MSBuildProjectFile).RuntimeNullables.cache</_RuntimeNullablesSettingsFile>
+      <_RuntimeNullablesStampFile>$(IntermediateOutputPath)$(MSBuildProjectFile).RuntimeNullables.stamp</_RuntimeNullablesStampFile>
+      <_RuntimeNullablesSettings>Enabled=$([MSBuild]::ValueOrDefault('$(RuntimeNullablesEnabled)', 'true'))</_RuntimeNullablesSettings>
+      <_RuntimeNullablesSettings>$(_RuntimeNullablesSettings);CheckOutputs=$([MSBuild]::ValueOrDefault('$(RuntimeNullablesCheckOutputs)', '$(_RuntimeNullablesLegacyCheckOutputs)'))</_RuntimeNullablesSettings>
+      <_RuntimeNullablesSettings>$(_RuntimeNullablesSettings);CheckNonPublic=$([MSBuild]::ValueOrDefault('$(RuntimeNullablesCheckNonPublic)', '$(_RuntimeNullablesLegacyCheckNonPublic)'))</_RuntimeNullablesSettings>
+      <_RuntimeNullablesSettings>$(_RuntimeNullablesSettings);TaskAssembly=$(RuntimeNullablesTaskAssembly)</_RuntimeNullablesSettings>
+    </PropertyGroup>
+
+    <WriteLinesToFile File="$(_RuntimeNullablesSettingsFile)" Lines="$(_RuntimeNullablesSettings)" Overwrite="true" WriteOnlyWhenDifferent="true" />
+
+    <!--
+      Packages imported after this one add their targets after the stamp target, so move it to the end. Only if it is there, since this assignment
+      would even override a global property (e.g. -p:TargetsTriggeredByCompilation=).
+    -->
+    <PropertyGroup Condition="$(TargetsTriggeredByCompilation.Contains(';_RuntimeNullablesWriteStamp'))">
+      <TargetsTriggeredByCompilation>$([MSBuild]::Unescape($(TargetsTriggeredByCompilation.Replace(';_RuntimeNullablesWriteStamp', ''))));_RuntimeNullablesWriteStamp</TargetsTriggeredByCompilation>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <CustomAdditionalCompileInputs Include="$(_RuntimeNullablesSettingsFile);@(_RuntimeNullablesFodyWeaversFile)" />
+      <CustomAdditionalCompileInputs Include="$([System.IO.Path]::GetDirectoryName('$(RuntimeNullablesTaskAssembly)'))\*.dll" />
+      <CustomAdditionalCompileOutputs Include="$(_RuntimeNullablesStampFile)" />
+      <FileWrites Include="$(_RuntimeNullablesSettingsFile);$(_RuntimeNullablesStampFile)" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="RuntimeNullablesWeave"
+          Condition="'$(RuntimeNullablesEnabled)' != 'false' And ('$(DesignTimeBuild)' != 'true' Or '$(BuildingForLiveUnitTesting)' == 'true') And
+                     '$(SkipCompilerExecution)' != 'true' And '$(_RuntimeNullablesIsWpfTempProject)' != 'true' And Exists('@(IntermediateAssembly)')">
+
+    <RuntimeNullables.Tasks.WeaveRuntimeNullables
+        AssemblyPath="@(IntermediateAssembly->'%(FullPath)')"
+        ProjectPath="$(MSBuildProjectFullPath)"
+        References="@(ReferencePath)"
+        DefineConstants="$(DefineConstants)"
+        CheckOutputs="$([MSBuild]::ValueOrDefault('$(RuntimeNullablesCheckOutputs)', '$(_RuntimeNullablesLegacyCheckOutputs)'))"
+        CheckNonPublic="$([MSBuild]::ValueOrDefault('$(RuntimeNullablesCheckNonPublic)', '$(_RuntimeNullablesLegacyCheckNonPublic)'))"
+        PublicSign="$(PublicSign)"
+        KeyFile="$(KeyOriginatorFile)"
+        KeyContainer="$(KeyContainerName)"
+        TreatWarningsAsErrors="$([MSBuild]::ValueOrDefault('$(RuntimeNullablesTreatWarningsAsErrors)', '$(TreatWarningsAsErrors)'))"
+        NoWarn="$(NoWarn);$(MSBuildWarningsAsMessages)"
+        WarningsNotAsErrors="$(WarningsNotAsErrors);$(MSBuildWarningsNotAsErrors)" />
+
+    <OnError ExecuteTargets="_RuntimeNullablesWeaveFailed" />
+  </Target>
+
+  <Target Name="_RuntimeNullablesWeaveFailed">
+    <Delete Files="$(_RuntimeNullablesStampFile)" ContinueOnError="true" />
+  </Target>
+
+  <!-- Also written when weaving is turned off, since the stamp is a compiler output either way. -->
+  <Target Name="_RuntimeNullablesWriteStamp"
+          Condition="'$(DesignTimeBuild)' != 'true' And '$(SkipCompilerExecution)' != 'true' And '$(_RuntimeNullablesIsWpfTempProject)' != 'true'">
+    <Touch Files="$(_RuntimeNullablesStampFile)" AlwaysCreate="true" />
+  </Target>
+
+  <!--
+    Weaving removes every reference to the RuntimeNullables assembly (it is only needed for [NullChecks] at compile time), so it doesn't need to be
+    copied to the output or listed in deps.json. Package runtime assets are matched by package ID (NuGet imports this file as
+    build\<package ID>.targets) and copy-local files by file name, which also covers the project reference used to build RuntimeNullables itself.
+  -->
+  <Target Name="_RuntimeNullablesRemoveCopyLocalFiles" AfterTargets="ResolveAssemblyReferences" Condition="'$(RuntimeNullablesEnabled)' != 'false'">
+    <ItemGroup>
+      <_RuntimeNullablesCopyLocalFile Include="@(RuntimeCopyLocalItems)" Condition="'%(NuGetPackageId)' == '$(MSBuildThisFileName)'" />
+      <_RuntimeNullablesCopyLocalFile Include="@(ReferenceCopyLocalPaths)"
+                                      Condition="'%(Filename)' == 'RuntimeNullables' And ('%(Extension)' == '.dll' Or '%(Extension)' == '.pdb' Or '%(Extension)' == '.xml')" />
+      <ReferenceCopyLocalPaths Remove="@(_RuntimeNullablesCopyLocalFile)" />
+      <RuntimeCopyLocalItems Remove="@(_RuntimeNullablesCopyLocalFile)" />
+    </ItemGroup>
+  </Target>
+
+  <!-- The package is only needed to build this project, so it shouldn't become a dependency of the projects and packages that depend on this one. -->
+  <Target Name="_RuntimeNullablesCheckPackageReference" BeforeTargets="CoreCompile"
+          Condition="'$(DesignTimeBuild)' != 'true' And '$(_RuntimeNullablesIsWpfTempProject)' != 'true'">
+    <ItemGroup>
+      <_RuntimeNullablesPackageReference Include="@(PackageReference)" Condition="'%(Identity)' == '$(MSBuildThisFileName)'" />
+    </ItemGroup>
+
+    <Warning Code="RN0003" File="$(MSBuildProjectFullPath)"
+             Text="RuntimeNullables: The $(MSBuildThisFileName) package reference should have PrivateAssets=&quot;all&quot;, since the package is only needed at build time and shouldn't become a dependency of projects and packages that depend on this project."
+             Condition="'@(_RuntimeNullablesPackageReference)' != '' And '%(_RuntimeNullablesPackageReference.PrivateAssets)' != 'all'" />
+  </Target>
+</Project>

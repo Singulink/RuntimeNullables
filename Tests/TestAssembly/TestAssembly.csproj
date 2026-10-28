@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net10.0</TargetFrameworks>
+
+    <!-- Most of the checks: everything is checked, in both configurations. -->
+    <RuntimeNullablesCheckNonPublic>true</RuntimeNullablesCheckNonPublic>
+    <RuntimeNullablesCheckOutputs>true</RuntimeNullablesCheckOutputs>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\RuntimeNullables\RuntimeNullables.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\WeaveTestAssembly.targets" />
+
+</Project>

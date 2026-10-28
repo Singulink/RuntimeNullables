@@ -1,0 +1,19 @@
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <PropertyGroup>
+    <!-- The C# version .NET 10 projects get by default, so the test assemblies can use the newest features that change the compiled code. -->
+    <LangVersion>14.0</LangVersion>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      The tests target versions of .NET that have nullable annotations, so they don't need the annotator from Directory.Build.props. The SDK
+      downloads the reference packs they need itself, which would make the annotator's download of another version a duplicate (NU1505).
+    -->
+    <PackageReference Remove="TunnelVisionLabs.ReferenceAssemblyAnnotator" />
+    <PackageDownload Remove="Microsoft.NETCore.App.Ref" />
+  </ItemGroup>
+</Project>

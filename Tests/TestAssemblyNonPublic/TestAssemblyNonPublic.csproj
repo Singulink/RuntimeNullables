@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net10.0</TargetFrameworks>
+
+    <!--
+      What counts as public API, and the settings taking precedence over [NullChecks(true)]: only the public API's inputs are checked, like in a
+      Release build with the default settings. The assembly turns null checks off and each type turns them back on with [NullChecks(true)].
+    -->
+    <RuntimeNullablesCheckNonPublic>false</RuntimeNullablesCheckNonPublic>
+    <RuntimeNullablesCheckOutputs>false</RuntimeNullablesCheckOutputs>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\RuntimeNullables\RuntimeNullables.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\WeaveTestAssembly.targets" />
+
+</Project>

@@ -1,0 +1,37 @@
+﻿.class public abstract auto ansi sealed beforefieldinit TestAssembly.NullableDisabled
+extends [System.Runtime]System.Object
+{
+.method public hidebysig static string
+NonNull(string x) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ret
+}
+.method public hidebysig static void  DisallowNullInput(string 'value') cil managed
+{
+.param [1]
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  nop
+IL_000e:  ret
+}
+.method public hidebysig static void  BadNotNullOutput([out] string& 'value') cil managed
+{
+.param [1]
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldnull
+IL_0002:  stind.ref
+IL_0003:  ldarg.0
+IL_0004:  ldind.ref
+IL_0005:  brtrue.s   IL_0011
+IL_0007:  ldstr      "Output parameter 'value' nullability contract was "
++ "broken."
+IL_000c:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0011:  ret
+}
+}

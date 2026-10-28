@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net10.0</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <!-- Pointers and function pointers, which are never checked. Everything else is. -->
+    <RuntimeNullablesCheckNonPublic>true</RuntimeNullablesCheckNonPublic>
+    <RuntimeNullablesCheckOutputs>true</RuntimeNullablesCheckOutputs>
+  </PropertyGroup>
+
+  <Import Project="..\WeaveTestAssembly.targets" />
+
+</Project>

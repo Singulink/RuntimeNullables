@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+
+    <!--
+      Runtime async (.NET 11): the compiler emits async methods without state machines. It's opt-in in the .NET 11 SDK. Everything is checked, in
+      both configurations.
+    -->
+    <Features>$(Features);runtime-async=on</Features>
+    <RuntimeNullablesCheckNonPublic>true</RuntimeNullablesCheckNonPublic>
+    <RuntimeNullablesCheckOutputs>true</RuntimeNullablesCheckOutputs>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\RuntimeNullables\RuntimeNullables.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\WeaveTestAssembly.targets" />
+
+</Project>

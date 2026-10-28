@@ -1,0 +1,35 @@
+<Project>
+  <!--
+    Builds the sources of the test assembly with the same name in the Tests directory with NullGuard instead of Runtime Nullables. NullGuard checks
+    everything unless the project sets NullGuardValidationFlags, and throws in Debug builds too instead of calling Debug.Assert, like Runtime Nullables.
+  -->
+  <PropertyGroup>
+    <TargetFramework Condition="'$(TargetFramework)' == ''">net10.0</TargetFramework>
+    <NullGuardValidationFlags Condition="'$(NullGuardValidationFlags)' == ''">All</NullGuardValidationFlags>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TestAssemblySourceDirectory>$(RepositoryDirectory)Tests\$(MSBuildProjectName)\</TestAssemblySourceDirectory>
+
+    <WeaverConfiguration>
+      <Weavers>
+        <NullGuard IncludeDebugAssert="false" />
+      </Weavers>
+    </WeaverConfiguration>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="$(TestAssemblySourceDirectory)**\*.cs" Exclude="$(TestAssemblySourceDirectory)bin\**;$(TestAssemblySourceDirectory)obj\**" />
+
+    <AssemblyAttribute Include="NullGuard.NullGuardAttribute">
+      <_Parameter1>NullGuard.ValidationFlags.$(NullGuardValidationFlags)</_Parameter1>
+      <_Parameter1_IsLiteral>true</_Parameter1_IsLiteral>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fody" PrivateAssets="all" />
+    <PackageReference Include="NullGuard.Fody" PrivateAssets="all" />
+
+    <!-- For the [NullChecks] attributes in the sources, which NullGuard ignores. -->
+    <ProjectReference Include="$(RepositoryDirectory)Source\RuntimeNullables\RuntimeNullables.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,92 @@
+﻿.class private auto ansi beforefieldinit TestAssemblyNonPublic.InternalImplicitImplementation
+extends [System.Runtime]System.Object
+implements TestAssemblyNonPublic.IPublicInterface,
+TestAssemblyNonPublic.IInternalInterface,
+class TestAssemblyNonPublic.IPublicGenericInterface`1<int32>,
+TestAssemblyNonPublic.IPublicMembersInterface
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type TestAssemblyNonPublic.IPublicInterface
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type TestAssemblyNonPublic.IInternalInterface
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type class TestAssemblyNonPublic.IPublicGenericInterface`1<int32>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type TestAssemblyNonPublic.IPublicMembersInterface
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig newslot specialname virtual final
+instance void  add_InterfaceEvent(class [System.Runtime]System.Action 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ret
+}
+.method public hidebysig newslot specialname virtual final
+instance void  remove_InterfaceEvent(class [System.Runtime]System.Action 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ret
+}
+.method public hidebysig newslot specialname virtual final
+instance void  set_InterfaceProperty(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ret
+}
+.method public hidebysig newslot virtual final
+instance void  InterfacePublicMethod(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.1
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "value"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ret
+}
+.method public hidebysig newslot virtual final
+instance void  InterfaceInternalMethod(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ret
+}
+.method public hidebysig newslot virtual final
+instance void  InterfaceGenericMethod(int32 'value',
+string text) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.2
+IL_0001:  brtrue.s   IL_000d
+IL_0003:  ldstr      "text"
+IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
+IL_000d:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  ret
+}
+.event [System.Runtime]System.Action InterfaceEvent
+{
+.addon instance void TestAssemblyNonPublic.InternalImplicitImplementation::add_InterfaceEvent(class [System.Runtime]System.Action)
+.removeon instance void TestAssemblyNonPublic.InternalImplicitImplementation::remove_InterfaceEvent(class [System.Runtime]System.Action)
+}
+.property instance string InterfaceProperty()
+{
+.set instance void TestAssemblyNonPublic.InternalImplicitImplementation::set_InterfaceProperty(string)
+}
+}

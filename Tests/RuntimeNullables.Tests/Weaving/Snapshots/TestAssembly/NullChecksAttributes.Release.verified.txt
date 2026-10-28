@@ -1,0 +1,104 @@
+﻿.class public auto ansi beforefieldinit TestAssembly.NullChecksAttributes
+extends [System.Runtime]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private string _value
+.method public hidebysig specialname rtspecialname
+instance void  .ctor() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  ret
+}
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  ret
+}
+.method public hidebysig specialname instance string
+get_UncheckedProperty() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.NullChecksAttributes::_value
+IL_0006:  ret
+}
+.method public hidebysig specialname instance void
+set_UncheckedProperty(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldarg.1
+IL_0002:  stfld      string TestAssembly.NullChecksAttributes::_value
+IL_0007:  ret
+}
+.method public hidebysig specialname instance string
+get_CheckedGetterProperty() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.NullChecksAttributes::_value
+IL_0006:  dup
+IL_0007:  brtrue.s   IL_0013
+IL_0009:  ldstr      "Return value nullability contract was broken."
+IL_000e:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0013:  ret
+}
+.method public hidebysig specialname instance void
+set_CheckedGetterProperty(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldarg.1
+IL_0002:  stfld      string TestAssembly.NullChecksAttributes::_value
+IL_0007:  ret
+}
+.method public hidebysig specialname instance string
+get_UncheckedSetterProperty() cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.NullChecksAttributes::_value
+IL_0006:  dup
+IL_0007:  brtrue.s   IL_0013
+IL_0009:  ldstr      "Return value nullability contract was broken."
+IL_000e:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
+IL_0013:  ret
+}
+.method public hidebysig specialname instance void
+set_UncheckedSetterProperty(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldarg.1
+IL_0002:  stfld      string TestAssembly.NullChecksAttributes::_value
+IL_0007:  ret
+}
+.method public hidebysig static string
+UncheckedMethod(string 'value') cil managed
+{
+.maxstack  8
+IL_0000:  ldnull
+IL_0001:  ret
+}
+.property instance string UncheckedProperty()
+{
+.get instance string TestAssembly.NullChecksAttributes::get_UncheckedProperty()
+.set instance void TestAssembly.NullChecksAttributes::set_UncheckedProperty(string)
+}
+.property instance string CheckedGetterProperty()
+{
+.get instance string TestAssembly.NullChecksAttributes::get_CheckedGetterProperty()
+.set instance void TestAssembly.NullChecksAttributes::set_CheckedGetterProperty(string)
+}
+.property instance string UncheckedSetterProperty()
+{
+.get instance string TestAssembly.NullChecksAttributes::get_UncheckedSetterProperty()
+.set instance void TestAssembly.NullChecksAttributes::set_UncheckedSetterProperty(string)
+}
+}

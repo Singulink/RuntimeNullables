@@ -1,0 +1,28 @@
+﻿.class private abstract auto ansi sealed beforefieldinit RuntimeNullables.ThrowHelpers
+extends [System.Runtime]System.Object
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.method public hidebysig static void  ThrowArgumentNull(string paramName) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor(string)
+IL_0006:  throw
+}
+.method public hidebysig static void  ThrowOutputNull(string message) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  newobj     instance void [System.Runtime]System.IO.InvalidDataException::.ctor(string)
+IL_0006:  throw
+}
+.method public hidebysig static class [System.Runtime]System.Exception
+GetAsyncResultNullException(string message) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  newobj     instance void [System.Data.Common]System.Data.InvalidConstraintException::.ctor(string)
+IL_0006:  ret
+}
+}

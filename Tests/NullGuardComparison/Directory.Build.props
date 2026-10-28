@@ -1,0 +1,13 @@
+<Project>
+  <!--
+    The comparison doesn't use the repository's build settings (analyzers, warnings as errors and the annotator), only the language settings the tests
+    are written for.
+  -->
+  <PropertyGroup>
+    <RepositoryDirectory>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\..\'))</RepositoryDirectory>
+    <LangVersion>14.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+</Project>

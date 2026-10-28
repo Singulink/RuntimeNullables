@@ -1,0 +1,9 @@
+# Editor config overrides for the weaver, which is not a public library
+
+
+########### C# files ###########
+[*.cs]
+
+#### Analyzer diagnostics ####
+
+stylecop.documentation.documentExposedElements = false

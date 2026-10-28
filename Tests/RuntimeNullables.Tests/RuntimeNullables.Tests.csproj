@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!--
+      The oldest and the current long-term support versions of .NET, and .NET 11 for runtime async (TestAssemblyRuntimeAsync). The other test
+      assemblies are used through their net10.0 builds there.
+    -->
+    <TargetFrameworks>net6.0;net10.0;net11.0</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Utilities.Core" />
+    <PackageReference Include="Microsoft.ILVerification" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="MSTest.TestAdapter" />
+    <PackageReference Include="MSTest.TestFramework" />
+    <PackageReference Include="Verify.MSTest" />
+
+    <!-- Replaces the version that Microsoft.Build.Utilities.Core brings in (4.7.0), which has a known vulnerability that NuGet's audit reports. -->
+    <PackageReference Include="System.Drawing.Common" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Source\RuntimeNullables\key.snk" Link="key.snk" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\RuntimeNullables.Weaver\RuntimeNullables.Weaver.csproj" />
+    <ProjectReference Include="..\..\Source\RuntimeNullables.Tasks\RuntimeNullables.Tasks.csproj" />
+    <ProjectReference Include="..\..\Source\RuntimeNullables\RuntimeNullables.csproj" />
+    <ProjectReference Include="..\TestAssemblyNonPublic\TestAssemblyNonPublic.csproj" />
+    <ProjectReference Include="..\TestAssemblyPointers\TestAssemblyPointers.csproj" />
+    <ProjectReference Include="..\TestAssemblySigned\TestAssemblySigned.csproj" />
+    <ProjectReference Include="..\TestAssemblyThrowHelpers\TestAssemblyThrowHelpers.csproj" />
+    <ProjectReference Include="..\TestAssembly\TestAssembly.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$([MSBuild]::IsTargetFrameworkCompatible('$(TargetFramework)', 'net11.0'))">
+    <ProjectReference Include="..\TestAssemblyRuntimeAsync\TestAssemblyRuntimeAsync.csproj" />
+  </ItemGroup>
+
+</Project>

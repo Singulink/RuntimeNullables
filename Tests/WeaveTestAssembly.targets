@@ -1,0 +1,48 @@
+<Project>
+  <!-- Weaves a test assembly with the in-repo build of RuntimeNullables, the same way the NuGet package does for consumers. -->
+
+  <PropertyGroup>
+    <RuntimeNullablesTaskAssembly>$(MSBuildThisFileDirectory)..\Source\RuntimeNullables.Tasks\bin\$(Configuration)\netstandard2.0\RuntimeNullables.Tasks.dll</RuntimeNullablesTaskAssembly>
+
+    <!--
+      Run the task in a separate process so the build never locks or keeps using an old build of the task assemblies, which are rebuilt in the same
+      solution. A long-lived MSBuild server (dotnet/msbuild#14289) still caches the task's parameter list, so after changing the task's parameters run
+      "dotnet build-server shutdown" if the build reports MSB4064 for a parameter that exists.
+    -->
+    <RuntimeNullablesUseTaskHost>true</RuntimeNullablesUseTaskHost>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(MSBuildThisFileDirectory)..\Source\RuntimeNullables.Tasks\RuntimeNullables.Tasks.csproj" ReferenceOutputAssembly="false"
+                      PrivateAssets="all" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)..\Source\RuntimeNullables\build\Singulink.RuntimeNullables.targets" />
+
+  <!--
+    Keeps a copy of the assembly and its PDB as the compiler produced them, along with the assembly's references, in an Unwoven folder that is copied to
+    the output of the test project (which references this project). The tests compare the woven and unwoven assemblies and weave copies themselves.
+  -->
+  <PropertyGroup>
+    <_UnwovenTestAssemblyDirectory>$(BaseIntermediateOutputPath)$(Configuration)\$(TargetFramework)\Unwoven\</_UnwovenTestAssemblyDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <_UnwovenTestAssemblyFile Include="$(_UnwovenTestAssemblyDirectory)$(MSBuildProjectName).dll" />
+    <_UnwovenTestAssemblyFile Include="$(_UnwovenTestAssemblyDirectory)$(MSBuildProjectName).pdb" />
+    <_UnwovenTestAssemblyFile Include="$(_UnwovenTestAssemblyDirectory)$(MSBuildProjectName).references.txt" />
+
+    <None Include="@(_UnwovenTestAssemblyFile)" Link="Unwoven\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" Visible="false" />
+
+    <!-- The files are only written when the project is compiled, so they are listed here to keep incremental clean from deleting them otherwise. -->
+    <FileWrites Include="@(_UnwovenTestAssemblyFile)" />
+  </ItemGroup>
+
+  <Target Name="_CopyUnwovenTestAssembly" BeforeTargets="RuntimeNullablesWeave"
+          Condition="'$(DesignTimeBuild)' != 'true' And '$(SkipCompilerExecution)' != 'true' And Exists('@(IntermediateAssembly)')">
+    <Copy SourceFiles="@(IntermediateAssembly);@(_DebugSymbolsIntermediatePath)" DestinationFolder="$(_UnwovenTestAssemblyDirectory)" />
+
+    <WriteLinesToFile File="$(_UnwovenTestAssemblyDirectory)$(MSBuildProjectName).references.txt" Lines="@(ReferencePath->'%(FullPath)')"
+                      Overwrite="true" />
+  </Target>
+</Project>

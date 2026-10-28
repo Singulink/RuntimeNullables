@@ -1,0 +1,15 @@
+﻿.class private abstract auto ansi sealed beforefieldinit RuntimeNullables.ThrowHelpers
+extends [System.Runtime]System.Object
+{
+string) = ( 01 00 17 52 75 6E 74 69 6D 65 4E 75 6C 6C 61 62   // ...RuntimeNullab
+6C 65 73 2E 57 65 61 76 65 72 07 33 2E 30 2E 30   // les.Weaver.3.0.0
+2E 30 00 00 )                                     // .0..
+.method assembly hidebysig static void
+ThrowArgumentNull(string paramName) cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  newobj     instance void [System.Runtime]System.ArgumentNullException::.ctor(string)
+IL_0006:  throw
+}
+}
