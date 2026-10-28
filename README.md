@@ -352,9 +352,9 @@ If you still use Fody for other add-ins, the element has to go from the project'
 Other changes:
 
 - Fody skipped add-ins that `FodyWeavers.xml` didn't list, so a project with that file only got null checks if the file listed `<RuntimeNullables>`. Now every project with the package gets them unless it sets `RuntimeNullablesEnabled` to `false`.
-- More is checked, so upgrading can surface null bugs that version 2 missed. Release builds also check protected members and internal classes' implementations of public interfaces. Some parameters and return values that version 2 skipped are now checked: `in` parameters of virtual methods, `ref readonly` return values, arrays of a generic type (`T[]`), `ref` arrays of value types (`ref byte[]`) and by-value parameters marked `[Out]`. So are outputs with `[MaybeNullWhen]`, `[NotNullWhen]` or `[NotNullIfNotNull]`, which version 2 never checked, and arguments that `[NotNull]` or `[NotNullWhen]` promise aren't null.
+- More is checked, so upgrading can surface null bugs that were missed before.
 - `[NullChecks(true)]` on code that's never checked, such as generated code, is reported as warning `RN0001`, since it has no effect.
-- .NET 11 runtime async methods are supported. Version 2 wove them as if they returned their task, which made invalid code or checked the wrong value.
-- C# 14 extension members are supported. Version 2 ignored `[NullChecks]` on extension properties, and also added checks to the declarations of extension members that the compiler adds next to their code, which are never called.
+- .NET 11 runtime async methods are supported.
+- C# 14 extension members are fully supported.
 - Code that uses `NullChecksAttribute` other than as an attribute (e.g. `typeof(NullChecksAttribute)`, which would fail at run time since the assembly doesn't reference `RuntimeNullables.dll` once the checks are injected) is now reported as error `RN1001`.
 - Strong-named assemblies are signed again with the same key the compiler used: the key file or key container from the project or the assembly's attributes, as the compiler finds them. Delay-signed and public-signed assemblies are left for you to sign.
