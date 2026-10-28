@@ -14,6 +14,8 @@ namespace RuntimeNullables.Tests;
 /// Compares the IL of every type in the woven test assemblies with its snapshot in the Snapshots folder. Debug and Release builds have separate
 /// snapshots since the compiler's code differs; the target frameworks share them. To accept a change, replace the <c>.verified.txt</c> file with the
 /// <c>.received.txt</c> file that the failing test writes next to it (one per target framework).
+/// <para>A failing test opens the two files in a diff tool, except on build servers. To turn that off, set the <c>DiffEngine_Disabled</c> environment
+/// variable to <c>true</c>.</para>
 /// </summary>
 [TestClass]
 public class ILSnapshotTests : VerifyBase
