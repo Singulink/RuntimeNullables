@@ -95,6 +95,25 @@ public static class TaskResults
         return default!;
     }
 
+    // Async methods that never return a result have no result to check.
+
+    public static async Task<string> ThrowingAsync()
+    {
+        await Task.Delay(10);
+        throw new InvalidOperationException();
+    }
+
+    public static async Task<string> ThrowingAsyncWithoutAwait()
+    {
+        throw new InvalidOperationException();
+    }
+
+    public static async ValueTask<string> ThrowingValueAsync()
+    {
+        await Task.Delay(10);
+        throw new InvalidOperationException();
+    }
+
     /// <summary>
     /// Tasks that are returned before they complete aren't checked.
     /// </summary>

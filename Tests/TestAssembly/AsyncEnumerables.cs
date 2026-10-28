@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -32,6 +33,22 @@ public static class AsyncEnumerables
         yield return string.Empty;
         yield return null!;
         yield return string.Empty;
+    }
+
+    public static async IAsyncEnumerable<string> GetNoReferencesAsync()
+    {
+        await Task.Delay(10);
+        yield break;
+    }
+
+    public static async IAsyncEnumerable<string> ThrowingGetReferencesAsync()
+    {
+        await Task.Delay(10);
+        throw new InvalidOperationException();
+
+#pragma warning disable CS0162 // Unreachable code detected (an async iterator needs a yield statement)
+        yield break;
+#pragma warning restore CS0162
     }
 
     public static async IAsyncEnumerable<string?> GetNullableReferencesAsync()

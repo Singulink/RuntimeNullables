@@ -199,7 +199,11 @@ public partial class ModuleWeaver
 
         if (!(GetSetResultMethodRef(instructions, out int index) is { } setResultMethodRef))
         {
-            WriteSkipWarning("'SetResult' method not found.");
+            // The compiler leaves out the call if the method never returns a result (e.g. it always throws), so there's nothing to check.
+
+            if (!BuilderHasSetResultMethod(stateMachineType))
+                WriteSkipWarning("'SetResult' method not found.");
+
             return;
         }
 
@@ -255,7 +259,12 @@ public partial class ModuleWeaver
 
         if (instructions[index - 1].OpCode != OpCodes.Ldc_I4_1)
         {
-            WriteSkipWarning("Unexpected state machine implementation - 'SetResult' method argument was not true.");
+            // The compiler calls SetResult(true) when the iterator yields a value and SetResult(false) when it ends. Without SetResult(true), it never
+            // yields a value (e.g. it only has 'yield break' or it always throws), so there's nothing to check.
+
+            if (instructions[index - 1].OpCode != OpCodes.Ldc_I4_0 || instructions.Any(i => IsSetResultCall(i) && i.Previous.OpCode == OpCodes.Ldc_I4_1))
+                WriteSkipWarning("Unexpected state machine implementation - 'SetResult' method argument was not true.");
+
             return;
         }
 
@@ -461,20 +470,33 @@ public partial class ModuleWeaver
     {
         for (int i = instructions.Count - 1; i >= 0; i--)
         {
-            var instruction = instructions[i];
-
-            if (instruction.OpCode == OpCodes.Call &&
-                instruction.Operand is MethodReference methodRef &&
-                methodRef.Name == "SetResult" &&
-                methodRef.Parameters.Count == 1)
+            if (IsSetResultCall(instructions[i]))
             {
                 index = i;
-                return methodRef;
+                return (MethodReference)instructions[i].Operand;
             }
         }
 
         index = -1;
         return null;
+    }
+
+    private static bool IsSetResultCall(Instruction instruction)
+    {
+        return instruction.OpCode == OpCodes.Call &&
+            instruction.Operand is MethodReference methodRef &&
+            methodRef.Name == "SetResult" &&
+            methodRef.Parameters.Count == 1;
+    }
+
+    /// <summary>
+    /// Gets a value indicating whether the builder of an async method's state machine has the <c>SetResult</c> method that the state machine calls when
+    /// the method returns a result.
+    /// </summary>
+    private static bool BuilderHasSetResultMethod(TypeDefinition stateMachineType)
+    {
+        var builderField = stateMachineType.Fields.FirstOrDefault(f => f.Name == "<>t__builder");
+        return builderField != null && builderField.FieldType.ResolveOrThrow().Methods.Any(m => m.Name == "SetResult" && m.Parameters.Count == 1);
     }
 
     private static MethodReference? GetSetExceptionMethodRef(TypeReference type, BclReferences bclReferences)

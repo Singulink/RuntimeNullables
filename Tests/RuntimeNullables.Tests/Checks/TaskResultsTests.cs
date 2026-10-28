@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RuntimeNullables.Tests.Infrastructure;
@@ -70,6 +71,15 @@ public class TaskResultsTests
 
     [TestMethod]
     public Task BadGenericAsync() => NullCheckAssert.ThrowsOutputNullAsync(NullCheckMessages.AsyncTaskResult, TaskResults.BadGenericAsync<object>);
+
+    [TestMethod]
+    public Task ThrowingAsync() => Assert.ThrowsExceptionAsync<InvalidOperationException>(TaskResults.ThrowingAsync);
+
+    [TestMethod]
+    public Task ThrowingAsyncWithoutAwait() => Assert.ThrowsExceptionAsync<InvalidOperationException>(TaskResults.ThrowingAsyncWithoutAwait);
+
+    [TestMethod]
+    public Task ThrowingValueAsync() => Assert.ThrowsExceptionAsync<InvalidOperationException>(() => TaskResults.ThrowingValueAsync().AsTask());
 
     // A check on a pending task would block on its result, so these time out if the check is wrong.
 

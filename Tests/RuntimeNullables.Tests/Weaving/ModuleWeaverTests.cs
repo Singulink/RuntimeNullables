@@ -41,6 +41,18 @@ public class ModuleWeaverTests
     }
 
     [TestMethod]
+    public void TestAssemblyIsWovenWithoutWarnings()
+    {
+        // This includes async methods that never return a result and async iterators that never yield a value (TaskResults.ThrowingAsync,
+        // AsyncEnumerables.GetNoReferencesAsync etc.), for which the compiler leaves out the code that sets a result.
+
+        using var module = TestFiles.ReadUnwovenModule(AssemblyName);
+        var logger = Weave(module);
+
+        Assert.AreEqual(0, logger.Warnings.Count, logger.ToString());
+    }
+
+    [TestMethod]
     [DataRow("TestAssembly.InputParameters", "Reference", false, "AllowNull", "DisallowNull", "conflicting preconditions on parameter 'value'")]
     [DataRow("TestAssembly.OutputParameters", "BadReference", false, "MaybeNull", "NotNull", "conflicting postconditions on parameter 'value'")]
     [DataRow("TestAssembly.Returns", "BadReference", true, "MaybeNull", "NotNull", "Conflicting return value postconditions")]

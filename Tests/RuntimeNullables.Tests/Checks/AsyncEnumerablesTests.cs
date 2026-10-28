@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -38,6 +39,15 @@ public class AsyncEnumerablesTests
     {
         return NullCheckAssert.ThrowsOutputNullAsync(
             NullCheckMessages.AsyncEnumeratorResult, () => EnumerateAsync(AsyncEnumerables.BadGetGenericsAsync<object>()));
+    }
+
+    [TestMethod]
+    public Task GetNoReferencesAsync() => EnumerateAsync(AsyncEnumerables.GetNoReferencesAsync());
+
+    [TestMethod]
+    public Task ThrowingGetReferencesAsync()
+    {
+        return Assert.ThrowsExceptionAsync<InvalidOperationException>(() => EnumerateAsync(AsyncEnumerables.ThrowingGetReferencesAsync()));
     }
 
     [TestMethod]

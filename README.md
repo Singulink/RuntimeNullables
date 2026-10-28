@@ -27,7 +27,7 @@ This package is part of our **Singulink Libraries** collection. Visit https://gi
 Add the package to your project:
 
 ```xml
-<PackageReference Include="Singulink.RuntimeNullables" Version="3.0.0" PrivateAssets="all" />
+<PackageReference Include="Singulink.RuntimeNullables" Version="3.0.1" PrivateAssets="all" />
 ```
 
 That's it. Null checks are injected into the assembly every time the project is compiled.
