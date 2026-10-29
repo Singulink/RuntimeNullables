@@ -1806,8 +1806,7 @@ ThrowingValue() cil managed
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  1
-.locals init (valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string> V_0,
-valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string> V_1)
+.locals init (valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string> V_0)
 IL_0000:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
 IL_0005:  throw
 }

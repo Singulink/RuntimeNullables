@@ -9,7 +9,8 @@ namespace RuntimeNullables.Weaver;
 
 public partial class ModuleWeaver
 {
-    private static bool InjectParameterChecks(MethodContext methodContext, ref ReturnBlockInfo? returnBlockInfo, ArgumentCopies argumentCopies)
+    private static bool InjectParameterChecks(
+        MethodContext methodContext, bool checkOutputs, ref ReturnBlockInfo? returnBlockInfo, ArgumentCopies argumentCopies)
     {
         var method = methodContext.Method;
         var weavingContext = methodContext.WeavingContext;
@@ -47,7 +48,7 @@ public partial class ModuleWeaver
 
             bool isByReference = parameterType.IsByReference;
 
-            if (!weavingContext.CheckOutputs || (isByReference && parameter.IsIn))
+            if (!checkOutputs || (isByReference && parameter.IsIn))
                 continue;
 
             // An argument that was checked going in can't be null coming out. The code of an async method or iterator hasn't all run when it returns.

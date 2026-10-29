@@ -1,3 +1,4 @@
+using System.Linq;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
 using Mono.Cecil.Rocks;
@@ -17,8 +18,13 @@ public partial class ModuleWeaver
         bool methodNullChecksEnabled = methodContext.NullChecksEnabled;
         bool? returnNullChecksValue = method.MethodReturnType.GetNullChecksAttributeValue(weavingContext);
 
+        // Outputs are checked when the method returns, so a method that always throws has none to check (and no copies of arguments are needed for
+        // the checks). Async methods and iterators still return their task or enumerable, and their results are checked in their state machines.
+
+        bool checkOutputs = weavingContext.CheckOutputs && method.Body.Instructions.Any(i => i.OpCode == OpCodes.Ret);
+
         bool injectParamChecks = methodNullChecksEnabled;
-        bool injectReturnChecks = weavingContext.CheckOutputs &&
+        bool injectReturnChecks = checkOutputs &&
             (returnNullChecksValue == true || (methodNullChecksEnabled && returnNullChecksValue != false)) &&
             method.ReturnType.WithoutModifiers().FullName != bclReferences.VoidType.FullName;
 
@@ -32,7 +38,7 @@ public partial class ModuleWeaver
         var argumentCopies = new ArgumentCopies(method);
 
         bool returnChecksInjected = injectReturnChecks && InjectReturnChecks(methodContext, ref returnBlockInfo, argumentCopies);
-        bool paramChecksInjected = injectParamChecks && InjectParameterChecks(methodContext, ref returnBlockInfo, argumentCopies);
+        bool paramChecksInjected = injectParamChecks && InjectParameterChecks(methodContext, checkOutputs, ref returnBlockInfo, argumentCopies);
 
         if (returnBlockInfo != null)
             UpdateReturnBlockInstructionReferences(method, returnBlockInfo);

@@ -53,6 +53,35 @@ public class ModuleWeaverTests
     }
 
     [TestMethod]
+    public void MethodsThatAlwaysThrowAreNotChanged()
+    {
+        // Outputs are checked when a method returns, so nothing is added to a method that always throws, not even the copies of arguments that checks
+        // for [NotNullIfNotNull] and argument postconditions use. The test methods named Throwing* have no inputs to check.
+
+        using var unwovenModule = TestFiles.ReadUnwovenModule(AssemblyName);
+        using var module = TestFiles.ReadUnwovenModule(AssemblyName);
+        Weave(module);
+
+        var unwovenMethods = GetThrowingMethods(unwovenModule).ToDictionary(m => m.FullName);
+        var methods = GetThrowingMethods(module).ToList();
+
+        Assert.IsTrue(methods.Count >= 10, $"Only {methods.Count} methods found.");
+
+        foreach (var method in methods)
+        {
+            var unwovenMethod = unwovenMethods[method.FullName];
+
+            Assert.AreEqual(unwovenMethod.Body.Instructions.Count, method.Body.Instructions.Count, method.FullName);
+            Assert.AreEqual(unwovenMethod.Body.Variables.Count, method.Body.Variables.Count, method.FullName);
+        }
+
+        static IEnumerable<MethodDefinition> GetThrowingMethods(ModuleDefinition module)
+        {
+            return module.GetTypes().SelectMany(t => t.Methods).Where(m => m.Name.StartsWith("Throwing", StringComparison.Ordinal) && m.HasBody);
+        }
+    }
+
+    [TestMethod]
     [DataRow("TestAssembly.InputParameters", "Reference", false, "AllowNull", "DisallowNull", "conflicting preconditions on parameter 'value'")]
     [DataRow("TestAssembly.OutputParameters", "BadReference", false, "MaybeNull", "NotNull", "conflicting postconditions on parameter 'value'")]
     [DataRow("TestAssembly.Returns", "BadReference", true, "MaybeNull", "NotNull", "Conflicting return value postconditions")]

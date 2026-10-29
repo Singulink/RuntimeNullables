@@ -82,6 +82,9 @@ public class ArgumentPostconditionsTests
     }
 
     [TestMethod]
+    public void ThrowingNotNull() => Assert.ThrowsException<InvalidOperationException>(() => ArgumentPostconditions.ThrowingNotNull(null));
+
+    [TestMethod]
     public void NotNullArgument() => NullCheckAssert.ThrowsArgumentNull("value", () => ArgumentPostconditions.NotNullArgument(null!));
 
     [TestMethod]

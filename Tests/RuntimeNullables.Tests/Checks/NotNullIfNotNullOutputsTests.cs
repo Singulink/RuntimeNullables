@@ -106,4 +106,10 @@ public class NotNullIfNotNullOutputsTests
 
     [TestMethod]
     public void ThrowingEcho() => Assert.ThrowsException<InvalidOperationException>(() => NotNullIfNotNullOutputs.ThrowingEcho("value"));
+
+    [TestMethod]
+    public void ThrowingOutEcho()
+    {
+        Assert.ThrowsException<InvalidOperationException>(() => NotNullIfNotNullOutputs.ThrowingOutEcho("value", out _));
+    }
 }

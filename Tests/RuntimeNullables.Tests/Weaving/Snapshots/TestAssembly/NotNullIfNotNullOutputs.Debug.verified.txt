@@ -509,11 +509,16 @@ IL_0016:  ret
 ThrowingEcho(string 'value') cil managed
 {
 .param [0]
-.maxstack  1
-.locals (string V_0)
-IL_0000:  ldarg.0
-IL_0001:  stloc.0
-IL_0002:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
-IL_0007:  throw
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0005:  throw
+}
+.method public hidebysig static void  ThrowingOutEcho(string 'value',
+[out] string& output) cil managed
+{
+.param [2]
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0005:  throw
 }
 }

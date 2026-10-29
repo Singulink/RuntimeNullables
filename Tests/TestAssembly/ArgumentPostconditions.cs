@@ -60,6 +60,11 @@ public static class ArgumentPostconditions
     public static void BadThrowIfNull([NotNull] object? value) { }
 
     /// <summary>
+    /// Always throws, so it never returns with a null argument.
+    /// </summary>
+    public static void ThrowingNotNull([NotNull] object? value) => throw new InvalidOperationException();
+
+    /// <summary>
     /// The caller's argument is checked, not the parameter's value when the method returns.
     /// </summary>
     public static void BadThrowIfNullThatAssigns([NotNull] string? value)

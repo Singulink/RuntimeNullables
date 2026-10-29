@@ -102,4 +102,6 @@ public static class NotNullIfNotNullOutputs
 
     [return: NotNullIfNotNull(nameof(value))]
     public static string? ThrowingEcho(string? value) => throw new InvalidOperationException();
+
+    public static void ThrowingOutEcho(string? value, [NotNullIfNotNull(nameof(value))] out string? output) => throw new InvalidOperationException();
 }
