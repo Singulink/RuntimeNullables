@@ -170,39 +170,25 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 [JsonSourceGenerationOptions(RespectNullableAnnotations = true, RespectRequiredConstructorParameters = true)]
 [JsonSerializable(typeof(CreateUser))]
 internal partial class AppJsonContext : JsonSerializerContext;
+```
 
-// A DTO that works well with these options:
+A DTO that works well with these options:
+
+```c#
 public class CreateUser(string username)
 {
-    // Constructor parameters and required properties must be in the JSON, and non-nullable ones can't be null.
+    // Must be in the JSON, and can't be null:
     public string Username { get; } = username;
     public required string Email { get; init; }
 
-    // Optional: a default value or a nullable type.
+    // Can be left out of the JSON, which leaves them with their default values:
     public bool IsEnabled { get; init; } = true;
+    public List<string> Roles { get; init; } = [];
     public string? Nickname { get; init; }
 }
 ```
 
-With these options, a nullable constructor parameter or `required` property must still be in the JSON, even though it can be `null`. To let JSON leave such members out (they're then `null`), add a modifier that makes them optional:
-
-```c#
-static void MakeNullableMembersOptional(JsonTypeInfo typeInfo)
-{
-    foreach (var property in typeInfo.Properties)
-    {
-        if (property.IsRequired && property.IsSetNullable)
-            property.IsRequired = false;
-    }
-}
-
-options.TypeInfoResolver = new DefaultJsonTypeInfoResolver().WithAddedModifier(MakeNullableMembersOptional);
-
-// Or, with a source-generated context:
-options.TypeInfoResolver = AppJsonContext.Default.WithAddedModifier(MakeNullableMembersOptional);
-```
-
-Don't silence the compiler's warning about a non-nullable property with `= null!`: System.Text.Json doesn't treat the property as required, so JSON that leaves it out leaves it `null` without calling its setter. Make it `required` instead.
+Don't silence the compiler's warning about a non-nullable property with `= null!`: System.Text.Json doesn't treat the property as required, so JSON that leaves it out leaves it `null` without calling its setter. Make it `required`, or give it a default value that isn't `null` (like `Roles` above).
 
 Neither System.Text.Json nor Runtime Nullables checks the elements of collections: `["a", null]` deserializes into a `List<string>`.
 
