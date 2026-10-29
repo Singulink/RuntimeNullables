@@ -505,4 +505,15 @@ IL_000c:  ldstr      "Output parameter 'output' nullability contract was"
 IL_0011:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
 IL_0016:  ret
 }
+.method public hidebysig static string
+ThrowingEcho(string 'value') cil managed
+{
+.param [0]
+.maxstack  1
+.locals (string V_0)
+IL_0000:  ldarg.0
+IL_0001:  stloc.0
+IL_0002:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0007:  throw
+}
 }

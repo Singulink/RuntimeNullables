@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RuntimeNullables.Tests.Infrastructure;
 using TestAssembly;
@@ -44,4 +45,7 @@ public class OutputParametersTests
 
     [TestMethod]
     public void GenericUnconstrained() => OutputParameters.GenericUnconstrained<object>(out _);
+
+    [TestMethod]
+    public void Throwing() => Assert.ThrowsException<InvalidOperationException>(() => OutputParameters.Throwing(out _));
 }

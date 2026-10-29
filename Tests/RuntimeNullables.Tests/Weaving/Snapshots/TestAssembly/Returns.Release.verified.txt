@@ -213,4 +213,18 @@ IL_0004:  ldstr      "Return value nullability contract was broken."
 IL_0009:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
 IL_000e:  ret
 }
+.method public hidebysig static string
+Throwing() cil managed
+{
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0005:  throw
+}
+.method public hidebysig static string&
+ThrowingRefReference() cil managed
+{
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0005:  throw
+}
 }

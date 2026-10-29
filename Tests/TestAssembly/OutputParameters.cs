@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace TestAssembly;
@@ -35,4 +36,6 @@ public static class OutputParameters
     public static void GenericMaybeNullAttribute<T>([MaybeNull] out T value) where T : class => value = null;
 
     public static void GenericUnconstrained<T>(out T value) => value = default!;
+
+    public static void Throwing(out string value) => throw new InvalidOperationException();
 }

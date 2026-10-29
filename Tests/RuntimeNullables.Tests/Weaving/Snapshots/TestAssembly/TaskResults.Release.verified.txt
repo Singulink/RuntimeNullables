@@ -273,6 +273,110 @@ IL_0007:  call       instance void valuetype [System.Runtime]System.Runtime.Comp
 IL_000c:  ret
 }
 }
+.class auto ansi sealed nested private beforefieldinit '<BadReferencePoolingValueAsync>d__16'
+extends [System.Runtime]System.ValueType
+implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.interfaceimpl type [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field public int32 '<>1__state'
+.field public valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> '<>t__builder'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter '<>u__1'
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+string V_1,
+valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
+class [System.Runtime]System.Exception V_3)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0040
+IL_000a:  ldc.i4.s   10
+IL_000c:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0011:  callvirt   instance valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter [System.Runtime]System.Threading.Tasks.Task::GetAwaiter()
+IL_0016:  stloc.2
+IL_0017:  ldloca.s   V_2
+IL_0019:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted()
+IL_001e:  brtrue.s   IL_005c
+IL_0020:  ldarg.0
+IL_0021:  ldc.i4.0
+IL_0022:  dup
+IL_0023:  stloc.0
+IL_0024:  stfld      int32 TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>1__state'
+IL_0029:  ldarg.0
+IL_002a:  ldloc.2
+IL_002b:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>u__1'
+IL_0030:  ldarg.0
+IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>t__builder'
+IL_0036:  ldloca.s   V_2
+IL_0038:  ldarg.0
+IL_0039:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,valuetype TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'>(!!0&,
+!!1&)
+IL_003e:  leave.s    IL_00a5
+IL_0040:  ldarg.0
+IL_0041:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>u__1'
+IL_0046:  stloc.2
+IL_0047:  ldarg.0
+IL_0048:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>u__1'
+IL_004d:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
+IL_0053:  ldarg.0
+IL_0054:  ldc.i4.m1
+IL_0055:  dup
+IL_0056:  stloc.0
+IL_0057:  stfld      int32 TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>1__state'
+IL_005c:  ldloca.s   V_2
+IL_005e:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
+IL_0063:  ldnull
+IL_0064:  stloc.1
+IL_0065:  leave.s    IL_007e
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_0067:  stloc.3
+IL_0068:  ldarg.0
+IL_0069:  ldc.i4.s   -2
+IL_006b:  stfld      int32 TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>1__state'
+IL_0070:  ldarg.0
+IL_0071:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>t__builder'
+IL_0076:  ldloc.3
+IL_0077:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
+IL_007c:  leave.s    IL_00a5
+}  // end handler
+IL_007e:  ldarg.0
+IL_007f:  ldc.i4.s   -2
+IL_0081:  stfld      int32 TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>1__state'
+IL_0086:  ldarg.0
+IL_0087:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>t__builder'
+IL_008c:  ldloc.1
+IL_008d:  brtrue.s   IL_009f
+IL_008f:  ldstr      "Async task result nullability contract was broken."
+IL_0094:  call       class [System.Runtime]System.Exception RuntimeNullables.ThrowHelpers::GetAsyncResultNullException(string)
+IL_0099:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
+IL_009e:  ret
+IL_009f:  ldloc.1
+IL_00a0:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::SetResult(!0)
+IL_00a5:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>t__builder'
+IL_0006:  ldarg.1
+IL_0007:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine)
+IL_000c:  ret
+}
+}
 .class auto ansi sealed nested private beforefieldinit '<BadReferenceValueAsync>d__11'
 extends [System.Runtime]System.ValueType
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
@@ -873,7 +977,7 @@ IL_0007:  call       instance void valuetype [System.Runtime]System.Runtime.Comp
 IL_000c:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<NullableReferenceAsync>d__27'
+.class auto ansi sealed nested private beforefieldinit '<NullableReferenceAsync>d__31'
 extends [System.Runtime]System.ValueType
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -893,7 +997,7 @@ string V_1,
 valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
 class [System.Runtime]System.Exception V_3)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -910,28 +1014,28 @@ IL_0020:  ldarg.0
 IL_0021:  ldc.i4.0
 IL_0022:  dup
 IL_0023:  stloc.0
-IL_0024:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>1__state'
+IL_0024:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>1__state'
 IL_0029:  ldarg.0
 IL_002a:  ldloc.2
-IL_002b:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>u__1'
+IL_002b:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>u__1'
 IL_0030:  ldarg.0
-IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>t__builder'
+IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>t__builder'
 IL_0036:  ldloca.s   V_2
 IL_0038:  ldarg.0
-IL_0039:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,valuetype TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'>(!!0&,
+IL_0039:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,valuetype TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'>(!!0&,
 !!1&)
 IL_003e:  leave.s    IL_0092
 IL_0040:  ldarg.0
-IL_0041:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>u__1'
+IL_0041:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>u__1'
 IL_0046:  stloc.2
 IL_0047:  ldarg.0
-IL_0048:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>u__1'
+IL_0048:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>u__1'
 IL_004d:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
 IL_0053:  ldarg.0
 IL_0054:  ldc.i4.m1
 IL_0055:  dup
 IL_0056:  stloc.0
-IL_0057:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>1__state'
+IL_0057:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>1__state'
 IL_005c:  ldloca.s   V_2
 IL_005e:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL_0063:  ldnull
@@ -943,18 +1047,18 @@ catch [System.Runtime]System.Exception
 IL_0067:  stloc.3
 IL_0068:  ldarg.0
 IL_0069:  ldc.i4.s   -2
-IL_006b:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>1__state'
+IL_006b:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>1__state'
 IL_0070:  ldarg.0
-IL_0071:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>t__builder'
+IL_0071:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>t__builder'
 IL_0076:  ldloc.3
 IL_0077:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
 IL_007c:  leave.s    IL_0092
 }  // end handler
 IL_007e:  ldarg.0
 IL_007f:  ldc.i4.s   -2
-IL_0081:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>1__state'
+IL_0081:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>1__state'
 IL_0086:  ldarg.0
-IL_0087:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>t__builder'
+IL_0087:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>t__builder'
 IL_008c:  ldloc.1
 IL_008d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::SetResult(!0)
 IL_0092:  ret
@@ -965,13 +1069,13 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 .override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>t__builder'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>t__builder'
 IL_0006:  ldarg.1
 IL_0007:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine)
 IL_000c:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<ThrowingAsync>d__16'
+.class auto ansi sealed nested private beforefieldinit '<ThrowingAsync>d__19'
 extends [System.Runtime]System.ValueType
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -991,7 +1095,7 @@ string V_1,
 valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
 class [System.Runtime]System.Exception V_3)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -1008,28 +1112,28 @@ IL_0020:  ldarg.0
 IL_0021:  ldc.i4.0
 IL_0022:  dup
 IL_0023:  stloc.0
-IL_0024:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>1__state'
+IL_0024:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>1__state'
 IL_0029:  ldarg.0
 IL_002a:  ldloc.2
-IL_002b:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>u__1'
+IL_002b:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>u__1'
 IL_0030:  ldarg.0
-IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>t__builder'
+IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>t__builder'
 IL_0036:  ldloca.s   V_2
 IL_0038:  ldarg.0
-IL_0039:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,valuetype TestAssembly.TaskResults/'<ThrowingAsync>d__16'>(!!0&,
+IL_0039:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,valuetype TestAssembly.TaskResults/'<ThrowingAsync>d__19'>(!!0&,
 !!1&)
 IL_003e:  leave.s    IL_0080
 IL_0040:  ldarg.0
-IL_0041:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>u__1'
+IL_0041:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>u__1'
 IL_0046:  stloc.2
 IL_0047:  ldarg.0
-IL_0048:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>u__1'
+IL_0048:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>u__1'
 IL_004d:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
 IL_0053:  ldarg.0
 IL_0054:  ldc.i4.m1
 IL_0055:  dup
 IL_0056:  stloc.0
-IL_0057:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>1__state'
+IL_0057:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>1__state'
 IL_005c:  ldloca.s   V_2
 IL_005e:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL_0063:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
@@ -1040,9 +1144,9 @@ catch [System.Runtime]System.Exception
 IL_0069:  stloc.3
 IL_006a:  ldarg.0
 IL_006b:  ldc.i4.s   -2
-IL_006d:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>1__state'
+IL_006d:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>1__state'
 IL_0072:  ldarg.0
-IL_0073:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>t__builder'
+IL_0073:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>t__builder'
 IL_0078:  ldloc.3
 IL_0079:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
 IL_007e:  leave.s    IL_0080
@@ -1055,13 +1159,13 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 .override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>t__builder'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>t__builder'
 IL_0006:  ldarg.1
 IL_0007:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine)
 IL_000c:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<ThrowingAsyncWithoutAwait>d__17'
+.class auto ansi sealed nested private beforefieldinit '<ThrowingAsyncWithoutAwait>d__20'
 extends [System.Runtime]System.ValueType
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -1087,9 +1191,9 @@ catch [System.Runtime]System.Exception
 IL_0006:  stloc.1
 IL_0007:  ldarg.0
 IL_0008:  ldc.i4.s   -2
-IL_000a:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17'::'<>1__state'
+IL_000a:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__20'::'<>1__state'
 IL_000f:  ldarg.0
-IL_0010:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17'::'<>t__builder'
+IL_0010:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__20'::'<>t__builder'
 IL_0015:  ldloc.1
 IL_0016:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
 IL_001b:  leave.s    IL_001d
@@ -1102,13 +1206,103 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 .override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17'::'<>t__builder'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__20'::'<>t__builder'
 IL_0006:  ldarg.1
 IL_0007:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine)
 IL_000c:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<ThrowingValueAsync>d__18'
+.class auto ansi sealed nested private beforefieldinit '<ThrowingPoolingValueAsync>d__22'
+extends [System.Runtime]System.ValueType
+implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.interfaceimpl type [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field public int32 '<>1__state'
+.field public valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> '<>t__builder'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter '<>u__1'
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+string V_1,
+valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
+class [System.Runtime]System.Exception V_3)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_0040
+IL_000a:  ldc.i4.s   10
+IL_000c:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_0011:  callvirt   instance valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter [System.Runtime]System.Threading.Tasks.Task::GetAwaiter()
+IL_0016:  stloc.2
+IL_0017:  ldloca.s   V_2
+IL_0019:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted()
+IL_001e:  brtrue.s   IL_005c
+IL_0020:  ldarg.0
+IL_0021:  ldc.i4.0
+IL_0022:  dup
+IL_0023:  stloc.0
+IL_0024:  stfld      int32 TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>1__state'
+IL_0029:  ldarg.0
+IL_002a:  ldloc.2
+IL_002b:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>u__1'
+IL_0030:  ldarg.0
+IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>t__builder'
+IL_0036:  ldloca.s   V_2
+IL_0038:  ldarg.0
+IL_0039:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,valuetype TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'>(!!0&,
+!!1&)
+IL_003e:  leave.s    IL_0080
+IL_0040:  ldarg.0
+IL_0041:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>u__1'
+IL_0046:  stloc.2
+IL_0047:  ldarg.0
+IL_0048:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>u__1'
+IL_004d:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
+IL_0053:  ldarg.0
+IL_0054:  ldc.i4.m1
+IL_0055:  dup
+IL_0056:  stloc.0
+IL_0057:  stfld      int32 TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>1__state'
+IL_005c:  ldloca.s   V_2
+IL_005e:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
+IL_0063:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0068:  throw
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_0069:  stloc.3
+IL_006a:  ldarg.0
+IL_006b:  ldc.i4.s   -2
+IL_006d:  stfld      int32 TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>1__state'
+IL_0072:  ldarg.0
+IL_0073:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>t__builder'
+IL_0078:  ldloc.3
+IL_0079:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
+IL_007e:  leave.s    IL_0080
+}  // end handler
+IL_0080:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>t__builder'
+IL_0006:  ldarg.1
+IL_0007:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine)
+IL_000c:  ret
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<ThrowingValueAsync>d__21'
 extends [System.Runtime]System.ValueType
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -1128,7 +1322,7 @@ string V_1,
 valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_2,
 class [System.Runtime]System.Exception V_3)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -1145,28 +1339,28 @@ IL_0020:  ldarg.0
 IL_0021:  ldc.i4.0
 IL_0022:  dup
 IL_0023:  stloc.0
-IL_0024:  stfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>1__state'
+IL_0024:  stfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>1__state'
 IL_0029:  ldarg.0
 IL_002a:  ldloc.2
-IL_002b:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>u__1'
+IL_002b:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>u__1'
 IL_0030:  ldarg.0
-IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>t__builder'
+IL_0031:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>t__builder'
 IL_0036:  ldloca.s   V_2
 IL_0038:  ldarg.0
-IL_0039:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,valuetype TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'>(!!0&,
+IL_0039:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,valuetype TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'>(!!0&,
 !!1&)
 IL_003e:  leave.s    IL_0080
 IL_0040:  ldarg.0
-IL_0041:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>u__1'
+IL_0041:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>u__1'
 IL_0046:  stloc.2
 IL_0047:  ldarg.0
-IL_0048:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>u__1'
+IL_0048:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>u__1'
 IL_004d:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
 IL_0053:  ldarg.0
 IL_0054:  ldc.i4.m1
 IL_0055:  dup
 IL_0056:  stloc.0
-IL_0057:  stfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>1__state'
+IL_0057:  stfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>1__state'
 IL_005c:  ldloca.s   V_2
 IL_005e:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL_0063:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
@@ -1177,9 +1371,9 @@ catch [System.Runtime]System.Exception
 IL_0069:  stloc.3
 IL_006a:  ldarg.0
 IL_006b:  ldc.i4.s   -2
-IL_006d:  stfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>1__state'
+IL_006d:  stfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>1__state'
 IL_0072:  ldarg.0
-IL_0073:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>t__builder'
+IL_0073:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>t__builder'
 IL_0078:  ldloc.3
 IL_0079:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::SetException(class [System.Runtime]System.Exception)
 IL_007e:  leave.s    IL_0080
@@ -1192,7 +1386,7 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 .override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>t__builder'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>t__builder'
 IL_0006:  ldarg.1
 IL_0007:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine)
 IL_000c:  ret
@@ -1577,23 +1771,63 @@ IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.A
 IL_0029:  call       instance class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!!T>::get_Task()
 IL_002e:  ret
 }
+.method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
+BadReferencePoolingValueAsync() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.maxstack  2
+.locals init (valuetype TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16' V_0)
+IL_0000:  ldloca.s   V_0
+IL_0002:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::Create()
+IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>t__builder'
+IL_000c:  ldloca.s   V_0
+IL_000e:  ldc.i4.m1
+IL_000f:  stfld      int32 TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>1__state'
+IL_0014:  ldloca.s   V_0
+IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>t__builder'
+IL_001b:  ldloca.s   V_0
+IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'>(!!0&)
+IL_0022:  ldloca.s   V_0
+IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<BadReferencePoolingValueAsync>d__16'::'<>t__builder'
+IL_0029:  call       instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::get_Task()
+IL_002e:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
+Throwing() cil managed
+{
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0005:  throw
+}
+.method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
+ThrowingValue() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.maxstack  1
+.locals init (valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string> V_0,
+valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string> V_1)
+IL_0000:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0005:  throw
+}
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 ThrowingAsync() cil managed
 {
 .maxstack  2
-.locals init (valuetype TestAssembly.TaskResults/'<ThrowingAsync>d__16' V_0)
+.locals init (valuetype TestAssembly.TaskResults/'<ThrowingAsync>d__19' V_0)
 IL_0000:  ldloca.s   V_0
 IL_0002:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::Create()
-IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>t__builder'
+IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>t__builder'
 IL_000c:  ldloca.s   V_0
 IL_000e:  ldc.i4.m1
-IL_000f:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>1__state'
+IL_000f:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>1__state'
 IL_0014:  ldloca.s   V_0
-IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>t__builder'
+IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>t__builder'
 IL_001b:  ldloca.s   V_0
-IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<ThrowingAsync>d__16'>(!!0&)
+IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<ThrowingAsync>d__19'>(!!0&)
 IL_0022:  ldloca.s   V_0
-IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__16'::'<>t__builder'
+IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsync>d__19'::'<>t__builder'
 IL_0029:  call       instance class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::get_Task()
 IL_002e:  ret
 }
@@ -1601,19 +1835,19 @@ IL_002e:  ret
 ThrowingAsyncWithoutAwait() cil managed
 {
 .maxstack  2
-.locals init (valuetype TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17' V_0)
+.locals init (valuetype TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__20' V_0)
 IL_0000:  ldloca.s   V_0
 IL_0002:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::Create()
-IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17'::'<>t__builder'
+IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__20'::'<>t__builder'
 IL_000c:  ldloca.s   V_0
 IL_000e:  ldc.i4.m1
-IL_000f:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17'::'<>1__state'
+IL_000f:  stfld      int32 TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__20'::'<>1__state'
 IL_0014:  ldloca.s   V_0
-IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17'::'<>t__builder'
+IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__20'::'<>t__builder'
 IL_001b:  ldloca.s   V_0
-IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17'>(!!0&)
+IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__20'>(!!0&)
 IL_0022:  ldloca.s   V_0
-IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__17'::'<>t__builder'
+IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingAsyncWithoutAwait>d__20'::'<>t__builder'
 IL_0029:  call       instance class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::get_Task()
 IL_002e:  ret
 }
@@ -1623,20 +1857,42 @@ ThrowingValueAsync() cil managed
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
 .maxstack  2
-.locals init (valuetype TestAssembly.TaskResults/'<ThrowingValueAsync>d__18' V_0)
+.locals init (valuetype TestAssembly.TaskResults/'<ThrowingValueAsync>d__21' V_0)
 IL_0000:  ldloca.s   V_0
 IL_0002:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Create()
-IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>t__builder'
+IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>t__builder'
 IL_000c:  ldloca.s   V_0
 IL_000e:  ldc.i4.m1
-IL_000f:  stfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>1__state'
+IL_000f:  stfld      int32 TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>1__state'
 IL_0014:  ldloca.s   V_0
-IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>t__builder'
+IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>t__builder'
 IL_001b:  ldloca.s   V_0
-IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'>(!!0&)
+IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'>(!!0&)
 IL_0022:  ldloca.s   V_0
-IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__18'::'<>t__builder'
+IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingValueAsync>d__21'::'<>t__builder'
 IL_0029:  call       instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder`1<string>::get_Task()
+IL_002e:  ret
+}
+.method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
+ThrowingPoolingValueAsync() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.maxstack  2
+.locals init (valuetype TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22' V_0)
+IL_0000:  ldloca.s   V_0
+IL_0002:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::Create()
+IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>t__builder'
+IL_000c:  ldloca.s   V_0
+IL_000e:  ldc.i4.m1
+IL_000f:  stfld      int32 TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>1__state'
+IL_0014:  ldloca.s   V_0
+IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>t__builder'
+IL_001b:  ldloca.s   V_0
+IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'>(!!0&)
+IL_0022:  ldloca.s   V_0
+IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<ThrowingPoolingValueAsync>d__22'::'<>t__builder'
+IL_0029:  call       instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1<string>::get_Task()
 IL_002e:  ret
 }
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
@@ -1862,19 +2118,19 @@ NullableReferenceAsync() cil managed
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
 .maxstack  2
-.locals init (valuetype TestAssembly.TaskResults/'<NullableReferenceAsync>d__27' V_0)
+.locals init (valuetype TestAssembly.TaskResults/'<NullableReferenceAsync>d__31' V_0)
 IL_0000:  ldloca.s   V_0
 IL_0002:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::Create()
-IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>t__builder'
+IL_0007:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>t__builder'
 IL_000c:  ldloca.s   V_0
 IL_000e:  ldc.i4.m1
-IL_000f:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>1__state'
+IL_000f:  stfld      int32 TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>1__state'
 IL_0014:  ldloca.s   V_0
-IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>t__builder'
+IL_0016:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>t__builder'
 IL_001b:  ldloca.s   V_0
-IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'>(!!0&)
+IL_001d:  call       instance void valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::Start<valuetype TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'>(!!0&)
 IL_0022:  ldloca.s   V_0
-IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__27'::'<>t__builder'
+IL_0024:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string> TestAssembly.TaskResults/'<NullableReferenceAsync>d__31'::'<>t__builder'
 IL_0029:  call       instance class [System.Runtime]System.Threading.Tasks.Task`1<!0> valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<string>::get_Task()
 IL_002e:  ret
 }

@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RuntimeNullables.Tests.Infrastructure;
 using TestAssembly;
@@ -130,5 +131,11 @@ public class ConditionalOutputParametersTests
         Assert.IsNull(value);
 
         NullCheckAssert.ThrowsOutputNull(NullCheckMessages.OutputParameter("value"), () => ConditionalOutputParameters.TryGetValue("bad", out _));
+    }
+
+    [TestMethod]
+    public void ThrowingNotNullWhenTrue()
+    {
+        Assert.ThrowsException<InvalidOperationException>(() => ConditionalOutputParameters.ThrowingNotNullWhenTrue(out _));
     }
 }

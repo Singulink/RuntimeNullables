@@ -73,6 +73,18 @@ public class TaskResultsTests
     public Task BadGenericAsync() => NullCheckAssert.ThrowsOutputNullAsync(NullCheckMessages.AsyncTaskResult, TaskResults.BadGenericAsync<object>);
 
     [TestMethod]
+    public Task BadReferencePoolingValueAsync()
+    {
+        return NullCheckAssert.ThrowsOutputNullAsync(NullCheckMessages.AsyncTaskResult, () => TaskResults.BadReferencePoolingValueAsync().AsTask());
+    }
+
+    [TestMethod]
+    public void Throwing() => Assert.ThrowsException<InvalidOperationException>(() => TaskResults.Throwing());
+
+    [TestMethod]
+    public void ThrowingValue() => Assert.ThrowsException<InvalidOperationException>(() => TaskResults.ThrowingValue());
+
+    [TestMethod]
     public Task ThrowingAsync() => Assert.ThrowsExceptionAsync<InvalidOperationException>(TaskResults.ThrowingAsync);
 
     [TestMethod]
@@ -80,6 +92,12 @@ public class TaskResultsTests
 
     [TestMethod]
     public Task ThrowingValueAsync() => Assert.ThrowsExceptionAsync<InvalidOperationException>(() => TaskResults.ThrowingValueAsync().AsTask());
+
+    [TestMethod]
+    public Task ThrowingPoolingValueAsync()
+    {
+        return Assert.ThrowsExceptionAsync<InvalidOperationException>(() => TaskResults.ThrowingPoolingValueAsync().AsTask());
+    }
 
     // A check on a pending task would block on its result, so these time out if the check is wrong.
 

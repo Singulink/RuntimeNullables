@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
@@ -49,6 +50,20 @@ public static class RuntimeAsyncMethods
     }
 
     public static async Task<T> GenericUnconstrainedAsync<T>() => default!;
+
+    // Methods that always throw have no result to check.
+
+    public static async Task<string> ThrowingAsync()
+    {
+        await Task.Yield();
+        throw new InvalidOperationException();
+    }
+
+    public static async ValueTask<string> ThrowingValueAsync()
+    {
+        await Task.Yield();
+        throw new InvalidOperationException();
+    }
 
     /// <summary>
     /// Several returns: "bad" returns null, anything else returns itself.

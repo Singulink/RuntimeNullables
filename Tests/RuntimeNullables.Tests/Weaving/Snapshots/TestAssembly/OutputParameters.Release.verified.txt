@@ -157,4 +157,10 @@ IL_0000:  ldarg.0
 IL_0001:  initobj    !!T
 IL_0007:  ret
 }
+.method public hidebysig static void  Throwing([out] string& 'value') cil managed
+{
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0005:  throw
+}
 }

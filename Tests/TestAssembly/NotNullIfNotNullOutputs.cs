@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
@@ -98,4 +99,7 @@ public static class NotNullIfNotNullOutputs
     /// Always sets the output to <see langword="null"/>.
     /// </summary>
     public static void BadRefEcho(string? value, [NotNullIfNotNull(nameof(value))] ref string? output) => output = null;
+
+    [return: NotNullIfNotNull(nameof(value))]
+    public static string? ThrowingEcho(string? value) => throw new InvalidOperationException();
 }

@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RuntimeNullables.Tests.Infrastructure;
 using TestAssembly;
@@ -66,4 +67,10 @@ public class ReturnsTests
 
     [TestMethod]
     public void BadTaskArray() => NullCheckAssert.ThrowsOutputNull(NullCheckMessages.ReturnValue, () => Returns.BadTaskArray());
+
+    [TestMethod]
+    public void Throwing() => Assert.ThrowsException<InvalidOperationException>(() => Returns.Throwing());
+
+    [TestMethod]
+    public void ThrowingRefReference() => Assert.ThrowsException<InvalidOperationException>(() => Returns.ThrowingRefReference());
 }

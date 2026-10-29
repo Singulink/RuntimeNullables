@@ -3,7 +3,7 @@ extends [System.Runtime]System.Object
 {
 .custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
-.class auto ansi sealed nested private beforefieldinit '<AsyncVoid>d__13'
+.class auto ansi sealed nested private beforefieldinit '<AsyncVoid>d__15'
 extends [System.Runtime]System.Object
 implements [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
 {
@@ -31,10 +31,10 @@ instance void  MoveNext() cil managed
 .locals init (int32 V_0,
 valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter V_1,
 valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable V_2,
-class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13' V_3,
+class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15' V_3,
 class [System.Runtime]System.Exception V_4)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -54,31 +54,31 @@ IL_0025:  ldarg.0
 IL_0026:  ldc.i4.0
 IL_0027:  dup
 IL_0028:  stloc.0
-IL_0029:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>1__state'
+IL_0029:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>1__state'
 IL_002e:  ldarg.0
 IL_002f:  ldloc.1
-IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>u__1'
+IL_0030:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>u__1'
 IL_0035:  ldarg.0
 IL_0036:  stloc.3
 IL_0037:  ldarg.0
-IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>t__builder'
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>t__builder'
 IL_003d:  ldloca.s   V_1
 IL_003f:  ldloca.s   V_3
-IL_0041:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter,class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'>(!!0&,
+IL_0041:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter,class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'>(!!0&,
 !!1&)
 IL_0046:  nop
 IL_0047:  leave.s    IL_009d
 IL_0049:  ldarg.0
-IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>u__1'
+IL_004a:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>u__1'
 IL_004f:  stloc.1
 IL_0050:  ldarg.0
-IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>u__1'
+IL_0051:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>u__1'
 IL_0056:  initobj    [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter
 IL_005c:  ldarg.0
 IL_005d:  ldc.i4.m1
 IL_005e:  dup
 IL_005f:  stloc.0
-IL_0060:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>1__state'
+IL_0060:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>1__state'
 IL_0065:  ldloca.s   V_1
 IL_0067:  call       instance void [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter::GetResult()
 IL_006c:  nop
@@ -89,9 +89,9 @@ catch [System.Runtime]System.Exception
 IL_006f:  stloc.s    V_4
 IL_0071:  ldarg.0
 IL_0072:  ldc.i4.s   -2
-IL_0074:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>1__state'
+IL_0074:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>1__state'
 IL_0079:  ldarg.0
-IL_007a:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>t__builder'
+IL_007a:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>t__builder'
 IL_007f:  ldloc.s    V_4
 IL_0081:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetException(class [System.Runtime]System.Exception)
 IL_0086:  nop
@@ -99,9 +99,9 @@ IL_0087:  leave.s    IL_009d
 }  // end handler
 IL_0089:  ldarg.0
 IL_008a:  ldc.i4.s   -2
-IL_008c:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>1__state'
+IL_008c:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>1__state'
 IL_0091:  ldarg.0
-IL_0092:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>t__builder'
+IL_0092:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>t__builder'
 IL_0097:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::SetResult()
 IL_009c:  nop
 IL_009d:  ret
@@ -114,7 +114,7 @@ instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServ
 IL_0000:  ret
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<BadGetReferences>d__14'
+.class auto ansi sealed nested private beforefieldinit '<BadGetReferences>d__16'
 extends [System.Runtime]System.Object
 implements class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>,
 [System.Runtime]System.Collections.IEnumerable,
@@ -144,10 +144,10 @@ IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
 IL_0006:  nop
 IL_0007:  ldarg.0
 IL_0008:  ldarg.1
-IL_0009:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_0009:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_000e:  ldarg.0
 IL_000f:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
-IL_0014:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>l__initialThreadId'
+IL_0014:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>l__initialThreadId'
 IL_0019:  ret
 }
 .method private hidebysig newslot virtual final
@@ -157,7 +157,7 @@ instance void  System.IDisposable.Dispose() cil managed
 .maxstack  8
 IL_0000:  ldarg.0
 IL_0001:  ldc.i4.s   -2
-IL_0003:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_0003:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_0008:  ret
 }
 .method private hidebysig newslot virtual final
@@ -167,7 +167,7 @@ instance bool  MoveNext() cil managed
 .maxstack  2
 .locals init (int32 V_0)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_0006:  stloc.0
 IL_0007:  ldloc.0
 IL_0008:  switch     (
@@ -182,16 +182,16 @@ IL_0021:  ldc.i4.0
 IL_0022:  ret
 IL_0023:  ldarg.0
 IL_0024:  ldc.i4.m1
-IL_0025:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_0025:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_002a:  nop
 IL_002b:  ldarg.0
 IL_002c:  ldsfld     string [System.Runtime]System.String::Empty
-IL_0031:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>2__current'
+IL_0031:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>2__current'
 IL_0036:  ldarg.0
 IL_0037:  ldc.i4.1
-IL_0038:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_0038:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_003d:  ldarg.0
-IL_003e:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>2__current'
+IL_003e:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>2__current'
 IL_0043:  brtrue.s   IL_004f
 IL_0045:  ldstr      "Enumerator result nullability contract was broken."
 IL_004a:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
@@ -199,15 +199,15 @@ IL_004f:  ldc.i4.1
 IL_0050:  ret
 IL_0051:  ldarg.0
 IL_0052:  ldc.i4.m1
-IL_0053:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_0053:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_0058:  ldarg.0
 IL_0059:  ldnull
-IL_005a:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>2__current'
+IL_005a:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>2__current'
 IL_005f:  ldarg.0
 IL_0060:  ldc.i4.2
-IL_0061:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_0061:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_0066:  ldarg.0
-IL_0067:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>2__current'
+IL_0067:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>2__current'
 IL_006c:  brtrue.s   IL_0078
 IL_006e:  ldstr      "Enumerator result nullability contract was broken."
 IL_0073:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
@@ -215,7 +215,7 @@ IL_0078:  ldc.i4.1
 IL_0079:  ret
 IL_007a:  ldarg.0
 IL_007b:  ldc.i4.m1
-IL_007c:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_007c:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_0081:  ldc.i4.0
 IL_0082:  ret
 }
@@ -225,7 +225,7 @@ instance string  'System.Collections.Generic.IEnumerator<System.String>.get_Curr
 .override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>::get_Current()
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>2__current'
+IL_0001:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>2__current'
 IL_0006:  ret
 }
 .method private hidebysig newslot virtual final
@@ -244,7 +244,7 @@ instance object  System.Collections.IEnumerator.get_Current() cil managed
 .override [System.Runtime]System.Collections.IEnumerator::get_Current
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>2__current'
+IL_0001:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>2__current'
 IL_0006:  ret
 }
 .method private hidebysig newslot virtual final
@@ -255,23 +255,23 @@ instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
 .override  method instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>::GetEnumerator()
 .maxstack  2
-.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14' V_0)
+.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16' V_0)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0022
 IL_000a:  ldarg.0
-IL_000b:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>l__initialThreadId'
+IL_000b:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>l__initialThreadId'
 IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0015:  bne.un.s   IL_0022
 IL_0017:  ldarg.0
 IL_0018:  ldc.i4.0
-IL_0019:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'<>1__state'
+IL_0019:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'<>1__state'
 IL_001e:  ldarg.0
 IL_001f:  stloc.0
 IL_0020:  br.s       IL_0029
 IL_0022:  ldc.i4.0
-IL_0023:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::.ctor(int32)
+IL_0023:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::.ctor(int32)
 IL_0028:  stloc.0
 IL_0029:  ldloc.0
 IL_002a:  ret
@@ -283,19 +283,19 @@ System.Collections.IEnumerable.GetEnumerator() cil managed
 .override [System.Runtime]System.Collections.IEnumerable::GetEnumerator
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  call       instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'()
+IL_0001:  call       instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'()
 IL_0006:  ret
 }
 .property instance string 'System.Collections.Generic.IEnumerator<System.String>.Current'()
 {
-.get instance string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::'System.Collections.Generic.IEnumerator<System.String>.get_Current'()
+.get instance string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::'System.Collections.Generic.IEnumerator<System.String>.get_Current'()
 }
 .property instance object System.Collections.IEnumerator.Current()
 {
-.get instance object TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::System.Collections.IEnumerator.get_Current()
+.get instance object TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::System.Collections.IEnumerator.get_Current()
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<BadGetReferencesAsync>d__15'
+.class auto ansi sealed nested private beforefieldinit '<BadGetReferencesAsync>d__17'
 extends [System.Runtime]System.Object
 implements class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<string>,
 class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>,
@@ -334,13 +334,13 @@ IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
 IL_0006:  nop
 IL_0007:  ldarg.0
 IL_0008:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_000d:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>t__builder'
+IL_000d:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>t__builder'
 IL_0012:  ldarg.0
 IL_0013:  ldarg.1
-IL_0014:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_0014:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_0019:  ldarg.0
 IL_001a:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
-IL_001f:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>l__initialThreadId'
+IL_001f:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>l__initialThreadId'
 IL_0024:  ret
 }
 .method private hidebysig newslot virtual final
@@ -351,10 +351,10 @@ instance void  MoveNext() cil managed
 .locals init (int32 V_0,
 valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter V_1,
 valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable V_2,
-class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15' V_3,
+class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17' V_3,
 class [System.Runtime]System.Exception V_4)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -372,18 +372,18 @@ IL_0026:  br         IL_00c2
 IL_002b:  br.s       IL_002f
 IL_002d:  br.s       IL_008b
 IL_002f:  ldarg.0
-IL_0030:  ldfld      bool TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>w__disposeMode'
+IL_0030:  ldfld      bool TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>w__disposeMode'
 IL_0035:  brfalse.s  IL_003c
 IL_0037:  leave      IL_0104
 IL_003c:  ldarg.0
 IL_003d:  ldc.i4.m1
 IL_003e:  dup
 IL_003f:  stloc.0
-IL_0040:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_0040:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_0045:  nop
 IL_0046:  ldarg.0
 IL_0047:  ldnull
-IL_0048:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>2__current'
+IL_0048:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>2__current'
 IL_004d:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable [System.Runtime]System.Threading.Tasks.Task::Yield()
 IL_0052:  stloc.2
 IL_0053:  ldloca.s   V_2
@@ -396,50 +396,50 @@ IL_0064:  ldarg.0
 IL_0065:  ldc.i4.0
 IL_0066:  dup
 IL_0067:  stloc.0
-IL_0068:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_0068:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_006d:  ldarg.0
 IL_006e:  ldloc.1
-IL_006f:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>u__1'
+IL_006f:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>u__1'
 IL_0074:  ldarg.0
 IL_0075:  stloc.3
 IL_0076:  ldarg.0
-IL_0077:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>t__builder'
+IL_0077:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>t__builder'
 IL_007c:  ldloca.s   V_1
 IL_007e:  ldloca.s   V_3
-IL_0080:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter,class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'>(!!0&,
+IL_0080:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter,class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'>(!!0&,
 !!1&)
 IL_0085:  nop
 IL_0086:  leave      IL_0152
 IL_008b:  ldarg.0
-IL_008c:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>u__1'
+IL_008c:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>u__1'
 IL_0091:  stloc.1
 IL_0092:  ldarg.0
-IL_0093:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>u__1'
+IL_0093:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>u__1'
 IL_0098:  initobj    [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter
 IL_009e:  ldarg.0
 IL_009f:  ldc.i4.m1
 IL_00a0:  dup
 IL_00a1:  stloc.0
-IL_00a2:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_00a2:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_00a7:  ldloca.s   V_1
 IL_00a9:  call       instance void [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter::GetResult()
 IL_00ae:  nop
 IL_00af:  ldarg.0
 IL_00b0:  ldnull
-IL_00b1:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>2__current'
+IL_00b1:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>2__current'
 IL_00b6:  ldarg.0
 IL_00b7:  ldc.i4.s   -4
 IL_00b9:  dup
 IL_00ba:  stloc.0
-IL_00bb:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_00bb:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_00c0:  leave.s    IL_012d
 IL_00c2:  ldarg.0
 IL_00c3:  ldc.i4.m1
 IL_00c4:  dup
 IL_00c5:  stloc.0
-IL_00c6:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_00c6:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_00cb:  ldarg.0
-IL_00cc:  ldfld      bool TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>w__disposeMode'
+IL_00cc:  ldfld      bool TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>w__disposeMode'
 IL_00d1:  brfalse.s  IL_00d5
 IL_00d3:  leave.s    IL_0104
 IL_00d5:  leave.s    IL_0104
@@ -449,16 +449,16 @@ catch [System.Runtime]System.Exception
 IL_00d7:  stloc.s    V_4
 IL_00d9:  ldarg.0
 IL_00da:  ldc.i4.s   -2
-IL_00dc:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_00dc:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_00e1:  ldarg.0
 IL_00e2:  ldnull
-IL_00e3:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>2__current'
+IL_00e3:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>2__current'
 IL_00e8:  ldarg.0
-IL_00e9:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>t__builder'
+IL_00e9:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>t__builder'
 IL_00ee:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
 IL_00f3:  nop
 IL_00f4:  ldarg.0
-IL_00f5:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_00f5:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_00fa:  ldloc.s    V_4
 IL_00fc:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetException(class [System.Runtime]System.Exception)
 IL_0101:  nop
@@ -466,24 +466,24 @@ IL_0102:  leave.s    IL_0152
 }  // end handler
 IL_0104:  ldarg.0
 IL_0105:  ldc.i4.s   -2
-IL_0107:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_0107:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_010c:  ldarg.0
 IL_010d:  ldnull
-IL_010e:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>2__current'
+IL_010e:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>2__current'
 IL_0113:  ldarg.0
-IL_0114:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>t__builder'
+IL_0114:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>t__builder'
 IL_0119:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
 IL_011e:  nop
 IL_011f:  ldarg.0
-IL_0120:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_0120:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0125:  ldc.i4.0
 IL_0126:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetResult(!0)
 IL_012b:  nop
 IL_012c:  ret
 IL_012d:  ldarg.0
-IL_012e:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_012e:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0133:  ldarg.0
-IL_0134:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>2__current'
+IL_0134:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>2__current'
 IL_0139:  brtrue.s   IL_014b
 IL_013b:  ldstr      "Async enumerator result nullability contract was b"
 + "roken."
@@ -511,29 +511,29 @@ instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<str
 .param [1] = nullref
 .override  method instance class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<string>::GetAsyncEnumerator(valuetype [System.Runtime]System.Threading.CancellationToken)
 .maxstack  2
-.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15' V_0)
+.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17' V_0)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0035
 IL_000a:  ldarg.0
-IL_000b:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>l__initialThreadId'
+IL_000b:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>l__initialThreadId'
 IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0015:  bne.un.s   IL_0035
 IL_0017:  ldarg.0
 IL_0018:  ldc.i4.s   -3
-IL_001a:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_001a:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_001f:  ldarg.0
 IL_0020:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_0025:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>t__builder'
+IL_0025:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>t__builder'
 IL_002a:  ldarg.0
 IL_002b:  ldc.i4.0
-IL_002c:  stfld      bool TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>w__disposeMode'
+IL_002c:  stfld      bool TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>w__disposeMode'
 IL_0031:  ldarg.0
 IL_0032:  stloc.0
 IL_0033:  br.s       IL_003d
 IL_0035:  ldc.i4.s   -3
-IL_0037:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::.ctor(int32)
+IL_0037:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::.ctor(int32)
 IL_003c:  stloc.0
 IL_003d:  ldloc.0
 IL_003e:  ret
@@ -546,11 +546,11 @@ instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .override  method instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>::MoveNextAsync()
 .maxstack  2
-.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15' V_0,
+.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17' V_0,
 int16 V_1,
 valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> V_2)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0014
 IL_000a:  ldloca.s   V_2
@@ -558,26 +558,26 @@ IL_000c:  initobj    valuetype [System.Runtime]System.Threading.Tasks.ValueTask`
 IL_0012:  ldloc.2
 IL_0013:  ret
 IL_0014:  ldarg.0
-IL_0015:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_0015:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_001a:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
 IL_001f:  ldarg.0
 IL_0020:  stloc.0
 IL_0021:  ldarg.0
-IL_0022:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>t__builder'
+IL_0022:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>t__builder'
 IL_0027:  ldloca.s   V_0
-IL_0029:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'>(!!0&)
+IL_0029:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'>(!!0&)
 IL_002e:  ldarg.0
-IL_002f:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_002f:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0034:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
 IL_0039:  stloc.1
 IL_003a:  ldarg.0
-IL_003b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_003b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0040:  ldloc.1
 IL_0041:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
 IL_0046:  ldc.i4.1
 IL_0047:  bne.un.s   IL_005b
 IL_0049:  ldarg.0
-IL_004a:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_004a:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_004f:  ldloc.1
 IL_0050:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
 IL_0055:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>::.ctor(!0)
@@ -596,7 +596,7 @@ instance string  'System.Collections.Generic.IAsyncEnumerator<System.String>.get
 .override  method instance !0 class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>::get_Current()
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>2__current'
+IL_0001:  ldfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>2__current'
 IL_0006:  ret
 }
 .method private hidebysig newslot virtual final
@@ -605,7 +605,7 @@ instance bool  'System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.
 .override  method instance !0 class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetResult(int16)
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
 IL_000c:  ret
@@ -617,7 +617,7 @@ instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourc
 .override  method instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetStatus(int16)
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
 IL_000c:  ret
@@ -638,7 +638,7 @@ int16,
 valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags)
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  ldarg.2
 IL_0008:  ldarg.3
@@ -655,7 +655,7 @@ instance void  System.Threading.Tasks.Sources.IValueTaskSource.GetResult(int16 t
 .override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetResult
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
 IL_000c:  pop
@@ -668,7 +668,7 @@ System.Threading.Tasks.Sources.IValueTaskSource.GetStatus(int16 token) cil manag
 .override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetStatus
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
 IL_000c:  ret
@@ -686,7 +686,7 @@ valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnComple
 .override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::OnCompleted
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  ldarg.2
 IL_0008:  ldarg.3
@@ -703,16 +703,16 @@ System.IAsyncDisposable.DisposeAsync() cil managed
 {
 .override [System.Runtime]System.IAsyncDisposable::DisposeAsync
 .maxstack  2
-.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15' V_0,
+.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17' V_0,
 valuetype [System.Runtime]System.Threading.Tasks.ValueTask V_1)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_0006:  ldc.i4.m1
 IL_0007:  blt.s      IL_000f
 IL_0009:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
 IL_000e:  throw
 IL_000f:  ldarg.0
-IL_0010:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>1__state'
+IL_0010:  ldfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>1__state'
 IL_0015:  ldc.i4.s   -2
 IL_0017:  bne.un.s   IL_0023
 IL_0019:  ldloca.s   V_1
@@ -721,19 +721,19 @@ IL_0021:  ldloc.1
 IL_0022:  ret
 IL_0023:  ldarg.0
 IL_0024:  ldc.i4.1
-IL_0025:  stfld      bool TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>w__disposeMode'
+IL_0025:  stfld      bool TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>w__disposeMode'
 IL_002a:  ldarg.0
-IL_002b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_002b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_0030:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
 IL_0035:  ldarg.0
 IL_0036:  stloc.0
 IL_0037:  ldarg.0
-IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>t__builder'
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>t__builder'
 IL_003d:  ldloca.s   V_0
-IL_003f:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'>(!!0&)
+IL_003f:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'>(!!0&)
 IL_0044:  ldarg.0
 IL_0045:  ldarg.0
-IL_0046:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'<>v__promiseOfValueOrEnd'
+IL_0046:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'<>v__promiseOfValueOrEnd'
 IL_004b:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
 IL_0050:  newobj     instance void [System.Runtime]System.Threading.Tasks.ValueTask::.ctor(class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource,
 int16)
@@ -741,7 +741,7 @@ IL_0055:  ret
 }
 .property instance string 'System.Collections.Generic.IAsyncEnumerator<System.String>.Current'()
 {
-.get instance string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::'System.Collections.Generic.IAsyncEnumerator<System.String>.get_Current'()
+.get instance string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::'System.Collections.Generic.IAsyncEnumerator<System.String>.get_Current'()
 }
 }
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
@@ -942,6 +942,56 @@ IL_0000:  ldloca.s   V_0
 IL_0002:  initobj    !!T
 IL_0008:  ldloc.0
 IL_0009:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
+ThrowingAsync() cil managed
+{
+.maxstack  1
+.locals init (valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter V_0,
+valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable V_1)
+IL_0000:  nop
+IL_0001:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable [System.Runtime]System.Threading.Tasks.Task::Yield()
+IL_0006:  stloc.1
+IL_0007:  ldloca.s   V_1
+IL_0009:  call       instance valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable::GetAwaiter()
+IL_000e:  stloc.0
+IL_000f:  ldloca.s   V_0
+IL_0011:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter::get_IsCompleted()
+IL_0016:  brtrue.s   IL_001f
+IL_0018:  ldloc.0
+IL_0019:  call       void [System.Runtime]System.Runtime.CompilerServices.AsyncHelpers::UnsafeAwaitAwaiter<valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter>(!!0)
+IL_001e:  nop
+IL_001f:  ldloca.s   V_0
+IL_0021:  call       instance void [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter::GetResult()
+IL_0026:  nop
+IL_0027:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_002c:  throw
+}
+.method public hidebysig static valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<string>
+ThrowingValueAsync() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 00 01 00 00 )
+.maxstack  1
+.locals init (valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter V_0,
+valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable V_1)
+IL_0000:  nop
+IL_0001:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable [System.Runtime]System.Threading.Tasks.Task::Yield()
+IL_0006:  stloc.1
+IL_0007:  ldloca.s   V_1
+IL_0009:  call       instance valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable::GetAwaiter()
+IL_000e:  stloc.0
+IL_000f:  ldloca.s   V_0
+IL_0011:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter::get_IsCompleted()
+IL_0016:  brtrue.s   IL_001f
+IL_0018:  ldloc.0
+IL_0019:  call       void [System.Runtime]System.Runtime.CompilerServices.AsyncHelpers::UnsafeAwaitAwaiter<valuetype [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter>(!!0)
+IL_001e:  nop
+IL_001f:  ldloca.s   V_0
+IL_0021:  call       instance void [System.Runtime]System.Runtime.CompilerServices.YieldAwaitable/YieldAwaiter::GetResult()
+IL_0026:  nop
+IL_0027:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_002c:  throw
 }
 .method public hidebysig static class [System.Runtime]System.Threading.Tasks.Task`1<string>
 SeveralReturnsAsync(string mode) cil managed
@@ -1169,26 +1219,26 @@ IL_0026:  ret
 .method public hidebysig static void  AsyncVoid(string 'value') cil managed
 {
 .maxstack  2
-.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13' V_0)
+.locals init (class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15' V_0)
 IL_0000:  ldarg.0
 IL_0001:  brtrue.s   IL_000d
 IL_0003:  ldstr      "value"
 IL_0008:  call       void RuntimeNullables.ThrowHelpers::ThrowArgumentNull(string)
-IL_000d:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::.ctor()
+IL_000d:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::.ctor()
 IL_0012:  stloc.0
 IL_0013:  ldloc.0
 IL_0014:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Create()
-IL_0019:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>t__builder'
+IL_0019:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>t__builder'
 IL_001e:  ldloc.0
 IL_001f:  ldarg.0
-IL_0020:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'value'
+IL_0020:  stfld      string TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'value'
 IL_0025:  ldloc.0
 IL_0026:  ldc.i4.m1
-IL_0027:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>1__state'
+IL_0027:  stfld      int32 TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>1__state'
 IL_002c:  ldloc.0
-IL_002d:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'::'<>t__builder'
+IL_002d:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'::'<>t__builder'
 IL_0032:  ldloca.s   V_0
-IL_0034:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__13'>(!!0&)
+IL_0034:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<class TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<AsyncVoid>d__15'>(!!0&)
 IL_0039:  ret
 }
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
@@ -1196,7 +1246,7 @@ BadGetReferences() cil managed
 {
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
-IL_0002:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__14'::.ctor(int32)
+IL_0002:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferences>d__16'::.ctor(int32)
 IL_0007:  ret
 }
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerable`1<string>
@@ -1204,7 +1254,7 @@ BadGetReferencesAsync() cil managed
 {
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
-IL_0002:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__15'::.ctor(int32)
+IL_0002:  newobj     instance void TestAssemblyRuntimeAsync.RuntimeAsyncMethods/'<BadGetReferencesAsync>d__17'::.ctor(int32)
 IL_0007:  ret
 }
 }

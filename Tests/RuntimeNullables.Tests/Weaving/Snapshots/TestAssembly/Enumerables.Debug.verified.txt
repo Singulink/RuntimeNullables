@@ -405,7 +405,151 @@ IL_0006:  ret
 .get instance object TestAssembly.Enumerables/'<BadGetReferences>d__1'::System.Collections.IEnumerator.get_Current()
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<GetNullNonGenerics>d__5'
+.class auto ansi sealed nested private beforefieldinit '<GetNoReferences>d__4'
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>,
+[System.Runtime]System.Collections.IEnumerable,
+class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>,
+[System.Runtime]System.Collections.IEnumerator,
+[System.Runtime]System.IDisposable
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerator
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private int32 '<>1__state'
+.field private string '<>2__current'
+.field private int32 '<>l__initialThreadId'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  ldarg.1
+IL_0009:  stfld      int32 TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>1__state'
+IL_000e:  ldarg.0
+IL_000f:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
+IL_0014:  stfld      int32 TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>l__initialThreadId'
+IL_0019:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.IDisposable.Dispose() cil managed
+{
+.override [System.Runtime]System.IDisposable::Dispose
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldc.i4.s   -2
+IL_0003:  stfld      int32 TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>1__state'
+IL_0008:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  MoveNext() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::MoveNext
+.maxstack  2
+.locals init (int32 V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>1__state'
+IL_0006:  stloc.0
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_000c
+IL_000a:  br.s       IL_000e
+IL_000c:  br.s       IL_0010
+IL_000e:  ldc.i4.0
+IL_000f:  ret
+IL_0010:  ldarg.0
+IL_0011:  ldc.i4.m1
+IL_0012:  stfld      int32 TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>1__state'
+IL_0017:  nop
+IL_0018:  ldc.i4.0
+IL_0019:  ret
+}
+.method private hidebysig newslot specialname virtual final
+instance string  'System.Collections.Generic.IEnumerator<System.String>.get_Current'() cil managed
+{
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Collections.IEnumerator.Reset() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::Reset
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_0005:  throw
+}
+.method private hidebysig newslot specialname virtual final
+instance object  System.Collections.IEnumerator.get_Current() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Runtime]System.Collections.IEnumerator::get_Current
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
+'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
+.override  method instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>::GetEnumerator()
+.maxstack  2
+.locals init (class TestAssembly.Enumerables/'<GetNoReferences>d__4' V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>1__state'
+IL_0006:  ldc.i4.s   -2
+IL_0008:  bne.un.s   IL_0022
+IL_000a:  ldarg.0
+IL_000b:  ldfld      int32 TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>l__initialThreadId'
+IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
+IL_0015:  bne.un.s   IL_0022
+IL_0017:  ldarg.0
+IL_0018:  ldc.i4.0
+IL_0019:  stfld      int32 TestAssembly.Enumerables/'<GetNoReferences>d__4'::'<>1__state'
+IL_001e:  ldarg.0
+IL_001f:  stloc.0
+IL_0020:  br.s       IL_0029
+IL_0022:  ldc.i4.0
+IL_0023:  newobj     instance void TestAssembly.Enumerables/'<GetNoReferences>d__4'::.ctor(int32)
+IL_0028:  stloc.0
+IL_0029:  ldloc.0
+IL_002a:  ret
+}
+.method private hidebysig newslot virtual final
+instance class [System.Runtime]System.Collections.IEnumerator
+System.Collections.IEnumerable.GetEnumerator() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerable::GetEnumerator
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string> TestAssembly.Enumerables/'<GetNoReferences>d__4'::'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'()
+IL_0006:  ret
+}
+.property instance string 'System.Collections.Generic.IEnumerator<System.String>.Current'()
+{
+.get instance string TestAssembly.Enumerables/'<GetNoReferences>d__4'::'System.Collections.Generic.IEnumerator<System.String>.get_Current'()
+}
+.property instance object System.Collections.IEnumerator.Current()
+{
+.get instance object TestAssembly.Enumerables/'<GetNoReferences>d__4'::System.Collections.IEnumerator.get_Current()
+}
+}
+.class auto ansi sealed nested private beforefieldinit '<GetNullNonGenerics>d__7'
 extends [System.Runtime]System.Object
 implements class [System.Runtime]System.Collections.Generic.IEnumerable`1<object>,
 [System.Runtime]System.Collections.IEnumerable,
@@ -436,10 +580,10 @@ IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
 IL_0006:  nop
 IL_0007:  ldarg.0
 IL_0008:  ldarg.1
-IL_0009:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>1__state'
+IL_0009:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>1__state'
 IL_000e:  ldarg.0
 IL_000f:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
-IL_0014:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>l__initialThreadId'
+IL_0014:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>l__initialThreadId'
 IL_0019:  ret
 }
 .method private hidebysig newslot virtual final
@@ -449,7 +593,7 @@ instance void  System.IDisposable.Dispose() cil managed
 .maxstack  8
 IL_0000:  ldarg.0
 IL_0001:  ldc.i4.s   -2
-IL_0003:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>1__state'
+IL_0003:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>1__state'
 IL_0008:  ret
 }
 .method private hidebysig newslot virtual final
@@ -459,7 +603,7 @@ instance bool  MoveNext() cil managed
 .maxstack  2
 .locals init (int32 V_0)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>1__state'
 IL_0006:  stloc.0
 IL_0007:  ldloc.0
 IL_0008:  brfalse.s  IL_0012
@@ -474,19 +618,19 @@ IL_0016:  ldc.i4.0
 IL_0017:  ret
 IL_0018:  ldarg.0
 IL_0019:  ldc.i4.m1
-IL_001a:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>1__state'
+IL_001a:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>1__state'
 IL_001f:  nop
 IL_0020:  ldarg.0
 IL_0021:  ldnull
-IL_0022:  stfld      object TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>2__current'
+IL_0022:  stfld      object TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>2__current'
 IL_0027:  ldarg.0
 IL_0028:  ldc.i4.1
-IL_0029:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>1__state'
+IL_0029:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>1__state'
 IL_002e:  ldc.i4.1
 IL_002f:  ret
 IL_0030:  ldarg.0
 IL_0031:  ldc.i4.m1
-IL_0032:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>1__state'
+IL_0032:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>1__state'
 IL_0037:  ldc.i4.0
 IL_0038:  ret
 }
@@ -498,7 +642,7 @@ instance object  'System.Collections.Generic.IEnumerator<System.Object>.get_Curr
 .override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<object>::get_Current()
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldfld      object TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>2__current'
+IL_0001:  ldfld      object TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>2__current'
 IL_0006:  ret
 }
 .method private hidebysig newslot virtual final
@@ -517,7 +661,7 @@ instance object  System.Collections.IEnumerator.get_Current() cil managed
 .override [System.Runtime]System.Collections.IEnumerator::get_Current
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldfld      object TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>2__current'
+IL_0001:  ldfld      object TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>2__current'
 IL_0006:  ret
 }
 .method private hidebysig newslot virtual final
@@ -528,23 +672,23 @@ instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<object>
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
 .override  method instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IEnumerable`1<object>::GetEnumerator()
 .maxstack  2
-.locals init (class TestAssembly.Enumerables/'<GetNullNonGenerics>d__5' V_0)
+.locals init (class TestAssembly.Enumerables/'<GetNullNonGenerics>d__7' V_0)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>1__state'
 IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0022
 IL_000a:  ldarg.0
-IL_000b:  ldfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>l__initialThreadId'
+IL_000b:  ldfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>l__initialThreadId'
 IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0015:  bne.un.s   IL_0022
 IL_0017:  ldarg.0
 IL_0018:  ldc.i4.0
-IL_0019:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'<>1__state'
+IL_0019:  stfld      int32 TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'<>1__state'
 IL_001e:  ldarg.0
 IL_001f:  stloc.0
 IL_0020:  br.s       IL_0029
 IL_0022:  ldc.i4.0
-IL_0023:  newobj     instance void TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::.ctor(int32)
+IL_0023:  newobj     instance void TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::.ctor(int32)
 IL_0028:  stloc.0
 IL_0029:  ldloc.0
 IL_002a:  ret
@@ -556,19 +700,19 @@ System.Collections.IEnumerable.GetEnumerator() cil managed
 .override [System.Runtime]System.Collections.IEnumerable::GetEnumerator
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  call       instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<object> TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'System.Collections.Generic.IEnumerable<System.Object>.GetEnumerator'()
+IL_0001:  call       instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<object> TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'System.Collections.Generic.IEnumerable<System.Object>.GetEnumerator'()
 IL_0006:  ret
 }
 .property instance object 'System.Collections.Generic.IEnumerator<System.Object>.Current'()
 {
-.get instance object TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'()
+.get instance object TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::'System.Collections.Generic.IEnumerator<System.Object>.get_Current'()
 }
 .property instance object System.Collections.IEnumerator.Current()
 {
-.get instance object TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::System.Collections.IEnumerator.get_Current()
+.get instance object TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::System.Collections.IEnumerator.get_Current()
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<GetNullableReferences>d__4'
+.class auto ansi sealed nested private beforefieldinit '<GetNullableReferences>d__6'
 extends [System.Runtime]System.Object
 implements class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>,
 [System.Runtime]System.Collections.IEnumerable,
@@ -599,10 +743,10 @@ IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
 IL_0006:  nop
 IL_0007:  ldarg.0
 IL_0008:  ldarg.1
-IL_0009:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>1__state'
+IL_0009:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>1__state'
 IL_000e:  ldarg.0
 IL_000f:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
-IL_0014:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>l__initialThreadId'
+IL_0014:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>l__initialThreadId'
 IL_0019:  ret
 }
 .method private hidebysig newslot virtual final
@@ -612,7 +756,7 @@ instance void  System.IDisposable.Dispose() cil managed
 .maxstack  8
 IL_0000:  ldarg.0
 IL_0001:  ldc.i4.s   -2
-IL_0003:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>1__state'
+IL_0003:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>1__state'
 IL_0008:  ret
 }
 .method private hidebysig newslot virtual final
@@ -622,7 +766,7 @@ instance bool  MoveNext() cil managed
 .maxstack  2
 .locals init (int32 V_0)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>1__state'
 IL_0006:  stloc.0
 IL_0007:  ldloc.0
 IL_0008:  brfalse.s  IL_0012
@@ -637,19 +781,19 @@ IL_0016:  ldc.i4.0
 IL_0017:  ret
 IL_0018:  ldarg.0
 IL_0019:  ldc.i4.m1
-IL_001a:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>1__state'
+IL_001a:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>1__state'
 IL_001f:  nop
 IL_0020:  ldarg.0
 IL_0021:  ldnull
-IL_0022:  stfld      string TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>2__current'
+IL_0022:  stfld      string TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>2__current'
 IL_0027:  ldarg.0
 IL_0028:  ldc.i4.1
-IL_0029:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>1__state'
+IL_0029:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>1__state'
 IL_002e:  ldc.i4.1
 IL_002f:  ret
 IL_0030:  ldarg.0
 IL_0031:  ldc.i4.m1
-IL_0032:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>1__state'
+IL_0032:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>1__state'
 IL_0037:  ldc.i4.0
 IL_0038:  ret
 }
@@ -661,7 +805,7 @@ instance string  'System.Collections.Generic.IEnumerator<System.String>.get_Curr
 .override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>::get_Current()
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldfld      string TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>2__current'
+IL_0001:  ldfld      string TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>2__current'
 IL_0006:  ret
 }
 .method private hidebysig newslot virtual final
@@ -680,7 +824,7 @@ instance object  System.Collections.IEnumerator.get_Current() cil managed
 .override [System.Runtime]System.Collections.IEnumerator::get_Current
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldfld      string TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>2__current'
+IL_0001:  ldfld      string TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>2__current'
 IL_0006:  ret
 }
 .method private hidebysig newslot virtual final
@@ -691,23 +835,23 @@ instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
 .override  method instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>::GetEnumerator()
 .maxstack  2
-.locals init (class TestAssembly.Enumerables/'<GetNullableReferences>d__4' V_0)
+.locals init (class TestAssembly.Enumerables/'<GetNullableReferences>d__6' V_0)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>1__state'
+IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>1__state'
 IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0022
 IL_000a:  ldarg.0
-IL_000b:  ldfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>l__initialThreadId'
+IL_000b:  ldfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>l__initialThreadId'
 IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
 IL_0015:  bne.un.s   IL_0022
 IL_0017:  ldarg.0
 IL_0018:  ldc.i4.0
-IL_0019:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'<>1__state'
+IL_0019:  stfld      int32 TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'<>1__state'
 IL_001e:  ldarg.0
 IL_001f:  stloc.0
 IL_0020:  br.s       IL_0029
 IL_0022:  ldc.i4.0
-IL_0023:  newobj     instance void TestAssembly.Enumerables/'<GetNullableReferences>d__4'::.ctor(int32)
+IL_0023:  newobj     instance void TestAssembly.Enumerables/'<GetNullableReferences>d__6'::.ctor(int32)
 IL_0028:  stloc.0
 IL_0029:  ldloc.0
 IL_002a:  ret
@@ -719,16 +863,16 @@ System.Collections.IEnumerable.GetEnumerator() cil managed
 .override [System.Runtime]System.Collections.IEnumerable::GetEnumerator
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  call       instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string> TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'()
+IL_0001:  call       instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string> TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'()
 IL_0006:  ret
 }
 .property instance string 'System.Collections.Generic.IEnumerator<System.String>.Current'()
 {
-.get instance string TestAssembly.Enumerables/'<GetNullableReferences>d__4'::'System.Collections.Generic.IEnumerator<System.String>.get_Current'()
+.get instance string TestAssembly.Enumerables/'<GetNullableReferences>d__6'::'System.Collections.Generic.IEnumerator<System.String>.get_Current'()
 }
 .property instance object System.Collections.IEnumerator.Current()
 {
-.get instance object TestAssembly.Enumerables/'<GetNullableReferences>d__4'::System.Collections.IEnumerator.get_Current()
+.get instance object TestAssembly.Enumerables/'<GetNullableReferences>d__6'::System.Collections.IEnumerator.get_Current()
 }
 }
 .class auto ansi sealed nested private beforefieldinit '<GoodGetGenerics>d__2`1'<.ctor T>
@@ -1207,6 +1351,150 @@ IL_0006:  ret
 .get instance object TestAssembly.Enumerables/'<GoodGetReferences>d__0'::System.Collections.IEnumerator.get_Current()
 }
 }
+.class auto ansi sealed nested private beforefieldinit '<ThrowingGetReferences>d__5'
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>,
+[System.Runtime]System.Collections.IEnumerable,
+class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>,
+[System.Runtime]System.Collections.IEnumerator,
+[System.Runtime]System.IDisposable
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Collections.IEnumerator
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private int32 '<>1__state'
+.field private string '<>2__current'
+.field private int32 '<>l__initialThreadId'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  ldarg.1
+IL_0009:  stfld      int32 TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>1__state'
+IL_000e:  ldarg.0
+IL_000f:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
+IL_0014:  stfld      int32 TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>l__initialThreadId'
+IL_0019:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.IDisposable.Dispose() cil managed
+{
+.override [System.Runtime]System.IDisposable::Dispose
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldc.i4.s   -2
+IL_0003:  stfld      int32 TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>1__state'
+IL_0008:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  MoveNext() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::MoveNext
+.maxstack  2
+.locals init (int32 V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>1__state'
+IL_0006:  stloc.0
+IL_0007:  ldloc.0
+IL_0008:  brfalse.s  IL_000c
+IL_000a:  br.s       IL_000e
+IL_000c:  br.s       IL_0010
+IL_000e:  ldc.i4.0
+IL_000f:  ret
+IL_0010:  ldarg.0
+IL_0011:  ldc.i4.m1
+IL_0012:  stfld      int32 TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>1__state'
+IL_0017:  nop
+IL_0018:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_001d:  throw
+}
+.method private hidebysig newslot specialname virtual final
+instance string  'System.Collections.Generic.IEnumerator<System.String>.get_Current'() cil managed
+{
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Collections.IEnumerator.Reset() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerator::Reset
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_0005:  throw
+}
+.method private hidebysig newslot specialname virtual final
+instance object  System.Collections.IEnumerator.get_Current() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override [System.Runtime]System.Collections.IEnumerator::get_Current
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string>
+'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 00 00 00 )
+.override  method instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<!0> class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>::GetEnumerator()
+.maxstack  2
+.locals init (class TestAssembly.Enumerables/'<ThrowingGetReferences>d__5' V_0)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>1__state'
+IL_0006:  ldc.i4.s   -2
+IL_0008:  bne.un.s   IL_0022
+IL_000a:  ldarg.0
+IL_000b:  ldfld      int32 TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>l__initialThreadId'
+IL_0010:  call       int32 [System.Runtime]System.Environment::get_CurrentManagedThreadId()
+IL_0015:  bne.un.s   IL_0022
+IL_0017:  ldarg.0
+IL_0018:  ldc.i4.0
+IL_0019:  stfld      int32 TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'<>1__state'
+IL_001e:  ldarg.0
+IL_001f:  stloc.0
+IL_0020:  br.s       IL_0029
+IL_0022:  ldc.i4.0
+IL_0023:  newobj     instance void TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::.ctor(int32)
+IL_0028:  stloc.0
+IL_0029:  ldloc.0
+IL_002a:  ret
+}
+.method private hidebysig newslot virtual final
+instance class [System.Runtime]System.Collections.IEnumerator
+System.Collections.IEnumerable.GetEnumerator() cil managed
+{
+.override [System.Runtime]System.Collections.IEnumerable::GetEnumerator
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance class [System.Runtime]System.Collections.Generic.IEnumerator`1<string> TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'()
+IL_0006:  ret
+}
+.property instance string 'System.Collections.Generic.IEnumerator<System.String>.Current'()
+{
+.get instance string TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::'System.Collections.Generic.IEnumerator<System.String>.get_Current'()
+}
+.property instance object System.Collections.IEnumerator.Current()
+{
+.get instance object TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::System.Collections.IEnumerator.get_Current()
+}
+}
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
 GoodGetReferences() cil managed
 {
@@ -1240,13 +1528,29 @@ IL_0002:  newobj     instance void class TestAssembly.Enumerables/'<BadGetGeneri
 IL_0007:  ret
 }
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
+GetNoReferences() cil managed
+{
+.maxstack  8
+IL_0000:  ldc.i4.s   -2
+IL_0002:  newobj     instance void TestAssembly.Enumerables/'<GetNoReferences>d__4'::.ctor(int32)
+IL_0007:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
+ThrowingGetReferences() cil managed
+{
+.maxstack  8
+IL_0000:  ldc.i4.s   -2
+IL_0002:  newobj     instance void TestAssembly.Enumerables/'<ThrowingGetReferences>d__5'::.ctor(int32)
+IL_0007:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Collections.Generic.IEnumerable`1<string>
 GetNullableReferences() cil managed
 {
 .param [0]
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
-IL_0002:  newobj     instance void TestAssembly.Enumerables/'<GetNullableReferences>d__4'::.ctor(int32)
+IL_0002:  newobj     instance void TestAssembly.Enumerables/'<GetNullableReferences>d__6'::.ctor(int32)
 IL_0007:  ret
 }
 .method public hidebysig static class [System.Runtime]System.Collections.IEnumerable
@@ -1254,7 +1558,7 @@ GetNullNonGenerics() cil managed
 {
 .maxstack  8
 IL_0000:  ldc.i4.s   -2
-IL_0002:  newobj     instance void TestAssembly.Enumerables/'<GetNullNonGenerics>d__5'::.ctor(int32)
+IL_0002:  newobj     instance void TestAssembly.Enumerables/'<GetNullNonGenerics>d__7'::.ctor(int32)
 IL_0007:  ret
 }
 }

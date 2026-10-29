@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RuntimeNullables.Tests.Infrastructure;
@@ -25,6 +26,12 @@ public class EnumerablesTests
     {
         NullCheckAssert.ThrowsOutputNull(NullCheckMessages.EnumeratorResult, () => Enumerate(Enumerables.BadGetGenerics<object>()));
     }
+
+    [TestMethod]
+    public void GetNoReferences() => Enumerate(Enumerables.GetNoReferences());
+
+    [TestMethod]
+    public void ThrowingGetReferences() => Assert.ThrowsException<InvalidOperationException>(() => Enumerate(Enumerables.ThrowingGetReferences()));
 
     [TestMethod]
     public void GetNullableReferences() => Enumerate(Enumerables.GetNullableReferences());

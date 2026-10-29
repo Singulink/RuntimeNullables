@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using RuntimeNullables;
@@ -54,6 +55,12 @@ public static class Returns
     /// The array is checked like any other reference (the elements' task results aren't checked).
     /// </summary>
     public static Task<string>[] BadTaskArray() => null!;
+
+    // Methods that always throw have no return value to check.
+
+    public static string Throwing() => throw new InvalidOperationException();
+
+    public static ref string ThrowingRefReference() => throw new InvalidOperationException();
 
     private static class Holder<T>
     {

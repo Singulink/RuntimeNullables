@@ -442,4 +442,12 @@ IL_004b:  ldstr      "Output parameter 'value' nullability contract was "
 IL_0050:  call       void RuntimeNullables.ThrowHelpers::ThrowOutputNull(string)
 IL_0055:  ret
 }
+.method public hidebysig static bool  ThrowingNotNullWhenTrue([out] string& output) cil managed
+{
+.custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.param [1]
+.maxstack  8
+IL_0000:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0005:  throw
+}
 }

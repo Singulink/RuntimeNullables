@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics.CodeAnalysis;
 using RuntimeNullables;
 
@@ -136,4 +137,6 @@ public static class ConditionalOutputParameters
         value = key;
         return true;
     }
+
+    public static bool ThrowingNotNullWhenTrue([NotNullWhen(true)] out string? output) => throw new InvalidOperationException();
 }

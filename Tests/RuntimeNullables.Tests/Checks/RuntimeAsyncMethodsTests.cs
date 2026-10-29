@@ -113,6 +113,12 @@ public class RuntimeAsyncMethodsTests
     }
 
     [TestMethod]
+    public Task ThrowingAsync() => Assert.ThrowsExceptionAsync<InvalidOperationException>(RuntimeAsyncMethods.ThrowingAsync);
+
+    [TestMethod]
+    public Task ThrowingValueAsync() => Assert.ThrowsExceptionAsync<InvalidOperationException>(() => RuntimeAsyncMethods.ThrowingValueAsync().AsTask());
+
+    [TestMethod]
     public Task GenericClassBadAsync()
     {
         return NullCheckAssert.ThrowsOutputNullAsync(NullCheckMessages.AsyncTaskResult, new RuntimeAsyncGeneric<string>().BadAsync);

@@ -3,7 +3,7 @@ extends [System.Runtime]System.Object
 {
 .custom instance void System.Runtime.CompilerServices.NullableContextAttribute::.ctor(uint8) = ( 01 00 01 00 00 )
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
-.class auto ansi sealed nested private beforefieldinit '<BadGetGenericsAsync>d__6`1'<.ctor T>
+.class auto ansi sealed nested private beforefieldinit '<BadGetGenericsAsync>d__8`1'<.ctor T>
 extends [System.Runtime]System.Object
 implements class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!T>,
 [System.Runtime]System.IAsyncDisposable,
@@ -38,10 +38,10 @@ IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
 IL_0006:  nop
 IL_0007:  ldarg.0
 IL_0008:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_000d:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>t__builder'
+IL_000d:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>t__builder'
 IL_0012:  ldarg.0
 IL_0013:  ldarg.1
-IL_0014:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0014:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0019:  ret
 }
 .method private hidebysig newslot virtual final
@@ -51,10 +51,10 @@ instance void  MoveNext() cil managed
 .maxstack  3
 .locals init (int32 V_0,
 valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_1,
-class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T> V_2,
+class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T> V_2,
 class [System.Runtime]System.Exception V_3)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -76,17 +76,17 @@ IL_0038:  br         IL_00df
 IL_003d:  br.s       IL_0041
 IL_003f:  br.s       IL_00a1
 IL_0041:  ldarg.0
-IL_0042:  ldfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>w__disposeMode'
+IL_0042:  ldfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>w__disposeMode'
 IL_0047:  brfalse.s  IL_004e
 IL_0049:  leave      IL_017f
 IL_004e:  ldarg.0
 IL_004f:  ldc.i4.m1
 IL_0050:  dup
 IL_0051:  stloc.0
-IL_0052:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0052:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0057:  nop
 IL_0058:  ldarg.0
-IL_0059:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>2__current'
+IL_0059:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>2__current'
 IL_005e:  initobj    !T
 IL_0064:  ldc.i4.s   10
 IL_0066:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
@@ -99,86 +99,86 @@ IL_007a:  ldarg.0
 IL_007b:  ldc.i4.0
 IL_007c:  dup
 IL_007d:  stloc.0
-IL_007e:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_007e:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0083:  ldarg.0
 IL_0084:  ldloc.1
-IL_0085:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>u__1'
+IL_0085:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>u__1'
 IL_008a:  ldarg.0
 IL_008b:  stloc.2
 IL_008c:  ldarg.0
-IL_008d:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>t__builder'
+IL_008d:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>t__builder'
 IL_0092:  ldloca.s   V_1
 IL_0094:  ldloca.s   V_2
-IL_0096:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>>(!!0&,
+IL_0096:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>>(!!0&,
 !!1&)
 IL_009b:  nop
 IL_009c:  leave      IL_01d7
 IL_00a1:  ldarg.0
-IL_00a2:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>u__1'
+IL_00a2:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>u__1'
 IL_00a7:  stloc.1
 IL_00a8:  ldarg.0
-IL_00a9:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>u__1'
+IL_00a9:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>u__1'
 IL_00ae:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
 IL_00b4:  ldarg.0
 IL_00b5:  ldc.i4.m1
 IL_00b6:  dup
 IL_00b7:  stloc.0
-IL_00b8:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_00b8:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_00bd:  ldloca.s   V_1
 IL_00bf:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL_00c4:  nop
 IL_00c5:  ldarg.0
 IL_00c6:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
-IL_00cb:  stfld      !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>2__current'
+IL_00cb:  stfld      !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>2__current'
 IL_00d0:  ldarg.0
 IL_00d1:  ldc.i4.s   -4
 IL_00d3:  dup
 IL_00d4:  stloc.0
-IL_00d5:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_00d5:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_00da:  leave      IL_01ad
 IL_00df:  ldarg.0
 IL_00e0:  ldc.i4.m1
 IL_00e1:  dup
 IL_00e2:  stloc.0
-IL_00e3:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_00e3:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_00e8:  ldarg.0
-IL_00e9:  ldfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>w__disposeMode'
+IL_00e9:  ldfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>w__disposeMode'
 IL_00ee:  brfalse.s  IL_00f5
 IL_00f0:  leave      IL_017f
 IL_00f5:  ldarg.0
-IL_00f6:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>2__current'
+IL_00f6:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>2__current'
 IL_00fb:  initobj    !T
 IL_0101:  ldarg.0
 IL_0102:  ldc.i4.s   -5
 IL_0104:  dup
 IL_0105:  stloc.0
-IL_0106:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0106:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_010b:  leave      IL_01ad
 IL_0110:  ldarg.0
 IL_0111:  ldc.i4.m1
 IL_0112:  dup
 IL_0113:  stloc.0
-IL_0114:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0114:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0119:  ldarg.0
-IL_011a:  ldfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>w__disposeMode'
+IL_011a:  ldfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>w__disposeMode'
 IL_011f:  brfalse.s  IL_0123
 IL_0121:  leave.s    IL_017f
 IL_0123:  ldarg.0
 IL_0124:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
-IL_0129:  stfld      !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>2__current'
+IL_0129:  stfld      !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>2__current'
 IL_012e:  ldarg.0
 IL_012f:  ldc.i4.s   -6
 IL_0131:  dup
 IL_0132:  stloc.0
-IL_0133:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0133:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0138:  leave.s    IL_01ad
 IL_013a:  ldarg.0
 IL_013b:  ldc.i4.m1
 IL_013c:  dup
 IL_013d:  stloc.0
-IL_013e:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_013e:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0143:  ldarg.0
-IL_0144:  ldfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>w__disposeMode'
+IL_0144:  ldfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>w__disposeMode'
 IL_0149:  brfalse.s  IL_014d
 IL_014b:  leave.s    IL_017f
 IL_014d:  leave.s    IL_017f
@@ -188,16 +188,16 @@ catch [System.Runtime]System.Exception
 IL_014f:  stloc.3
 IL_0150:  ldarg.0
 IL_0151:  ldc.i4.s   -2
-IL_0153:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0153:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0158:  ldarg.0
-IL_0159:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>2__current'
+IL_0159:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>2__current'
 IL_015e:  initobj    !T
 IL_0164:  ldarg.0
-IL_0165:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>t__builder'
+IL_0165:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>t__builder'
 IL_016a:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
 IL_016f:  nop
 IL_0170:  ldarg.0
-IL_0171:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0171:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0176:  ldloc.3
 IL_0177:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetException(class [System.Runtime]System.Exception)
 IL_017c:  nop
@@ -205,24 +205,24 @@ IL_017d:  leave.s    IL_01d7
 }  // end handler
 IL_017f:  ldarg.0
 IL_0180:  ldc.i4.s   -2
-IL_0182:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0182:  stfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0187:  ldarg.0
-IL_0188:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>2__current'
+IL_0188:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>2__current'
 IL_018d:  initobj    !T
 IL_0193:  ldarg.0
-IL_0194:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>t__builder'
+IL_0194:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>t__builder'
 IL_0199:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
 IL_019e:  nop
 IL_019f:  ldarg.0
-IL_01a0:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_01a0:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_01a5:  ldc.i4.0
 IL_01a6:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetResult(!0)
 IL_01ab:  nop
 IL_01ac:  ret
 IL_01ad:  ldarg.0
-IL_01ae:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_01ae:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_01b3:  ldarg.0
-IL_01b4:  ldfld      !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>2__current'
+IL_01b4:  ldfld      !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>2__current'
 IL_01b9:  box        !T
 IL_01be:  brtrue.s   IL_01d0
 IL_01c0:  ldstr      "Async enumerator result nullability contract was b"
@@ -250,11 +250,11 @@ instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .override  method instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!T>::MoveNextAsync()
 .maxstack  2
-.locals init (class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T> V_0,
+.locals init (class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T> V_0,
 int16 V_1,
 valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> V_2)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0014
 IL_000a:  ldloca.s   V_2
@@ -262,26 +262,26 @@ IL_000c:  initobj    valuetype [System.Runtime]System.Threading.Tasks.ValueTask`
 IL_0012:  ldloc.2
 IL_0013:  ret
 IL_0014:  ldarg.0
-IL_0015:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0015:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_001a:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
 IL_001f:  ldarg.0
 IL_0020:  stloc.0
 IL_0021:  ldarg.0
-IL_0022:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>t__builder'
+IL_0022:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>t__builder'
 IL_0027:  ldloca.s   V_0
-IL_0029:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>>(!!0&)
+IL_0029:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>>(!!0&)
 IL_002e:  ldarg.0
-IL_002f:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_002f:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0034:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
 IL_0039:  stloc.1
 IL_003a:  ldarg.0
-IL_003b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_003b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0040:  ldloc.1
 IL_0041:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
 IL_0046:  ldc.i4.1
 IL_0047:  bne.un.s   IL_005b
 IL_0049:  ldarg.0
-IL_004a:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_004a:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_004f:  ldloc.1
 IL_0050:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
 IL_0055:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>::.ctor(!0)
@@ -300,7 +300,7 @@ instance !T  'System.Collections.Generic.IAsyncEnumerator<T>.get_Current'() cil 
 .override  method instance !0 class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!T>::get_Current()
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldfld      !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>2__current'
+IL_0001:  ldfld      !0 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>2__current'
 IL_0006:  ret
 }
 .method private hidebysig newslot virtual final
@@ -309,7 +309,7 @@ instance bool  'System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.
 .override  method instance !0 class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetResult(int16)
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
 IL_000c:  ret
@@ -321,7 +321,7 @@ instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourc
 .override  method instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetStatus(int16)
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
 IL_000c:  ret
@@ -342,7 +342,7 @@ int16,
 valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags)
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  ldarg.2
 IL_0008:  ldarg.3
@@ -359,7 +359,7 @@ instance void  System.Threading.Tasks.Sources.IValueTaskSource.GetResult(int16 t
 .override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetResult
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
 IL_000c:  pop
@@ -372,7 +372,7 @@ System.Threading.Tasks.Sources.IValueTaskSource.GetStatus(int16 token) cil manag
 .override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetStatus
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
 IL_000c:  ret
@@ -390,7 +390,7 @@ valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnComple
 .override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::OnCompleted
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  ldarg.2
 IL_0008:  ldarg.3
@@ -407,16 +407,16 @@ System.IAsyncDisposable.DisposeAsync() cil managed
 {
 .override [System.Runtime]System.IAsyncDisposable::DisposeAsync
 .maxstack  2
-.locals init (class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T> V_0,
+.locals init (class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T> V_0,
 valuetype [System.Runtime]System.Threading.Tasks.ValueTask V_1)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0006:  ldc.i4.m1
 IL_0007:  blt.s      IL_000f
 IL_0009:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
 IL_000e:  throw
 IL_000f:  ldarg.0
-IL_0010:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>1__state'
+IL_0010:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>1__state'
 IL_0015:  ldc.i4.s   -2
 IL_0017:  bne.un.s   IL_0023
 IL_0019:  ldloca.s   V_1
@@ -425,19 +425,19 @@ IL_0021:  ldloc.1
 IL_0022:  ret
 IL_0023:  ldarg.0
 IL_0024:  ldc.i4.1
-IL_0025:  stfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>w__disposeMode'
+IL_0025:  stfld      bool class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>w__disposeMode'
 IL_002a:  ldarg.0
-IL_002b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_002b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0030:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
 IL_0035:  ldarg.0
 IL_0036:  stloc.0
 IL_0037:  ldarg.0
-IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>t__builder'
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>t__builder'
 IL_003d:  ldloca.s   V_0
-IL_003f:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>>(!!0&)
+IL_003f:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>>(!!0&)
 IL_0044:  ldarg.0
 IL_0045:  ldarg.0
-IL_0046:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0046:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_004b:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
 IL_0050:  newobj     instance void [System.Runtime]System.Threading.Tasks.ValueTask::.ctor(class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource,
 int16)
@@ -445,7 +445,7 @@ IL_0055:  ret
 }
 .property instance !T 'System.Collections.Generic.IAsyncEnumerator<T>.Current'()
 {
-.get instance !T TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'::'System.Collections.Generic.IAsyncEnumerator<T>.get_Current'()
+.get instance !T TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'::'System.Collections.Generic.IAsyncEnumerator<T>.get_Current'()
 }
 }
 .class auto ansi sealed nested private beforefieldinit '<BadGetReferencesAsync>d__1'
@@ -1287,6 +1287,378 @@ IL_0055:  ret
 .get instance string TestAssembly.AsyncEnumerators/'<BadGetReferencesAsyncWithoutAwait>d__3'::'System.Collections.Generic.IAsyncEnumerator<System.String>.get_Current'()
 }
 }
+.class auto ansi sealed nested private beforefieldinit '<GetNoReferencesAsync>d__5'
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>,
+[System.Runtime]System.IAsyncDisposable,
+class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>,
+[System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource,
+[System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IAsyncDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field public int32 '<>1__state'
+.field public valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder '<>t__builder'
+.field public valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> '<>v__promiseOfValueOrEnd'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private string '<>2__current'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private bool '<>w__disposeMode'
+.field private valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
+IL_000d:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>t__builder'
+IL_0012:  ldarg.0
+IL_0013:  ldarg.1
+IL_0014:  stfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_0019:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_1,
+class TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5' V_2,
+class [System.Runtime]System.Exception V_3)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  ldc.i4.s   -3
+IL_000a:  beq.s      IL_0013
+IL_000c:  br.s       IL_000e
+IL_000e:  ldloc.0
+IL_000f:  brfalse.s  IL_0015
+IL_0011:  br.s       IL_0017
+IL_0013:  br.s       IL_0017
+IL_0015:  br.s       IL_0072
+IL_0017:  ldarg.0
+IL_0018:  ldfld      bool TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>w__disposeMode'
+IL_001d:  brfalse.s  IL_0024
+IL_001f:  leave      IL_00ca
+IL_0024:  ldarg.0
+IL_0025:  ldc.i4.m1
+IL_0026:  dup
+IL_0027:  stloc.0
+IL_0028:  stfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_002d:  nop
+IL_002e:  ldarg.0
+IL_002f:  ldnull
+IL_0030:  stfld      string TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>2__current'
+IL_0035:  ldc.i4.s   10
+IL_0037:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_003c:  callvirt   instance valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter [System.Runtime]System.Threading.Tasks.Task::GetAwaiter()
+IL_0041:  stloc.1
+IL_0042:  ldloca.s   V_1
+IL_0044:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted()
+IL_0049:  brtrue.s   IL_008e
+IL_004b:  ldarg.0
+IL_004c:  ldc.i4.0
+IL_004d:  dup
+IL_004e:  stloc.0
+IL_004f:  stfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_0054:  ldarg.0
+IL_0055:  ldloc.1
+IL_0056:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>u__1'
+IL_005b:  ldarg.0
+IL_005c:  stloc.2
+IL_005d:  ldarg.0
+IL_005e:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>t__builder'
+IL_0063:  ldloca.s   V_1
+IL_0065:  ldloca.s   V_2
+IL_0067:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'>(!!0&,
+!!1&)
+IL_006c:  nop
+IL_006d:  leave      IL_00f3
+IL_0072:  ldarg.0
+IL_0073:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>u__1'
+IL_0078:  stloc.1
+IL_0079:  ldarg.0
+IL_007a:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>u__1'
+IL_007f:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
+IL_0085:  ldarg.0
+IL_0086:  ldc.i4.m1
+IL_0087:  dup
+IL_0088:  stloc.0
+IL_0089:  stfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_008e:  ldloca.s   V_1
+IL_0090:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
+IL_0095:  nop
+IL_0096:  ldarg.0
+IL_0097:  ldc.i4.1
+IL_0098:  stfld      bool TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>w__disposeMode'
+IL_009d:  leave.s    IL_00ca
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_009f:  stloc.3
+IL_00a0:  ldarg.0
+IL_00a1:  ldc.i4.s   -2
+IL_00a3:  stfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_00a8:  ldarg.0
+IL_00a9:  ldnull
+IL_00aa:  stfld      string TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>2__current'
+IL_00af:  ldarg.0
+IL_00b0:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>t__builder'
+IL_00b5:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
+IL_00ba:  nop
+IL_00bb:  ldarg.0
+IL_00bc:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_00c1:  ldloc.3
+IL_00c2:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetException(class [System.Runtime]System.Exception)
+IL_00c7:  nop
+IL_00c8:  leave.s    IL_00f3
+}  // end handler
+IL_00ca:  ldarg.0
+IL_00cb:  ldc.i4.s   -2
+IL_00cd:  stfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_00d2:  ldarg.0
+IL_00d3:  ldnull
+IL_00d4:  stfld      string TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>2__current'
+IL_00d9:  ldarg.0
+IL_00da:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>t__builder'
+IL_00df:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
+IL_00e4:  nop
+IL_00e5:  ldarg.0
+IL_00e6:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_00eb:  ldc.i4.0
+IL_00ec:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetResult(!0)
+IL_00f1:  nop
+IL_00f2:  ret
+IL_00f3:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+.method private hidebysig newslot virtual final
+instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>
+'System.Collections.Generic.IAsyncEnumerator<System.String>.MoveNextAsync'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override  method instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>::MoveNextAsync()
+.maxstack  2
+.locals init (class TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5' V_0,
+int16 V_1,
+valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> V_2)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_0006:  ldc.i4.s   -2
+IL_0008:  bne.un.s   IL_0014
+IL_000a:  ldloca.s   V_2
+IL_000c:  initobj    valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>
+IL_0012:  ldloc.2
+IL_0013:  ret
+IL_0014:  ldarg.0
+IL_0015:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_001a:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
+IL_001f:  ldarg.0
+IL_0020:  stloc.0
+IL_0021:  ldarg.0
+IL_0022:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>t__builder'
+IL_0027:  ldloca.s   V_0
+IL_0029:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'>(!!0&)
+IL_002e:  ldarg.0
+IL_002f:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_0034:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
+IL_0039:  stloc.1
+IL_003a:  ldarg.0
+IL_003b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_0040:  ldloc.1
+IL_0041:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
+IL_0046:  ldc.i4.1
+IL_0047:  bne.un.s   IL_005b
+IL_0049:  ldarg.0
+IL_004a:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_004f:  ldloc.1
+IL_0050:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
+IL_0055:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>::.ctor(!0)
+IL_005a:  ret
+IL_005b:  ldarg.0
+IL_005c:  ldloc.1
+IL_005d:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>::.ctor(class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<!0>,
+int16)
+IL_0062:  ret
+}
+.method private hidebysig newslot specialname virtual final
+instance string  'System.Collections.Generic.IAsyncEnumerator<System.String>.get_Current'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  'System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult'(int16 token) cil managed
+{
+.override  method instance !0 class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetResult(int16)
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
+IL_000c:  ret
+}
+.method private hidebysig newslot virtual final
+instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus
+'System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetStatus'(int16 token) cil managed
+{
+.override  method instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetStatus(int16)
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
+IL_000c:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  'System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.OnCompleted'(class [System.Runtime]System.Action`1<object> continuation,
+object state,
+int16 token,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags 'flags') cil managed
+{
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
+.param [2]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.override  method instance void class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::OnCompleted(class [System.Runtime]System.Action`1<object>,
+object,
+int16,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags)
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  ldarg.2
+IL_0008:  ldarg.3
+IL_0009:  ldarg.s    'flags'
+IL_000b:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::OnCompleted(class [System.Runtime]System.Action`1<object>,
+object,
+int16,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags)
+IL_0010:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Threading.Tasks.Sources.IValueTaskSource.GetResult(int16 token) cil managed
+{
+.override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetResult
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
+IL_000c:  pop
+IL_000d:  ret
+}
+.method private hidebysig newslot virtual final
+instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus
+System.Threading.Tasks.Sources.IValueTaskSource.GetStatus(int16 token) cil managed
+{
+.override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetStatus
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
+IL_000c:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Threading.Tasks.Sources.IValueTaskSource.OnCompleted(class [System.Runtime]System.Action`1<object> continuation,
+object state,
+int16 token,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags 'flags') cil managed
+{
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
+.param [2]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::OnCompleted
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  ldarg.2
+IL_0008:  ldarg.3
+IL_0009:  ldarg.s    'flags'
+IL_000b:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::OnCompleted(class [System.Runtime]System.Action`1<object>,
+object,
+int16,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags)
+IL_0010:  ret
+}
+.method private hidebysig newslot virtual final
+instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask
+System.IAsyncDisposable.DisposeAsync() cil managed
+{
+.override [System.Runtime]System.IAsyncDisposable::DisposeAsync
+.maxstack  2
+.locals init (class TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5' V_0,
+valuetype [System.Runtime]System.Threading.Tasks.ValueTask V_1)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_0006:  ldc.i4.m1
+IL_0007:  blt.s      IL_000f
+IL_0009:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_000e:  throw
+IL_000f:  ldarg.0
+IL_0010:  ldfld      int32 TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>1__state'
+IL_0015:  ldc.i4.s   -2
+IL_0017:  bne.un.s   IL_0023
+IL_0019:  ldloca.s   V_1
+IL_001b:  initobj    [System.Runtime]System.Threading.Tasks.ValueTask
+IL_0021:  ldloc.1
+IL_0022:  ret
+IL_0023:  ldarg.0
+IL_0024:  ldc.i4.1
+IL_0025:  stfld      bool TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>w__disposeMode'
+IL_002a:  ldarg.0
+IL_002b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_0030:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
+IL_0035:  ldarg.0
+IL_0036:  stloc.0
+IL_0037:  ldarg.0
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>t__builder'
+IL_003d:  ldloca.s   V_0
+IL_003f:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'>(!!0&)
+IL_0044:  ldarg.0
+IL_0045:  ldarg.0
+IL_0046:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'<>v__promiseOfValueOrEnd'
+IL_004b:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
+IL_0050:  newobj     instance void [System.Runtime]System.Threading.Tasks.ValueTask::.ctor(class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource,
+int16)
+IL_0055:  ret
+}
+.property instance string 'System.Collections.Generic.IAsyncEnumerator<System.String>.Current'()
+{
+.get instance string TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::'System.Collections.Generic.IAsyncEnumerator<System.String>.get_Current'()
+}
+}
 .class auto ansi sealed nested private beforefieldinit '<GetNullableReferencesAsync>d__4'
 extends [System.Runtime]System.Object
 implements class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>,
@@ -1683,7 +2055,7 @@ IL_0055:  ret
 .get instance string TestAssembly.AsyncEnumerators/'<GetNullableReferencesAsync>d__4'::'System.Collections.Generic.IAsyncEnumerator<System.String>.get_Current'()
 }
 }
-.class auto ansi sealed nested private beforefieldinit '<GoodGetGenericsAsync>d__5`1'<.ctor T>
+.class auto ansi sealed nested private beforefieldinit '<GoodGetGenericsAsync>d__7`1'<.ctor T>
 extends [System.Runtime]System.Object
 implements class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!T>,
 [System.Runtime]System.IAsyncDisposable,
@@ -1718,10 +2090,10 @@ IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
 IL_0006:  nop
 IL_0007:  ldarg.0
 IL_0008:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
-IL_000d:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>t__builder'
+IL_000d:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>t__builder'
 IL_0012:  ldarg.0
 IL_0013:  ldarg.1
-IL_0014:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_0014:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_0019:  ret
 }
 .method private hidebysig newslot virtual final
@@ -1731,10 +2103,10 @@ instance void  MoveNext() cil managed
 .maxstack  3
 .locals init (int32 V_0,
 valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_1,
-class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T> V_2,
+class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T> V_2,
 class [System.Runtime]System.Exception V_3)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_0006:  stloc.0
 .try
 {
@@ -1752,17 +2124,17 @@ IL_0026:  br         IL_00ca
 IL_002b:  br.s       IL_002f
 IL_002d:  br.s       IL_008f
 IL_002f:  ldarg.0
-IL_0030:  ldfld      bool class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>w__disposeMode'
+IL_0030:  ldfld      bool class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>w__disposeMode'
 IL_0035:  brfalse.s  IL_003c
 IL_0037:  leave      IL_010f
 IL_003c:  ldarg.0
 IL_003d:  ldc.i4.m1
 IL_003e:  dup
 IL_003f:  stloc.0
-IL_0040:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_0040:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_0045:  nop
 IL_0046:  ldarg.0
-IL_0047:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>2__current'
+IL_0047:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>2__current'
 IL_004c:  initobj    !T
 IL_0052:  ldc.i4.s   10
 IL_0054:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
@@ -1775,50 +2147,50 @@ IL_0068:  ldarg.0
 IL_0069:  ldc.i4.0
 IL_006a:  dup
 IL_006b:  stloc.0
-IL_006c:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_006c:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_0071:  ldarg.0
 IL_0072:  ldloc.1
-IL_0073:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>u__1'
+IL_0073:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>u__1'
 IL_0078:  ldarg.0
 IL_0079:  stloc.2
 IL_007a:  ldarg.0
-IL_007b:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>t__builder'
+IL_007b:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>t__builder'
 IL_0080:  ldloca.s   V_1
 IL_0082:  ldloca.s   V_2
-IL_0084:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>>(!!0&,
+IL_0084:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>>(!!0&,
 !!1&)
 IL_0089:  nop
 IL_008a:  leave      IL_0167
 IL_008f:  ldarg.0
-IL_0090:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>u__1'
+IL_0090:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>u__1'
 IL_0095:  stloc.1
 IL_0096:  ldarg.0
-IL_0097:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>u__1'
+IL_0097:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>u__1'
 IL_009c:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
 IL_00a2:  ldarg.0
 IL_00a3:  ldc.i4.m1
 IL_00a4:  dup
 IL_00a5:  stloc.0
-IL_00a6:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_00a6:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_00ab:  ldloca.s   V_1
 IL_00ad:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
 IL_00b2:  nop
 IL_00b3:  ldarg.0
 IL_00b4:  call       !!0 [System.Runtime]System.Activator::CreateInstance<!T>()
-IL_00b9:  stfld      !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>2__current'
+IL_00b9:  stfld      !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>2__current'
 IL_00be:  ldarg.0
 IL_00bf:  ldc.i4.s   -4
 IL_00c1:  dup
 IL_00c2:  stloc.0
-IL_00c3:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_00c3:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_00c8:  leave.s    IL_013d
 IL_00ca:  ldarg.0
 IL_00cb:  ldc.i4.m1
 IL_00cc:  dup
 IL_00cd:  stloc.0
-IL_00ce:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_00ce:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_00d3:  ldarg.0
-IL_00d4:  ldfld      bool class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>w__disposeMode'
+IL_00d4:  ldfld      bool class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>w__disposeMode'
 IL_00d9:  brfalse.s  IL_00dd
 IL_00db:  leave.s    IL_010f
 IL_00dd:  leave.s    IL_010f
@@ -1828,16 +2200,16 @@ catch [System.Runtime]System.Exception
 IL_00df:  stloc.3
 IL_00e0:  ldarg.0
 IL_00e1:  ldc.i4.s   -2
-IL_00e3:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_00e3:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_00e8:  ldarg.0
-IL_00e9:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>2__current'
+IL_00e9:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>2__current'
 IL_00ee:  initobj    !T
 IL_00f4:  ldarg.0
-IL_00f5:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>t__builder'
+IL_00f5:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>t__builder'
 IL_00fa:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
 IL_00ff:  nop
 IL_0100:  ldarg.0
-IL_0101:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0101:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0106:  ldloc.3
 IL_0107:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetException(class [System.Runtime]System.Exception)
 IL_010c:  nop
@@ -1845,24 +2217,24 @@ IL_010d:  leave.s    IL_0167
 }  // end handler
 IL_010f:  ldarg.0
 IL_0110:  ldc.i4.s   -2
-IL_0112:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_0112:  stfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_0117:  ldarg.0
-IL_0118:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>2__current'
+IL_0118:  ldflda     !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>2__current'
 IL_011d:  initobj    !T
 IL_0123:  ldarg.0
-IL_0124:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>t__builder'
+IL_0124:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>t__builder'
 IL_0129:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
 IL_012e:  nop
 IL_012f:  ldarg.0
-IL_0130:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0130:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0135:  ldc.i4.0
 IL_0136:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetResult(!0)
 IL_013b:  nop
 IL_013c:  ret
 IL_013d:  ldarg.0
-IL_013e:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_013e:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0143:  ldarg.0
-IL_0144:  ldfld      !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>2__current'
+IL_0144:  ldfld      !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>2__current'
 IL_0149:  box        !T
 IL_014e:  brtrue.s   IL_0160
 IL_0150:  ldstr      "Async enumerator result nullability contract was b"
@@ -1890,11 +2262,11 @@ instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>
 .custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
 .override  method instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!T>::MoveNextAsync()
 .maxstack  2
-.locals init (class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T> V_0,
+.locals init (class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T> V_0,
 int16 V_1,
 valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> V_2)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_0006:  ldc.i4.s   -2
 IL_0008:  bne.un.s   IL_0014
 IL_000a:  ldloca.s   V_2
@@ -1902,26 +2274,26 @@ IL_000c:  initobj    valuetype [System.Runtime]System.Threading.Tasks.ValueTask`
 IL_0012:  ldloc.2
 IL_0013:  ret
 IL_0014:  ldarg.0
-IL_0015:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0015:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_001a:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
 IL_001f:  ldarg.0
 IL_0020:  stloc.0
 IL_0021:  ldarg.0
-IL_0022:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>t__builder'
+IL_0022:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>t__builder'
 IL_0027:  ldloca.s   V_0
-IL_0029:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>>(!!0&)
+IL_0029:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>>(!!0&)
 IL_002e:  ldarg.0
-IL_002f:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_002f:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0034:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
 IL_0039:  stloc.1
 IL_003a:  ldarg.0
-IL_003b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_003b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0040:  ldloc.1
 IL_0041:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
 IL_0046:  ldc.i4.1
 IL_0047:  bne.un.s   IL_005b
 IL_0049:  ldarg.0
-IL_004a:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_004a:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_004f:  ldloc.1
 IL_0050:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
 IL_0055:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>::.ctor(!0)
@@ -1940,7 +2312,7 @@ instance !T  'System.Collections.Generic.IAsyncEnumerator<T>.get_Current'() cil 
 .override  method instance !0 class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!T>::get_Current()
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldfld      !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>2__current'
+IL_0001:  ldfld      !0 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>2__current'
 IL_0006:  ret
 }
 .method private hidebysig newslot virtual final
@@ -1949,7 +2321,7 @@ instance bool  'System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.
 .override  method instance !0 class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetResult(int16)
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
 IL_000c:  ret
@@ -1961,7 +2333,7 @@ instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourc
 .override  method instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetStatus(int16)
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
 IL_000c:  ret
@@ -1982,7 +2354,7 @@ int16,
 valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags)
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  ldarg.2
 IL_0008:  ldarg.3
@@ -1999,7 +2371,7 @@ instance void  System.Threading.Tasks.Sources.IValueTaskSource.GetResult(int16 t
 .override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetResult
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
 IL_000c:  pop
@@ -2012,7 +2384,7 @@ System.Threading.Tasks.Sources.IValueTaskSource.GetStatus(int16 token) cil manag
 .override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetStatus
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
 IL_000c:  ret
@@ -2030,7 +2402,7 @@ valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnComple
 .override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::OnCompleted
 .maxstack  8
 IL_0000:  ldarg.0
-IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0006:  ldarg.1
 IL_0007:  ldarg.2
 IL_0008:  ldarg.3
@@ -2047,16 +2419,16 @@ System.IAsyncDisposable.DisposeAsync() cil managed
 {
 .override [System.Runtime]System.IAsyncDisposable::DisposeAsync
 .maxstack  2
-.locals init (class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T> V_0,
+.locals init (class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T> V_0,
 valuetype [System.Runtime]System.Threading.Tasks.ValueTask V_1)
 IL_0000:  ldarg.0
-IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_0001:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_0006:  ldc.i4.m1
 IL_0007:  blt.s      IL_000f
 IL_0009:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
 IL_000e:  throw
 IL_000f:  ldarg.0
-IL_0010:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>1__state'
+IL_0010:  ldfld      int32 class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>1__state'
 IL_0015:  ldc.i4.s   -2
 IL_0017:  bne.un.s   IL_0023
 IL_0019:  ldloca.s   V_1
@@ -2065,19 +2437,19 @@ IL_0021:  ldloc.1
 IL_0022:  ret
 IL_0023:  ldarg.0
 IL_0024:  ldc.i4.1
-IL_0025:  stfld      bool class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>w__disposeMode'
+IL_0025:  stfld      bool class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>w__disposeMode'
 IL_002a:  ldarg.0
-IL_002b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_002b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_0030:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
 IL_0035:  ldarg.0
 IL_0036:  stloc.0
 IL_0037:  ldarg.0
-IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>t__builder'
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>t__builder'
 IL_003d:  ldloca.s   V_0
-IL_003f:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>>(!!0&)
+IL_003f:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>>(!!0&)
 IL_0044:  ldarg.0
 IL_0045:  ldarg.0
-IL_0046:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!T>::'<>v__promiseOfValueOrEnd'
+IL_0046:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!T>::'<>v__promiseOfValueOrEnd'
 IL_004b:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
 IL_0050:  newobj     instance void [System.Runtime]System.Threading.Tasks.ValueTask::.ctor(class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource,
 int16)
@@ -2085,7 +2457,7 @@ IL_0055:  ret
 }
 .property instance !T 'System.Collections.Generic.IAsyncEnumerator<T>.Current'()
 {
-.get instance !T TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'::'System.Collections.Generic.IAsyncEnumerator<T>.get_Current'()
+.get instance !T TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'::'System.Collections.Generic.IAsyncEnumerator<T>.get_Current'()
 }
 }
 .class auto ansi sealed nested private beforefieldinit '<GoodGetReferencesAsync>d__0'
@@ -2848,6 +3220,376 @@ IL_0055:  ret
 .get instance string TestAssembly.AsyncEnumerators/'<GoodGetReferencesAsyncWithoutAwait>d__2'::'System.Collections.Generic.IAsyncEnumerator<System.String>.get_Current'()
 }
 }
+.class auto ansi sealed nested private beforefieldinit '<ThrowingGetReferencesAsync>d__6'
+extends [System.Runtime]System.Object
+implements class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>,
+[System.Runtime]System.IAsyncDisposable,
+class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>,
+[System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource,
+[System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+{
+.interfaceimpl type class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.IAsyncDisposable
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.interfaceimpl type [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field public int32 '<>1__state'
+.field public valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder '<>t__builder'
+.field public valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> '<>v__promiseOfValueOrEnd'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private string '<>2__current'
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.field private bool '<>w__disposeMode'
+.field private valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter '<>u__1'
+.method public hidebysig specialname rtspecialname
+instance void  .ctor(int32 '<>1__state') cil managed
+{
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  call       instance void [System.Runtime]System.Object::.ctor()
+IL_0006:  nop
+IL_0007:  ldarg.0
+IL_0008:  call       valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Create()
+IL_000d:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>t__builder'
+IL_0012:  ldarg.0
+IL_0013:  ldarg.1
+IL_0014:  stfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_0019:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  MoveNext() cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::MoveNext
+.maxstack  3
+.locals init (int32 V_0,
+valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter V_1,
+class TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6' V_2,
+class [System.Runtime]System.Exception V_3)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_0006:  stloc.0
+.try
+{
+IL_0007:  ldloc.0
+IL_0008:  ldc.i4.s   -3
+IL_000a:  beq.s      IL_0013
+IL_000c:  br.s       IL_000e
+IL_000e:  ldloc.0
+IL_000f:  brfalse.s  IL_0015
+IL_0011:  br.s       IL_0017
+IL_0013:  br.s       IL_0017
+IL_0015:  br.s       IL_006f
+IL_0017:  ldarg.0
+IL_0018:  ldfld      bool TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>w__disposeMode'
+IL_001d:  brfalse.s  IL_0024
+IL_001f:  leave      IL_00c4
+IL_0024:  ldarg.0
+IL_0025:  ldc.i4.m1
+IL_0026:  dup
+IL_0027:  stloc.0
+IL_0028:  stfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_002d:  nop
+IL_002e:  ldarg.0
+IL_002f:  ldnull
+IL_0030:  stfld      string TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>2__current'
+IL_0035:  ldc.i4.s   10
+IL_0037:  call       class [System.Runtime]System.Threading.Tasks.Task [System.Runtime]System.Threading.Tasks.Task::Delay(int32)
+IL_003c:  callvirt   instance valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter [System.Runtime]System.Threading.Tasks.Task::GetAwaiter()
+IL_0041:  stloc.1
+IL_0042:  ldloca.s   V_1
+IL_0044:  call       instance bool [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::get_IsCompleted()
+IL_0049:  brtrue.s   IL_008b
+IL_004b:  ldarg.0
+IL_004c:  ldc.i4.0
+IL_004d:  dup
+IL_004e:  stloc.0
+IL_004f:  stfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_0054:  ldarg.0
+IL_0055:  ldloc.1
+IL_0056:  stfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>u__1'
+IL_005b:  ldarg.0
+IL_005c:  stloc.2
+IL_005d:  ldarg.0
+IL_005e:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>t__builder'
+IL_0063:  ldloca.s   V_1
+IL_0065:  ldloca.s   V_2
+IL_0067:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::AwaitUnsafeOnCompleted<valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter,class TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'>(!!0&,
+!!1&)
+IL_006c:  nop
+IL_006d:  leave.s    IL_00ed
+IL_006f:  ldarg.0
+IL_0070:  ldfld      valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>u__1'
+IL_0075:  stloc.1
+IL_0076:  ldarg.0
+IL_0077:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>u__1'
+IL_007c:  initobj    [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter
+IL_0082:  ldarg.0
+IL_0083:  ldc.i4.m1
+IL_0084:  dup
+IL_0085:  stloc.0
+IL_0086:  stfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_008b:  ldloca.s   V_1
+IL_008d:  call       instance void [System.Runtime]System.Runtime.CompilerServices.TaskAwaiter::GetResult()
+IL_0092:  nop
+IL_0093:  newobj     instance void [System.Runtime]System.InvalidOperationException::.ctor()
+IL_0098:  throw
+}  // end .try
+catch [System.Runtime]System.Exception
+{
+IL_0099:  stloc.3
+IL_009a:  ldarg.0
+IL_009b:  ldc.i4.s   -2
+IL_009d:  stfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_00a2:  ldarg.0
+IL_00a3:  ldnull
+IL_00a4:  stfld      string TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>2__current'
+IL_00a9:  ldarg.0
+IL_00aa:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>t__builder'
+IL_00af:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
+IL_00b4:  nop
+IL_00b5:  ldarg.0
+IL_00b6:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_00bb:  ldloc.3
+IL_00bc:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetException(class [System.Runtime]System.Exception)
+IL_00c1:  nop
+IL_00c2:  leave.s    IL_00ed
+}  // end handler
+IL_00c4:  ldarg.0
+IL_00c5:  ldc.i4.s   -2
+IL_00c7:  stfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_00cc:  ldarg.0
+IL_00cd:  ldnull
+IL_00ce:  stfld      string TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>2__current'
+IL_00d3:  ldarg.0
+IL_00d4:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>t__builder'
+IL_00d9:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::Complete()
+IL_00de:  nop
+IL_00df:  ldarg.0
+IL_00e0:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_00e5:  ldc.i4.0
+IL_00e6:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::SetResult(!0)
+IL_00eb:  nop
+IL_00ec:  ret
+IL_00ed:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  SetStateMachine(class [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine stateMachine) cil managed
+{
+.override [System.Runtime]System.Runtime.CompilerServices.IAsyncStateMachine::SetStateMachine
+.maxstack  8
+IL_0000:  ret
+}
+.method private hidebysig newslot virtual final
+instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>
+'System.Collections.Generic.IAsyncEnumerator<System.String>.MoveNextAsync'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override  method instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>::MoveNextAsync()
+.maxstack  2
+.locals init (class TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6' V_0,
+int16 V_1,
+valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool> V_2)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_0006:  ldc.i4.s   -2
+IL_0008:  bne.un.s   IL_0014
+IL_000a:  ldloca.s   V_2
+IL_000c:  initobj    valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>
+IL_0012:  ldloc.2
+IL_0013:  ret
+IL_0014:  ldarg.0
+IL_0015:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_001a:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
+IL_001f:  ldarg.0
+IL_0020:  stloc.0
+IL_0021:  ldarg.0
+IL_0022:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>t__builder'
+IL_0027:  ldloca.s   V_0
+IL_0029:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'>(!!0&)
+IL_002e:  ldarg.0
+IL_002f:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_0034:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
+IL_0039:  stloc.1
+IL_003a:  ldarg.0
+IL_003b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_0040:  ldloc.1
+IL_0041:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
+IL_0046:  ldc.i4.1
+IL_0047:  bne.un.s   IL_005b
+IL_0049:  ldarg.0
+IL_004a:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_004f:  ldloc.1
+IL_0050:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
+IL_0055:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>::.ctor(!0)
+IL_005a:  ret
+IL_005b:  ldarg.0
+IL_005c:  ldloc.1
+IL_005d:  newobj     instance void valuetype [System.Runtime]System.Threading.Tasks.ValueTask`1<bool>::.ctor(class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<!0>,
+int16)
+IL_0062:  ret
+}
+.method private hidebysig newslot specialname virtual final
+instance string  'System.Collections.Generic.IAsyncEnumerator<System.String>.get_Current'() cil managed
+{
+.param [0]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 00 00 00 )
+.override  method instance !0 class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>::get_Current()
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldfld      string TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>2__current'
+IL_0006:  ret
+}
+.method private hidebysig newslot virtual final
+instance bool  'System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetResult'(int16 token) cil managed
+{
+.override  method instance !0 class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetResult(int16)
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
+IL_000c:  ret
+}
+.method private hidebysig newslot virtual final
+instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus
+'System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.GetStatus'(int16 token) cil managed
+{
+.override  method instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::GetStatus(int16)
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
+IL_000c:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  'System.Threading.Tasks.Sources.IValueTaskSource<System.Boolean>.OnCompleted'(class [System.Runtime]System.Action`1<object> continuation,
+object state,
+int16 token,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags 'flags') cil managed
+{
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
+.param [2]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.override  method instance void class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource`1<bool>::OnCompleted(class [System.Runtime]System.Action`1<object>,
+object,
+int16,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags)
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  ldarg.2
+IL_0008:  ldarg.3
+IL_0009:  ldarg.s    'flags'
+IL_000b:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::OnCompleted(class [System.Runtime]System.Action`1<object>,
+object,
+int16,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags)
+IL_0010:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Threading.Tasks.Sources.IValueTaskSource.GetResult(int16 token) cil managed
+{
+.override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetResult
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  call       instance !0 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetResult(int16)
+IL_000c:  pop
+IL_000d:  ret
+}
+.method private hidebysig newslot virtual final
+instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus
+System.Threading.Tasks.Sources.IValueTaskSource.GetStatus(int16 token) cil managed
+{
+.override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::GetStatus
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  call       instance valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceStatus valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::GetStatus(int16)
+IL_000c:  ret
+}
+.method private hidebysig newslot virtual final
+instance void  System.Threading.Tasks.Sources.IValueTaskSource.OnCompleted(class [System.Runtime]System.Action`1<object> continuation,
+object state,
+int16 token,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags 'flags') cil managed
+{
+.param [1]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8[]) = ( 01 00 02 00 00 00 01 02 00 00 )
+.param [2]
+.custom instance void System.Runtime.CompilerServices.NullableAttribute::.ctor(uint8) = ( 01 00 02 00 00 )
+.override [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource::OnCompleted
+.maxstack  8
+IL_0000:  ldarg.0
+IL_0001:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_0006:  ldarg.1
+IL_0007:  ldarg.2
+IL_0008:  ldarg.3
+IL_0009:  ldarg.s    'flags'
+IL_000b:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::OnCompleted(class [System.Runtime]System.Action`1<object>,
+object,
+int16,
+valuetype [System.Runtime]System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags)
+IL_0010:  ret
+}
+.method private hidebysig newslot virtual final
+instance valuetype [System.Runtime]System.Threading.Tasks.ValueTask
+System.IAsyncDisposable.DisposeAsync() cil managed
+{
+.override [System.Runtime]System.IAsyncDisposable::DisposeAsync
+.maxstack  2
+.locals init (class TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6' V_0,
+valuetype [System.Runtime]System.Threading.Tasks.ValueTask V_1)
+IL_0000:  ldarg.0
+IL_0001:  ldfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_0006:  ldc.i4.m1
+IL_0007:  blt.s      IL_000f
+IL_0009:  newobj     instance void [System.Runtime]System.NotSupportedException::.ctor()
+IL_000e:  throw
+IL_000f:  ldarg.0
+IL_0010:  ldfld      int32 TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>1__state'
+IL_0015:  ldc.i4.s   -2
+IL_0017:  bne.un.s   IL_0023
+IL_0019:  ldloca.s   V_1
+IL_001b:  initobj    [System.Runtime]System.Threading.Tasks.ValueTask
+IL_0021:  ldloc.1
+IL_0022:  ret
+IL_0023:  ldarg.0
+IL_0024:  ldc.i4.1
+IL_0025:  stfld      bool TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>w__disposeMode'
+IL_002a:  ldarg.0
+IL_002b:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_0030:  call       instance void valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::Reset()
+IL_0035:  ldarg.0
+IL_0036:  stloc.0
+IL_0037:  ldarg.0
+IL_0038:  ldflda     valuetype [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>t__builder'
+IL_003d:  ldloca.s   V_0
+IL_003f:  call       instance void [System.Runtime]System.Runtime.CompilerServices.AsyncIteratorMethodBuilder::MoveNext<class TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'>(!!0&)
+IL_0044:  ldarg.0
+IL_0045:  ldarg.0
+IL_0046:  ldflda     valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool> TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'<>v__promiseOfValueOrEnd'
+IL_004b:  call       instance int16 valuetype [System.Runtime]System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore`1<bool>::get_Version()
+IL_0050:  newobj     instance void [System.Runtime]System.Threading.Tasks.ValueTask::.ctor(class [System.Runtime]System.Threading.Tasks.Sources.IValueTaskSource,
+int16)
+IL_0055:  ret
+}
+.property instance string 'System.Collections.Generic.IAsyncEnumerator<System.String>.Current'()
+{
+.get instance string TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::'System.Collections.Generic.IAsyncEnumerator<System.String>.get_Current'()
+}
+}
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
 GoodGetReferencesAsync() cil managed
 {
@@ -2890,12 +3632,28 @@ IL_0000:  ldc.i4.s   -3
 IL_0002:  newobj     instance void TestAssembly.AsyncEnumerators/'<GetNullableReferencesAsync>d__4'::.ctor(int32)
 IL_0007:  ret
 }
+.method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
+GetNoReferencesAsync() cil managed
+{
+.maxstack  8
+IL_0000:  ldc.i4.s   -3
+IL_0002:  newobj     instance void TestAssembly.AsyncEnumerators/'<GetNoReferencesAsync>d__5'::.ctor(int32)
+IL_0007:  ret
+}
+.method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<string>
+ThrowingGetReferencesAsync() cil managed
+{
+.maxstack  8
+IL_0000:  ldc.i4.s   -3
+IL_0002:  newobj     instance void TestAssembly.AsyncEnumerators/'<ThrowingGetReferencesAsync>d__6'::.ctor(int32)
+IL_0007:  ret
+}
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!!T>
 GoodGetGenericsAsync<.ctor T>() cil managed
 {
 .maxstack  8
 IL_0000:  ldc.i4.s   -3
-IL_0002:  newobj     instance void class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__5`1'<!!T>::.ctor(int32)
+IL_0002:  newobj     instance void class TestAssembly.AsyncEnumerators/'<GoodGetGenericsAsync>d__7`1'<!!T>::.ctor(int32)
 IL_0007:  ret
 }
 .method public hidebysig static class [System.Runtime]System.Collections.Generic.IAsyncEnumerator`1<!!T>
@@ -2903,7 +3661,7 @@ BadGetGenericsAsync<.ctor T>() cil managed
 {
 .maxstack  8
 IL_0000:  ldc.i4.s   -3
-IL_0002:  newobj     instance void class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__6`1'<!!T>::.ctor(int32)
+IL_0002:  newobj     instance void class TestAssembly.AsyncEnumerators/'<BadGetGenericsAsync>d__8`1'<!!T>::.ctor(int32)
 IL_0007:  ret
 }
 }

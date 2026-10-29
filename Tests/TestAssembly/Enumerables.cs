@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -35,6 +36,22 @@ public static class Enumerables
         yield return new T();
         yield return default!;
         yield return new T();
+    }
+
+    // Iterators that never yield a value have no values to check.
+
+    public static IEnumerable<string> GetNoReferences()
+    {
+        yield break;
+    }
+
+    public static IEnumerable<string> ThrowingGetReferences()
+    {
+        throw new InvalidOperationException();
+
+#pragma warning disable CS0162 // Unreachable code detected (an iterator needs a yield statement)
+        yield break;
+#pragma warning restore CS0162
     }
 
     public static IEnumerable<string?> GetNullableReferences()

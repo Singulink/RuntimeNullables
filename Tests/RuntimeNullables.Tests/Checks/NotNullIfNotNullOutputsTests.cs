@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -102,4 +103,7 @@ public class NotNullIfNotNullOutputsTests
         output = "output";
         NullCheckAssert.ThrowsOutputNull(NullCheckMessages.OutputParameter("output"), () => NotNullIfNotNullOutputs.BadRefEcho("value", ref output));
     }
+
+    [TestMethod]
+    public void ThrowingEcho() => Assert.ThrowsException<InvalidOperationException>(() => NotNullIfNotNullOutputs.ThrowingEcho("value"));
 }

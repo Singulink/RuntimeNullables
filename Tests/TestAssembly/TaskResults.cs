@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -95,7 +96,21 @@ public static class TaskResults
         return default!;
     }
 
-    // Async methods that never return a result have no result to check.
+    /// <summary>
+    /// A builder other than the default one.
+    /// </summary>
+    [AsyncMethodBuilder(typeof(PoolingAsyncValueTaskMethodBuilder<>))]
+    public static async ValueTask<string> BadReferencePoolingValueAsync()
+    {
+        await Task.Delay(10);
+        return null!;
+    }
+
+    // Methods that always throw have no result to check.
+
+    public static Task<string> Throwing() => throw new InvalidOperationException();
+
+    public static ValueTask<string> ThrowingValue() => throw new InvalidOperationException();
 
     public static async Task<string> ThrowingAsync()
     {
@@ -109,6 +124,13 @@ public static class TaskResults
     }
 
     public static async ValueTask<string> ThrowingValueAsync()
+    {
+        await Task.Delay(10);
+        throw new InvalidOperationException();
+    }
+
+    [AsyncMethodBuilder(typeof(PoolingAsyncValueTaskMethodBuilder<>))]
+    public static async ValueTask<string> ThrowingPoolingValueAsync()
     {
         await Task.Delay(10);
         throw new InvalidOperationException();
