@@ -68,10 +68,48 @@ public static class NotNullIfNotNullOutputs
     public static string? BadEchoUnknownName(string? value) => null;
 
     /// <summary>
-    /// Always returns <see langword="null"/>. Only by-value arguments count, so this isn't checked.
+    /// Always returns <see langword="null"/>.
     /// </summary>
     [return: NotNullIfNotNull(nameof(value))]
     public static string? BadEchoRefArgument(ref string? value) => null;
+
+    /// <summary>
+    /// Returns its <c>ref</c> parameter after setting it to <see langword="null"/>. The value the caller passed in is checked, not the parameter's value.
+    /// </summary>
+    [return: NotNullIfNotNull(nameof(value))]
+    public static string? BadEchoRefArgumentThatAssigns(ref string? value)
+    {
+        value = null;
+        return value;
+    }
+
+    /// <summary>
+    /// Always returns <see langword="null"/>.
+    /// </summary>
+    [return: NotNullIfNotNull(nameof(value))]
+    public static string? BadEchoInArgument(in string? value) => null;
+
+    /// <summary>
+    /// Always returns <see langword="null"/>.
+    /// </summary>
+    [return: NotNullIfNotNull(nameof(value))]
+    public static object? BadEchoGenericRefArgument<T>(ref T value) => null;
+
+    /// <summary>
+    /// Always returns <see langword="null"/>. An empty <see cref="System.Nullable{T}"/> counts as null.
+    /// </summary>
+    [return: NotNullIfNotNull(nameof(number))]
+    public static string? BadNumberToStringRefArgument(ref int? number) => null;
+
+    /// <summary>
+    /// Always returns <see langword="null"/>. Callers have no value for an <c>out</c> argument, so this isn't checked.
+    /// </summary>
+    [return: NotNullIfNotNull(nameof(value))]
+    public static string? BadEchoOutArgument(out string? value)
+    {
+        value = "value";
+        return null;
+    }
 
     /// <summary>
     /// The return value of an async method is the task, so this isn't checked.

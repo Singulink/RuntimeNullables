@@ -68,15 +68,17 @@ public partial class ModuleWeaver
     }
 
     /// <summary>
-    /// Gets the by-value parameters named by the item's <c>[NotNullIfNotNull]</c> attributes: the item isn't null if one of their arguments isn't.
-    /// Other parameters (out/ref/in, value types other than <see cref="System.Nullable{T}"/>, names that don't match) are ignored.
+    /// Gets the parameters named by the item's <c>[NotNullIfNotNull]</c> attributes: the item isn't null if one of their arguments isn't. For a
+    /// <c>ref</c> or <c>in</c> parameter, that's the value the caller passed in. Other parameters (out parameters, which callers have no value for,
+    /// value types other than <see cref="System.Nullable{T}"/>, names that don't match) are ignored.
     /// </summary>
     private static IEnumerable<ParameterDefinition> GetNotNullIfNotNullSources(MethodDefinition method, ICustomAttributeProvider item)
     {
         return item.GetNotNullIfNotNullParameterNames()
             .Select(name => method.Parameters.FirstOrDefault(p => p.Name == name))
             .OfType<ParameterDefinition>()
-            .Where(p => p.ParameterType.WithoutModifiers() is var type && !type.IsByReference && (type.IsReferenceType() || type.IsNullableValueType()));
+            .Where(p => !(p.ParameterType.WithoutModifiers().IsByReference && p.IsOut))
+            .Where(p => p.ParameterType.WithoutRefAndModifiers() is var type && (type.IsReferenceType() || type.IsNullableValueType()));
     }
 
     /// <summary>

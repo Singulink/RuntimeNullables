@@ -27,7 +27,7 @@ This package is part of our **Singulink Libraries** collection. Visit https://gi
 Add the package to your project:
 
 ```xml
-<PackageReference Include="Singulink.RuntimeNullables" Version="3.0.1" PrivateAssets="all" />
+<PackageReference Include="Singulink.RuntimeNullables" Version="3.1.0" PrivateAssets="all" />
 ```
 
 That's it. Null checks are injected into the assembly every time the project is compiled.
@@ -71,7 +71,7 @@ The checks follow the standard annotations:
 - `?` on types, and the `notnull` and `class` constraints on generic type parameters. A value of an unconstrained generic type `T` can be null, so it is only checked if an attribute disallows null.
 - the `[AllowNull]`, `[DisallowNull]`, `[MaybeNull]` and `[NotNull]` attributes.
 - the conditional `[MaybeNullWhen]` and `[NotNullWhen]` attributes, which are checked against the method's `bool` return value. For example, the `out` parameter of `bool TryGetValue(string key, [MaybeNullWhen(false)] out string value)` is checked when the method returns `true`. Like the compiler, Runtime Nullables ignores them on methods that don't return `bool`.
-- `[NotNullIfNotNull]`: a return value or `out` or `ref` parameter with it is checked when the named argument isn't null (the caller's argument, even if the method assigns to the parameter).
+- `[NotNullIfNotNull]`: a return value or `out` or `ref` parameter with it is checked when the named argument isn't null. That's the value the caller passed, even if the method assigns to the parameter. Names of `out` parameters are ignored, since callers don't pass a value for them.
 
 In code compiled with nullable reference types disabled, types don't say whether values can be null, so only the attributes above lead to checks there. Generated code isn't checked at all: types, methods and properties marked `[GeneratedCode]` or `[CompilerGenerated]` (and the types nested in them), such as source generator output, and lambdas and local functions, which the compiler marks as generated. Neither are types in the `RuntimeNullables`, `System.Runtime.CompilerServices` and `System.Diagnostics.CodeAnalysis` namespaces, where projects put their own throw helpers and copies of the nullable attributes.
 
@@ -318,7 +318,7 @@ Like compiler warnings, the warnings can be suppressed with `NoWarn` and reporte
 ## Limitations
 
 - Null checks are injected right after compiling, as part of MSBuild's `CoreCompile` target, so they're only injected when the assembly is compiled. Builds that compile without that target aren't supported.
-- `[NotNullIfNotNull]` only follows by-value arguments, not `out`, `ref` or `in` ones. Arguments that `[NotNull]` or `[NotNullWhen]` promise aren't null aren't checked for `async` methods and iterators, which return before their code runs.
+- Arguments that `[NotNull]` or `[NotNullWhen]` promise aren't null aren't checked for `async` methods and iterators, which return before their code runs.
 - Tasks returned by methods that aren't `async` are only checked if they are already completed when they are returned.
 - Assemblies signed with an enhanced strong name key (with a hash algorithm other than SHA-1) can't be signed again after the null checks are injected, which is reported as error `RN1001`.
 - Like Fody, Runtime Nullables writes the debug symbols again and records their local path in the assembly, so a `PathMap` that the compiler applied to that path (e.g. with `ContinuousIntegrationBuild`) isn't kept. Source file paths in the symbols keep their mapping.

@@ -65,9 +65,49 @@ public class NotNullIfNotNullOutputsTests
     [TestMethod]
     public void BadEchoRefArgument()
     {
-        string? value = "value";
+        string? value = null;
         Assert.IsNull(NotNullIfNotNullOutputs.BadEchoRefArgument(ref value));
+
+        value = "value";
+        NullCheckAssert.ThrowsOutputNull(NullCheckMessages.ReturnValue, () => NotNullIfNotNullOutputs.BadEchoRefArgument(ref value));
     }
+
+    [TestMethod]
+    public void BadEchoRefArgumentThatAssigns()
+    {
+        string? value = "value";
+        NullCheckAssert.ThrowsOutputNull(NullCheckMessages.ReturnValue, () => NotNullIfNotNullOutputs.BadEchoRefArgumentThatAssigns(ref value));
+    }
+
+    [TestMethod]
+    public void BadEchoInArgument()
+    {
+        Assert.IsNull(NotNullIfNotNullOutputs.BadEchoInArgument(null));
+        NullCheckAssert.ThrowsOutputNull(NullCheckMessages.ReturnValue, () => NotNullIfNotNullOutputs.BadEchoInArgument("value"));
+    }
+
+    [TestMethod]
+    public void BadEchoGenericRefArgument()
+    {
+        string? value = null;
+        Assert.IsNull(NotNullIfNotNullOutputs.BadEchoGenericRefArgument(ref value));
+
+        value = "value";
+        NullCheckAssert.ThrowsOutputNull(NullCheckMessages.ReturnValue, () => NotNullIfNotNullOutputs.BadEchoGenericRefArgument(ref value));
+    }
+
+    [TestMethod]
+    public void BadNumberToStringRefArgument()
+    {
+        int? number = null;
+        Assert.IsNull(NotNullIfNotNullOutputs.BadNumberToStringRefArgument(ref number));
+
+        number = 1;
+        NullCheckAssert.ThrowsOutputNull(NullCheckMessages.ReturnValue, () => NotNullIfNotNullOutputs.BadNumberToStringRefArgument(ref number));
+    }
+
+    [TestMethod]
+    public void BadEchoOutArgument() => Assert.IsNull(NotNullIfNotNullOutputs.BadEchoOutArgument(out _));
 
 #pragma warning disable CA2007 // Consider calling ConfigureAwait on the awaited task
     [TestMethod]

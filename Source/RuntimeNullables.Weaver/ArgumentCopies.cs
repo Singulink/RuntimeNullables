@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using Mono.Cecil;
 using Mono.Cecil.Cil;
+using RuntimeNullables.Weaver.Extensions;
 
 namespace RuntimeNullables.Weaver;
 
 /// <summary>
-/// Copies of a method's by-value arguments, saved when the method starts. Checks that run when the method returns use them, so they see the caller's
-/// arguments even if the method assigns new values to its parameters.
+/// Copies of a method's arguments, saved when the method starts. Checks that run when the method returns use them, so they see the caller's arguments
+/// even if the method assigns new values to its parameters. For a <c>ref</c> or <c>in</c> parameter, the copy is the value it referred to.
 /// </summary>
 internal sealed class ArgumentCopies
 {
@@ -30,11 +31,22 @@ internal sealed class ArgumentCopies
     {
         if (!_copies.TryGetValue(parameter, out var copy))
         {
-            copy = new VariableDefinition(parameter.ParameterType);
+            var valueType = parameter.ParameterType.WithoutRefAndModifiers();
+            copy = new VariableDefinition(valueType);
             _method.Body.Variables.Add(copy);
 
             var instructions = _method.Body.Instructions;
             instructions.Insert(0, Instruction.Create(OpCodes.Stloc, copy));
+
+            if (parameter.ParameterType.WithoutModifiers().IsByReference)
+            {
+                var loadValue = valueType.IsValueType || valueType.IsGenericParameter ?
+                    Instruction.Create(OpCodes.Ldobj, valueType) :
+                    Instruction.Create(OpCodes.Ldind_Ref);
+
+                instructions.Insert(0, loadValue);
+            }
+
             instructions.Insert(0, Instruction.Create(OpCodes.Ldarg, parameter));
 
             _copies.Add(parameter, copy);
