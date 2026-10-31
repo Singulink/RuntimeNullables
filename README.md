@@ -219,7 +219,7 @@ Neither System.Text.Json nor Runtime Nullables checks the elements of collection
 
 Also:
 - A single `[NullChecks(bool)]` attribute instead of a set of modes and attributes, and warnings when conflicting annotations (e.g. `[AllowNull, DisallowNull]`) cause checks to be skipped.
-- Leaner code: throw helpers instead of throwing directly (smaller IL), and no forced `.locals init`, which would override `[SkipLocalsInit]`.
+- Leaner code: throw helpers instead of throwing directly (smaller IL, so methods are more likely to be inlined), and no forced `.locals init`, which would override `[SkipLocalsInit]`.
 
 ## Configuration
 
