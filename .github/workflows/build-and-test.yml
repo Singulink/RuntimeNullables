@@ -38,12 +38,7 @@ jobs:
         dotnet-version: |
           6.0.x
           10.0.x
-    - name: Setup .NET 11
-      uses: actions/setup-dotnet@v5
-      with:
-        # Prerelease until .NET 11 is released; then this can move to the list above.
-        dotnet-version: 11.0.x
-        dotnet-quality: preview
+          11.0.x
     - name: Clean
       run: dotnet clean RuntimeNullables.slnx --configuration ${{ matrix.configuration }} && dotnet nuget locals all --clear
     - name: Install dependencies
@@ -71,12 +66,8 @@ jobs:
       uses: actions/setup-dotnet@v5
       with:
         # The end-to-end tests run on .NET 10 and build with the newest SDK, currently 11.
-        dotnet-version: 10.0.x
-    - name: Setup .NET 11
-      uses: actions/setup-dotnet@v5
-      with:
-        # Prerelease until .NET 11 is released; then this can move to the list above.
-        dotnet-version: 11.0.x
-        dotnet-quality: preview
+        dotnet-version: |
+          10.0.x
+          11.0.x
     - name: Test
       run: dotnet test Tests/RuntimeNullables.EndToEndTests --configuration ${{ matrix.configuration }} --verbosity normal
