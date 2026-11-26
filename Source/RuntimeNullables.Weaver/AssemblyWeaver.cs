@@ -141,8 +141,9 @@ public static class AssemblyWeaver
 
         if (exception is IOException or UnauthorizedAccessException)
         {
-            return exception.Message.Contains(Path.GetFileName(options.AssemblyPath)) ?
-                exception.Message : $"{exception.Message} (weaving '{options.AssemblyPath}')";
+            return exception.Message.Contains(Path.GetFileName(options.AssemblyPath))
+                ? exception.Message
+                : $"{exception.Message} (weaving '{options.AssemblyPath}')";
         }
 
         var exceptionChain = new List<Exception>();

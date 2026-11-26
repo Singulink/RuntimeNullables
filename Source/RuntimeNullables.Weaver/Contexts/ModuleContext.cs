@@ -89,9 +89,9 @@ internal sealed class ModuleContext : NullableContext
         {
             if (skippedType.HasAnyGeneratedAttribute())
             {
-                return skippedType.Name.StartsWith("<", System.StringComparison.Ordinal) ?
-                    TypeContext.GetGeneratedCodeReason(skippedType.Name) :
-                    $"'{skippedType}' is generated code, which isn't checked.";
+                return skippedType.Name.StartsWith("<", System.StringComparison.Ordinal)
+                    ? TypeContext.GetGeneratedCodeReason(skippedType.Name)
+                    : $"'{skippedType}' is generated code, which isn't checked.";
             }
 
             if (IsExcludedNamespaceType(skippedType))

@@ -80,8 +80,9 @@ public class WeaveTaskTests
 
         Assert.AreEqual(!expectError, task.Execute());
 
-        var diagnostics = expectError ?
-            engine.Errors.Select(e => (e.Code, e.File, e.Message)) : engine.Warnings.Select(w => (w.Code, w.File, w.Message));
+        var diagnostics = expectError
+            ? engine.Errors.Select(e => (e.Code, e.File, e.Message))
+            : engine.Warnings.Select(w => (w.Code, w.File, w.Message));
 
         var diagnostic = diagnostics.Single();
         Assert.AreEqual("RN0001", diagnostic.Code);

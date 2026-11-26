@@ -100,9 +100,9 @@ internal sealed class TypeContext : NullableContext
     /// </summary>
     internal static string GetGeneratedCodeReason(string name)
     {
-        return name.StartsWith("<", System.StringComparison.Ordinal) ?
-            "lambdas and local functions are generated code, which isn't checked." :
-            "it's generated code, which isn't checked.";
+        return name.StartsWith("<", System.StringComparison.Ordinal)
+            ? "lambdas and local functions are generated code, which isn't checked."
+            : "it's generated code, which isn't checked.";
     }
 
     /// <summary>

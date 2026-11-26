@@ -42,8 +42,9 @@ internal static class Ildasm
     private static readonly Regex _frameworkAttributePrefix = new(
         @"^\.custom instance void \[[^\]]+\](?=System\.Runtime\.CompilerServices\.(Nullable|ExtensionMarker))", RegexOptions.CultureInvariant);
 
-    private static readonly Lazy<string> _ildasmPath = new(() => WindowsSdkTools.TryFind("ildasm", out string? path) ?
-        path : throw new FileNotFoundException("Could not find ildasm.exe in the Windows SDK."));
+    private static readonly Lazy<string> _ildasmPath = new(() => WindowsSdkTools.TryFind("ildasm", out string? path)
+        ? path
+        : throw new FileNotFoundException("Could not find ildasm.exe in the Windows SDK."));
 
     public static string Decompile(string assemblyPath, string typeName)
     {

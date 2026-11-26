@@ -144,9 +144,9 @@ public partial class ModuleWeaver
 
         OutputCheck CreateCheck(ParameterDefinition parameter, bool isByReference, bool? whenResult)
         {
-            return isByReference ?
-                OutputCheck.ForParameter(parameter, whenResult) :
-                OutputCheck.ForArgument(parameter, argumentCopies.GetOrAdd(parameter), whenResult);
+            return isByReference
+                ? OutputCheck.ForParameter(parameter, whenResult)
+                : OutputCheck.ForArgument(parameter, argumentCopies.GetOrAdd(parameter), whenResult);
         }
     }
 

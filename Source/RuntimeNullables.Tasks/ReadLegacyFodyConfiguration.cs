@@ -144,13 +144,17 @@ public sealed class ReadLegacyFodyConfiguration : Task
         if (Log.HasLoggedErrors)
             return;
 
-        string newLocation = configuration.File == null ? "the file that sets the WeaverConfiguration property"
-            : inProjectFile ? "the project file"
-            : "Directory.Build.props or the project files";
+        string newLocation = configuration.File == null
+            ? "the file that sets the WeaverConfiguration property"
+            : inProjectFile
+                ? "the project file"
+                : "Directory.Build.props or the project files";
 
-        string removal = configuration.File == null ? "the whole property"
-            : inProjectFile ? "FodyWeavers.xml and FodyWeavers.xsd"
-            : "FodyWeavers.xml";
+        string removal = configuration.File == null
+            ? "the whole property"
+            : inProjectFile
+                ? "FodyWeavers.xml and FodyWeavers.xsd"
+                : "FodyWeavers.xml";
 
         string message = replacements.Count > 0
             ? $"{intro}. Set these properties in {newLocation} instead: {properties}. Then remove the element (or delete {removal} if Fody isn't used " +

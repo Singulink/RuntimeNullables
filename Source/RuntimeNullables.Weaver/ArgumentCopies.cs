@@ -40,9 +40,9 @@ internal sealed class ArgumentCopies
 
             if (parameter.ParameterType.WithoutModifiers().IsByReference)
             {
-                var loadValue = valueType.IsValueType || valueType.IsGenericParameter ?
-                    Instruction.Create(OpCodes.Ldobj, valueType) :
-                    Instruction.Create(OpCodes.Ldind_Ref);
+                var loadValue = valueType.IsValueType || valueType.IsGenericParameter
+                    ? Instruction.Create(OpCodes.Ldobj, valueType)
+                    : Instruction.Create(OpCodes.Ldind_Ref);
 
                 instructions.Insert(0, loadValue);
             }

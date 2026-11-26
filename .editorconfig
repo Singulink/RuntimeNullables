@@ -529,3 +529,6 @@ dotnet_diagnostic.SA1009.severity = suggestion
 
 # SA1111: Closing parenthesis should be on line of last parameter
 dotnet_diagnostic.SA1111.severity = suggestion
+
+# SA1504: All accessors should be single-line or multi-line
+dotnet_diagnostic.SA1504.severity = none
